@@ -17,7 +17,7 @@ byte EP = 1;  /* Execution Permission: 1 or 2 */
 TCB tcb[3];   /* Task control blocks: tcb[1] for Process1, tcb[2] for Process2 */
 
 /* Select highest priority process and update EP */
-inline select_highest_priority() {
+inline OsGetTopTask() {
     /* Only consider READY or RUNNING tasks */
     if
     :: (tcb[1].state == READY || tcb[1].state == RUNNING) && 
@@ -44,21 +44,12 @@ inline select_highest_priority() {
 #define NONDET_INTERRUPT \
     if \
     :: skip; \
-    :: tcb[1].prio = 0; select_highest_priority(); \
-    :: tcb[1].prio = 15; select_highest_priority(); \
-    :: tcb[1].prio = 31; select_highest_priority(); \
-    :: tcb[2].prio = 0; select_highest_priority(); \
-    :: tcb[2].prio = 15; select_highest_priority(); \
-    :: tcb[2].prio = 31; select_highest_priority(); \
-    :: tcb[1].state = READY; select_highest_priority(); \
-    :: tcb[1].state = SUSPENDED; select_highest_priority(); \
-    :: tcb[2].state = READY; select_highest_priority(); \
-    :: tcb[2].state = SUSPENDED; select_highest_priority(); \
+    :: OsGetTopTask(); \
     fi
 
 /* Execute statement when current process has permission */
 #define EXEC_WHEN_CURRENT(id, stmt) \
-    (EP == id) -> stmt; NONDET_INTERRUPT
+    atomic { (EP == id) -> stmt; NONDET_INTERRUPT }
 
 proctype Process1() {
     do
@@ -77,13 +68,13 @@ proctype Process2() {
 
 init {
     /* Initialize Task Control Blocks */
-    tcb[1].prio = 10;        /* Initial priority for Process1 */
+    tcb[1].prio = 20;        /* Initial priority for Process1 */
     tcb[1].state = READY;    /* Process1 starts in READY state */
     
     tcb[2].prio = 20;        /* Initial priority for Process2 */
     tcb[2].state = READY;    /* Process2 starts in READY state */
     
-    select_highest_priority();  /* Set initial EP based on priorities */
+    OsGetTopTask();  /* Set initial EP based on priorities */
     run Process1();
     run Process2()
 }

@@ -133,19 +133,19 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates2	27	/* :init: */
-#define minseq2	1033
-#define maxseq2	1058
+#define minseq2	133
+#define maxseq2	158
 #define _endstate2	26
 
-#define _nstates1	415	/* Process2 */
-#define minseq1	619
-#define maxseq1	1032
-#define _endstate1	414
+#define _nstates1	55	/* Process2 */
+#define minseq1	79
+#define maxseq1	132
+#define _endstate1	54
 
-#define _nstates0	620	/* Process1 */
+#define _nstates0	80	/* Process1 */
 #define minseq0	0
-#define maxseq0	618
-#define _endstate0	619
+#define maxseq0	78
+#define _endstate0	79
 
 extern short src_ln2[];
 extern short src_ln1[];
@@ -154,9 +154,9 @@ extern S_F_MAP src_file2[];
 extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
-#define T_ID	unsigned short
-#define _T5	684
-#define _T2	685
+#define T_ID	unsigned char
+#define _T5	84
+#define _T2	85
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -179,7 +179,7 @@ struct TCB { /* user defined type */
 typedef struct P2 { /* :init: */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 11; /* state    */
+	unsigned _p   : 8; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -190,7 +190,7 @@ typedef struct P2 { /* :init: */
 typedef struct P1 { /* Process2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 11; /* state    */
+	unsigned _p   : 8; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -201,7 +201,7 @@ typedef struct P1 { /* Process2 */
 typedef struct P0 { /* Process1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 11; /* state    */
+	unsigned _p   : 8; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -211,7 +211,7 @@ typedef struct P0 { /* Process1 */
 typedef struct P3 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 11; /* state    */
+	unsigned _p   : 8; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -440,8 +440,8 @@ typedef struct TRIX_v6 {
 
 #define _start3	0 /* np_ */
 #define _start2	1
-#define _start1	411
-#define _start0	616
+#define _start1	51
+#define _start0	76
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -801,7 +801,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	686
+#define NTRANS	86
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);
