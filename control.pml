@@ -18,26 +18,36 @@ TCB tcb[3];   /* Task control blocks: tcb[1] for Process1, tcb[2] for Process2 *
 
 /* Select highest priority process and update EP */
 inline OsGetTopTask() {
-    /* Only consider READY or RUNNING tasks */
-    if
-    :: (tcb[1].state == READY || tcb[1].state == RUNNING) && 
-       (tcb[2].state != READY && tcb[2].state != RUNNING) ->
-        EP = 1;
-    :: (tcb[2].state == READY || tcb[2].state == RUNNING) && 
-       (tcb[1].state != READY && tcb[1].state != RUNNING) ->
-        EP = 2;
-    :: (tcb[1].state == READY || tcb[1].state == RUNNING) && 
-       (tcb[2].state == READY || tcb[2].state == RUNNING) ->
+    byte i;
+    byte highest_prio = 255;  /* Start with lowest possible priority */
+    byte top_task = 0;        /* 0 means no task found */
+    
+    /* Loop through all tasks to find highest priority READY/RUNNING task */
+    i = 1;
+    do
+    :: (i <= 2) ->
         if
-        :: (tcb[1].prio < tcb[2].prio) -> EP = 1;
-        :: (tcb[1].prio > tcb[2].prio) -> EP = 2;
-        :: (tcb[1].prio == tcb[2].prio) ->
+        :: (tcb[i].state == READY || tcb[i].state == RUNNING) ->
             if
-            :: EP = 1;
-            :: EP = 2;
+            :: (tcb[i].prio < highest_prio) ->
+                highest_prio = tcb[i].prio;
+                top_task = i;
+            :: (tcb[i].prio == highest_prio) ->
+                /* Same priority: non-deterministically choose */
+                if
+                :: top_task = i;
+                :: skip;  /* Keep current top_task */
+                fi
+            :: else -> skip;
             fi
-        fi
-    fi
+        :: else -> skip;
+        fi;
+        i++;
+    :: (i > 2) -> break;
+    od;
+    
+    /* Update EP to the highest priority task found */
+    EP = top_task;
 }
 
 /* Non-deterministic interrupt macro */

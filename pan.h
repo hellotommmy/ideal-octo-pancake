@@ -132,20 +132,20 @@ typedef struct S_F_MAP {
 	int upto;
 } S_F_MAP;
 
-#define _nstates2	27	/* :init: */
-#define minseq2	133
-#define maxseq2	158
-#define _endstate2	26
+#define _nstates2	38	/* :init: */
+#define minseq2	188
+#define maxseq2	224
+#define _endstate2	37
 
-#define _nstates1	55	/* Process2 */
-#define minseq1	79
-#define maxseq1	132
-#define _endstate1	54
+#define _nstates1	77	/* Process2 */
+#define minseq1	112
+#define maxseq1	187
+#define _endstate1	76
 
-#define _nstates0	80	/* Process1 */
+#define _nstates0	113	/* Process1 */
 #define minseq0	0
-#define maxseq0	78
-#define _endstate0	79
+#define maxseq0	111
+#define _endstate0	112
 
 extern short src_ln2[];
 extern short src_ln1[];
@@ -155,8 +155,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned char
-#define _T5	84
-#define _T2	85
+#define _T5	101
+#define _T2	102
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -183,8 +183,11 @@ typedef struct P2 { /* :init: */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
+	uchar _4_6_i;
+	uchar _4_6_highest_prio;
+	uchar _4_6_top_task;
 } P2;
-#define Air2	(sizeof(P2) - 3)
+#define Air2	(sizeof(P2) - Offsetof(P2, _4_6_top_task) - 1*sizeof(uchar))
 
 #define PProcess2	((P1 *)_this)
 typedef struct P1 { /* Process2 */
@@ -194,8 +197,14 @@ typedef struct P1 { /* Process2 */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
+	uchar _3_4_4_i;
+	uchar _3_4_4_highest_prio;
+	uchar _3_4_4_top_task;
+	uchar _3_5_5_i;
+	uchar _3_5_5_highest_prio;
+	uchar _3_5_5_top_task;
 } P1;
-#define Air1	(sizeof(P1) - 3)
+#define Air1	(sizeof(P1) - Offsetof(P1, _3_5_5_top_task) - 1*sizeof(uchar))
 
 #define PProcess1	((P0 *)_this)
 typedef struct P0 { /* Process1 */
@@ -205,8 +214,17 @@ typedef struct P0 { /* Process1 */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
+	uchar _2_1_1_i;
+	uchar _2_1_1_highest_prio;
+	uchar _2_1_1_top_task;
+	uchar _2_2_2_i;
+	uchar _2_2_2_highest_prio;
+	uchar _2_2_2_top_task;
+	uchar _2_3_3_i;
+	uchar _2_3_3_highest_prio;
+	uchar _2_3_3_top_task;
 } P0;
-#define Air0	(sizeof(P0) - 3)
+#define Air0	(sizeof(P0) - Offsetof(P0, _2_3_3_top_task) - 1*sizeof(uchar))
 
 typedef struct P3 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
@@ -440,8 +458,8 @@ typedef struct TRIX_v6 {
 
 #define _start3	0 /* np_ */
 #define _start2	1
-#define _start1	51
-#define _start0	76
+#define _start1	73
+#define _start0	109
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -801,7 +819,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	86
+#define NTRANS	103
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);
