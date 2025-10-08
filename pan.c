@@ -73,6 +73,18 @@ globinit(void)
 #endif
 	*proc_offset, *q_offset;
 void
+locinit5(int h)
+{
+}
+void
+locinit4(int h)
+{
+}
+void
+locinit3(int h)
+{
+}
+void
 locinit2(int h)
 {
 }
@@ -490,103 +502,141 @@ int _;	/* predefined write-only variable */
 	#define Index(x, y)	x
 #endif
 
+short src_ln5 [] = {
+	  0,  25,  25,  26,  26,  27,  27,  24, 
+	 29,  24,  31,  31,  30,  33,  30,  35, 
+	 35,  34,  37,  34,  37,   0, };
+S_F_MAP src_file5 [] = {
+	{ "-", 0, 0 },
+	{ "_spin_nvr.tmp", 1, 20 },
+	{ "-", 21, 22 }
+};
+short *src_claim;
+uchar reached5 [] = {
+	  0,   1,   1,   1,   1,   1,   1,   0, 
+	  1,   1,   1,   1,   0,   1,   1,   1, 
+	  1,   0,   1,   1,   0,   0, };
+uchar *loopstate5;
+
+short src_ln4 [] = {
+	  0,  14,  14,  15,  15,  13,  17,  13, 
+	 19,  19,  18,  21,  18,  21,   0, };
+S_F_MAP src_file4 [] = {
+	{ "-", 0, 0 },
+	{ "_spin_nvr.tmp", 1, 13 },
+	{ "-", 14, 15 }
+};
+uchar reached4 [] = {
+	  0,   1,   1,   1,   1,   0,   1,   1, 
+	  1,   1,   0,   1,   1,   0,   0, };
+uchar *loopstate4;
+
+short src_ln3 [] = {
+	  0,   3,   3,   4,   4,   2,   6,   2, 
+	  8,   8,   7,  10,   7,  10,   0, };
+S_F_MAP src_file3 [] = {
+	{ "-", 0, 0 },
+	{ "_spin_nvr.tmp", 1, 13 },
+	{ "-", 14, 15 }
+};
+uchar reached3 [] = {
+	  0,   1,   1,   1,   1,   0,   1,   1, 
+	  1,   1,   0,   1,   1,   0,   0, };
+uchar *loopstate3;
+
 short src_ln2 [] = {
-	  0,  81,  82,  84,  85,  22,  23,  26, 
-	 26,  28,  30,  32,  33,  34,  35,  38, 
-	 39,  37,  41,  41,  41,  31,  43,  43, 
-	 43,  29,  45,  45,  46,  46,  27,  50, 
-	 27,  50,  20,  88,  89,  90,   0, };
+	  0, 182, 184,  35,  36,  37,  38,  39, 
+	 39,  35,  41,  35,  41,  33, 186, 187, 
+	187, 183, 191, 183, 191, 192,  50,  51, 
+	 52,  53,  53,  49,  55,  47, 195, 196, 
+	 50,  51,  52,  53,  53,  49,  55,  47, 
+	117, 118, 121, 122, 124, 126, 129, 130, 
+	130, 123, 132, 132, 132, 121, 136, 121, 
+	136, 115, 200, 201, 202,   0, };
 S_F_MAP src_file2 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 37 },
-	{ "-", 38, 39 }
+	{ "control.pml", 1, 60 },
+	{ "-", 61, 62 }
 };
 uchar reached2 [] = {
-	  0,   0,   0,   0,   0,   1,   0,   0, 
-	  0,   1,   1,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   0,   1,   1, 
-	  0,   0,   1,   0,   1,   1,   0,   1, 
-	  1,   0,   0,   0,   0,   0,   0, };
+	  0,   0,   1,   1,   1,   0,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   1,   0, 
+	  0,   1,   1,   1,   1,   0,   0,   0, 
+	  1,   0,   0,   1,   1,   1,   1,   0, 
+	  1,   0,   0,   1,   1,   0,   0,   1, 
+	  0,   0,   1,   1,   1,   0,   1,   1, 
+	  0,   0,   0,   0,   0,   0, };
 uchar *loopstate2;
 
 short src_ln1 [] = {
-	  0,  74,  74,  74,  22,  23,  26,  26, 
-	 28,  30,  32,  33,  34,  35,  38,  39, 
-	 37,  41,  41,  41,  31,  43,  43,  43, 
-	 29,  45,  45,  46,  46,  27,  50,  27, 
-	 50,  20,  74,  74,  74,  75,  75,  75, 
-	 22,  23,  26,  26,  28,  30,  32,  33, 
-	 34,  35,  38,  39,  37,  41,  41,  41, 
-	 31,  43,  43,  43,  29,  45,  45,  46, 
-	 46,  27,  50,  27,  50,  20,  75,  75, 
-	 75,  73,  77,  73,  77,   0, };
+	  0, 160, 160, 160, 117, 118, 121, 122, 
+	124, 126, 129, 130, 130, 123, 132, 132, 
+	132, 121, 136, 121, 136, 115, 160, 160, 
+	160, 161, 161, 161, 117, 118, 121, 122, 
+	124, 126, 129, 130, 130, 123, 132, 132, 
+	132, 121, 136, 121, 136, 115, 161, 161, 
+	161, 159, 163, 159, 163,   0, };
 S_F_MAP src_file1 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 76 },
-	{ "-", 77, 78 }
+	{ "control.pml", 1, 52 },
+	{ "-", 53, 54 }
 };
 uchar reached1 [] = {
-	  0,   1,   0,   1,   1,   0,   0,   0, 
-	  1,   1,   1,   0,   0,   1,   1,   1, 
-	  0,   1,   1,   0,   0,   1,   1,   0, 
-	  0,   1,   0,   1,   1,   0,   1,   1, 
-	  0,   1,   0,   1,   1,   1,   0,   1, 
-	  1,   0,   0,   0,   1,   1,   1,   0, 
-	  0,   1,   1,   1,   0,   1,   1,   0, 
-	  0,   1,   1,   0,   0,   1,   0,   1, 
+	  0,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   1,   0,   1,   0,   1, 
+	  1,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
 	  1,   0,   1,   1,   0,   1,   0,   1, 
 	  1,   0,   1,   1,   0,   0, };
 uchar *loopstate1;
 
 short src_ln0 [] = {
-	  0,  66,  66,  66,  22,  23,  26,  26, 
-	 28,  30,  32,  33,  34,  35,  38,  39, 
-	 37,  41,  41,  41,  31,  43,  43,  43, 
-	 29,  45,  45,  46,  46,  27,  50,  27, 
-	 50,  20,  66,  66,  66,  67,  67,  67, 
-	 22,  23,  26,  26,  28,  30,  32,  33, 
-	 34,  35,  38,  39,  37,  41,  41,  41, 
-	 31,  43,  43,  43,  29,  45,  45,  46, 
-	 46,  27,  50,  27,  50,  20,  67,  67, 
-	 67,  68,  68,  68,  22,  23,  26,  26, 
-	 28,  30,  32,  33,  34,  35,  38,  39, 
-	 37,  41,  41,  41,  31,  43,  43,  43, 
-	 29,  45,  45,  46,  46,  27,  50,  27, 
-	 50,  20,  68,  68,  68,  65,  70,  65, 
-	 70,   0, };
+	  0, 152, 152, 152, 117, 118, 121, 122, 
+	124, 126, 129, 130, 130, 123, 132, 132, 
+	132, 121, 136, 121, 136, 115, 152, 152, 
+	152, 153, 153, 153, 117, 118, 121, 122, 
+	124, 126, 129, 130, 130, 123, 132, 132, 
+	132, 121, 136, 121, 136, 115, 153, 153, 
+	153, 154, 154, 154, 117, 118, 121, 122, 
+	124, 126, 129, 130, 130, 123, 132, 132, 
+	132, 121, 136, 121, 136, 115, 154, 154, 
+	154, 151, 156, 151, 156,   0, };
 S_F_MAP src_file0 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 112 },
-	{ "-", 113, 114 }
+	{ "control.pml", 1, 76 },
+	{ "-", 77, 78 }
 };
 uchar reached0 [] = {
-	  0,   1,   0,   1,   1,   0,   0,   0, 
-	  1,   1,   1,   0,   0,   1,   1,   1, 
-	  0,   1,   1,   0,   0,   1,   1,   0, 
-	  0,   1,   0,   1,   1,   0,   1,   1, 
-	  0,   1,   0,   1,   1,   1,   0,   1, 
-	  1,   0,   0,   0,   1,   1,   1,   0, 
-	  0,   1,   1,   1,   0,   1,   1,   0, 
-	  0,   1,   1,   0,   0,   1,   0,   1, 
+	  0,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
 	  1,   0,   1,   1,   0,   1,   0,   1, 
-	  1,   1,   0,   1,   1,   0,   0,   0, 
-	  1,   1,   1,   0,   0,   1,   1,   1, 
-	  0,   1,   1,   0,   0,   1,   1,   0, 
-	  0,   1,   0,   1,   1,   0,   1,   1, 
-	  0,   1,   0,   1,   1,   0,   1,   1, 
-	  0,   0, };
+	  1,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   1,   0,   1,   0,   1, 
+	  1,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   1,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   0, };
 uchar *loopstate0;
-uchar reached3[3];  /* np_ */
-uchar *loopstate3;  /* np_ */
+uchar reached6[3];  /* np_ */
+uchar *loopstate6;  /* np_ */
 struct {
 	int tp; short *src;
 } src_all[] = {
+	{ 5, &src_ln5[0] },
+	{ 4, &src_ln4[0] },
+	{ 3, &src_ln3[0] },
 	{ 2, &src_ln2[0] },
 	{ 1, &src_ln1[0] },
 	{ 0, &src_ln0[0] },
 	{ 0, (short *) 0 }
 };
 S_F_MAP *flref[] = {
+	src_file5,
+	src_file4,
+	src_file3,
 	src_file2,
 	src_file1,
 	src_file0 
@@ -598,11 +648,18 @@ struct {
 	{ (char *) 0, "" }
 };
 
-short Air[] = {  (short) Air0, (short) Air1, (short) Air2, (short) Air3 };
+short Air[] = {  (short) Air0, (short) Air1, (short) Air2, (short) Air3, (short) Air4, (short) Air5, (short) Air6
+#ifndef NOCLAIM
+	, (short) Air7
+#endif
+	 };
 char *procname[] = {
    "Process1",
    "Process2",
    ":init:",
+   "starvation_free_task1",
+   "starvation_free_task2",
+   "all_starvation_free",
    ":np_:",
 	0
 };
@@ -613,19 +670,24 @@ int Btypes[] = {
    4,	/* Process1 */
    4,	/* Process2 */
    2,	/* :init: */
+   1,	/* starvation_free_task1 */
+   1,	/* starvation_free_task2 */
+   1,	/* all_starvation_free */
    0	/* :np_: */
 };
 
+#ifndef NOCLAIM
 uchar spin_c_typ[NCLAIMS]; /* claim-types */
-uchar *accpstate[4];
-uchar *progstate[4];
-uchar *loopstate[4];
-uchar *reached[4];
-uchar *stopstate[4];
-uchar *visstate[4];
-short *mapstate[4];
+#endif
+uchar *accpstate[7];
+uchar *progstate[7];
+uchar *loopstate[7];
+uchar *reached[7];
+uchar *stopstate[7];
+uchar *visstate[7];
+short *mapstate[7];
 #ifdef HAS_CODE
-	int NrStates[4];
+	int NrStates[7];
 #endif
 #ifdef TRIX
 int what_p_size(int);
@@ -784,6 +846,12 @@ addproc(int calling_pid, int priority, int n)
 	case 1: j = sizeof(P1); break;
 	case 2: j = sizeof(P2); break;
 	case 3: j = sizeof(P3); break;
+	case 4: j = sizeof(P4); break;
+	case 5: j = sizeof(P5); break;
+	case 6: j = sizeof(P6); break;
+#ifndef NOCLAIM
+	case 7: j = sizeof(P7); break;
+#endif
 	default: Uerror("bad proc - addproc");
 	}
 	#ifdef BFS_PAR
@@ -876,14 +944,87 @@ addproc(int calling_pid, int priority, int n)
 	{	((P0 *)_this)->_pid = h;
 	}
 	switch (n) {
-	case 3:	/* np_ */
-		((P3 *)pptr(h))->_t = 3;
-		((P3 *)pptr(h))->_p = 0;
-#ifdef HAS_PRIORITY
-		((P3 *)pptr(h))->_priority = priority;
+#ifndef NOCLAIM
+	case 7:	/* claim select */
+		spin_c_typ[0] = 5; /* all_starvation_free */
+		((P7 *)pptr(h))->c_cur[0] = 7;
+		reached5[7]=1;
+		spin_c_typ[1] = 4; /* starvation_free_task2 */
+		((P7 *)pptr(h))->c_cur[1] = 5;
+		reached4[5]=1;
+		spin_c_typ[2] = 3; /* starvation_free_task1 */
+		((P7 *)pptr(h))->c_cur[2] = 5;
+		reached3[5]=1;
+		((P7 *)pptr(h))->_t = 3;
+		((P7 *)pptr(h))->_p = 5;
+		((P7 *)pptr(h))->_n = 2; /* starvation_free_task1 */
+		src_claim = src_ln3;
+#ifndef BFS
+		if (whichclaim == -1 && claimname == NULL)
+			printf("pan: ltl formula starvation_free_task1\n");
 #endif
-		reached3[0] = 1;
-		accpstate[3][1] = 1;
+		if (whichclaim != -1)
+		{	select_claim(whichclaim);
+		}
+		break;
+
+#endif
+	case 6:	/* np_ */
+		((P6 *)pptr(h))->_t = 6;
+		((P6 *)pptr(h))->_p = 0;
+#ifdef HAS_PRIORITY
+		((P6 *)pptr(h))->_priority = priority;
+#endif
+		reached6[0] = 1;
+		accpstate[6][1] = 1;
+		break;
+	case 5:	/* all_starvation_free */
+		((P5 *)pptr(h))->_t = 5;
+		((P5 *)pptr(h))->_p = 7;
+#ifdef HAS_PRIORITY
+		((P5 *)pptr(h))->_priority = priority; /* was: 1 */
+#endif
+		reached5[7]=1;
+		src_claim = src_ln5;
+		/* params: */
+		/* locals: */
+#ifdef VAR_RANGES
+#endif
+#ifdef HAS_CODE
+		locinit5(h);
+#endif
+		break;
+	case 4:	/* starvation_free_task2 */
+		((P4 *)pptr(h))->_t = 4;
+		((P4 *)pptr(h))->_p = 5;
+#ifdef HAS_PRIORITY
+		((P4 *)pptr(h))->_priority = priority; /* was: 1 */
+#endif
+		reached4[5]=1;
+		src_claim = src_ln4;
+		/* params: */
+		/* locals: */
+#ifdef VAR_RANGES
+#endif
+#ifdef HAS_CODE
+		locinit4(h);
+#endif
+		break;
+	case 3:	/* starvation_free_task1 */
+		((P3 *)pptr(h))->_t = 3;
+		((P3 *)pptr(h))->_p = 5;
+#ifdef HAS_PRIORITY
+		((P3 *)pptr(h))->_priority = priority; /* was: 1 */
+#endif
+		reached3[5]=1;
+		src_claim = src_ln3;
+		/* params: */
+		/* locals: */
+#ifdef VAR_RANGES
+#endif
+#ifdef HAS_CODE
+		locinit3(h);
+#endif
 		break;
 	case 2:	/* :init: */
 		((P2 *)pptr(h))->_t = 2;
@@ -894,11 +1035,13 @@ addproc(int calling_pid, int priority, int n)
 		reached2[1]=1;
 		/* params: */
 		/* locals: */
-		((P2 *)pptr(h))->_4_6_i = 0;
+		((P2 *)pptr(h))->i = 0;
 #ifdef VAR_RANGES
-		logval(":init::i", ((P2 *)pptr(h))->_4_6_i);
-		logval(":init::highest_prio", ((P2 *)pptr(h))->_4_6_highest_prio);
-		logval(":init::top_task", ((P2 *)pptr(h))->_4_6_top_task);
+		logval(":init::i", ((P2 *)pptr(h))->i);
+		logval(":init::idx", ((P2 *)pptr(h))->_5_6_idx);
+		logval(":init::prio", ((P2 *)pptr(h))->_5_9_prio);
+		logval(":init::top_task", ((P2 *)pptr(h))->_5_9_top_task);
+		logval(":init::found", ((P2 *)pptr(h))->_5_9_found);
 #endif
 #ifdef HAS_CODE
 		locinit2(h);
@@ -906,22 +1049,20 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 1:	/* Process2 */
 		((P1 *)pptr(h))->_t = 1;
-		((P1 *)pptr(h))->_p = 73;
+		((P1 *)pptr(h))->_p = 49;
 #ifdef HAS_PRIORITY
 		((P1 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached1[73]=1;
+		reached1[49]=1;
 		/* params: */
 		/* locals: */
-		((P1 *)pptr(h))->_3_4_4_i = 0;
-		((P1 *)pptr(h))->_3_5_5_i = 0;
 #ifdef VAR_RANGES
-		logval("Process2:i", ((P1 *)pptr(h))->_3_4_4_i);
-		logval("Process2:highest_prio", ((P1 *)pptr(h))->_3_4_4_highest_prio);
-		logval("Process2:top_task", ((P1 *)pptr(h))->_3_4_4_top_task);
-		logval("Process2:i", ((P1 *)pptr(h))->_3_5_5_i);
-		logval("Process2:highest_prio", ((P1 *)pptr(h))->_3_5_5_highest_prio);
-		logval("Process2:top_task", ((P1 *)pptr(h))->_3_5_5_top_task);
+		logval("Process2:prio", ((P1 *)pptr(h))->_4_4_4_prio);
+		logval("Process2:top_task", ((P1 *)pptr(h))->_4_4_4_top_task);
+		logval("Process2:found", ((P1 *)pptr(h))->_4_4_4_found);
+		logval("Process2:prio", ((P1 *)pptr(h))->_4_5_5_prio);
+		logval("Process2:top_task", ((P1 *)pptr(h))->_4_5_5_top_task);
+		logval("Process2:found", ((P1 *)pptr(h))->_4_5_5_found);
 #endif
 #ifdef HAS_CODE
 		locinit1(h);
@@ -929,26 +1070,23 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 0:	/* Process1 */
 		((P0 *)pptr(h))->_t = 0;
-		((P0 *)pptr(h))->_p = 109;
+		((P0 *)pptr(h))->_p = 73;
 #ifdef HAS_PRIORITY
 		((P0 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached0[109]=1;
+		reached0[73]=1;
 		/* params: */
 		/* locals: */
-		((P0 *)pptr(h))->_2_1_1_i = 0;
-		((P0 *)pptr(h))->_2_2_2_i = 0;
-		((P0 *)pptr(h))->_2_3_3_i = 0;
 #ifdef VAR_RANGES
-		logval("Process1:i", ((P0 *)pptr(h))->_2_1_1_i);
-		logval("Process1:highest_prio", ((P0 *)pptr(h))->_2_1_1_highest_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_2_1_1_top_task);
-		logval("Process1:i", ((P0 *)pptr(h))->_2_2_2_i);
-		logval("Process1:highest_prio", ((P0 *)pptr(h))->_2_2_2_highest_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_2_2_2_top_task);
-		logval("Process1:i", ((P0 *)pptr(h))->_2_3_3_i);
-		logval("Process1:highest_prio", ((P0 *)pptr(h))->_2_3_3_highest_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_2_3_3_top_task);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_1_1_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_1_1_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_1_1_found);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_2_2_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_2_2_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_2_2_found);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_3_3_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_3_3_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_3_3_found);
 #endif
 #ifdef HAS_CODE
 		locinit0(h);
@@ -983,6 +1121,9 @@ col_p(int i, char *z)
 	case 1: j = sizeof(P1); break;
 	case 2: j = sizeof(P2); break;
 	case 3: j = sizeof(P3); break;
+	case 4: j = sizeof(P4); break;
+	case 5: j = sizeof(P5); break;
+	case 6: j = sizeof(P6); break;
 	default: Uerror("bad proctype - collapse");
 	}
 	if (z) x = z; else x = scratch;
@@ -1064,52 +1205,89 @@ run(void)
 	Maxbody = max(Maxbody, ((int) sizeof(P1)));
 	Maxbody = max(Maxbody, ((int) sizeof(P2)));
 	Maxbody = max(Maxbody, ((int) sizeof(P3)));
+	Maxbody = max(Maxbody, ((int) sizeof(P4)));
+	Maxbody = max(Maxbody, ((int) sizeof(P5)));
+	Maxbody = max(Maxbody, ((int) sizeof(P6)));
 	reached[0] = reached0;
 	reached[1] = reached1;
 	reached[2] = reached2;
 	reached[3] = reached3;
+	reached[4] = reached4;
+	reached[5] = reached5;
+	reached[6] = reached6;
 	accpstate[0] = (uchar *) emalloc(_nstates0);
 	accpstate[1] = (uchar *) emalloc(_nstates1);
 	accpstate[2] = (uchar *) emalloc(_nstates2);
 	accpstate[3] = (uchar *) emalloc(_nstates3);
+	accpstate[4] = (uchar *) emalloc(_nstates4);
+	accpstate[5] = (uchar *) emalloc(_nstates5);
+	accpstate[6] = (uchar *) emalloc(_nstates6);
 	progstate[0] = (uchar *) emalloc(_nstates0);
 	progstate[1] = (uchar *) emalloc(_nstates1);
 	progstate[2] = (uchar *) emalloc(_nstates2);
 	progstate[3] = (uchar *) emalloc(_nstates3);
+	progstate[4] = (uchar *) emalloc(_nstates4);
+	progstate[5] = (uchar *) emalloc(_nstates5);
+	progstate[6] = (uchar *) emalloc(_nstates6);
 	loopstate0 = loopstate[0] = (uchar *) emalloc(_nstates0);
 	loopstate1 = loopstate[1] = (uchar *) emalloc(_nstates1);
 	loopstate2 = loopstate[2] = (uchar *) emalloc(_nstates2);
 	loopstate3 = loopstate[3] = (uchar *) emalloc(_nstates3);
+	loopstate4 = loopstate[4] = (uchar *) emalloc(_nstates4);
+	loopstate5 = loopstate[5] = (uchar *) emalloc(_nstates5);
+	loopstate6 = loopstate[6] = (uchar *) emalloc(_nstates6);
 	stopstate[0] = (uchar *) emalloc(_nstates0);
 	stopstate[1] = (uchar *) emalloc(_nstates1);
 	stopstate[2] = (uchar *) emalloc(_nstates2);
 	stopstate[3] = (uchar *) emalloc(_nstates3);
+	stopstate[4] = (uchar *) emalloc(_nstates4);
+	stopstate[5] = (uchar *) emalloc(_nstates5);
+	stopstate[6] = (uchar *) emalloc(_nstates6);
 	visstate[0] = (uchar *) emalloc(_nstates0);
 	visstate[1] = (uchar *) emalloc(_nstates1);
 	visstate[2] = (uchar *) emalloc(_nstates2);
 	visstate[3] = (uchar *) emalloc(_nstates3);
+	visstate[4] = (uchar *) emalloc(_nstates4);
+	visstate[5] = (uchar *) emalloc(_nstates5);
+	visstate[6] = (uchar *) emalloc(_nstates6);
 	mapstate[0] = (short *) emalloc(_nstates0 * sizeof(short));
 	mapstate[1] = (short *) emalloc(_nstates1 * sizeof(short));
 	mapstate[2] = (short *) emalloc(_nstates2 * sizeof(short));
 	mapstate[3] = (short *) emalloc(_nstates3 * sizeof(short));
+	mapstate[4] = (short *) emalloc(_nstates4 * sizeof(short));
+	mapstate[5] = (short *) emalloc(_nstates5 * sizeof(short));
+	mapstate[6] = (short *) emalloc(_nstates6 * sizeof(short));
 	stopstate[0][_endstate0] = 1;
 	stopstate[1][_endstate1] = 1;
 	stopstate[2][_endstate2] = 1;
 	stopstate[3][_endstate3] = 1;
+	stopstate[4][_endstate4] = 1;
+	stopstate[5][_endstate5] = 1;
+	stopstate[6][_endstate6] = 1;
 #ifdef HAS_CODE
 	NrStates[0] = _nstates0;
 	NrStates[1] = _nstates1;
 	NrStates[2] = _nstates2;
 	NrStates[3] = _nstates3;
+	NrStates[4] = _nstates4;
+	NrStates[5] = _nstates5;
+	NrStates[6] = _nstates6;
 #endif
 
 	Maxbody = max(Maxbody, sizeof(State)-VECTORSZ);
 	if ((Maxbody % WS) != 0)
 		Maxbody += WS - (Maxbody % WS);
 
+	accpstate[5][17] = 1;
+	accpstate[5][12] = 1;
+	accpstate[4][10] = 1;
+	accpstate[3][10] = 1;
 	retrans(0, _nstates0, _start0, src_ln0, reached0, loopstate0);
 	retrans(1, _nstates1, _start1, src_ln1, reached1, loopstate1);
 	retrans(2, _nstates2, _start2, src_ln2, reached2, loopstate2);
+	retrans(3, _nstates3, _start3, src_ln3, reached3, loopstate3);
+	retrans(4, _nstates4, _start4, src_ln4, reached4, loopstate4);
+	retrans(5, _nstates5, _start5, src_ln5, reached5, loopstate5);
 	if (state_tables)
 	{ if (dodot) exit(0);
 	  printf("\nTransition Type: ");
@@ -12452,6 +12630,9 @@ do_reach(void)
 	r_ck(reached0, _nstates0, 0, src_ln0, src_file0);
 	r_ck(reached1, _nstates1, 1, src_ln1, src_file1);
 	r_ck(reached2, _nstates2, 2, src_ln2, src_file2);
+	r_ck(reached3, _nstates3, 3, src_ln3, src_file3);
+	r_ck(reached4, _nstates4, 4, src_ln4, src_file4);
+	r_ck(reached5, _nstates5, 5, src_ln5, src_file5);
 }
 
 void
@@ -12464,6 +12645,34 @@ iniglobals(int calling_pid)
 		now.tcb[1].state = 0;
 		now.tcb[2].prio = 0;
 		now.tcb[2].state = 0;
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			now.readyQueue[0].tasks[l_in] = 0;
+		}
+	}
+		now.readyQueue[0].tailIndex = 0;
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			now.readyQueue[1].tasks[l_in] = 0;
+		}
+	}
+		now.readyQueue[1].tailIndex = 0;
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			now.readyQueue[2].tasks[l_in] = 0;
+		}
+	}
+		now.readyQueue[2].tailIndex = 0;
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			now.readyQueue[3].tasks[l_in] = 0;
+		}
+	}
+		now.readyQueue[3].tailIndex = 0;
 #ifdef VAR_RANGES
 		logval("EP", now.EP);
 		logval("tcb[0].prio", now.tcb[0].prio);
@@ -12472,6 +12681,34 @@ iniglobals(int calling_pid)
 		logval("tcb[1].state", now.tcb[1].state);
 		logval("tcb[2].prio", now.tcb[2].prio);
 		logval("tcb[2].state", now.tcb[2].state);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			logval("readyQueue[0].tasks[l_in]", now.readyQueue[0].tasks[l_in]);
+		}
+	}
+		logval("readyQueue[0].tailIndex", now.readyQueue[0].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			logval("readyQueue[1].tasks[l_in]", now.readyQueue[1].tasks[l_in]);
+		}
+	}
+		logval("readyQueue[1].tailIndex", now.readyQueue[1].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			logval("readyQueue[2].tasks[l_in]", now.readyQueue[2].tasks[l_in]);
+		}
+	}
+		logval("readyQueue[2].tailIndex", now.readyQueue[2].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			logval("readyQueue[3].tasks[l_in]", now.readyQueue[3].tasks[l_in]);
+		}
+	}
+		logval("readyQueue[3].tailIndex", now.readyQueue[3].tailIndex);
 #endif
 }
 
@@ -12554,6 +12791,9 @@ what_p_size(int t)
 	case 1: j = sizeof(P1); break;
 	case 2: j = sizeof(P2); break;
 	case 3: j = sizeof(P3); break;
+	case 4: j = sizeof(P4); break;
+	case 5: j = sizeof(P5); break;
+	case 6: j = sizeof(P6); break;
 	default: Uerror("bad proctype");
 	}
 	return j;
@@ -14177,37 +14417,77 @@ c_globals(void)
 	printf("	byte   state:	%d\n", now.tcb[ 1 ].state);
 	printf("	byte   prio:	%d\n", now.tcb[ 2 ].prio);
 	printf("	byte   state:	%d\n", now.tcb[ 2 ].state);
+		printf("	(struct readyQueue)\n");
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			printf("	byte   tasks[%d]:	%d\n", l_in, now.readyQueue[ 0 ].tasks[l_in]);
+		}
+	}
+	printf("	byte   tailIndex:	%d\n", now.readyQueue[ 0 ].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			printf("	byte   tasks[%d]:	%d\n", l_in, now.readyQueue[ 1 ].tasks[l_in]);
+		}
+	}
+	printf("	byte   tailIndex:	%d\n", now.readyQueue[ 1 ].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			printf("	byte   tasks[%d]:	%d\n", l_in, now.readyQueue[ 2 ].tasks[l_in]);
+		}
+	}
+	printf("	byte   tailIndex:	%d\n", now.readyQueue[ 2 ].tailIndex);
+	{	int l_in;
+		for (l_in = 0; l_in < 5; l_in++)
+		{
+			printf("	byte   tasks[%d]:	%d\n", l_in, now.readyQueue[ 3 ].tasks[l_in]);
+		}
+	}
+	printf("	byte   tailIndex:	%d\n", now.readyQueue[ 3 ].tailIndex);
 }
 void
 c_locals(int pid, int tp)
 {	/* int i; */
 	switch(tp) {
+	case 5:
+		/* none */
+		break;
+	case 4:
+		/* none */
+		break;
+	case 3:
+		/* none */
+		break;
 	case 2:
 		printf("local vars proc %d (:init:):\n", pid);
-	printf("	byte   i:	%d\n", ((P2 *)pptr(pid))->_4_6_i);
-	printf("	byte   highest_prio:	%d\n", ((P2 *)pptr(pid))->_4_6_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P2 *)pptr(pid))->_4_6_top_task);
+	printf("	byte   i:	%d\n", ((P2 *)pptr(pid))->i);
+	printf("	byte   idx:	%d\n", ((P2 *)pptr(pid))->_5_6_idx);
+	printf("	byte   prio:	%d\n", ((P2 *)pptr(pid))->_5_9_prio);
+	printf("	byte   top_task:	%d\n", ((P2 *)pptr(pid))->_5_9_top_task);
+	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_5_9_found);
 		break;
 	case 1:
 		printf("local vars proc %d (Process2):\n", pid);
-	printf("	byte   i:	%d\n", ((P1 *)pptr(pid))->_3_4_4_i);
-	printf("	byte   highest_prio:	%d\n", ((P1 *)pptr(pid))->_3_4_4_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_3_4_4_top_task);
-	printf("	byte   i:	%d\n", ((P1 *)pptr(pid))->_3_5_5_i);
-	printf("	byte   highest_prio:	%d\n", ((P1 *)pptr(pid))->_3_5_5_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_3_5_5_top_task);
+	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_4_4_prio);
+	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_4_4_top_task);
+	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_4_4_found);
+	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_5_5_prio);
+	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_5_5_top_task);
+	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_5_5_found);
 		break;
 	case 0:
 		printf("local vars proc %d (Process1):\n", pid);
-	printf("	byte   i:	%d\n", ((P0 *)pptr(pid))->_2_1_1_i);
-	printf("	byte   highest_prio:	%d\n", ((P0 *)pptr(pid))->_2_1_1_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_2_1_1_top_task);
-	printf("	byte   i:	%d\n", ((P0 *)pptr(pid))->_2_2_2_i);
-	printf("	byte   highest_prio:	%d\n", ((P0 *)pptr(pid))->_2_2_2_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_2_2_2_top_task);
-	printf("	byte   i:	%d\n", ((P0 *)pptr(pid))->_2_3_3_i);
-	printf("	byte   highest_prio:	%d\n", ((P0 *)pptr(pid))->_2_3_3_highest_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_2_3_3_top_task);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_1_1_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_1_1_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_1_1_found);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_2_2_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_2_2_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_2_2_found);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_3_3_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_3_3_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_3_3_found);
 		break;
 	}
 }
@@ -14221,7 +14501,7 @@ c_chandump(int unused)
 {	unused++; /* avoid complaints */
 }
 
-Trans *t_id_lkup[225];
+Trans *t_id_lkup[234];
 
 
 #ifdef BFS_PAR
