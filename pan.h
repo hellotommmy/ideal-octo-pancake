@@ -2,7 +2,7 @@
 #define PAN_H
 
 #define SpinVersion	"Spin Version 6.5.2 -- 6 December 2019"
-#define PanSource	"control.pml"
+#define PanSource	"resume_suspend.pml"
 
 #define G_long	8
 #define G_int	4
@@ -140,34 +140,34 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates5	21	/* all_starvation_free */
-#define minseq5	428
-#define maxseq5	447
+#define minseq5	756
+#define maxseq5	775
 #define _endstate5	20
 
 #define _nstates4	14	/* starvation_free_task2 */
-#define minseq4	415
-#define maxseq4	427
+#define minseq4	743
+#define maxseq4	755
 #define _endstate4	13
 
 #define _nstates3	14	/* starvation_free_task1 */
-#define minseq3	402
-#define maxseq3	414
+#define minseq3	730
+#define maxseq3	742
 #define _endstate3	13
 
-#define _nstates2	80	/* :init: */
-#define minseq2	323
-#define maxseq2	401
-#define _endstate2	79
+#define _nstates2	99	/* :init: */
+#define minseq2	632
+#define maxseq2	729
+#define _endstate2	98
 
-#define _nstates1	131	/* Process2 */
-#define minseq1	193
-#define maxseq1	322
-#define _endstate1	130
+#define _nstates1	283	/* Process2 */
+#define minseq1	350
+#define maxseq1	631
+#define _endstate1	282
 
-#define _nstates0	194	/* Process1 */
+#define _nstates0	351	/* Process1 */
 #define minseq0	0
-#define maxseq0	192
-#define _endstate0	193
+#define maxseq0	349
+#define _endstate0	350
 
 extern short src_ln5[];
 extern short src_ln4[];
@@ -183,8 +183,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned short
-#define _T5	154
-#define _T2	155
+#define _T5	238
+#define _T2	239
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -202,15 +202,20 @@ extern S_F_MAP src_file0[];
 struct TCB { /* user defined type */
 	uchar prio;
 	uchar state;
+	uchar responseTime;
 };
 struct ReadyList { /* user defined type */
 	uchar tasks[5];
 	uchar tailIndex;
 };
+struct SortLink { /* user defined type */
+	uchar tasks[5];
+	uchar count;
+};
 typedef struct P5 { /* all_starvation_free */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -220,7 +225,7 @@ typedef struct P5 { /* all_starvation_free */
 typedef struct P4 { /* starvation_free_task2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -230,7 +235,7 @@ typedef struct P4 { /* starvation_free_task2 */
 typedef struct P3 { /* starvation_free_task1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -241,70 +246,89 @@ typedef struct P3 { /* starvation_free_task1 */
 typedef struct P2 { /* :init: */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar i;
-	uchar _5_6_idx;
-	uchar _5_9_prio;
-	uchar _5_9_top_task;
-	uchar _5_9_found;
-	uchar _5_10_idx;
+	uchar _6_6_idx;
+	uchar _6_7_idx;
+	uchar _6_10_prio;
+	uchar _6_10_top_task;
+	uchar _6_10_found;
+	uchar _6_11_idx;
 } P2;
-#define Air2	(sizeof(P2) - Offsetof(P2, _5_10_idx) - 1*sizeof(uchar))
+#define Air2	(sizeof(P2) - Offsetof(P2, _6_11_idx) - 1*sizeof(uchar))
 
 #define PProcess2	((P1 *)_this)
 typedef struct P1 { /* Process2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _4_4_4_interrupted_task;
-	uchar _4_4_4_18_prio;
-	uchar _4_4_4_18_top_task;
-	uchar _4_4_4_18_found;
-	uchar _4_4_4_19_idx;
-	uchar _4_5_5_interrupted_task;
-	uchar _4_5_5_23_prio;
-	uchar _4_5_5_23_top_task;
-	uchar _4_5_5_23_found;
-	uchar _4_5_5_24_idx;
+	uchar _5_4_5_interrupted_task;
+	uchar _5_4_5_22_prio;
+	uchar _5_4_5_22_top_task;
+	uchar _5_4_5_22_found;
+	uchar _5_4_5_23_idx;
+	uchar _5_5_6_needSched;
+	uchar _5_5_6_26_8_removePos;
+	uchar _5_5_6_26_8_found;
+	uchar _5_5_6_26_8_shiftIdx;
+	uchar _5_5_6_27_interrupted_task;
+	uchar _5_5_6_27_12_prio;
+	uchar _5_5_6_27_12_top_task;
+	uchar _5_5_6_27_12_found;
+	uchar _5_5_6_27_13_idx;
+	uchar _5_5_7_interrupted_task;
+	uchar _5_5_7_31_prio;
+	uchar _5_5_7_31_top_task;
+	uchar _5_5_7_31_found;
+	uchar _5_5_7_32_idx;
 } P1;
-#define Air1	(sizeof(P1) - Offsetof(P1, _4_5_5_24_idx) - 1*sizeof(uchar))
+#define Air1	(sizeof(P1) - Offsetof(P1, _5_5_7_32_idx) - 1*sizeof(uchar))
 
 #define PProcess1	((P0 *)_this)
 typedef struct P0 { /* Process1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _3_1_1_interrupted_task;
-	uchar _3_1_1_3_prio;
-	uchar _3_1_1_3_top_task;
-	uchar _3_1_1_3_found;
-	uchar _3_1_1_4_idx;
-	uchar _3_2_2_interrupted_task;
-	uchar _3_2_2_8_prio;
-	uchar _3_2_2_8_top_task;
-	uchar _3_2_2_8_found;
-	uchar _3_2_2_9_idx;
-	uchar _3_3_3_interrupted_task;
-	uchar _3_3_3_13_prio;
-	uchar _3_3_3_13_top_task;
-	uchar _3_3_3_13_found;
-	uchar _3_3_3_14_idx;
+	uchar _4_1_1_interrupted_task;
+	uchar _4_1_1_3_prio;
+	uchar _4_1_1_3_top_task;
+	uchar _4_1_1_3_found;
+	uchar _4_1_1_4_idx;
+	uchar _4_2_2_interrupted_task;
+	uchar _4_2_2_8_prio;
+	uchar _4_2_2_8_top_task;
+	uchar _4_2_2_8_found;
+	uchar _4_2_2_9_idx;
+	uchar _4_3_3_needSched;
+	uchar _4_3_3_12_1_removePos;
+	uchar _4_3_3_12_1_found;
+	uchar _4_3_3_12_1_shiftIdx;
+	uchar _4_3_3_13_interrupted_task;
+	uchar _4_3_3_13_5_prio;
+	uchar _4_3_3_13_5_top_task;
+	uchar _4_3_3_13_5_found;
+	uchar _4_3_3_13_6_idx;
+	uchar _4_3_4_interrupted_task;
+	uchar _4_3_4_17_prio;
+	uchar _4_3_4_17_top_task;
+	uchar _4_3_4_17_found;
+	uchar _4_3_4_18_idx;
 } P0;
-#define Air0	(sizeof(P0) - Offsetof(P0, _3_3_3_14_idx) - 1*sizeof(uchar))
+#define Air0	(sizeof(P0) - Offsetof(P0, _4_3_4_18_idx) - 1*sizeof(uchar))
 
 typedef struct P6 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 9; /* state    */
+	unsigned _p   : 10; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -322,7 +346,7 @@ typedef struct P6 { /* np_ */
 typedef struct P7 {
 	unsigned _pid : 8; /* always zero */
 	unsigned _t   : 4; /* active-claim type  */
-	unsigned _p   : 9; /* active-claim state */
+	unsigned _p   : 10; /* active-claim state */
 	unsigned _n   : 3; /* active-claim index */
 	uchar c_cur[NCLAIMS]; /* claim-states */
 } P7;
@@ -522,6 +546,7 @@ typedef struct State {
 	uchar newTask;
 	struct TCB tcb[3];
 	struct ReadyList readyQueue[4];
+	struct SortLink sortLink;
 #ifdef TRIX
 	/* room for 512 proc+chan ptrs, + safety margin */
 	char *_ids_[MAXPROC+MAXQ+4];
@@ -558,8 +583,8 @@ typedef struct TRIX_v6 {
 #define _start4	5
 #define _start3	5
 #define _start2	1
-#define _start1	127
-#define _start0	190
+#define _start1	279
+#define _start0	347
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -919,7 +944,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	156
+#define NTRANS	240
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);
