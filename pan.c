@@ -545,80 +545,136 @@ uchar reached3 [] = {
 uchar *loopstate3;
 
 short src_ln2 [] = {
-	  0, 182, 184,  35,  36,  37,  38,  39, 
-	 39,  35,  41,  35,  41,  33, 186, 187, 
-	187, 183, 191, 183, 191, 192,  50,  51, 
-	 52,  53,  53,  49,  55,  47, 195, 196, 
-	 50,  51,  52,  53,  53,  49,  55,  47, 
-	117, 118, 121, 122, 124, 126, 129, 130, 
-	130, 123, 132, 132, 132, 121, 136, 121, 
-	136, 115, 200, 201, 202,   0, };
+	  0, 230, 232,  44,  45,  46,  47,  48, 
+	 48,  44,  50,  44,  50,  42, 234, 235, 
+	235, 231, 239, 231, 239, 240,  59,  60, 
+	 61,  62,  62,  58,  64,  56, 243, 244, 
+	 59,  60,  61,  62,  62,  58,  64,  56, 
+	126, 127, 130, 131, 133, 135, 138, 139, 
+	139, 132, 141, 141, 141, 130, 145, 130, 
+	145, 146, 124,  98,  99, 100, 101, 102, 
+	102,  98, 106,  98, 107, 108, 109, 110, 
+	110, 106, 112,  94, 250, 252, 253, 254, 
+	  0, };
 S_F_MAP src_file2 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 60 },
-	{ "-", 61, 62 }
+	{ "control.pml", 1, 79 },
+	{ "-", 80, 81 }
 };
 uchar reached2 [] = {
 	  0,   0,   1,   1,   1,   0,   0,   1, 
 	  1,   0,   1,   1,   0,   0,   0,   1, 
 	  1,   0,   1,   1,   0,   0,   1,   0, 
-	  0,   1,   1,   1,   1,   0,   0,   0, 
-	  1,   0,   0,   1,   1,   1,   1,   0, 
+	  0,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   0,   0,   1,   0,   1,   1,   0, 
 	  1,   0,   0,   1,   1,   0,   0,   1, 
 	  0,   0,   1,   1,   1,   0,   1,   1, 
-	  0,   0,   0,   0,   0,   0, };
+	  0,   0,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   1,   1,   1,   0,   0,   1, 
+	  1,   0,   1,   0,   0,   0,   0,   0, 
+	  0, };
 uchar *loopstate2;
 
 short src_ln1 [] = {
-	  0, 160, 160, 160, 117, 118, 121, 122, 
-	124, 126, 129, 130, 130, 123, 132, 132, 
-	132, 121, 136, 121, 136, 115, 160, 160, 
-	160, 161, 161, 161, 117, 118, 121, 122, 
-	124, 126, 129, 130, 130, 123, 132, 132, 
-	132, 121, 136, 121, 136, 115, 161, 161, 
-	161, 159, 163, 159, 163,   0, };
+	  0, 208, 208, 169, 152, 153, 151, 172, 
+	176, 177,  59,  60,  61,  62,  62,  58, 
+	 64,  56, 179, 179, 175, 183, 126, 127, 
+	130, 131, 133, 135, 138, 139, 139, 132, 
+	141, 141, 141, 130, 145, 130, 145, 146, 
+	124,  98,  99, 100, 101, 102, 102,  98, 
+	106,  98, 107, 108, 109, 110, 110, 106, 
+	112,  94, 187, 188, 156, 155, 166, 208, 
+	209, 209, 169, 152, 153, 151, 172, 176, 
+	177,  59,  60,  61,  62,  62,  58,  64, 
+	 56, 179, 179, 175, 183, 126, 127, 130, 
+	131, 133, 135, 138, 139, 139, 132, 141, 
+	141, 141, 130, 145, 130, 145, 146, 124, 
+	 98,  99, 100, 101, 102, 102,  98, 106, 
+	 98, 107, 108, 109, 110, 110, 106, 112, 
+	 94, 187, 188, 156, 155, 166, 209, 207, 
+	211, 207, 211,   0, };
 S_F_MAP src_file1 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 52 },
-	{ "-", 53, 54 }
+	{ "control.pml", 1, 130 },
+	{ "-", 131, 132 }
 };
 uchar reached1 [] = {
-	  0,   1,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   1,   0,   1, 
-	  1,   1,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   1,   0,   1, 
-	  1,   0,   1,   1,   0,   0, };
+	  0,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   0,   1,   0,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   1,   1,   0, 
+	  0,   1,   1,   0,   0,   1,   0,   0, 
+	  1,   1,   1,   0,   1,   1,   0,   0, 
+	  0,   1,   1,   0,   0,   1,   1,   0, 
+	  1,   1,   1,   0,   0,   1,   0,   0, 
+	  1,   0,   0,   0,   1,   0,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  0,   1,   0,   0,   1,   0,   1,   1, 
+	  0,   1,   1,   0,   1,   1,   0,   0, 
+	  1,   1,   0,   0,   1,   0,   0,   1, 
+	  1,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   1,   0,   0,   1,   1,   0,   1, 
+	  1,   1,   0,   0,   1,   0,   0,   1, 
+	  0,   0,   0,   1,   0,   0,   1,   0, 
+	  1,   1,   0,   0, };
 uchar *loopstate1;
 
 short src_ln0 [] = {
-	  0, 152, 152, 152, 117, 118, 121, 122, 
-	124, 126, 129, 130, 130, 123, 132, 132, 
-	132, 121, 136, 121, 136, 115, 152, 152, 
-	152, 153, 153, 153, 117, 118, 121, 122, 
-	124, 126, 129, 130, 130, 123, 132, 132, 
-	132, 121, 136, 121, 136, 115, 153, 153, 
-	153, 154, 154, 154, 117, 118, 121, 122, 
-	124, 126, 129, 130, 130, 123, 132, 132, 
-	132, 121, 136, 121, 136, 115, 154, 154, 
-	154, 151, 156, 151, 156,   0, };
+	  0, 200, 200, 169, 152, 153, 151, 172, 
+	176, 177,  59,  60,  61,  62,  62,  58, 
+	 64,  56, 179, 179, 175, 183, 126, 127, 
+	130, 131, 133, 135, 138, 139, 139, 132, 
+	141, 141, 141, 130, 145, 130, 145, 146, 
+	124,  98,  99, 100, 101, 102, 102,  98, 
+	106,  98, 107, 108, 109, 110, 110, 106, 
+	112,  94, 187, 188, 156, 155, 166, 200, 
+	201, 201, 169, 152, 153, 151, 172, 176, 
+	177,  59,  60,  61,  62,  62,  58,  64, 
+	 56, 179, 179, 175, 183, 126, 127, 130, 
+	131, 133, 135, 138, 139, 139, 132, 141, 
+	141, 141, 130, 145, 130, 145, 146, 124, 
+	 98,  99, 100, 101, 102, 102,  98, 106, 
+	 98, 107, 108, 109, 110, 110, 106, 112, 
+	 94, 187, 188, 156, 155, 166, 201, 202, 
+	202, 169, 152, 153, 151, 172, 176, 177, 
+	 59,  60,  61,  62,  62,  58,  64,  56, 
+	179, 179, 175, 183, 126, 127, 130, 131, 
+	133, 135, 138, 139, 139, 132, 141, 141, 
+	141, 130, 145, 130, 145, 146, 124,  98, 
+	 99, 100, 101, 102, 102,  98, 106,  98, 
+	107, 108, 109, 110, 110, 106, 112,  94, 
+	187, 188, 156, 155, 166, 202, 199, 204, 
+	199, 204,   0, };
 S_F_MAP src_file0 [] = {
 	{ "-", 0, 0 },
-	{ "control.pml", 1, 76 },
-	{ "-", 77, 78 }
+	{ "control.pml", 1, 193 },
+	{ "-", 194, 195 }
 };
 uchar reached0 [] = {
-	  0,   1,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   1,   0,   1, 
+	  0,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   0,   1,   0,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   1,   1,   0, 
+	  0,   1,   1,   0,   0,   1,   0,   0, 
+	  1,   1,   1,   0,   1,   1,   0,   0, 
+	  0,   1,   1,   0,   0,   1,   1,   0, 
+	  1,   1,   1,   0,   0,   1,   0,   0, 
+	  1,   0,   0,   0,   1,   0,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  0,   1,   0,   0,   1,   0,   1,   1, 
+	  0,   1,   1,   0,   1,   1,   0,   0, 
+	  1,   1,   0,   0,   1,   0,   0,   1, 
+	  1,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   1,   0,   0,   1,   1,   0,   1, 
+	  1,   1,   0,   0,   1,   0,   0,   1, 
+	  0,   0,   0,   1,   0,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   1,   0, 
+	  1,   0,   0,   1,   0,   1,   1,   0, 
 	  1,   1,   0,   1,   1,   0,   0,   1, 
 	  1,   0,   0,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   1,   0,   1, 
-	  1,   1,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   0,   1,   0,   1, 
-	  1,   0,   1,   1,   0,   0, };
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  1,   0,   0,   1,   1,   0,   1,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   0, 
+	  0,   0,   1,   0,   0,   1,   0,   1, 
+	  1,   0,   0, };
 uchar *loopstate0;
 uchar reached6[3];  /* np_ */
 uchar *loopstate6;  /* np_ */
@@ -1042,6 +1098,7 @@ addproc(int calling_pid, int priority, int n)
 		logval(":init::prio", ((P2 *)pptr(h))->_5_9_prio);
 		logval(":init::top_task", ((P2 *)pptr(h))->_5_9_top_task);
 		logval(":init::found", ((P2 *)pptr(h))->_5_9_found);
+		logval(":init::idx", ((P2 *)pptr(h))->_5_10_idx);
 #endif
 #ifdef HAS_CODE
 		locinit2(h);
@@ -1049,20 +1106,24 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 1:	/* Process2 */
 		((P1 *)pptr(h))->_t = 1;
-		((P1 *)pptr(h))->_p = 49;
+		((P1 *)pptr(h))->_p = 127;
 #ifdef HAS_PRIORITY
 		((P1 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached1[49]=1;
+		reached1[127]=1;
 		/* params: */
 		/* locals: */
 #ifdef VAR_RANGES
-		logval("Process2:prio", ((P1 *)pptr(h))->_4_4_4_prio);
-		logval("Process2:top_task", ((P1 *)pptr(h))->_4_4_4_top_task);
-		logval("Process2:found", ((P1 *)pptr(h))->_4_4_4_found);
-		logval("Process2:prio", ((P1 *)pptr(h))->_4_5_5_prio);
-		logval("Process2:top_task", ((P1 *)pptr(h))->_4_5_5_top_task);
-		logval("Process2:found", ((P1 *)pptr(h))->_4_5_5_found);
+		logval("Process2:interrupted_task", ((P1 *)pptr(h))->_4_4_4_interrupted_task);
+		logval("Process2:prio", ((P1 *)pptr(h))->_4_4_4_18_prio);
+		logval("Process2:top_task", ((P1 *)pptr(h))->_4_4_4_18_top_task);
+		logval("Process2:found", ((P1 *)pptr(h))->_4_4_4_18_found);
+		logval("Process2:idx", ((P1 *)pptr(h))->_4_4_4_19_idx);
+		logval("Process2:interrupted_task", ((P1 *)pptr(h))->_4_5_5_interrupted_task);
+		logval("Process2:prio", ((P1 *)pptr(h))->_4_5_5_23_prio);
+		logval("Process2:top_task", ((P1 *)pptr(h))->_4_5_5_23_top_task);
+		logval("Process2:found", ((P1 *)pptr(h))->_4_5_5_23_found);
+		logval("Process2:idx", ((P1 *)pptr(h))->_4_5_5_24_idx);
 #endif
 #ifdef HAS_CODE
 		locinit1(h);
@@ -1070,23 +1131,29 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 0:	/* Process1 */
 		((P0 *)pptr(h))->_t = 0;
-		((P0 *)pptr(h))->_p = 73;
+		((P0 *)pptr(h))->_p = 190;
 #ifdef HAS_PRIORITY
 		((P0 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached0[73]=1;
+		reached0[190]=1;
 		/* params: */
 		/* locals: */
 #ifdef VAR_RANGES
-		logval("Process1:prio", ((P0 *)pptr(h))->_3_1_1_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_3_1_1_top_task);
-		logval("Process1:found", ((P0 *)pptr(h))->_3_1_1_found);
-		logval("Process1:prio", ((P0 *)pptr(h))->_3_2_2_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_3_2_2_top_task);
-		logval("Process1:found", ((P0 *)pptr(h))->_3_2_2_found);
-		logval("Process1:prio", ((P0 *)pptr(h))->_3_3_3_prio);
-		logval("Process1:top_task", ((P0 *)pptr(h))->_3_3_3_top_task);
-		logval("Process1:found", ((P0 *)pptr(h))->_3_3_3_found);
+		logval("Process1:interrupted_task", ((P0 *)pptr(h))->_3_1_1_interrupted_task);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_1_1_3_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_1_1_3_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_1_1_3_found);
+		logval("Process1:idx", ((P0 *)pptr(h))->_3_1_1_4_idx);
+		logval("Process1:interrupted_task", ((P0 *)pptr(h))->_3_2_2_interrupted_task);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_2_2_8_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_2_2_8_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_2_2_8_found);
+		logval("Process1:idx", ((P0 *)pptr(h))->_3_2_2_9_idx);
+		logval("Process1:interrupted_task", ((P0 *)pptr(h))->_3_3_3_interrupted_task);
+		logval("Process1:prio", ((P0 *)pptr(h))->_3_3_3_13_prio);
+		logval("Process1:top_task", ((P0 *)pptr(h))->_3_3_3_13_top_task);
+		logval("Process1:found", ((P0 *)pptr(h))->_3_3_3_13_found);
+		logval("Process1:idx", ((P0 *)pptr(h))->_3_3_3_14_idx);
 #endif
 #ifdef HAS_CODE
 		locinit0(h);
@@ -12638,7 +12705,14 @@ do_reach(void)
 void
 iniglobals(int calling_pid)
 {
+		now.int_ctrl_reg = 0;
+		now.topPrio = 0;
 		now.EP = 1;
+		isTaskSwitch = 0;
+		now.int_save = 0;
+		ep_save = 0;
+		now.newTask = 0;
+		pendSV_pending = 0;
 		now.tcb[0].prio = 0;
 		now.tcb[0].state = 0;
 		now.tcb[1].prio = 0;
@@ -12674,7 +12748,11 @@ iniglobals(int calling_pid)
 	}
 		now.readyQueue[3].tailIndex = 0;
 #ifdef VAR_RANGES
+		logval("int_ctrl_reg", now.int_ctrl_reg);
+		logval("topPrio", now.topPrio);
 		logval("EP", now.EP);
+		logval("int_save", now.int_save);
+		logval("newTask", now.newTask);
 		logval("tcb[0].prio", now.tcb[0].prio);
 		logval("tcb[0].state", now.tcb[0].state);
 		logval("tcb[1].prio", now.tcb[1].prio);
@@ -14409,6 +14487,8 @@ void
 c_globals(void)
 {	/* int i; */
 	printf("global vars:\n");
+	printf("	byte   int_ctrl_reg:	%d\n", now.int_ctrl_reg);
+	printf("	byte   topPrio:	%d\n", now.topPrio);
 	printf("	byte   EP:	%d\n", now.EP);
 		printf("	(struct tcb)\n");
 	printf("	byte   prio:	%d\n", now.tcb[ 0 ].prio);
@@ -14446,6 +14526,8 @@ c_globals(void)
 		}
 	}
 	printf("	byte   tailIndex:	%d\n", now.readyQueue[ 3 ].tailIndex);
+	printf("	byte   int_save:	%d\n", now.int_save);
+	printf("	byte   newTask:	%d\n", now.newTask);
 }
 void
 c_locals(int pid, int tp)
@@ -14467,27 +14549,38 @@ c_locals(int pid, int tp)
 	printf("	byte   prio:	%d\n", ((P2 *)pptr(pid))->_5_9_prio);
 	printf("	byte   top_task:	%d\n", ((P2 *)pptr(pid))->_5_9_top_task);
 	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_5_9_found);
+	printf("	byte   idx:	%d\n", ((P2 *)pptr(pid))->_5_10_idx);
 		break;
 	case 1:
 		printf("local vars proc %d (Process2):\n", pid);
-	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_4_4_prio);
-	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_4_4_top_task);
-	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_4_4_found);
-	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_5_5_prio);
-	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_5_5_top_task);
-	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_5_5_found);
+	printf("	byte   interrupted_task:	%d\n", ((P1 *)pptr(pid))->_4_4_4_interrupted_task);
+	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_4_4_18_prio);
+	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_4_4_18_top_task);
+	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_4_4_18_found);
+	printf("	byte   idx:	%d\n", ((P1 *)pptr(pid))->_4_4_4_19_idx);
+	printf("	byte   interrupted_task:	%d\n", ((P1 *)pptr(pid))->_4_5_5_interrupted_task);
+	printf("	byte   prio:	%d\n", ((P1 *)pptr(pid))->_4_5_5_23_prio);
+	printf("	byte   top_task:	%d\n", ((P1 *)pptr(pid))->_4_5_5_23_top_task);
+	printf("	byte   found:	%d\n", ((P1 *)pptr(pid))->_4_5_5_23_found);
+	printf("	byte   idx:	%d\n", ((P1 *)pptr(pid))->_4_5_5_24_idx);
 		break;
 	case 0:
 		printf("local vars proc %d (Process1):\n", pid);
-	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_1_1_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_1_1_top_task);
-	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_1_1_found);
-	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_2_2_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_2_2_top_task);
-	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_2_2_found);
-	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_3_3_prio);
-	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_3_3_top_task);
-	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_3_3_found);
+	printf("	byte   interrupted_task:	%d\n", ((P0 *)pptr(pid))->_3_1_1_interrupted_task);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_1_1_3_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_1_1_3_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_1_1_3_found);
+	printf("	byte   idx:	%d\n", ((P0 *)pptr(pid))->_3_1_1_4_idx);
+	printf("	byte   interrupted_task:	%d\n", ((P0 *)pptr(pid))->_3_2_2_interrupted_task);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_2_2_8_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_2_2_8_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_2_2_8_found);
+	printf("	byte   idx:	%d\n", ((P0 *)pptr(pid))->_3_2_2_9_idx);
+	printf("	byte   interrupted_task:	%d\n", ((P0 *)pptr(pid))->_3_3_3_interrupted_task);
+	printf("	byte   prio:	%d\n", ((P0 *)pptr(pid))->_3_3_3_13_prio);
+	printf("	byte   top_task:	%d\n", ((P0 *)pptr(pid))->_3_3_3_13_top_task);
+	printf("	byte   found:	%d\n", ((P0 *)pptr(pid))->_3_3_3_13_found);
+	printf("	byte   idx:	%d\n", ((P0 *)pptr(pid))->_3_3_3_14_idx);
 		break;
 	}
 }
@@ -14501,7 +14594,7 @@ c_chandump(int unused)
 {	unused++; /* avoid complaints */
 }
 
-Trans *t_id_lkup[234];
+Trans *t_id_lkup[448];
 
 
 #ifdef BFS_PAR

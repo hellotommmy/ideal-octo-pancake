@@ -1,4 +1,11 @@
-/* Minimal SPIN/Promela program with EP control variable */
+/* Execute statement when current process has permission */
+byte int_ctrl_reg = 0;
+#define INT_SAFE (int_ctrl_reg > 0)
+
+#define EXEC_WHEN_CURRENT(id, stmt) \
+    atomic { (EP == id) -> stmt; NONDET_INTERRUPT }
+#define EXEC_WHEN_CURRENT_SAFE(id, stmt) \
+    atomic { (id == EP) -> stmt; INT_SAFE }
 
 /* Configuration */
 #define NUM_OF_TASKS 2
@@ -12,6 +19,8 @@
 #define DELAYED   2
 #define SUSPENDED 3
 #define RUNNING   4
+
+byte topPrio;
 
 /* Task control block structure */
 typedef TCB {
@@ -47,10 +56,10 @@ inline initReadyQueue(prioLevel) {
 inline OsEnqueueTail(taskId, prioLevel) {
     /* tailIndex 指向第一个空位，直接插入 */
     if
-    :: (readyQueue[prioLevel].tailIndex < LIST_SIZE) ->
-        readyQueue[prioLevel].tasks[readyQueue[prioLevel].tailIndex] = taskId;
-        readyQueue[prioLevel].tailIndex++;
-    :: else -> skip;  /* 队列已满，跳过 */
+    :: (readyQueue[prioLevel].tailIndex < LIST_SIZE) ->//若队列不满
+        readyQueue[prioLevel].tasks[readyQueue[prioLevel].tailIndex] = taskId;//直接插入
+        readyQueue[prioLevel].tailIndex++;//队尾后移一位
+    :: else -> assert(0);  /* 队列已满，错误 */
     fi
 }
 
@@ -136,17 +145,55 @@ inline OsGetTopTask(task_return_var, task_return_prio) {
     task_return_var = top_task;
     task_return_prio = prio;
 }
+byte isTaskSwitch = 0;
 
+byte int_save = 0;
+inline LOS_IntLock() {
+    int_save = int_ctrl_reg;
+    int_ctrl_reg = 1;
+}
+inline LOS_IntRestore() {
+    int_ctrl_reg = int_save;
+}
+inline LOS_IntUnlock() {
+    int_ctrl_reg = 0;
+}
+byte ep_save = 0;
+byte newTask = 0;
+byte pendSV_pending = 0;
+
+/* Inline Systick interrupt handler */
+inline Systick_Handler() {
+    byte interrupted_task = 0;
+    
+    LOS_IntLock();
+    
+    /* Save the interrupted task */
+    interrupted_task = EP;
+    
+    /* Save current task if it's a user task */
+    if
+    :: (interrupted_task >= 1 && interrupted_task <= NUM_OF_TASKS) ->
+        tcb[interrupted_task].state = READY;
+        OsEnqueueTail(interrupted_task, tcb[interrupted_task].prio);
+    :: else -> skip;
+    fi;
+    
+    /* Select next task */
+    OsGetTopTask(newTask, topPrio);
+    OsDequeueHead(topPrio);
+    
+    /* Perform context switch */
+    tcb[newTask].state = RUNNING;
+    EP = newTask;
+    
+    LOS_IntRestore();
+}
 /* Non-deterministic interrupt macro */
-#define NONDET_INTERRUPT \
-    if \
-    :: skip; \
-    :: OsGetTopTask(EP, prio); \
-    fi
+/* For starvation-free verification, always trigger systick */
+#define NONDET_INTERRUPT Systick_Handler();
 
-/* Execute statement when current process has permission */
-#define EXEC_WHEN_CURRENT(id, stmt) \
-    atomic { (EP == id) -> stmt; NONDET_INTERRUPT }
+
 
 proctype Process1() {
     do
@@ -185,7 +232,7 @@ ltl all_starvation_free {
 
 init {
     byte i;
-    byte prio;
+
     /* Initialize all ready queues */
     i = 0;
     do
@@ -204,7 +251,11 @@ init {
     tcb[2].state = READY;    /* Process2 starts in READY state */
     OsEnqueueTail(2, tcb[2].prio);  /* Add to ready queue */
     
-    OsGetTopTask(EP, prio);  /* Set initial EP based on priorities */
+    /* Get first task and remove from queue */
+    OsGetTopTask(EP, topPrio);       /* Get highest priority task */
+    OsDequeueHead(topPrio);          /* Remove it from queue */
+    tcb[EP].state = RUNNING;         /* Mark as RUNNING */
+    
     run Process1();
     run Process2()
 }

@@ -140,34 +140,34 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates5	21	/* all_starvation_free */
-#define minseq5	214
-#define maxseq5	233
+#define minseq5	428
+#define maxseq5	447
 #define _endstate5	20
 
 #define _nstates4	14	/* starvation_free_task2 */
-#define minseq4	201
-#define maxseq4	213
+#define minseq4	415
+#define maxseq4	427
 #define _endstate4	13
 
 #define _nstates3	14	/* starvation_free_task1 */
-#define minseq3	188
-#define maxseq3	200
+#define minseq3	402
+#define maxseq3	414
 #define _endstate3	13
 
-#define _nstates2	61	/* :init: */
-#define minseq2	128
-#define maxseq2	187
-#define _endstate2	60
+#define _nstates2	80	/* :init: */
+#define minseq2	323
+#define maxseq2	401
+#define _endstate2	79
 
-#define _nstates1	53	/* Process2 */
-#define minseq1	76
-#define maxseq1	127
-#define _endstate1	52
+#define _nstates1	131	/* Process2 */
+#define minseq1	193
+#define maxseq1	322
+#define _endstate1	130
 
-#define _nstates0	77	/* Process1 */
+#define _nstates0	194	/* Process1 */
 #define minseq0	0
-#define maxseq0	75
-#define _endstate0	76
+#define maxseq0	192
+#define _endstate0	193
 
 extern short src_ln5[];
 extern short src_ln4[];
@@ -182,9 +182,9 @@ extern S_F_MAP src_file2[];
 extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
-#define T_ID	unsigned char
-#define _T5	92
-#define _T2	93
+#define T_ID	unsigned short
+#define _T5	154
+#define _T2	155
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -210,7 +210,7 @@ struct ReadyList { /* user defined type */
 typedef struct P5 { /* all_starvation_free */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -220,7 +220,7 @@ typedef struct P5 { /* all_starvation_free */
 typedef struct P4 { /* starvation_free_task2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -230,7 +230,7 @@ typedef struct P4 { /* starvation_free_task2 */
 typedef struct P3 { /* starvation_free_task1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -241,7 +241,7 @@ typedef struct P3 { /* starvation_free_task1 */
 typedef struct P2 { /* :init: */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -250,50 +250,61 @@ typedef struct P2 { /* :init: */
 	uchar _5_9_prio;
 	uchar _5_9_top_task;
 	uchar _5_9_found;
+	uchar _5_10_idx;
 } P2;
-#define Air2	(sizeof(P2) - Offsetof(P2, _5_9_found) - 1*sizeof(uchar))
+#define Air2	(sizeof(P2) - Offsetof(P2, _5_10_idx) - 1*sizeof(uchar))
 
 #define PProcess2	((P1 *)_this)
 typedef struct P1 { /* Process2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _4_4_4_prio;
-	uchar _4_4_4_top_task;
-	uchar _4_4_4_found;
-	uchar _4_5_5_prio;
-	uchar _4_5_5_top_task;
-	uchar _4_5_5_found;
+	uchar _4_4_4_interrupted_task;
+	uchar _4_4_4_18_prio;
+	uchar _4_4_4_18_top_task;
+	uchar _4_4_4_18_found;
+	uchar _4_4_4_19_idx;
+	uchar _4_5_5_interrupted_task;
+	uchar _4_5_5_23_prio;
+	uchar _4_5_5_23_top_task;
+	uchar _4_5_5_23_found;
+	uchar _4_5_5_24_idx;
 } P1;
-#define Air1	(sizeof(P1) - Offsetof(P1, _4_5_5_found) - 1*sizeof(uchar))
+#define Air1	(sizeof(P1) - Offsetof(P1, _4_5_5_24_idx) - 1*sizeof(uchar))
 
 #define PProcess1	((P0 *)_this)
 typedef struct P0 { /* Process1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _3_1_1_prio;
-	uchar _3_1_1_top_task;
-	uchar _3_1_1_found;
-	uchar _3_2_2_prio;
-	uchar _3_2_2_top_task;
-	uchar _3_2_2_found;
-	uchar _3_3_3_prio;
-	uchar _3_3_3_top_task;
-	uchar _3_3_3_found;
+	uchar _3_1_1_interrupted_task;
+	uchar _3_1_1_3_prio;
+	uchar _3_1_1_3_top_task;
+	uchar _3_1_1_3_found;
+	uchar _3_1_1_4_idx;
+	uchar _3_2_2_interrupted_task;
+	uchar _3_2_2_8_prio;
+	uchar _3_2_2_8_top_task;
+	uchar _3_2_2_8_found;
+	uchar _3_2_2_9_idx;
+	uchar _3_3_3_interrupted_task;
+	uchar _3_3_3_13_prio;
+	uchar _3_3_3_13_top_task;
+	uchar _3_3_3_13_found;
+	uchar _3_3_3_14_idx;
 } P0;
-#define Air0	(sizeof(P0) - Offsetof(P0, _3_3_3_found) - 1*sizeof(uchar))
+#define Air0	(sizeof(P0) - Offsetof(P0, _3_3_3_14_idx) - 1*sizeof(uchar))
 
 typedef struct P6 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
-	unsigned _p   : 8; /* state    */
+	unsigned _p   : 9; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -311,7 +322,7 @@ typedef struct P6 { /* np_ */
 typedef struct P7 {
 	unsigned _pid : 8; /* always zero */
 	unsigned _t   : 4; /* active-claim type  */
-	unsigned _p   : 8; /* active-claim state */
+	unsigned _p   : 9; /* active-claim state */
 	unsigned _n   : 3; /* active-claim index */
 	uchar c_cur[NCLAIMS]; /* claim-states */
 } P7;
@@ -504,7 +515,11 @@ typedef struct State {
 		unsigned short _event;
 	#endif
 #endif
+	uchar int_ctrl_reg;
+	uchar topPrio;
 	uchar EP;
+	uchar int_save;
+	uchar newTask;
 	struct TCB tcb[3];
 	struct ReadyList readyQueue[4];
 #ifdef TRIX
@@ -528,6 +543,9 @@ typedef struct TRIX_v6 {
 #endif
 
 #define HAS_TRACK	0
+/* hidden variable: */	uchar isTaskSwitch;
+/* hidden variable: */	uchar ep_save;
+/* hidden variable: */	uchar pendSV_pending;
 #define FORWARD_MOVES	"pan.m"
 #define BACKWARD_MOVES	"pan.b"
 #define TRANSITIONS	"pan.t"
@@ -540,8 +558,8 @@ typedef struct TRIX_v6 {
 #define _start4	5
 #define _start3	5
 #define _start2	1
-#define _start1	49
-#define _start0	73
+#define _start1	127
+#define _start0	190
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -901,7 +919,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	94
+#define NTRANS	156
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);

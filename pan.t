@@ -28,373 +28,682 @@ settable(void)
 
 	trans[5] = (Trans **) emalloc(21*sizeof(Trans *));
 
-	trans[5][8]	= settr(221,0,7,1,0,".(goto)", 0, 2, 0);
-	T = trans[5][7] = settr(220,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(220,0,1,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(220,0,3,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(220,0,5,0,0,"DO", 0, 2, 0);
-	trans[5][1]	= settr(214,0,12,3,0,"((!(!((tcb[2].state==1)))&&!((EP==2))))", 1, 2, 0);
-	trans[5][2]	= settr(215,0,12,1,0,"goto accept_S5", 0, 2, 0);
-	trans[5][3]	= settr(216,0,17,4,0,"((!(!((tcb[1].state==1)))&&!((EP==1))))", 1, 2, 0);
-	trans[5][4]	= settr(217,0,17,1,0,"goto accept_S10", 0, 2, 0);
-	trans[5][5]	= settr(218,0,7,1,0,"(1)", 0, 2, 0);
-	trans[5][6]	= settr(219,0,7,1,0,"goto T0_init", 0, 2, 0);
-	trans[5][9]	= settr(222,0,12,1,0,"break", 0, 2, 0);
-	trans[5][13]	= settr(226,0,12,1,0,".(goto)", 0, 2, 0);
-	T = trans[5][12] = settr(225,0,0,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(225,0,10,0,0,"DO", 0, 2, 0);
-	trans[5][10]	= settr(223,0,12,5,0,"(!((EP==2)))", 1, 2, 0);
-	trans[5][11]	= settr(224,0,12,1,0,"goto accept_S5", 0, 2, 0);
-	trans[5][14]	= settr(227,0,17,1,0,"break", 0, 2, 0);
-	trans[5][18]	= settr(231,0,17,1,0,".(goto)", 0, 2, 0);
-	T = trans[5][17] = settr(230,0,0,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(230,0,15,0,0,"DO", 0, 2, 0);
-	trans[5][15]	= settr(228,0,17,6,0,"(!((EP==1)))", 1, 2, 0);
-	trans[5][16]	= settr(229,0,17,1,0,"goto accept_S10", 0, 2, 0);
-	trans[5][19]	= settr(232,0,20,1,0,"break", 0, 2, 0);
-	trans[5][20]	= settr(233,0,0,7,7,"-end-", 0, 3500, 0);
+	trans[5][8]	= settr(435,0,7,1,0,".(goto)", 0, 2, 0);
+	T = trans[5][7] = settr(434,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(434,0,1,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(434,0,3,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(434,0,5,0,0,"DO", 0, 2, 0);
+	trans[5][1]	= settr(428,0,12,3,0,"((!(!((tcb[2].state==1)))&&!((EP==2))))", 1, 2, 0);
+	trans[5][2]	= settr(429,0,12,1,0,"goto accept_S5", 0, 2, 0);
+	trans[5][3]	= settr(430,0,17,4,0,"((!(!((tcb[1].state==1)))&&!((EP==1))))", 1, 2, 0);
+	trans[5][4]	= settr(431,0,17,1,0,"goto accept_S10", 0, 2, 0);
+	trans[5][5]	= settr(432,0,7,1,0,"(1)", 0, 2, 0);
+	trans[5][6]	= settr(433,0,7,1,0,"goto T0_init", 0, 2, 0);
+	trans[5][9]	= settr(436,0,12,1,0,"break", 0, 2, 0);
+	trans[5][13]	= settr(440,0,12,1,0,".(goto)", 0, 2, 0);
+	T = trans[5][12] = settr(439,0,0,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(439,0,10,0,0,"DO", 0, 2, 0);
+	trans[5][10]	= settr(437,0,12,5,0,"(!((EP==2)))", 1, 2, 0);
+	trans[5][11]	= settr(438,0,12,1,0,"goto accept_S5", 0, 2, 0);
+	trans[5][14]	= settr(441,0,17,1,0,"break", 0, 2, 0);
+	trans[5][18]	= settr(445,0,17,1,0,".(goto)", 0, 2, 0);
+	T = trans[5][17] = settr(444,0,0,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(444,0,15,0,0,"DO", 0, 2, 0);
+	trans[5][15]	= settr(442,0,17,6,0,"(!((EP==1)))", 1, 2, 0);
+	trans[5][16]	= settr(443,0,17,1,0,"goto accept_S10", 0, 2, 0);
+	trans[5][19]	= settr(446,0,20,1,0,"break", 0, 2, 0);
+	trans[5][20]	= settr(447,0,0,7,7,"-end-", 0, 3500, 0);
 
 	/* proctype 4: starvation_free_task2 */
 
 	trans[4] = (Trans **) emalloc(14*sizeof(Trans *));
 
-	trans[4][6]	= settr(206,0,5,1,0,".(goto)", 0, 2, 0);
-	T = trans[4][5] = settr(205,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(205,0,1,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(205,0,3,0,0,"DO", 0, 2, 0);
-	trans[4][1]	= settr(201,0,10,8,0,"((!(!((tcb[2].state==1)))&&!((EP==2))))", 1, 2, 0);
-	trans[4][2]	= settr(202,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[4][3]	= settr(203,0,5,1,0,"(1)", 0, 2, 0);
-	trans[4][4]	= settr(204,0,5,1,0,"goto T0_init", 0, 2, 0);
-	trans[4][7]	= settr(207,0,10,1,0,"break", 0, 2, 0);
-	trans[4][11]	= settr(211,0,10,1,0,".(goto)", 0, 2, 0);
-	T = trans[4][10] = settr(210,0,0,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(210,0,8,0,0,"DO", 0, 2, 0);
-	trans[4][8]	= settr(208,0,10,9,0,"(!((EP==2)))", 1, 2, 0);
-	trans[4][9]	= settr(209,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[4][12]	= settr(212,0,13,1,0,"break", 0, 2, 0);
-	trans[4][13]	= settr(213,0,0,10,10,"-end-", 0, 3500, 0);
+	trans[4][6]	= settr(420,0,5,1,0,".(goto)", 0, 2, 0);
+	T = trans[4][5] = settr(419,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(419,0,1,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(419,0,3,0,0,"DO", 0, 2, 0);
+	trans[4][1]	= settr(415,0,10,8,0,"((!(!((tcb[2].state==1)))&&!((EP==2))))", 1, 2, 0);
+	trans[4][2]	= settr(416,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[4][3]	= settr(417,0,5,1,0,"(1)", 0, 2, 0);
+	trans[4][4]	= settr(418,0,5,1,0,"goto T0_init", 0, 2, 0);
+	trans[4][7]	= settr(421,0,10,1,0,"break", 0, 2, 0);
+	trans[4][11]	= settr(425,0,10,1,0,".(goto)", 0, 2, 0);
+	T = trans[4][10] = settr(424,0,0,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(424,0,8,0,0,"DO", 0, 2, 0);
+	trans[4][8]	= settr(422,0,10,9,0,"(!((EP==2)))", 1, 2, 0);
+	trans[4][9]	= settr(423,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[4][12]	= settr(426,0,13,1,0,"break", 0, 2, 0);
+	trans[4][13]	= settr(427,0,0,10,10,"-end-", 0, 3500, 0);
 
 	/* proctype 3: starvation_free_task1 */
 
 	trans[3] = (Trans **) emalloc(14*sizeof(Trans *));
 
-	trans[3][6]	= settr(193,0,5,1,0,".(goto)", 0, 2, 0);
-	T = trans[3][5] = settr(192,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(192,0,1,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(192,0,3,0,0,"DO", 0, 2, 0);
-	trans[3][1]	= settr(188,0,10,11,0,"((!(!((tcb[1].state==1)))&&!((EP==1))))", 1, 2, 0);
-	trans[3][2]	= settr(189,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[3][3]	= settr(190,0,5,1,0,"(1)", 0, 2, 0);
-	trans[3][4]	= settr(191,0,5,1,0,"goto T0_init", 0, 2, 0);
-	trans[3][7]	= settr(194,0,10,1,0,"break", 0, 2, 0);
-	trans[3][11]	= settr(198,0,10,1,0,".(goto)", 0, 2, 0);
-	T = trans[3][10] = settr(197,0,0,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(197,0,8,0,0,"DO", 0, 2, 0);
-	trans[3][8]	= settr(195,0,10,12,0,"(!((EP==1)))", 1, 2, 0);
-	trans[3][9]	= settr(196,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[3][12]	= settr(199,0,13,1,0,"break", 0, 2, 0);
-	trans[3][13]	= settr(200,0,0,13,13,"-end-", 0, 3500, 0);
+	trans[3][6]	= settr(407,0,5,1,0,".(goto)", 0, 2, 0);
+	T = trans[3][5] = settr(406,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(406,0,1,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(406,0,3,0,0,"DO", 0, 2, 0);
+	trans[3][1]	= settr(402,0,10,11,0,"((!(!((tcb[1].state==1)))&&!((EP==1))))", 1, 2, 0);
+	trans[3][2]	= settr(403,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[3][3]	= settr(404,0,5,1,0,"(1)", 0, 2, 0);
+	trans[3][4]	= settr(405,0,5,1,0,"goto T0_init", 0, 2, 0);
+	trans[3][7]	= settr(408,0,10,1,0,"break", 0, 2, 0);
+	trans[3][11]	= settr(412,0,10,1,0,".(goto)", 0, 2, 0);
+	T = trans[3][10] = settr(411,0,0,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(411,0,8,0,0,"DO", 0, 2, 0);
+	trans[3][8]	= settr(409,0,10,12,0,"(!((EP==1)))", 1, 2, 0);
+	trans[3][9]	= settr(410,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[3][12]	= settr(413,0,13,1,0,"break", 0, 2, 0);
+	trans[3][13]	= settr(414,0,0,13,13,"-end-", 0, 3500, 0);
 
 	/* proctype 2: :init: */
 
-	trans[2] = (Trans **) emalloc(61*sizeof(Trans *));
+	trans[2] = (Trans **) emalloc(80*sizeof(Trans *));
 
-	trans[2][1]	= settr(128,0,17,14,14,"i = 0", 0, 2, 0);
-	trans[2][18]	= settr(145,0,17,1,0,".(goto)", 0, 2, 0);
-	T = trans[2][17] = settr(144,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(144,0,2,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(144,0,15,0,0,"DO", 0, 2, 0);
-	trans[2][2]	= settr(129,0,13,15,0,"((i<4))", 0, 2, 0);
-	T = trans[ 2][13] = settr(140,0,0,0,0,"sub-sequence", 0, 2, 0);
-	T->nxt	= settr(140,0,3,0,0,"sub-sequence", 0, 2, 0);
-	trans[2][3]	= settr(130,0,9,16,16,"idx = 0", 0, 2, 0);
-	trans[2][10]	= settr(137,0,9,1,0,".(goto)", 0, 2, 0);
-	T = trans[2][9] = settr(136,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(136,0,4,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(136,0,7,0,0,"DO", 0, 2, 0);
-	trans[2][4]	= settr(131,0,5,17,0,"((idx<5))", 0, 2, 0);
-	trans[2][5]	= settr(132,0,6,18,18,"readyQueue[i].tasks[idx] = 255", 1, 2, 0);
-	trans[2][6]	= settr(133,0,9,19,19,"idx = (idx+1)", 0, 2, 0);
-	trans[2][7]	= settr(134,0,12,20,20,"((idx>=5))", 0, 2, 0);
-	trans[2][8]	= settr(135,0,12,1,0,"goto :b8", 0, 2, 0);
-	trans[2][11]	= settr(138,0,12,1,0,"break", 0, 2, 0);
-	trans[2][12]	= settr(139,0,14,21,21,"readyQueue[i].tailIndex = 0", 1, 2, 0);
-	trans[2][14]	= settr(141,0,17,22,22,"i = (i+1)", 0, 2, 0);
-	trans[2][15]	= settr(142,0,20,23,23,"((i>=4))", 0, 2, 0);
-	trans[2][16]	= settr(143,0,20,1,0,"goto :b7", 0, 2, 0);
-	trans[2][19]	= settr(146,0,20,1,0,"break", 0, 2, 0);
-	trans[2][20]	= settr(147,0,21,24,24,"tcb[1].prio = 2", 1, 2, 0);
-	trans[2][21]	= settr(148,0,29,25,25,"tcb[1].state = 1", 1, 2, 0);
-	T = trans[ 2][29] = settr(156,0,0,0,0,"sub-sequence", 0, 2, 0);
-	T->nxt	= settr(156,0,27,0,0,"sub-sequence", 0, 2, 0);
-	T = trans[2][27] = settr(154,0,0,0,0,"IF", 0, 2, 0);
-	T = T->nxt	= settr(154,0,22,0,0,"IF", 0, 2, 0);
-	    T->nxt	= settr(154,0,25,0,0,"IF", 0, 2, 0);
-	trans[2][22]	= settr(149,0,23,26,0,"((readyQueue[tcb[1].prio].tailIndex<5))", 1, 2, 0);
-	trans[2][23]	= settr(150,0,24,27,27,"readyQueue[tcb[1].prio].tasks[readyQueue[tcb[1].prio].tailIndex] = 1", 1, 2, 0);
-	trans[2][24]	= settr(151,0,30,28,28,"readyQueue[tcb[1].prio].tailIndex = (readyQueue[tcb[1].prio].tailIndex+1)", 1, 2, 0);
-	trans[2][28]	= settr(155,0,30,1,0,".(goto)", 0, 2, 0);
-	trans[2][25]	= settr(152,0,26,2,0,"else", 0, 2, 0);
-	trans[2][26]	= settr(153,0,30,1,0,"(1)", 0, 2, 0);
-	trans[2][30]	= settr(157,0,31,29,29,"tcb[2].prio = 2", 1, 2, 0);
-	trans[2][31]	= settr(158,0,39,30,30,"tcb[2].state = 1", 1, 2, 0);
-	T = trans[ 2][39] = settr(166,0,0,0,0,"sub-sequence", 0, 2, 0);
-	T->nxt	= settr(166,0,37,0,0,"sub-sequence", 0, 2, 0);
-	T = trans[2][37] = settr(164,0,0,0,0,"IF", 0, 2, 0);
-	T = T->nxt	= settr(164,0,32,0,0,"IF", 0, 2, 0);
-	    T->nxt	= settr(164,0,35,0,0,"IF", 0, 2, 0);
-	trans[2][32]	= settr(159,0,33,31,0,"((readyQueue[tcb[2].prio].tailIndex<5))", 1, 2, 0);
-	trans[2][33]	= settr(160,0,34,32,32,"readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2", 1, 2, 0);
-	trans[2][34]	= settr(161,0,57,33,33,"readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)", 1, 2, 0);
-	trans[2][38]	= settr(165,0,57,1,0,".(goto)", 0, 2, 0);
-	trans[2][35]	= settr(162,0,36,2,0,"else", 0, 2, 0);
-	trans[2][36]	= settr(163,0,57,1,0,"(1)", 0, 2, 0);
-	T = trans[ 2][57] = settr(184,0,0,0,0,"sub-sequence", 0, 2, 0);
-	T->nxt	= settr(184,0,40,0,0,"sub-sequence", 0, 2, 0);
-	trans[2][40]	= settr(167,0,53,34,34,"prio = 0", 0, 2, 0); /* m: 41 -> 0,53 */
+	trans[2][1]	= settr(323,0,17,14,14,"i = 0", 0, 2, 0);
+	trans[2][18]	= settr(340,0,17,1,0,".(goto)", 0, 2, 0);
+	T = trans[2][17] = settr(339,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(339,0,2,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(339,0,15,0,0,"DO", 0, 2, 0);
+	trans[2][2]	= settr(324,0,13,15,0,"((i<4))", 0, 2, 0);
+	T = trans[ 2][13] = settr(335,0,0,0,0,"sub-sequence", 0, 2, 0);
+	T->nxt	= settr(335,0,3,0,0,"sub-sequence", 0, 2, 0);
+	trans[2][3]	= settr(325,0,9,16,16,"idx = 0", 0, 2, 0);
+	trans[2][10]	= settr(332,0,9,1,0,".(goto)", 0, 2, 0);
+	T = trans[2][9] = settr(331,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(331,0,4,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(331,0,7,0,0,"DO", 0, 2, 0);
+	trans[2][4]	= settr(326,0,5,17,0,"((idx<5))", 0, 2, 0);
+	trans[2][5]	= settr(327,0,6,18,18,"readyQueue[i].tasks[idx] = 255", 1, 2, 0);
+	trans[2][6]	= settr(328,0,9,19,19,"idx = (idx+1)", 0, 2, 0);
+	trans[2][7]	= settr(329,0,12,20,20,"((idx>=5))", 0, 2, 0);
+	trans[2][8]	= settr(330,0,12,1,0,"goto :b13", 0, 2, 0);
+	trans[2][11]	= settr(333,0,12,1,0,"break", 0, 2, 0);
+	trans[2][12]	= settr(334,0,14,21,21,"readyQueue[i].tailIndex = 0", 1, 2, 0);
+	trans[2][14]	= settr(336,0,17,22,22,"i = (i+1)", 0, 2, 0);
+	trans[2][15]	= settr(337,0,20,23,23,"((i>=4))", 0, 2, 0);
+	trans[2][16]	= settr(338,0,20,1,0,"goto :b12", 0, 2, 0);
+	trans[2][19]	= settr(341,0,20,1,0,"break", 0, 2, 0);
+	trans[2][20]	= settr(342,0,21,24,24,"tcb[1].prio = 2", 1, 2, 0);
+	trans[2][21]	= settr(343,0,29,25,25,"tcb[1].state = 1", 1, 2, 0);
+	T = trans[ 2][29] = settr(351,0,0,0,0,"sub-sequence", 0, 2, 0);
+	T->nxt	= settr(351,0,27,0,0,"sub-sequence", 0, 2, 0);
+	T = trans[2][27] = settr(349,0,0,0,0,"IF", 0, 2, 0);
+	T = T->nxt	= settr(349,0,22,0,0,"IF", 0, 2, 0);
+	    T->nxt	= settr(349,0,25,0,0,"IF", 0, 2, 0);
+	trans[2][22]	= settr(344,0,23,26,0,"((readyQueue[tcb[1].prio].tailIndex<5))", 1, 2, 0);
+	trans[2][23]	= settr(345,0,24,27,27,"readyQueue[tcb[1].prio].tasks[readyQueue[tcb[1].prio].tailIndex] = 1", 1, 2, 0);
+	trans[2][24]	= settr(346,0,30,28,28,"readyQueue[tcb[1].prio].tailIndex = (readyQueue[tcb[1].prio].tailIndex+1)", 1, 2, 0);
+	trans[2][28]	= settr(350,0,30,1,0,".(goto)", 0, 2, 0);
+	trans[2][25]	= settr(347,0,26,2,0,"else", 0, 2, 0);
+	trans[2][26]	= settr(348,0,30,29,0,"assert(0)", 0, 2, 0);
+	trans[2][30]	= settr(352,0,31,30,30,"tcb[2].prio = 2", 1, 2, 0);
+	trans[2][31]	= settr(353,0,39,31,31,"tcb[2].state = 1", 1, 2, 0);
+	T = trans[ 2][39] = settr(361,0,0,0,0,"sub-sequence", 0, 2, 0);
+	T->nxt	= settr(361,0,37,0,0,"sub-sequence", 0, 2, 0);
+	T = trans[2][37] = settr(359,0,0,0,0,"IF", 0, 2, 0);
+	T = T->nxt	= settr(359,0,32,0,0,"IF", 0, 2, 0);
+	    T->nxt	= settr(359,0,35,0,0,"IF", 0, 2, 0);
+	trans[2][32]	= settr(354,0,33,32,0,"((readyQueue[tcb[2].prio].tailIndex<5))", 1, 2, 0);
+	trans[2][33]	= settr(355,0,34,33,33,"readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2", 1, 2, 0);
+	trans[2][34]	= settr(356,0,58,34,34,"readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)", 1, 2, 0);
+	trans[2][38]	= settr(360,0,58,1,0,".(goto)", 0, 2, 0);
+	trans[2][35]	= settr(357,0,36,2,0,"else", 0, 2, 0);
+	trans[2][36]	= settr(358,0,58,35,0,"assert(0)", 0, 2, 0);
+	T = trans[ 2][58] = settr(380,0,0,0,0,"sub-sequence", 0, 2, 0);
+	T->nxt	= settr(380,0,40,0,0,"sub-sequence", 0, 2, 0);
+	trans[2][40]	= settr(362,0,53,36,36,"prio = 0", 0, 2, 0); /* m: 41 -> 0,53 */
 	reached2[41] = 1;
 	trans[2][41]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
 	trans[2][42]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[2][54]	= settr(181,0,53,1,0,".(goto)", 0, 2, 0);
-	T = trans[2][53] = settr(180,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(180,0,43,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(180,0,51,0,0,"DO", 0, 2, 0);
-	trans[2][43]	= settr(170,0,49,35,0,"(((prio<4)&&!(found)))", 0, 2, 0);
-	T = trans[2][49] = settr(176,0,0,0,0,"IF", 0, 2, 0);
-	T = T->nxt	= settr(176,0,44,0,0,"IF", 0, 2, 0);
-	    T->nxt	= settr(176,0,47,0,0,"IF", 0, 2, 0);
-	trans[2][44]	= settr(171,0,45,36,0,"((readyQueue[prio].tailIndex>0))", 1, 2, 0);
-	trans[2][45]	= settr(172,0,46,37,37,"top_task = readyQueue[prio].tasks[0]", 1, 2, 0);
-	trans[2][46]	= settr(173,0,53,38,38,"found = 1", 0, 2, 0);
-	trans[2][50]	= settr(177,0,53,1,0,".(goto)", 0, 2, 0);
-	trans[2][47]	= settr(174,0,48,2,0,"else", 0, 2, 0);
-	trans[2][48]	= settr(175,0,53,39,39,"prio = (prio+1)", 0, 2, 0);
-	trans[2][51]	= settr(178,0,56,40,40,"(((prio>=4)||found))", 0, 2, 0);
-	trans[2][52]	= settr(179,0,56,1,0,"goto :b9", 0, 2, 0);
-	trans[2][55]	= settr(182,0,56,1,0,"break", 0, 2, 0);
-	trans[2][56]	= settr(183,0,58,41,41,"EP = top_task", 1, 2, 0);
-	trans[2][58]	= settr(185,0,59,42,42,"(run Process1())", 0, 2, 0);
-	trans[2][59]	= settr(186,0,60,43,43,"(run Process2())", 0, 2, 0);
-	trans[2][60]	= settr(187,0,0,44,44,"-end-", 0, 3500, 0);
+	trans[2][54]	= settr(376,0,53,1,0,".(goto)", 0, 2, 0);
+	T = trans[2][53] = settr(375,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(375,0,43,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(375,0,51,0,0,"DO", 0, 2, 0);
+	trans[2][43]	= settr(365,0,49,37,0,"(((prio<4)&&!(found)))", 0, 2, 0);
+	T = trans[2][49] = settr(371,0,0,0,0,"IF", 0, 2, 0);
+	T = T->nxt	= settr(371,0,44,0,0,"IF", 0, 2, 0);
+	    T->nxt	= settr(371,0,47,0,0,"IF", 0, 2, 0);
+	trans[2][44]	= settr(366,0,45,38,0,"((readyQueue[prio].tailIndex>0))", 1, 2, 0);
+	trans[2][45]	= settr(367,0,46,39,39,"top_task = readyQueue[prio].tasks[0]", 1, 2, 0);
+	trans[2][46]	= settr(368,0,53,40,40,"found = 1", 0, 2, 0);
+	trans[2][50]	= settr(372,0,53,1,0,".(goto)", 0, 2, 0);
+	trans[2][47]	= settr(369,0,48,2,0,"else", 0, 2, 0);
+	trans[2][48]	= settr(370,0,53,41,41,"prio = (prio+1)", 0, 2, 0);
+	trans[2][51]	= settr(373,0,56,42,42,"(((prio>=4)||found))", 0, 2, 0);
+	trans[2][52]	= settr(374,0,56,1,0,"goto :b14", 0, 2, 0);
+	trans[2][55]	= settr(377,0,56,1,0,"break", 0, 2, 0);
+	trans[2][56]	= settr(378,0,57,43,43,"EP = top_task", 1, 2, 0);
+	trans[2][57]	= settr(379,0,75,44,44,"topPrio = prio", 1, 2, 0);
+	T = trans[ 2][75] = settr(397,0,0,0,0,"sub-sequence", 0, 2, 0);
+	T->nxt	= settr(397,0,59,0,0,"sub-sequence", 0, 2, 0);
+	trans[2][59]	= settr(381,0,65,45,45,"idx = 0", 0, 2, 0);
+	trans[2][66]	= settr(388,0,65,1,0,".(goto)", 0, 2, 0);
+	T = trans[2][65] = settr(387,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(387,0,60,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(387,0,63,0,0,"DO", 0, 2, 0);
+	trans[2][60]	= settr(382,0,61,46,0,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[2][61]	= settr(383,0,62,47,47,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]", 1, 2, 0);
+	trans[2][62]	= settr(384,0,65,48,48,"idx = (idx+1)", 0, 2, 0);
+	trans[2][63]	= settr(385,0,73,49,49,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[2][64]	= settr(386,0,73,1,0,"goto :b15", 0, 2, 0);
+	trans[2][67]	= settr(389,0,73,1,0,"break", 0, 2, 0);
+	T = trans[2][73] = settr(395,0,0,0,0,"IF", 0, 2, 0);
+	T = T->nxt	= settr(395,0,68,0,0,"IF", 0, 2, 0);
+	    T->nxt	= settr(395,0,71,0,0,"IF", 0, 2, 0);
+	trans[2][68]	= settr(390,0,69,50,0,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0);
+	trans[2][69]	= settr(391,0,70,51,51,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255", 1, 2, 0);
+	trans[2][70]	= settr(392,0,76,52,52,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)", 1, 2, 0);
+	trans[2][74]	= settr(396,0,76,1,0,".(goto)", 0, 2, 0);
+	trans[2][71]	= settr(393,0,72,2,0,"else", 0, 2, 0);
+	trans[2][72]	= settr(394,0,76,1,0,"(1)", 0, 2, 0);
+	trans[2][76]	= settr(398,0,77,53,53,"tcb[EP].state = 4", 1, 2, 0);
+	trans[2][77]	= settr(399,0,78,54,54,"(run Process1())", 0, 2, 0);
+	trans[2][78]	= settr(400,0,79,55,55,"(run Process2())", 0, 2, 0);
+	trans[2][79]	= settr(401,0,0,56,56,"-end-", 0, 3500, 0);
 
 	/* proctype 1: Process2 */
 
-	trans[1] = (Trans **) emalloc(53*sizeof(Trans *));
+	trans[1] = (Trans **) emalloc(131*sizeof(Trans *));
 
-	trans[1][50]	= settr(125,0,49,1,0,".(goto)", 0, 2, 0);
-	T = trans[1][49] = settr(124,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(124,0,24,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(124,0,48,0,0,"DO", 0, 2, 0);
-	T = trans[ 1][24] = settr(99,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(99,2,1,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][1]	= settr(76,2,22,45,45,"((EP==2))", 1, 2, 0); /* m: 2 -> 22,0 */
+	trans[1][128]	= settr(320,0,127,1,0,".(goto)", 0, 2, 0);
+	T = trans[1][127] = settr(319,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(319,0,63,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(319,0,126,0,0,"DO", 0, 2, 0);
+	T = trans[ 1][63] = settr(255,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(255,2,1,0,0,"ATOMIC", 1, 2, 0);
+	trans[1][1]	= settr(193,2,62,57,57,"((EP==2))", 1, 2, 0); /* m: 2 -> 62,0 */
 	reached1[2] = 1;
 	trans[1][2]	= settr(0,0,0,0,0,"printf('Process 2 is running\\n')",0,0,0);
-	T = trans[1][22] = settr(97,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(97,2,3,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(97,2,21,0,0,"IF", 1, 2, 0);
-	trans[1][3]	= settr(78,0,49,46,46,"(1)", 1, 2, 0); /* m: 23 -> 49,0 */
-	reached1[23] = 1;
-	trans[1][23]	= settr(98,0,49,47,47,".(goto)", 1, 2, 0);
-	T = trans[ 1][21] = settr(96,0,0,0,0,"sub-sequence", 1, 2, 0);
-	T->nxt	= settr(96,0,4,0,0,"sub-sequence", 1, 2, 0);
-	trans[1][4]	= settr(79,2,17,48,48,"prio = 0", 1, 2, 0); /* m: 5 -> 0,17 */
+	T = trans[ 1][62] = settr(254,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(254,0,3,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][3]	= settr(195,2,6,58,58,"interrupted_task = 0", 1, 2, 0);
+	T = trans[ 1][6] = settr(198,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(198,0,4,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][4]	= settr(196,2,20,59,59,"int_save = int_ctrl_reg", 1, 2, 0); /* m: 5 -> 0,20 */
 	reached1[5] = 1;
-	trans[1][5]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
-	trans[1][6]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[1][18]	= settr(93,2,17,1,0,".(goto)", 1, 2, 0);
-	T = trans[1][17] = settr(92,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(92,2,7,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(92,2,15,0,0,"DO", 1, 2, 0);
-	trans[1][7]	= settr(82,2,13,49,0,"(((prio<4)&&!(found)))", 1, 2, 0);
-	T = trans[1][13] = settr(88,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(88,2,8,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(88,2,11,0,0,"IF", 1, 2, 0);
-	trans[1][8]	= settr(83,2,17,50,50,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 9 -> 17,0 */
+	trans[1][5]	= settr(0,0,0,0,0,"int_ctrl_reg = 1",0,0,0);
+	trans[1][7]	= settr(0,0,0,0,0,"interrupted_task = EP",0,0,0);
+	T = trans[1][20] = settr(212,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(212,2,8,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(212,2,18,0,0,"IF", 1, 2, 0);
+	trans[1][8]	= settr(200,2,17,60,60,"(((interrupted_task>=1)&&(interrupted_task<=2)))", 1, 2, 0); /* m: 9 -> 17,0 */
 	reached1[9] = 1;
-	trans[1][9]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
-	trans[1][10]	= settr(0,0,0,0,0,"found = 1",0,0,0);
-	trans[1][14]	= settr(89,2,17,1,0,".(goto)", 1, 2, 0);
-	trans[1][11]	= settr(86,2,12,2,0,"else", 1, 2, 0);
-	trans[1][12]	= settr(87,2,17,51,51,"prio = (prio+1)", 1, 2, 0);
-	trans[1][15]	= settr(90,0,49,52,52,"(((prio>=4)||found))", 1, 2, 0); /* m: 20 -> 49,0 */
-	reached1[20] = 1;
-	trans[1][16]	= settr(91,2,20,1,0,"goto :b5", 1, 2, 0); /* m: 20 -> 0,49 */
-	reached1[20] = 1;
-	trans[1][19]	= settr(94,2,20,1,0,"break", 1, 2, 0);
-	trans[1][20]	= settr(95,0,49,53,53,"EP = top_task", 1, 2, 0); /* m: 23 -> 0,49 */
+	trans[1][9]	= settr(0,0,0,0,0,"tcb[interrupted_task].state = 1",0,0,0);
+	T = trans[ 1][17] = settr(209,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(209,0,15,0,0,"sub-sequence", 1, 2, 0);
+	T = trans[1][15] = settr(207,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(207,2,10,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(207,2,13,0,0,"IF", 1, 2, 0);
+	trans[1][10]	= settr(202,2,40,61,61,"((readyQueue[tcb[interrupted_task].prio].tailIndex<5))", 1, 2, 0); /* m: 11 -> 40,0 */
+	reached1[11] = 1;
+	trans[1][11]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tasks[readyQueue[tcb[interrupted_task].prio].tailIndex] = interrupted_task",0,0,0);
+	trans[1][12]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tailIndex = (readyQueue[tcb[interrupted_task].prio].tailIndex+1)",0,0,0);
+	trans[1][16]	= settr(208,2,40,1,0,".(goto)", 1, 2, 0);
+	trans[1][13]	= settr(205,2,14,2,0,"else", 1, 2, 0);
+	trans[1][14]	= settr(206,2,40,62,0,"assert(0)", 1, 2, 0);
+	trans[1][21]	= settr(213,2,40,1,0,".(goto)", 1, 2, 0);
+	trans[1][18]	= settr(210,2,19,2,0,"else", 1, 2, 0);
+	trans[1][19]	= settr(211,2,40,1,0,"(1)", 1, 2, 0);
+	T = trans[ 1][40] = settr(232,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(232,0,22,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][22]	= settr(214,2,35,63,63,"prio = 0", 1, 2, 0); /* m: 23 -> 0,35 */
 	reached1[23] = 1;
-	T = trans[ 1][48] = settr(123,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(123,2,25,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][25]	= settr(100,2,46,54,54,"((EP==2))", 1, 2, 0); /* m: 26 -> 46,0 */
-	reached1[26] = 1;
-	trans[1][26]	= settr(0,0,0,0,0,"EP = 1",0,0,0);
-	T = trans[1][46] = settr(121,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(121,2,27,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(121,2,45,0,0,"IF", 1, 2, 0);
-	trans[1][27]	= settr(102,0,49,55,55,"(1)", 1, 2, 0); /* m: 47 -> 49,0 */
-	reached1[47] = 1;
-	trans[1][47]	= settr(122,0,49,56,56,".(goto)", 1, 2, 0);
-	T = trans[ 1][45] = settr(120,0,0,0,0,"sub-sequence", 1, 2, 0);
-	T->nxt	= settr(120,0,28,0,0,"sub-sequence", 1, 2, 0);
-	trans[1][28]	= settr(103,2,41,57,57,"prio = 0", 1, 2, 0); /* m: 29 -> 0,41 */
-	reached1[29] = 1;
-	trans[1][29]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
-	trans[1][30]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[1][42]	= settr(117,2,41,1,0,".(goto)", 1, 2, 0);
-	T = trans[1][41] = settr(116,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(116,2,31,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(116,2,39,0,0,"DO", 1, 2, 0);
-	trans[1][31]	= settr(106,2,37,58,0,"(((prio<4)&&!(found)))", 1, 2, 0);
-	T = trans[1][37] = settr(112,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(112,2,32,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(112,2,35,0,0,"IF", 1, 2, 0);
-	trans[1][32]	= settr(107,2,41,59,59,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 33 -> 41,0 */
-	reached1[33] = 1;
-	trans[1][33]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
-	trans[1][34]	= settr(0,0,0,0,0,"found = 1",0,0,0);
-	trans[1][38]	= settr(113,2,41,1,0,".(goto)", 1, 2, 0);
-	trans[1][35]	= settr(110,2,36,2,0,"else", 1, 2, 0);
-	trans[1][36]	= settr(111,2,41,60,60,"prio = (prio+1)", 1, 2, 0);
-	trans[1][39]	= settr(114,0,49,61,61,"(((prio>=4)||found))", 1, 2, 0); /* m: 44 -> 49,0 */
-	reached1[44] = 1;
-	trans[1][40]	= settr(115,2,44,1,0,"goto :b6", 1, 2, 0); /* m: 44 -> 0,49 */
-	reached1[44] = 1;
-	trans[1][43]	= settr(118,2,44,1,0,"break", 1, 2, 0);
-	trans[1][44]	= settr(119,0,49,62,62,"EP = top_task", 1, 2, 0); /* m: 47 -> 0,49 */
-	reached1[47] = 1;
-	trans[1][51]	= settr(126,0,52,1,0,"break", 0, 2, 0);
-	trans[1][52]	= settr(127,0,0,63,63,"-end-", 0, 3500, 0);
+	trans[1][23]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
+	trans[1][24]	= settr(0,0,0,0,0,"found = 0",0,0,0);
+	trans[1][36]	= settr(228,2,35,1,0,".(goto)", 1, 2, 0);
+	T = trans[1][35] = settr(227,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(227,2,25,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(227,2,33,0,0,"DO", 1, 2, 0);
+	trans[1][25]	= settr(217,2,31,64,0,"(((prio<4)&&!(found)))", 1, 2, 0);
+	T = trans[1][31] = settr(223,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(223,2,26,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(223,2,29,0,0,"IF", 1, 2, 0);
+	trans[1][26]	= settr(218,2,35,65,65,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 27 -> 35,0 */
+	reached1[27] = 1;
+	trans[1][27]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
+	trans[1][28]	= settr(0,0,0,0,0,"found = 1",0,0,0);
+	trans[1][32]	= settr(224,2,35,1,0,".(goto)", 1, 2, 0);
+	trans[1][29]	= settr(221,2,30,2,0,"else", 1, 2, 0);
+	trans[1][30]	= settr(222,2,35,66,66,"prio = (prio+1)", 1, 2, 0);
+	trans[1][33]	= settr(225,2,57,67,67,"(((prio>=4)||found))", 1, 2, 0); /* m: 38 -> 57,0 */
+	reached1[38] = 1;
+	trans[1][34]	= settr(226,2,38,1,0,"goto :b8", 1, 2, 0); /* m: 38 -> 0,57 */
+	reached1[38] = 1;
+	trans[1][37]	= settr(229,2,38,1,0,"break", 1, 2, 0);
+	trans[1][38]	= settr(230,2,57,68,68,"newTask = top_task", 1, 2, 0); /* m: 39 -> 0,57 */
+	reached1[39] = 1;
+	trans[1][39]	= settr(0,0,0,0,0,"topPrio = prio",0,0,0);
+	T = trans[ 1][57] = settr(249,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(249,0,41,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][41]	= settr(233,2,47,69,69,"idx = 0", 1, 2, 0);
+	trans[1][48]	= settr(240,2,47,1,0,".(goto)", 1, 2, 0);
+	T = trans[1][47] = settr(239,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(239,2,42,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(239,2,45,0,0,"DO", 1, 2, 0);
+	trans[1][42]	= settr(234,2,47,70,70,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0); /* m: 43 -> 47,0 */
+	reached1[43] = 1;
+	trans[1][43]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]",0,0,0);
+	trans[1][44]	= settr(0,0,0,0,0,"idx = (idx+1)",0,0,0);
+	trans[1][45]	= settr(237,2,55,71,71,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[1][46]	= settr(238,2,55,1,0,"goto :b9", 1, 2, 0);
+	trans[1][49]	= settr(241,2,55,1,0,"break", 1, 2, 0);
+	T = trans[1][55] = settr(247,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(247,2,50,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(247,2,53,0,0,"IF", 1, 2, 0);
+	trans[1][50]	= settr(242,2,61,72,72,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0); /* m: 51 -> 61,0 */
+	reached1[51] = 1;
+	trans[1][51]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255",0,0,0);
+	trans[1][52]	= settr(0,0,0,0,0,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)",0,0,0);
+	trans[1][56]	= settr(248,2,58,1,0,".(goto)", 1, 2, 0); /* m: 58 -> 0,61 */
+	reached1[58] = 1;
+	trans[1][53]	= settr(245,2,54,2,0,"else", 1, 2, 0);
+	trans[1][54]	= settr(246,2,61,73,73,"(1)", 1, 2, 0); /* m: 58 -> 61,0 */
+	reached1[58] = 1;
+	trans[1][58]	= settr(250,2,61,74,74,"tcb[newTask].state = 4", 1, 2, 0); /* m: 59 -> 0,61 */
+	reached1[59] = 1;
+	trans[1][59]	= settr(0,0,0,0,0,"EP = newTask",0,0,0);
+	T = trans[ 1][61] = settr(253,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(253,0,60,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][60]	= settr(252,0,127,75,75,"int_ctrl_reg = int_save", 1, 2, 0);
+	T = trans[ 1][126] = settr(318,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(318,2,64,0,0,"ATOMIC", 1, 2, 0);
+	trans[1][64]	= settr(256,2,125,76,76,"((EP==2))", 1, 2, 0); /* m: 65 -> 125,0 */
+	reached1[65] = 1;
+	trans[1][65]	= settr(0,0,0,0,0,"EP = 1",0,0,0);
+	T = trans[ 1][125] = settr(317,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(317,0,66,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][66]	= settr(258,2,69,77,77,"interrupted_task = 0", 1, 2, 0);
+	T = trans[ 1][69] = settr(261,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(261,0,67,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][67]	= settr(259,2,83,78,78,"int_save = int_ctrl_reg", 1, 2, 0); /* m: 68 -> 0,83 */
+	reached1[68] = 1;
+	trans[1][68]	= settr(0,0,0,0,0,"int_ctrl_reg = 1",0,0,0);
+	trans[1][70]	= settr(0,0,0,0,0,"interrupted_task = EP",0,0,0);
+	T = trans[1][83] = settr(275,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(275,2,71,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(275,2,81,0,0,"IF", 1, 2, 0);
+	trans[1][71]	= settr(263,2,80,79,79,"(((interrupted_task>=1)&&(interrupted_task<=2)))", 1, 2, 0); /* m: 72 -> 80,0 */
+	reached1[72] = 1;
+	trans[1][72]	= settr(0,0,0,0,0,"tcb[interrupted_task].state = 1",0,0,0);
+	T = trans[ 1][80] = settr(272,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(272,0,78,0,0,"sub-sequence", 1, 2, 0);
+	T = trans[1][78] = settr(270,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(270,2,73,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(270,2,76,0,0,"IF", 1, 2, 0);
+	trans[1][73]	= settr(265,2,103,80,80,"((readyQueue[tcb[interrupted_task].prio].tailIndex<5))", 1, 2, 0); /* m: 74 -> 103,0 */
+	reached1[74] = 1;
+	trans[1][74]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tasks[readyQueue[tcb[interrupted_task].prio].tailIndex] = interrupted_task",0,0,0);
+	trans[1][75]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tailIndex = (readyQueue[tcb[interrupted_task].prio].tailIndex+1)",0,0,0);
+	trans[1][79]	= settr(271,2,103,1,0,".(goto)", 1, 2, 0);
+	trans[1][76]	= settr(268,2,77,2,0,"else", 1, 2, 0);
+	trans[1][77]	= settr(269,2,103,81,0,"assert(0)", 1, 2, 0);
+	trans[1][84]	= settr(276,2,103,1,0,".(goto)", 1, 2, 0);
+	trans[1][81]	= settr(273,2,82,2,0,"else", 1, 2, 0);
+	trans[1][82]	= settr(274,2,103,1,0,"(1)", 1, 2, 0);
+	T = trans[ 1][103] = settr(295,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(295,0,85,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][85]	= settr(277,2,98,82,82,"prio = 0", 1, 2, 0); /* m: 86 -> 0,98 */
+	reached1[86] = 1;
+	trans[1][86]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
+	trans[1][87]	= settr(0,0,0,0,0,"found = 0",0,0,0);
+	trans[1][99]	= settr(291,2,98,1,0,".(goto)", 1, 2, 0);
+	T = trans[1][98] = settr(290,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(290,2,88,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(290,2,96,0,0,"DO", 1, 2, 0);
+	trans[1][88]	= settr(280,2,94,83,0,"(((prio<4)&&!(found)))", 1, 2, 0);
+	T = trans[1][94] = settr(286,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(286,2,89,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(286,2,92,0,0,"IF", 1, 2, 0);
+	trans[1][89]	= settr(281,2,98,84,84,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 90 -> 98,0 */
+	reached1[90] = 1;
+	trans[1][90]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
+	trans[1][91]	= settr(0,0,0,0,0,"found = 1",0,0,0);
+	trans[1][95]	= settr(287,2,98,1,0,".(goto)", 1, 2, 0);
+	trans[1][92]	= settr(284,2,93,2,0,"else", 1, 2, 0);
+	trans[1][93]	= settr(285,2,98,85,85,"prio = (prio+1)", 1, 2, 0);
+	trans[1][96]	= settr(288,2,120,86,86,"(((prio>=4)||found))", 1, 2, 0); /* m: 101 -> 120,0 */
+	reached1[101] = 1;
+	trans[1][97]	= settr(289,2,101,1,0,"goto :b10", 1, 2, 0); /* m: 101 -> 0,120 */
+	reached1[101] = 1;
+	trans[1][100]	= settr(292,2,101,1,0,"break", 1, 2, 0);
+	trans[1][101]	= settr(293,2,120,87,87,"newTask = top_task", 1, 2, 0); /* m: 102 -> 0,120 */
+	reached1[102] = 1;
+	trans[1][102]	= settr(0,0,0,0,0,"topPrio = prio",0,0,0);
+	T = trans[ 1][120] = settr(312,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(312,0,104,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][104]	= settr(296,2,110,88,88,"idx = 0", 1, 2, 0);
+	trans[1][111]	= settr(303,2,110,1,0,".(goto)", 1, 2, 0);
+	T = trans[1][110] = settr(302,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(302,2,105,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(302,2,108,0,0,"DO", 1, 2, 0);
+	trans[1][105]	= settr(297,2,110,89,89,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0); /* m: 106 -> 110,0 */
+	reached1[106] = 1;
+	trans[1][106]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]",0,0,0);
+	trans[1][107]	= settr(0,0,0,0,0,"idx = (idx+1)",0,0,0);
+	trans[1][108]	= settr(300,2,118,90,90,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[1][109]	= settr(301,2,118,1,0,"goto :b11", 1, 2, 0);
+	trans[1][112]	= settr(304,2,118,1,0,"break", 1, 2, 0);
+	T = trans[1][118] = settr(310,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(310,2,113,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(310,2,116,0,0,"IF", 1, 2, 0);
+	trans[1][113]	= settr(305,2,124,91,91,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0); /* m: 114 -> 124,0 */
+	reached1[114] = 1;
+	trans[1][114]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255",0,0,0);
+	trans[1][115]	= settr(0,0,0,0,0,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)",0,0,0);
+	trans[1][119]	= settr(311,2,121,1,0,".(goto)", 1, 2, 0); /* m: 121 -> 0,124 */
+	reached1[121] = 1;
+	trans[1][116]	= settr(308,2,117,2,0,"else", 1, 2, 0);
+	trans[1][117]	= settr(309,2,124,92,92,"(1)", 1, 2, 0); /* m: 121 -> 124,0 */
+	reached1[121] = 1;
+	trans[1][121]	= settr(313,2,124,93,93,"tcb[newTask].state = 4", 1, 2, 0); /* m: 122 -> 0,124 */
+	reached1[122] = 1;
+	trans[1][122]	= settr(0,0,0,0,0,"EP = newTask",0,0,0);
+	T = trans[ 1][124] = settr(316,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(316,0,123,0,0,"sub-sequence", 1, 2, 0);
+	trans[1][123]	= settr(315,0,127,94,94,"int_ctrl_reg = int_save", 1, 2, 0);
+	trans[1][129]	= settr(321,0,130,1,0,"break", 0, 2, 0);
+	trans[1][130]	= settr(322,0,0,95,95,"-end-", 0, 3500, 0);
 
 	/* proctype 0: Process1 */
 
-	trans[0] = (Trans **) emalloc(77*sizeof(Trans *));
+	trans[0] = (Trans **) emalloc(194*sizeof(Trans *));
 
-	trans[0][74]	= settr(73,0,73,1,0,".(goto)", 0, 2, 0);
-	T = trans[0][73] = settr(72,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(72,0,24,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(72,0,48,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(72,0,72,0,0,"DO", 0, 2, 0);
-	T = trans[ 0][24] = settr(23,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(23,2,1,0,0,"ATOMIC", 1, 2, 0);
-	trans[0][1]	= settr(0,2,22,64,64,"((EP==1))", 1, 2, 0); /* m: 2 -> 22,0 */
+	trans[0][191]	= settr(190,0,190,1,0,".(goto)", 0, 2, 0);
+	T = trans[0][190] = settr(189,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(189,0,63,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(189,0,126,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(189,0,189,0,0,"DO", 0, 2, 0);
+	T = trans[ 0][63] = settr(62,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(62,2,1,0,0,"ATOMIC", 1, 2, 0);
+	trans[0][1]	= settr(0,2,62,96,96,"((EP==1))", 1, 2, 0); /* m: 2 -> 62,0 */
 	reached0[2] = 1;
 	trans[0][2]	= settr(0,0,0,0,0,"printf('Process 1 is running\\n')",0,0,0);
-	T = trans[0][22] = settr(21,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(21,2,3,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(21,2,21,0,0,"IF", 1, 2, 0);
-	trans[0][3]	= settr(2,0,73,65,65,"(1)", 1, 2, 0); /* m: 23 -> 73,0 */
-	reached0[23] = 1;
-	trans[0][23]	= settr(22,0,73,66,66,".(goto)", 1, 2, 0);
-	T = trans[ 0][21] = settr(20,0,0,0,0,"sub-sequence", 1, 2, 0);
-	T->nxt	= settr(20,0,4,0,0,"sub-sequence", 1, 2, 0);
-	trans[0][4]	= settr(3,2,17,67,67,"prio = 0", 1, 2, 0); /* m: 5 -> 0,17 */
+	T = trans[ 0][62] = settr(61,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(61,0,3,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][3]	= settr(2,2,6,97,97,"interrupted_task = 0", 1, 2, 0);
+	T = trans[ 0][6] = settr(5,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(5,0,4,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][4]	= settr(3,2,20,98,98,"int_save = int_ctrl_reg", 1, 2, 0); /* m: 5 -> 0,20 */
 	reached0[5] = 1;
-	trans[0][5]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
-	trans[0][6]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[0][18]	= settr(17,2,17,1,0,".(goto)", 1, 2, 0);
-	T = trans[0][17] = settr(16,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(16,2,7,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(16,2,15,0,0,"DO", 1, 2, 0);
-	trans[0][7]	= settr(6,2,13,68,0,"(((prio<4)&&!(found)))", 1, 2, 0);
-	T = trans[0][13] = settr(12,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(12,2,8,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(12,2,11,0,0,"IF", 1, 2, 0);
-	trans[0][8]	= settr(7,2,17,69,69,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 9 -> 17,0 */
+	trans[0][5]	= settr(0,0,0,0,0,"int_ctrl_reg = 1",0,0,0);
+	trans[0][7]	= settr(0,0,0,0,0,"interrupted_task = EP",0,0,0);
+	T = trans[0][20] = settr(19,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(19,2,8,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(19,2,18,0,0,"IF", 1, 2, 0);
+	trans[0][8]	= settr(7,2,17,99,99,"(((interrupted_task>=1)&&(interrupted_task<=2)))", 1, 2, 0); /* m: 9 -> 17,0 */
 	reached0[9] = 1;
-	trans[0][9]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
-	trans[0][10]	= settr(0,0,0,0,0,"found = 1",0,0,0);
-	trans[0][14]	= settr(13,2,17,1,0,".(goto)", 1, 2, 0);
-	trans[0][11]	= settr(10,2,12,2,0,"else", 1, 2, 0);
-	trans[0][12]	= settr(11,2,17,70,70,"prio = (prio+1)", 1, 2, 0);
-	trans[0][15]	= settr(14,0,73,71,71,"(((prio>=4)||found))", 1, 2, 0); /* m: 20 -> 73,0 */
-	reached0[20] = 1;
-	trans[0][16]	= settr(15,2,20,1,0,"goto :b1", 1, 2, 0); /* m: 20 -> 0,73 */
-	reached0[20] = 1;
-	trans[0][19]	= settr(18,2,20,1,0,"break", 1, 2, 0);
-	trans[0][20]	= settr(19,0,73,72,72,"EP = top_task", 1, 2, 0); /* m: 23 -> 0,73 */
+	trans[0][9]	= settr(0,0,0,0,0,"tcb[interrupted_task].state = 1",0,0,0);
+	T = trans[ 0][17] = settr(16,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(16,0,15,0,0,"sub-sequence", 1, 2, 0);
+	T = trans[0][15] = settr(14,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(14,2,10,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(14,2,13,0,0,"IF", 1, 2, 0);
+	trans[0][10]	= settr(9,2,40,100,100,"((readyQueue[tcb[interrupted_task].prio].tailIndex<5))", 1, 2, 0); /* m: 11 -> 40,0 */
+	reached0[11] = 1;
+	trans[0][11]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tasks[readyQueue[tcb[interrupted_task].prio].tailIndex] = interrupted_task",0,0,0);
+	trans[0][12]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tailIndex = (readyQueue[tcb[interrupted_task].prio].tailIndex+1)",0,0,0);
+	trans[0][16]	= settr(15,2,40,1,0,".(goto)", 1, 2, 0);
+	trans[0][13]	= settr(12,2,14,2,0,"else", 1, 2, 0);
+	trans[0][14]	= settr(13,2,40,101,0,"assert(0)", 1, 2, 0);
+	trans[0][21]	= settr(20,2,40,1,0,".(goto)", 1, 2, 0);
+	trans[0][18]	= settr(17,2,19,2,0,"else", 1, 2, 0);
+	trans[0][19]	= settr(18,2,40,1,0,"(1)", 1, 2, 0);
+	T = trans[ 0][40] = settr(39,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(39,0,22,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][22]	= settr(21,2,35,102,102,"prio = 0", 1, 2, 0); /* m: 23 -> 0,35 */
 	reached0[23] = 1;
-	T = trans[ 0][48] = settr(47,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(47,2,25,0,0,"ATOMIC", 1, 2, 0);
-	trans[0][25]	= settr(24,2,46,73,73,"((EP==1))", 1, 2, 0); /* m: 26 -> 46,0 */
-	reached0[26] = 1;
-	trans[0][26]	= settr(0,0,0,0,0,"assert((EP==1))",0,0,0);
-	T = trans[0][46] = settr(45,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(45,2,27,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(45,2,45,0,0,"IF", 1, 2, 0);
-	trans[0][27]	= settr(26,0,73,74,74,"(1)", 1, 2, 0); /* m: 47 -> 73,0 */
-	reached0[47] = 1;
-	trans[0][47]	= settr(46,0,73,75,75,".(goto)", 1, 2, 0);
-	T = trans[ 0][45] = settr(44,0,0,0,0,"sub-sequence", 1, 2, 0);
-	T->nxt	= settr(44,0,28,0,0,"sub-sequence", 1, 2, 0);
-	trans[0][28]	= settr(27,2,41,76,76,"prio = 0", 1, 2, 0); /* m: 29 -> 0,41 */
-	reached0[29] = 1;
-	trans[0][29]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
-	trans[0][30]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[0][42]	= settr(41,2,41,1,0,".(goto)", 1, 2, 0);
-	T = trans[0][41] = settr(40,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(40,2,31,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(40,2,39,0,0,"DO", 1, 2, 0);
-	trans[0][31]	= settr(30,2,37,77,0,"(((prio<4)&&!(found)))", 1, 2, 0);
-	T = trans[0][37] = settr(36,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(36,2,32,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(36,2,35,0,0,"IF", 1, 2, 0);
-	trans[0][32]	= settr(31,2,41,78,78,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 33 -> 41,0 */
-	reached0[33] = 1;
-	trans[0][33]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
-	trans[0][34]	= settr(0,0,0,0,0,"found = 1",0,0,0);
-	trans[0][38]	= settr(37,2,41,1,0,".(goto)", 1, 2, 0);
-	trans[0][35]	= settr(34,2,36,2,0,"else", 1, 2, 0);
-	trans[0][36]	= settr(35,2,41,79,79,"prio = (prio+1)", 1, 2, 0);
-	trans[0][39]	= settr(38,0,73,80,80,"(((prio>=4)||found))", 1, 2, 0); /* m: 44 -> 73,0 */
-	reached0[44] = 1;
-	trans[0][40]	= settr(39,2,44,1,0,"goto :b2", 1, 2, 0); /* m: 44 -> 0,73 */
-	reached0[44] = 1;
-	trans[0][43]	= settr(42,2,44,1,0,"break", 1, 2, 0);
-	trans[0][44]	= settr(43,0,73,81,81,"EP = top_task", 1, 2, 0); /* m: 47 -> 0,73 */
-	reached0[47] = 1;
-	T = trans[ 0][72] = settr(71,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(71,2,49,0,0,"ATOMIC", 1, 2, 0);
-	trans[0][49]	= settr(48,2,70,82,82,"((EP==1))", 1, 2, 0); /* m: 50 -> 70,0 */
-	reached0[50] = 1;
-	trans[0][50]	= settr(0,0,0,0,0,"EP = 2",0,0,0);
-	T = trans[0][70] = settr(69,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(69,2,51,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(69,2,69,0,0,"IF", 1, 2, 0);
-	trans[0][51]	= settr(50,0,73,83,83,"(1)", 1, 2, 0); /* m: 71 -> 73,0 */
-	reached0[71] = 1;
-	trans[0][71]	= settr(70,0,73,84,84,".(goto)", 1, 2, 0);
+	trans[0][23]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
+	trans[0][24]	= settr(0,0,0,0,0,"found = 0",0,0,0);
+	trans[0][36]	= settr(35,2,35,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][35] = settr(34,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(34,2,25,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(34,2,33,0,0,"DO", 1, 2, 0);
+	trans[0][25]	= settr(24,2,31,103,0,"(((prio<4)&&!(found)))", 1, 2, 0);
+	T = trans[0][31] = settr(30,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(30,2,26,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(30,2,29,0,0,"IF", 1, 2, 0);
+	trans[0][26]	= settr(25,2,35,104,104,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 27 -> 35,0 */
+	reached0[27] = 1;
+	trans[0][27]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
+	trans[0][28]	= settr(0,0,0,0,0,"found = 1",0,0,0);
+	trans[0][32]	= settr(31,2,35,1,0,".(goto)", 1, 2, 0);
+	trans[0][29]	= settr(28,2,30,2,0,"else", 1, 2, 0);
+	trans[0][30]	= settr(29,2,35,105,105,"prio = (prio+1)", 1, 2, 0);
+	trans[0][33]	= settr(32,2,57,106,106,"(((prio>=4)||found))", 1, 2, 0); /* m: 38 -> 57,0 */
+	reached0[38] = 1;
+	trans[0][34]	= settr(33,2,38,1,0,"goto :b1", 1, 2, 0); /* m: 38 -> 0,57 */
+	reached0[38] = 1;
+	trans[0][37]	= settr(36,2,38,1,0,"break", 1, 2, 0);
+	trans[0][38]	= settr(37,2,57,107,107,"newTask = top_task", 1, 2, 0); /* m: 39 -> 0,57 */
+	reached0[39] = 1;
+	trans[0][39]	= settr(0,0,0,0,0,"topPrio = prio",0,0,0);
+	T = trans[ 0][57] = settr(56,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(56,0,41,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][41]	= settr(40,2,47,108,108,"idx = 0", 1, 2, 0);
+	trans[0][48]	= settr(47,2,47,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][47] = settr(46,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(46,2,42,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(46,2,45,0,0,"DO", 1, 2, 0);
+	trans[0][42]	= settr(41,2,47,109,109,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0); /* m: 43 -> 47,0 */
+	reached0[43] = 1;
+	trans[0][43]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]",0,0,0);
+	trans[0][44]	= settr(0,0,0,0,0,"idx = (idx+1)",0,0,0);
+	trans[0][45]	= settr(44,2,55,110,110,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[0][46]	= settr(45,2,55,1,0,"goto :b2", 1, 2, 0);
+	trans[0][49]	= settr(48,2,55,1,0,"break", 1, 2, 0);
+	T = trans[0][55] = settr(54,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(54,2,50,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(54,2,53,0,0,"IF", 1, 2, 0);
+	trans[0][50]	= settr(49,2,61,111,111,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0); /* m: 51 -> 61,0 */
+	reached0[51] = 1;
+	trans[0][51]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255",0,0,0);
+	trans[0][52]	= settr(0,0,0,0,0,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)",0,0,0);
+	trans[0][56]	= settr(55,2,58,1,0,".(goto)", 1, 2, 0); /* m: 58 -> 0,61 */
+	reached0[58] = 1;
+	trans[0][53]	= settr(52,2,54,2,0,"else", 1, 2, 0);
+	trans[0][54]	= settr(53,2,61,112,112,"(1)", 1, 2, 0); /* m: 58 -> 61,0 */
+	reached0[58] = 1;
+	trans[0][58]	= settr(57,2,61,113,113,"tcb[newTask].state = 4", 1, 2, 0); /* m: 59 -> 0,61 */
+	reached0[59] = 1;
+	trans[0][59]	= settr(0,0,0,0,0,"EP = newTask",0,0,0);
+	T = trans[ 0][61] = settr(60,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(60,0,60,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][60]	= settr(59,0,190,114,114,"int_ctrl_reg = int_save", 1, 2, 0);
+	T = trans[ 0][126] = settr(125,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(125,2,64,0,0,"ATOMIC", 1, 2, 0);
+	trans[0][64]	= settr(63,2,125,115,115,"((EP==1))", 1, 2, 0); /* m: 65 -> 125,0 */
+	reached0[65] = 1;
+	trans[0][65]	= settr(0,0,0,0,0,"assert((EP==1))",0,0,0);
+	T = trans[ 0][125] = settr(124,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(124,0,66,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][66]	= settr(65,2,69,116,116,"interrupted_task = 0", 1, 2, 0);
 	T = trans[ 0][69] = settr(68,0,0,0,0,"sub-sequence", 1, 2, 0);
-	T->nxt	= settr(68,0,52,0,0,"sub-sequence", 1, 2, 0);
-	trans[0][52]	= settr(51,2,65,85,85,"prio = 0", 1, 2, 0); /* m: 53 -> 0,65 */
-	reached0[53] = 1;
-	trans[0][53]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
-	trans[0][54]	= settr(0,0,0,0,0,"found = 0",0,0,0);
-	trans[0][66]	= settr(65,2,65,1,0,".(goto)", 1, 2, 0);
-	T = trans[0][65] = settr(64,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(64,2,55,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(64,2,63,0,0,"DO", 1, 2, 0);
-	trans[0][55]	= settr(54,2,61,86,0,"(((prio<4)&&!(found)))", 1, 2, 0);
-	T = trans[0][61] = settr(60,2,0,0,0,"IF", 1, 2, 0);
-	T = T->nxt	= settr(60,2,56,0,0,"IF", 1, 2, 0);
-	    T->nxt	= settr(60,2,59,0,0,"IF", 1, 2, 0);
-	trans[0][56]	= settr(55,2,65,87,87,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 57 -> 65,0 */
-	reached0[57] = 1;
-	trans[0][57]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
-	trans[0][58]	= settr(0,0,0,0,0,"found = 1",0,0,0);
-	trans[0][62]	= settr(61,2,65,1,0,".(goto)", 1, 2, 0);
-	trans[0][59]	= settr(58,2,60,2,0,"else", 1, 2, 0);
-	trans[0][60]	= settr(59,2,65,88,88,"prio = (prio+1)", 1, 2, 0);
-	trans[0][63]	= settr(62,0,73,89,89,"(((prio>=4)||found))", 1, 2, 0); /* m: 68 -> 73,0 */
+	T->nxt	= settr(68,0,67,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][67]	= settr(66,2,83,117,117,"int_save = int_ctrl_reg", 1, 2, 0); /* m: 68 -> 0,83 */
 	reached0[68] = 1;
-	trans[0][64]	= settr(63,2,68,1,0,"goto :b3", 1, 2, 0); /* m: 68 -> 0,73 */
-	reached0[68] = 1;
-	trans[0][67]	= settr(66,2,68,1,0,"break", 1, 2, 0);
-	trans[0][68]	= settr(67,0,73,90,90,"EP = top_task", 1, 2, 0); /* m: 71 -> 0,73 */
-	reached0[71] = 1;
-	trans[0][75]	= settr(74,0,76,1,0,"break", 0, 2, 0);
-	trans[0][76]	= settr(75,0,0,91,91,"-end-", 0, 3500, 0);
+	trans[0][68]	= settr(0,0,0,0,0,"int_ctrl_reg = 1",0,0,0);
+	trans[0][70]	= settr(0,0,0,0,0,"interrupted_task = EP",0,0,0);
+	T = trans[0][83] = settr(82,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(82,2,71,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(82,2,81,0,0,"IF", 1, 2, 0);
+	trans[0][71]	= settr(70,2,80,118,118,"(((interrupted_task>=1)&&(interrupted_task<=2)))", 1, 2, 0); /* m: 72 -> 80,0 */
+	reached0[72] = 1;
+	trans[0][72]	= settr(0,0,0,0,0,"tcb[interrupted_task].state = 1",0,0,0);
+	T = trans[ 0][80] = settr(79,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(79,0,78,0,0,"sub-sequence", 1, 2, 0);
+	T = trans[0][78] = settr(77,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(77,2,73,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(77,2,76,0,0,"IF", 1, 2, 0);
+	trans[0][73]	= settr(72,2,103,119,119,"((readyQueue[tcb[interrupted_task].prio].tailIndex<5))", 1, 2, 0); /* m: 74 -> 103,0 */
+	reached0[74] = 1;
+	trans[0][74]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tasks[readyQueue[tcb[interrupted_task].prio].tailIndex] = interrupted_task",0,0,0);
+	trans[0][75]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tailIndex = (readyQueue[tcb[interrupted_task].prio].tailIndex+1)",0,0,0);
+	trans[0][79]	= settr(78,2,103,1,0,".(goto)", 1, 2, 0);
+	trans[0][76]	= settr(75,2,77,2,0,"else", 1, 2, 0);
+	trans[0][77]	= settr(76,2,103,120,0,"assert(0)", 1, 2, 0);
+	trans[0][84]	= settr(83,2,103,1,0,".(goto)", 1, 2, 0);
+	trans[0][81]	= settr(80,2,82,2,0,"else", 1, 2, 0);
+	trans[0][82]	= settr(81,2,103,1,0,"(1)", 1, 2, 0);
+	T = trans[ 0][103] = settr(102,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(102,0,85,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][85]	= settr(84,2,98,121,121,"prio = 0", 1, 2, 0); /* m: 86 -> 0,98 */
+	reached0[86] = 1;
+	trans[0][86]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
+	trans[0][87]	= settr(0,0,0,0,0,"found = 0",0,0,0);
+	trans[0][99]	= settr(98,2,98,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][98] = settr(97,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(97,2,88,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(97,2,96,0,0,"DO", 1, 2, 0);
+	trans[0][88]	= settr(87,2,94,122,0,"(((prio<4)&&!(found)))", 1, 2, 0);
+	T = trans[0][94] = settr(93,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(93,2,89,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(93,2,92,0,0,"IF", 1, 2, 0);
+	trans[0][89]	= settr(88,2,98,123,123,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 90 -> 98,0 */
+	reached0[90] = 1;
+	trans[0][90]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
+	trans[0][91]	= settr(0,0,0,0,0,"found = 1",0,0,0);
+	trans[0][95]	= settr(94,2,98,1,0,".(goto)", 1, 2, 0);
+	trans[0][92]	= settr(91,2,93,2,0,"else", 1, 2, 0);
+	trans[0][93]	= settr(92,2,98,124,124,"prio = (prio+1)", 1, 2, 0);
+	trans[0][96]	= settr(95,2,120,125,125,"(((prio>=4)||found))", 1, 2, 0); /* m: 101 -> 120,0 */
+	reached0[101] = 1;
+	trans[0][97]	= settr(96,2,101,1,0,"goto :b3", 1, 2, 0); /* m: 101 -> 0,120 */
+	reached0[101] = 1;
+	trans[0][100]	= settr(99,2,101,1,0,"break", 1, 2, 0);
+	trans[0][101]	= settr(100,2,120,126,126,"newTask = top_task", 1, 2, 0); /* m: 102 -> 0,120 */
+	reached0[102] = 1;
+	trans[0][102]	= settr(0,0,0,0,0,"topPrio = prio",0,0,0);
+	T = trans[ 0][120] = settr(119,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(119,0,104,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][104]	= settr(103,2,110,127,127,"idx = 0", 1, 2, 0);
+	trans[0][111]	= settr(110,2,110,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][110] = settr(109,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(109,2,105,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(109,2,108,0,0,"DO", 1, 2, 0);
+	trans[0][105]	= settr(104,2,110,128,128,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0); /* m: 106 -> 110,0 */
+	reached0[106] = 1;
+	trans[0][106]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]",0,0,0);
+	trans[0][107]	= settr(0,0,0,0,0,"idx = (idx+1)",0,0,0);
+	trans[0][108]	= settr(107,2,118,129,129,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[0][109]	= settr(108,2,118,1,0,"goto :b4", 1, 2, 0);
+	trans[0][112]	= settr(111,2,118,1,0,"break", 1, 2, 0);
+	T = trans[0][118] = settr(117,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(117,2,113,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(117,2,116,0,0,"IF", 1, 2, 0);
+	trans[0][113]	= settr(112,2,124,130,130,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0); /* m: 114 -> 124,0 */
+	reached0[114] = 1;
+	trans[0][114]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255",0,0,0);
+	trans[0][115]	= settr(0,0,0,0,0,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)",0,0,0);
+	trans[0][119]	= settr(118,2,121,1,0,".(goto)", 1, 2, 0); /* m: 121 -> 0,124 */
+	reached0[121] = 1;
+	trans[0][116]	= settr(115,2,117,2,0,"else", 1, 2, 0);
+	trans[0][117]	= settr(116,2,124,131,131,"(1)", 1, 2, 0); /* m: 121 -> 124,0 */
+	reached0[121] = 1;
+	trans[0][121]	= settr(120,2,124,132,132,"tcb[newTask].state = 4", 1, 2, 0); /* m: 122 -> 0,124 */
+	reached0[122] = 1;
+	trans[0][122]	= settr(0,0,0,0,0,"EP = newTask",0,0,0);
+	T = trans[ 0][124] = settr(123,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(123,0,123,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][123]	= settr(122,0,190,133,133,"int_ctrl_reg = int_save", 1, 2, 0);
+	T = trans[ 0][189] = settr(188,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(188,2,127,0,0,"ATOMIC", 1, 2, 0);
+	trans[0][127]	= settr(126,2,188,134,134,"((EP==1))", 1, 2, 0); /* m: 128 -> 188,0 */
+	reached0[128] = 1;
+	trans[0][128]	= settr(0,0,0,0,0,"EP = 2",0,0,0);
+	T = trans[ 0][188] = settr(187,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(187,0,129,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][129]	= settr(128,2,132,135,135,"interrupted_task = 0", 1, 2, 0);
+	T = trans[ 0][132] = settr(131,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(131,0,130,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][130]	= settr(129,2,146,136,136,"int_save = int_ctrl_reg", 1, 2, 0); /* m: 131 -> 0,146 */
+	reached0[131] = 1;
+	trans[0][131]	= settr(0,0,0,0,0,"int_ctrl_reg = 1",0,0,0);
+	trans[0][133]	= settr(0,0,0,0,0,"interrupted_task = EP",0,0,0);
+	T = trans[0][146] = settr(145,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(145,2,134,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(145,2,144,0,0,"IF", 1, 2, 0);
+	trans[0][134]	= settr(133,2,143,137,137,"(((interrupted_task>=1)&&(interrupted_task<=2)))", 1, 2, 0); /* m: 135 -> 143,0 */
+	reached0[135] = 1;
+	trans[0][135]	= settr(0,0,0,0,0,"tcb[interrupted_task].state = 1",0,0,0);
+	T = trans[ 0][143] = settr(142,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(142,0,141,0,0,"sub-sequence", 1, 2, 0);
+	T = trans[0][141] = settr(140,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(140,2,136,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(140,2,139,0,0,"IF", 1, 2, 0);
+	trans[0][136]	= settr(135,2,166,138,138,"((readyQueue[tcb[interrupted_task].prio].tailIndex<5))", 1, 2, 0); /* m: 137 -> 166,0 */
+	reached0[137] = 1;
+	trans[0][137]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tasks[readyQueue[tcb[interrupted_task].prio].tailIndex] = interrupted_task",0,0,0);
+	trans[0][138]	= settr(0,0,0,0,0,"readyQueue[tcb[interrupted_task].prio].tailIndex = (readyQueue[tcb[interrupted_task].prio].tailIndex+1)",0,0,0);
+	trans[0][142]	= settr(141,2,166,1,0,".(goto)", 1, 2, 0);
+	trans[0][139]	= settr(138,2,140,2,0,"else", 1, 2, 0);
+	trans[0][140]	= settr(139,2,166,139,0,"assert(0)", 1, 2, 0);
+	trans[0][147]	= settr(146,2,166,1,0,".(goto)", 1, 2, 0);
+	trans[0][144]	= settr(143,2,145,2,0,"else", 1, 2, 0);
+	trans[0][145]	= settr(144,2,166,1,0,"(1)", 1, 2, 0);
+	T = trans[ 0][166] = settr(165,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(165,0,148,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][148]	= settr(147,2,161,140,140,"prio = 0", 1, 2, 0); /* m: 149 -> 0,161 */
+	reached0[149] = 1;
+	trans[0][149]	= settr(0,0,0,0,0,"top_task = 0",0,0,0);
+	trans[0][150]	= settr(0,0,0,0,0,"found = 0",0,0,0);
+	trans[0][162]	= settr(161,2,161,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][161] = settr(160,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(160,2,151,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(160,2,159,0,0,"DO", 1, 2, 0);
+	trans[0][151]	= settr(150,2,157,141,0,"(((prio<4)&&!(found)))", 1, 2, 0);
+	T = trans[0][157] = settr(156,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(156,2,152,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(156,2,155,0,0,"IF", 1, 2, 0);
+	trans[0][152]	= settr(151,2,161,142,142,"((readyQueue[prio].tailIndex>0))", 1, 2, 0); /* m: 153 -> 161,0 */
+	reached0[153] = 1;
+	trans[0][153]	= settr(0,0,0,0,0,"top_task = readyQueue[prio].tasks[0]",0,0,0);
+	trans[0][154]	= settr(0,0,0,0,0,"found = 1",0,0,0);
+	trans[0][158]	= settr(157,2,161,1,0,".(goto)", 1, 2, 0);
+	trans[0][155]	= settr(154,2,156,2,0,"else", 1, 2, 0);
+	trans[0][156]	= settr(155,2,161,143,143,"prio = (prio+1)", 1, 2, 0);
+	trans[0][159]	= settr(158,2,183,144,144,"(((prio>=4)||found))", 1, 2, 0); /* m: 164 -> 183,0 */
+	reached0[164] = 1;
+	trans[0][160]	= settr(159,2,164,1,0,"goto :b5", 1, 2, 0); /* m: 164 -> 0,183 */
+	reached0[164] = 1;
+	trans[0][163]	= settr(162,2,164,1,0,"break", 1, 2, 0);
+	trans[0][164]	= settr(163,2,183,145,145,"newTask = top_task", 1, 2, 0); /* m: 165 -> 0,183 */
+	reached0[165] = 1;
+	trans[0][165]	= settr(0,0,0,0,0,"topPrio = prio",0,0,0);
+	T = trans[ 0][183] = settr(182,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(182,0,167,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][167]	= settr(166,2,173,146,146,"idx = 0", 1, 2, 0);
+	trans[0][174]	= settr(173,2,173,1,0,".(goto)", 1, 2, 0);
+	T = trans[0][173] = settr(172,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(172,2,168,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(172,2,171,0,0,"DO", 1, 2, 0);
+	trans[0][168]	= settr(167,2,173,147,147,"((idx<(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0); /* m: 169 -> 173,0 */
+	reached0[169] = 1;
+	trans[0][169]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]",0,0,0);
+	trans[0][170]	= settr(0,0,0,0,0,"idx = (idx+1)",0,0,0);
+	trans[0][171]	= settr(170,2,181,148,148,"((idx>=(readyQueue[topPrio].tailIndex-1)))", 1, 2, 0);
+	trans[0][172]	= settr(171,2,181,1,0,"goto :b6", 1, 2, 0);
+	trans[0][175]	= settr(174,2,181,1,0,"break", 1, 2, 0);
+	T = trans[0][181] = settr(180,2,0,0,0,"IF", 1, 2, 0);
+	T = T->nxt	= settr(180,2,176,0,0,"IF", 1, 2, 0);
+	    T->nxt	= settr(180,2,179,0,0,"IF", 1, 2, 0);
+	trans[0][176]	= settr(175,2,187,149,149,"((readyQueue[topPrio].tailIndex>0))", 1, 2, 0); /* m: 177 -> 187,0 */
+	reached0[177] = 1;
+	trans[0][177]	= settr(0,0,0,0,0,"readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255",0,0,0);
+	trans[0][178]	= settr(0,0,0,0,0,"readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)",0,0,0);
+	trans[0][182]	= settr(181,2,184,1,0,".(goto)", 1, 2, 0); /* m: 184 -> 0,187 */
+	reached0[184] = 1;
+	trans[0][179]	= settr(178,2,180,2,0,"else", 1, 2, 0);
+	trans[0][180]	= settr(179,2,187,150,150,"(1)", 1, 2, 0); /* m: 184 -> 187,0 */
+	reached0[184] = 1;
+	trans[0][184]	= settr(183,2,187,151,151,"tcb[newTask].state = 4", 1, 2, 0); /* m: 185 -> 0,187 */
+	reached0[185] = 1;
+	trans[0][185]	= settr(0,0,0,0,0,"EP = newTask",0,0,0);
+	T = trans[ 0][187] = settr(186,0,0,0,0,"sub-sequence", 1, 2, 0);
+	T->nxt	= settr(186,0,186,0,0,"sub-sequence", 1, 2, 0);
+	trans[0][186]	= settr(185,0,190,152,152,"int_ctrl_reg = int_save", 1, 2, 0);
+	trans[0][192]	= settr(191,0,193,1,0,"break", 0, 2, 0);
+	trans[0][193]	= settr(192,0,0,153,153,"-end-", 0, 3500, 0);
 	/* np_ demon: */
 	trans[_NP_] = (Trans **) emalloc(3*sizeof(Trans *));
 	T = trans[_NP_][0] = settr(9997,0,1,_T5,0,"(np_)", 1,2,0);

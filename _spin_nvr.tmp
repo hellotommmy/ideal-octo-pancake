@@ -1,0 +1,38 @@
+never starvation_free_task1 {    /* !([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) */
+T0_init:
+	do
+	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((EP==1)))) -> goto accept_S4
+	od;
+}
+never starvation_free_task2 {    /* !([] ((! ((tcb[2].state==1))) || (<> ((EP==2))))) */
+T0_init:
+	do
+	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((EP==2)))) -> goto accept_S4
+	od;
+}
+never all_starvation_free {    /* !(([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) && ([] ((! ((tcb[2].state==1))) || (<> ((EP==2)))))) */
+T0_init:
+	do
+	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S5
+	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S10
+	:: (1) -> goto T0_init
+	od;
+accept_S5:
+	do
+	:: (! (((EP==2)))) -> goto accept_S5
+	od;
+accept_S10:
+	do
+	:: (! (((EP==1)))) -> goto accept_S10
+	od;
+}
