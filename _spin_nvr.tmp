@@ -20,19 +20,51 @@ accept_S4:
 	:: (! (((EP==2)))) -> goto accept_S4
 	od;
 }
-never all_starvation_free {    /* !(([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) && ([] ((! ((tcb[2].state==1))) || (<> ((EP==2)))))) */
+never starvation_free_task3 {    /* !([] ((! ((tcb[3].state==1))) || (<> ((EP==3))))) */
 T0_init:
 	do
-	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S5
-	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S10
+	:: (! ((! ((tcb[3].state==1)))) && ! (((EP==3)))) -> goto accept_S4
 	:: (1) -> goto T0_init
 	od;
-accept_S5:
+accept_S4:
 	do
-	:: (! (((EP==2)))) -> goto accept_S5
+	:: (! (((EP==3)))) -> goto accept_S4
 	od;
-accept_S10:
+}
+never starvation_free_task4 {    /* !([] ((! ((tcb[4].state==1))) || (<> ((EP==4))))) */
+T0_init:
 	do
-	:: (! (((EP==1)))) -> goto accept_S10
+	:: (! ((! ((tcb[4].state==1)))) && ! (((EP==4)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((EP==4)))) -> goto accept_S4
+	od;
+}
+never all_starvation_free {    /* !(((([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) && ([] ((! ((tcb[2].state==1))) || (<> ((EP==2)))))) && ([] ((! ((tcb[3].state==1))) || (<> ((EP==3)))))) && ([] ((! ((tcb[4].state==1))) || (<> ((EP==4)))))) */
+T0_init:
+	do
+	:: (! ((! ((tcb[4].state==1)))) && ! (((EP==4))) && (! ((! ((tcb[1].state==1)))) || (! ((! ((tcb[2].state==1)))) || (! ((! ((tcb[3].state==1)))) || ! ((! ((tcb[4].state==1)))))))) -> goto accept_S7
+	:: (! ((! ((tcb[3].state==1)))) && ! (((EP==3))) && (! ((! ((tcb[1].state==1)))) || (! ((! ((tcb[2].state==1)))) || (! ((! ((tcb[3].state==1)))) || ! ((! ((tcb[4].state==1)))))))) -> goto accept_S12
+	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S17
+	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S22
+	:: (1) -> goto T0_init
+	od;
+accept_S7:
+	do
+	:: (! (((EP==4)))) -> goto accept_S7
+	od;
+accept_S12:
+	do
+	:: (! (((EP==3)))) -> goto accept_S12
+	od;
+accept_S17:
+	do
+	:: (! (((EP==2)))) -> goto accept_S17
+	od;
+accept_S22:
+	do
+	:: (! (((EP==1)))) -> goto accept_S22
 	od;
 }

@@ -2,10 +2,15 @@
 byte int_ctrl_reg = 0;
 #define INT_SAFE (int_ctrl_reg > 0)
 
+byte int_type = 0;
+
 #define EXEC_WHEN_CURRENT(id, stmt) \
-    atomic { (EP == id) -> stmt; NONDET_INTERRUPT }
+    atomic { (EP == id && int_ctrl_reg == 0) -> stmt; NONDET_INTERRUPT }
 #define EXEC_WHEN_CURRENT_SAFE(id, stmt) \
     atomic { (id == EP) -> stmt; INT_SAFE }
+
+#define EXEC_INTERRUPT(int_id, stmt) \
+    atomic { (int_type == int_id) -> stmt;  }
 
 /* Configuration */
 #define NUM_OF_TASKS 2
@@ -163,7 +168,7 @@ byte newTask = 0;
 byte pendSV_pending = 0;
 
 /* Inline Systick interrupt handler */
-inline Systick_Handler() {
+proctype Systick_Handler() {
     byte interrupted_task = 0;
     
     LOS_IntLock();

@@ -8,10 +8,11 @@ byte int_ctrl_reg = 0;
     atomic { (id == EP) -> stmt; INT_SAFE }
 
 /* Configuration */
-#define NUM_OF_TASKS 2
-#define LIST_SIZE 5      /* Static array size for simulating linked list */
+#define NUM_OF_TASKS 4
+#define LIST_SIZE 8      /* Static array size for simulating linked list */
 #define NUM_PRIORITIES 4 /* Number of priority levels (0-31) */ // you may change to 32 for full liteos-m simulationi, however 4 suffices for verification purposes
 #define UNUSED 255       /* Mark for unused list nodes */
+#define MAX_DELAY_TICKS 10  /* Maximum delay ticks for verification */
 
 /* Task state definitions */
 #define PENDED    0
@@ -21,12 +22,15 @@ byte int_ctrl_reg = 0;
 #define RUNNING   4
 
 byte topPrio;
+byte tickCount = 0;  /* Global tick counter */
 
 /* Task control block structure */
 typedef TCB {
     byte prio;          /* Priority: lower value = higher priority (0-31 range) */
     byte state;         /* Task state: PENDED/READY/DELAYED/SUSPENDED/RUNNING */
     byte responseTime;  /* Response time for sortLink ordering */
+    byte wakeupTime;    /* Wakeup time for delayed tasks (in ticks) */
+    byte delayTicks;    /* Remaining delay ticks */
 }
 
 /* Ready list structure - simulates linked list with static array */
@@ -48,14 +52,14 @@ SortLink sortLink;  /* Sorted list for suspended/delayed tasks */
 
 /* Initialize sortLink */
 inline initSortLink() {
-    byte idx;
+    byte init_sl_idx;
     
-    idx = 0;
+    init_sl_idx = 0;
     do
-    :: (idx < LIST_SIZE) ->
-        sortLink.tasks[idx] = UNUSED;
-        idx++;
-    :: (idx >= LIST_SIZE) -> break;
+    :: (init_sl_idx < LIST_SIZE) ->
+        sortLink.tasks[init_sl_idx] = UNUSED;
+        init_sl_idx++;
+    :: (init_sl_idx >= LIST_SIZE) -> break;
     od;
     sortLink.count = 0;
 }
@@ -112,14 +116,14 @@ inline OsDeleteSortLink(taskId) {
 
 /* Initialize a ready queue */
 inline initReadyQueue(prioLevel) {
-    byte idx;
+    byte init_rq_idx;
     
-    idx = 0;
+    init_rq_idx = 0;
     do
-    :: (idx < LIST_SIZE) ->
-        readyQueue[prioLevel].tasks[idx] = UNUSED;
-        idx++;
-    :: (idx >= LIST_SIZE) -> break;
+    :: (init_rq_idx < LIST_SIZE) ->
+        readyQueue[prioLevel].tasks[init_rq_idx] = UNUSED;
+        init_rq_idx++;
+    :: (init_rq_idx >= LIST_SIZE) -> break;
     od;
     readyQueue[prioLevel].tailIndex = 0;  /* Empty list: tailIndex points to head */
 }
@@ -150,16 +154,16 @@ inline OsDequeueTail(prioLevel) {
     fi
 }
 inline OsEnqueueHead(taskId, prioLevel){
-    byte idx;
+    byte enq_idx;
     
-    idx = readyQueue[prioLevel].tailIndex;
+    enq_idx = readyQueue[prioLevel].tailIndex;
     
     /* 将所有元素后移一格，从尾到头 */
     do
-    :: (idx > 0) ->
-        readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[idx - 1];
-        idx--;
-    :: (idx <= 0) -> break;
+    :: (enq_idx > 0) ->
+        readyQueue[prioLevel].tasks[enq_idx] = readyQueue[prioLevel].tasks[enq_idx - 1];
+        enq_idx--;
+    :: (enq_idx <= 0) -> break;
     od;
     
     /* 在头部（位置0）插入新任务 */
@@ -168,16 +172,16 @@ inline OsEnqueueHead(taskId, prioLevel){
 }
 
 inline OsDequeueHead(prioLevel){
-    byte idx;
+    byte deq_idx;
     
-    idx = 0;
+    deq_idx = 0;
     
     /* 将所有元素前移一格 */
     do
-    :: (idx < readyQueue[prioLevel].tailIndex - 1) ->
-        readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[idx + 1];
-        idx++;
-    :: (idx >= readyQueue[prioLevel].tailIndex - 1) -> break;
+    :: (deq_idx < readyQueue[prioLevel].tailIndex - 1) ->
+        readyQueue[prioLevel].tasks[deq_idx] = readyQueue[prioLevel].tasks[deq_idx + 1];
+        deq_idx++;
+    :: (deq_idx >= readyQueue[prioLevel].tailIndex - 1) -> break;
     od;
     
     /* 清空最后一个位置并更新tailIndex */
@@ -365,20 +369,82 @@ inline LOS_TaskResume(taskId) {
     fi
 }
 
+/* LOS_TaskDelay - Delay current task for specified ticks */
+inline LOS_TaskDelay(ticks) {
+    byte currentTask;
+    
+    if
+    :: (ticks > 0 && EP >= 1 && EP <= NUM_OF_TASKS) ->
+        LOS_IntLock();
+        
+        currentTask = EP;
+        
+        /* Set delay parameters */
+        tcb[currentTask].state = DELAYED;
+        tcb[currentTask].wakeupTime = tickCount + ticks;
+        tcb[currentTask].delayTicks = ticks;
+        
+        /* Remove from ready queue and add to sortLink */
+        OsAdd2SortLink(currentTask);
+        
+        /* Force task switch */
+        Systick_Handler();
+        
+        LOS_IntRestore();
+    :: else -> skip;
+    fi
+}
+
 /* Inline Systick interrupt handler */
 inline Systick_Handler() {
     byte interrupted_task;
+    byte idx;
+    byte taskId;
+    byte needResched;
     
     interrupted_task = 0;
+    needResched = 0;
     
     LOS_IntLock();
+    
+    /* Increment tick counter */
+    tickCount++;
+    
+    /* Scan sortLink for delayed tasks to wake up */
+    idx = 0;
+    do
+    :: (idx < sortLink.count) ->
+        taskId = sortLink.tasks[idx];
+        
+        /* Check if task should be woken up */
+        if
+        :: (tcb[taskId].state == DELAYED && 
+            tickCount >= tcb[taskId].wakeupTime) ->
+            /* Wake up the task */
+            tcb[taskId].state = READY;
+            tcb[taskId].delayTicks = 0;
+            
+            /* Remove from sortLink */
+            OsDeleteSortLink(taskId);
+            
+            /* Add back to ready queue */
+            OsEnqueueTail(taskId, tcb[taskId].prio);
+            
+            needResched = 1;
+            /* Don't increment idx, as we removed an element */
+        :: else ->
+            idx++;
+        fi
+    :: (idx >= sortLink.count) -> break;
+    od;
     
     /* Save the interrupted task */
     interrupted_task = EP;
     
-    /* Save current task if it's a user task */
+    /* Save current task if it's a user task and not delayed */
     if
-    :: (interrupted_task >= 1 && interrupted_task <= NUM_OF_TASKS) ->
+    :: (interrupted_task >= 1 && interrupted_task <= NUM_OF_TASKS &&
+        tcb[interrupted_task].state != DELAYED) ->
         tcb[interrupted_task].state = READY;
         OsEnqueueTail(interrupted_task, tcb[interrupted_task].prio);
     :: else -> skip;
@@ -401,17 +467,58 @@ inline Systick_Handler() {
 
 
 proctype Process1() {
+    byte counter = 0;
+    byte work = 0;
+    
     do
-    :: EXEC_WHEN_CURRENT(1, printf("Process 1 is running\n"));
-    :: EXEC_WHEN_CURRENT(1, assert(EP == 1));
-    :: EXEC_WHEN_CURRENT(1, LOS_TaskResume(2));   /* Only resume, no suspend to avoid deadlock */
+    :: EXEC_WHEN_CURRENT(1, printf("Process 1 running, counter=%d\n", counter));
+    :: EXEC_WHEN_CURRENT(1, counter++);
+    :: EXEC_WHEN_CURRENT(1, work = (work + counter) % 100);
+    :: EXEC_WHEN_CURRENT(1, LOS_TaskDelay(2));  /* Delay 2 ticks */
+    :: EXEC_WHEN_CURRENT(1, LOS_TaskDelay(3));  /* Variable delay */
+    :: (counter < 100) -> EXEC_WHEN_CURRENT(1, skip);  /* Continue working */
     od
 }
 
 proctype Process2() {
+    byte counter = 0;
+    byte work = 0;
+    
     do
-    :: EXEC_WHEN_CURRENT(2, printf("Process 2 is running\n"));
-    :: EXEC_WHEN_CURRENT(2, LOS_TaskResume(1));   /* Only resume, no suspend to avoid deadlock */
+    :: EXEC_WHEN_CURRENT(2, printf("Process 2 running, counter=%d\n", counter));
+    :: EXEC_WHEN_CURRENT(2, counter++);
+    :: EXEC_WHEN_CURRENT(2, work = (work + counter * 2) % 100);
+    :: EXEC_WHEN_CURRENT(2, LOS_TaskDelay(3));  /* Delay 3 ticks */
+    :: EXEC_WHEN_CURRENT(2, LOS_TaskDelay(1));  /* Variable delay */
+    :: (counter < 100) -> EXEC_WHEN_CURRENT(2, skip);
+    od
+}
+
+proctype Process3() {
+    byte counter = 0;
+    byte work = 0;
+    
+    do
+    :: EXEC_WHEN_CURRENT(3, printf("Process 3 running, counter=%d\n", counter));
+    :: EXEC_WHEN_CURRENT(3, counter++);
+    :: EXEC_WHEN_CURRENT(3, work = (work + counter * 3) % 100);
+    :: EXEC_WHEN_CURRENT(3, LOS_TaskDelay(1));  /* Delay 1 tick */
+    :: EXEC_WHEN_CURRENT(3, LOS_TaskDelay(4));  /* Variable delay */
+    :: (counter < 100) -> EXEC_WHEN_CURRENT(3, skip);
+    od
+}
+
+proctype Process4() {
+    byte counter = 0;
+    byte work = 0;
+    
+    do
+    :: EXEC_WHEN_CURRENT(4, printf("Process 4 running, counter=%d\n", counter));
+    :: EXEC_WHEN_CURRENT(4, counter++);
+    :: EXEC_WHEN_CURRENT(4, work = (work + counter * 4) % 100);
+    :: EXEC_WHEN_CURRENT(4, LOS_TaskDelay(2));  /* Delay 2 ticks */
+    :: EXEC_WHEN_CURRENT(4, LOS_TaskDelay(5));  /* Variable delay */
+    :: (counter < 100) -> EXEC_WHEN_CURRENT(4, skip);
     od
 }
 
@@ -429,10 +536,20 @@ ltl starvation_free_task2 {
     [] ((tcb[2].state == READY) -> <> (EP == 2)) 
 }
 
+ltl starvation_free_task3 { 
+    [] ((tcb[3].state == READY) -> <> (EP == 3)) 
+}
+
+ltl starvation_free_task4 { 
+    [] ((tcb[4].state == READY) -> <> (EP == 4)) 
+}
+
 /* Combined property: all tasks are starvation-free */
 ltl all_starvation_free {
     ([] ((tcb[1].state == READY) -> <> (EP == 1))) &&
-    ([] ((tcb[2].state == READY) -> <> (EP == 2)))
+    ([] ((tcb[2].state == READY) -> <> (EP == 2))) &&
+    ([] ((tcb[3].state == READY) -> <> (EP == 3))) &&
+    ([] ((tcb[4].state == READY) -> <> (EP == 4)))
 }
 
 init {
@@ -454,12 +571,30 @@ init {
     tcb[1].prio = 2;            /* Initial priority for Process1 */
     tcb[1].state = READY;       /* Process1 starts in READY state */
     tcb[1].responseTime = 10;   /* Initial response time */
+    tcb[1].wakeupTime = 0;
+    tcb[1].delayTicks = 0;
     OsEnqueueTail(1, tcb[1].prio);  /* Add to ready queue */
     
     tcb[2].prio = 2;            /* Initial priority for Process2 */
     tcb[2].state = READY;       /* Process2 starts in READY state */
     tcb[2].responseTime = 20;   /* Initial response time */
+    tcb[2].wakeupTime = 0;
+    tcb[2].delayTicks = 0;
     OsEnqueueTail(2, tcb[2].prio);  /* Add to ready queue */
+    
+    tcb[3].prio = 1;            /* Higher priority for Process3 */
+    tcb[3].state = READY;       /* Process3 starts in READY state */
+    tcb[3].responseTime = 15;   /* Initial response time */
+    tcb[3].wakeupTime = 0;
+    tcb[3].delayTicks = 0;
+    OsEnqueueTail(3, tcb[3].prio);  /* Add to ready queue */
+    
+    tcb[4].prio = 3;            /* Lower priority for Process4 */
+    tcb[4].state = READY;       /* Process4 starts in READY state */
+    tcb[4].responseTime = 25;   /* Initial response time */
+    tcb[4].wakeupTime = 0;
+    tcb[4].delayTicks = 0;
+    OsEnqueueTail(4, tcb[4].prio);  /* Add to ready queue */
     
     /* Get first task and remove from queue */
     OsGetTopTask(EP, topPrio);       /* Get highest priority task */
@@ -467,5 +602,7 @@ init {
     tcb[EP].state = RUNNING;         /* Mark as RUNNING */
     
     run Process1();
-    run Process2()
+    run Process2();
+    run Process3();
+    run Process4()
 }
