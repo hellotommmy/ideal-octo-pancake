@@ -1,70 +1,124 @@
-never starvation_free_task1 {    /* !([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) */
+never back_to_user {    /* !([] (<> ((EP>=2)))) */
 T0_init:
 	do
-	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S4
+	:: (! (((EP>=2)))) -> goto accept_S4
 	:: (1) -> goto T0_init
 	od;
 accept_S4:
 	do
-	:: (! (((EP==1)))) -> goto accept_S4
+	:: (! (((EP>=2)))) -> goto accept_S4
 	od;
 }
-never starvation_free_task2 {    /* !([] ((! ((tcb[2].state==1))) || (<> ((EP==2))))) */
+never exc_leads_to_user {    /* !([] ((! ((EP<2))) || (<> ((EP>=2))))) */
 T0_init:
 	do
-	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S4
+	:: (! ((! ((EP<2)))) && ! (((EP>=2)))) -> goto accept_S4
 	:: (1) -> goto T0_init
 	od;
 accept_S4:
 	do
-	:: (! (((EP==2)))) -> goto accept_S4
+	:: (! (((EP>=2)))) -> goto accept_S4
 	od;
 }
-never starvation_free_task3 {    /* !([] ((! ((tcb[3].state==1))) || (<> ((EP==3))))) */
+never all_starvation_free {    /* !((! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) && ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))) */
 T0_init:
 	do
-	:: (! ((! ((tcb[3].state==1)))) && ! (((EP==3)))) -> goto accept_S4
-	:: (1) -> goto T0_init
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2))) && ((EP>=2))) -> goto accept_S9
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2)))) -> goto T0_S350
+	:: ((! ((pending_exp>0))) && ! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2)))) -> goto accept_S244
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S140
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1))))) -> goto T0_S371
+	:: ((! ((pending_exp>0))) && ! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1))))) -> goto accept_S267
+	:: (((EP>=2))) -> goto T0_init
+	:: (1) -> goto T0_S384
+	:: ((! ((pending_exp>0)))) -> goto T0_S317
 	od;
-accept_S4:
+accept_S9:
 	do
-	:: (! (((EP==3)))) -> goto accept_S4
+	:: (! (((EP==2))) && ((EP>=2))) -> goto T0_S9
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: ((! ((pending_exp>0))) && ! (((EP==2)))) -> goto T0_S244
 	od;
-}
-never starvation_free_task4 {    /* !([] ((! ((tcb[4].state==1))) || (<> ((EP==4))))) */
-T0_init:
+accept_S140:
 	do
-	:: (! ((! ((tcb[4].state==1)))) && ! (((EP==4)))) -> goto accept_S4
-	:: (1) -> goto T0_init
+	:: (! (((EP==(2+1)))) && ((EP>=2))) -> goto T0_S140
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: ((! ((pending_exp>0))) && ! (((EP==(2+1))))) -> goto T0_S267
 	od;
-accept_S4:
+accept_S244:
 	do
-	:: (! (((EP==4)))) -> goto accept_S4
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: ((((! ((pending_exp>0))) && ! (((EP==2)))) || (! (((EP==2))) && ((EP>=2))))) -> goto T0_S244
 	od;
-}
-never all_starvation_free {    /* !(((([] ((! ((tcb[1].state==1))) || (<> ((EP==1))))) && ([] ((! ((tcb[2].state==1))) || (<> ((EP==2)))))) && ([] ((! ((tcb[3].state==1))) || (<> ((EP==3)))))) && ([] ((! ((tcb[4].state==1))) || (<> ((EP==4)))))) */
-T0_init:
+accept_S267:
 	do
-	:: (! ((! ((tcb[4].state==1)))) && ! (((EP==4))) && (! ((! ((tcb[1].state==1)))) || (! ((! ((tcb[2].state==1)))) || (! ((! ((tcb[3].state==1)))) || ! ((! ((tcb[4].state==1)))))))) -> goto accept_S7
-	:: (! ((! ((tcb[3].state==1)))) && ! (((EP==3))) && (! ((! ((tcb[1].state==1)))) || (! ((! ((tcb[2].state==1)))) || (! ((! ((tcb[3].state==1)))) || ! ((! ((tcb[4].state==1)))))))) -> goto accept_S12
-	:: (! ((! ((tcb[2].state==1)))) && ! (((EP==2)))) -> goto accept_S17
-	:: (! ((! ((tcb[1].state==1)))) && ! (((EP==1)))) -> goto accept_S22
-	:: (1) -> goto T0_init
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: ((((! ((pending_exp>0))) && ! (((EP==(2+1))))) || (! (((EP==(2+1)))) && ((EP>=2))))) -> goto T0_S267
 	od;
-accept_S7:
+accept_S350:
 	do
-	:: (! (((EP==4)))) -> goto accept_S7
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: (! (((EP==2))) && ((EP>=2))) -> goto T0_S244
 	od;
-accept_S12:
+accept_S371:
 	do
-	:: (! (((EP==3)))) -> goto accept_S12
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: (! (((EP==(2+1)))) && ((EP>=2))) -> goto T0_S267
 	od;
-accept_S17:
+T0_S9:
 	do
-	:: (! (((EP==2)))) -> goto accept_S17
+	:: (! (((EP==2))) && ((EP>=2))) -> goto accept_S9
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: ((! ((pending_exp>0))) && ! (((EP==2)))) -> goto accept_S244
 	od;
-accept_S22:
+T0_S140:
 	do
-	:: (! (((EP==1)))) -> goto accept_S22
+	:: (! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S140
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: ((! ((pending_exp>0))) && ! (((EP==(2+1))))) -> goto accept_S267
+	od;
+T0_S244:
+	do
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: ((((! ((pending_exp>0))) && ! (((EP==2)))) || (! (((EP==2))) && ((EP>=2))))) -> goto accept_S244
+	od;
+T0_S267:
+	do
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: ((((! ((pending_exp>0))) && ! (((EP==(2+1))))) || (! (((EP==(2+1)))) && ((EP>=2))))) -> goto accept_S267
+	od;
+T0_S317:
+	do
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2)))) -> goto T0_S350
+	:: ((((! ((pending_exp>0))) && (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2))))) || (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && (! (((EP==2))) && ((EP>=2)))))) -> goto accept_S244
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1))))) -> goto T0_S371
+	:: ((((! ((pending_exp>0))) && (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1)))))) || (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && (! (((EP==(2+1)))) && ((EP>=2)))))) -> goto accept_S267
+	:: (((EP>=2))) -> goto T0_init
+	:: (1) -> goto T0_S384
+	:: ((! ((pending_exp>0)))) -> goto T0_S317
+	od;
+T0_S350:
+	do
+	:: (! (((EP==2)))) -> goto T0_S350
+	:: (! (((EP==2))) && ((EP>=2))) -> goto accept_S244
+	:: (! (((EP==2))) && ((EP>=2))) -> goto accept_S350
+	od;
+T0_S371:
+	do
+	:: (! (((EP==(2+1))))) -> goto T0_S371
+	:: (! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S267
+	:: (! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S371
+	od;
+T0_S384:
+	do
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2)))) -> goto T0_S350
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1))))) -> goto T0_S371
+	:: (((EP>=2))) -> goto T0_init
+	:: (1) -> goto T0_S384
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2))) && ((EP>=2))) -> goto accept_S244
+	:: (! ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==2))) && ((EP>=2))) -> goto accept_S350
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S267
+	:: (! ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1))))) && ! (((EP==(2+1)))) && ((EP>=2))) -> goto accept_S371
+	:: ((! ((pending_exp>0))) && ((EP>=2))) -> goto T0_S317
 	od;
 }

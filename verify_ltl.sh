@@ -2,7 +2,7 @@
 # Verify LTL properties for starvation freedom
 
 echo "=== Generating verifier (all LTL properties detected) ==="
-spin -a control.pml
+spin -a c2.pml
 gcc -o pan pan.c
 
 echo ""
