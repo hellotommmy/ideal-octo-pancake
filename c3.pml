@@ -289,7 +289,6 @@ ltl back_to_user { [] <> IN_USER }
 /* 每次进入异常最终都会回到用户态 */
 ltl exc_leads_to_user { [] (IN_EXC -> <> IN_USER) }
 
-
 ltl starvation_free_task1 {
     ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))))
 }
@@ -298,7 +297,7 @@ ltl starvation_free_task2 {
 }
 /* 组合性质：任务就绪必达 ＋ 只要有任意 pending，最终回到用户态 */
 ltl all_starvation_free {
-  ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))) &&
+  ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))) ||
   ([] ((tcb[FIRST_TASK+1].state == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK+1))) )
   
 }

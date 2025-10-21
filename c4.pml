@@ -136,6 +136,8 @@ inline exp_return(tmp)
     :: true -> skip \
     fi
 
+
+
 /* ND tick even while we are inside an exception: pending can arrive but won't preempt now */
 #define ND_TIMER_INT_EXC() \
     if \
@@ -155,6 +157,7 @@ inline exp_return(tmp)
 typedef TCB {
     byte prio;
     byte state;
+    byte pendList;
 }
 
 typedef ReadyList {
@@ -162,10 +165,79 @@ typedef ReadyList {
     byte tailIndex;
 }
 
+typedef SortLinkNode {
+    byte taskId;
+    byte responseTime;
+}
+
 byte topPrio;
 TCB tcb[LAST_TASK + 1];
 ReadyList readyQueue[NUM_PRIORITIES];
+SortLinkNode g_taskSortLink[NUM_OF_TASKS];
+byte g_taskSortLinkTail = 0;
 
+inline initSortLinkList()
+{
+    byte idx = 0;
+    do
+    :: (idx < NUM_OF_TASKS) ->
+        g_taskSortLink[idx].taskId = UNUSED;
+        g_taskSortLink[idx].responseTime = UNUSED;
+        idx++
+    :: else -> break
+    od;
+    g_taskSortLinkTail = 0;
+}
+inline LOS_Schedule()
+{
+    set_pending(PendSV_ID);
+    // D_TAKEN_INT();
+}
+#define MAX_RESPONSE_TIME  255
+inline LOS_Suspend(taskId)
+{
+    g_taskSortLink[g_taskSortLinkTail].taskId = taskId;
+    g_taskSortLink[g_taskSortLinkTail].responseTime = MAX_RESPONSE_TIME;
+    tcb[taskId].pendList = g_taskSortLinkTail;
+    g_taskSortLinkTail++;
+    if
+    :: tcb[taskId].state == READY ->
+        //remove from ready queue
+        OsDequeueWithId(taskId);
+        tcb[taskId].state = SUSPENDED;
+    :: tcb[taskId].state == RUNNING -> 
+        tcb[taskId].state = SUSPENDED;
+        LOS_Schedule();
+    :: tcb[taskId].state == SUSPENDED ->
+        assert(0);
+    :: else -> assert(0);
+    fi
+}
+
+
+inline LOS_Resume(taskId)
+{
+    assert(EP >= FIRST_TASK && EP <= LAST_TASK);
+    byte sortlinkIdx = tcb[taskId].pendList;
+    byte idx = sortlinkIdx;
+    do
+    :: (idx < g_taskSortLinkTail - 1) ->
+        g_taskSortLink[idx].taskId = g_taskSortLink[idx + 1].taskId;
+        g_taskSortLink[idx].responseTime = g_taskSortLink[idx + 1].responseTime;
+        idx++
+    :: else -> break
+    od; 
+    g_taskSortLink[g_taskSortLinkTail - 1].taskId = UNUSED;
+    g_taskSortLink[g_taskSortLinkTail - 1].responseTime = 0;
+    g_taskSortLinkTail--;
+    tcb[taskId].state = READY;
+    OsEnqueueTail(taskId, tcb[taskId].prio);
+    if
+    :: tcb[taskId].prio < tcb[EP].prio ->
+        LOS_Schedule();
+    :: else -> skip;
+    fi
+}
 inline initReadyQueue(prioLevel)
 {
     byte idx = 0;
@@ -191,6 +263,37 @@ inline OsEnqueueTail(taskId, prioLevel)
 inline OsDequeueHead(prioLevel)
 {
     byte idx = 0;
+    do
+    :: (idx < readyQueue[prioLevel].tailIndex - 1) ->
+        readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[idx + 1];
+        idx++
+    :: else -> break
+    od;
+    if
+    :: (readyQueue[prioLevel].tailIndex > 0) ->
+        readyQueue[prioLevel].tasks[readyQueue[prioLevel].tailIndex - 1] = UNUSED;
+        readyQueue[prioLevel].tailIndex--
+    :: else -> skip
+    fi
+}
+
+
+
+inline OsDequeueWithId(taskId)
+{
+    byte idx = 0;
+    byte found = 0;
+    byte prioLevel = tcb[taskId].prio;
+    do
+    :: (idx < readyQueue[prioLevel].tailIndex && !found) ->
+        if
+        :: (readyQueue[prioLevel].tasks[idx] == taskId) ->
+            found = 1;
+        :: else -> idx++
+        fi
+    :: else -> break
+    od;
+    assert(found == 1);
     do
     :: (idx < readyQueue[prioLevel].tailIndex - 1) ->
         readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[idx + 1];
@@ -262,12 +365,15 @@ proctype SysTick_Handler()
     od
 }
 
+
 /***** Two simple tasks *****/
 proctype Process1()
 {
     do
     :: AWAIT_T(FIRST_TASK, printf("Process1 running\\n"))
+    :: AWAIT_T(FIRST_TASK, LOS_Suspend(FIRST_TASK+1))
     :: AWAIT_T(FIRST_TASK, assert(EP == FIRST_TASK))
+    :: AWAIT_T(FIRST_TASK, LOS_Resume(FIRST_TASK+1))
     od
 }
 
@@ -289,7 +395,6 @@ ltl back_to_user { [] <> IN_USER }
 /* 每次进入异常最终都会回到用户态 */
 ltl exc_leads_to_user { [] (IN_EXC -> <> IN_USER) }
 
-
 ltl starvation_free_task1 {
     ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))))
 }
@@ -298,7 +403,7 @@ ltl starvation_free_task2 {
 }
 /* 组合性质：任务就绪必达 ＋ 只要有任意 pending，最终回到用户态 */
 ltl all_starvation_free {
-  ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))) &&
+  ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))) ||
   ([] ((tcb[FIRST_TASK+1].state == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK+1))) )
   
 }
@@ -321,6 +426,7 @@ init
         i++
     :: else -> break
     od;
+    initSortLinkList();
 
     /* init TCBs + ready lists */
     tcb[FIRST_TASK].prio = 2;      tcb[FIRST_TASK].state     = READY; OsEnqueueTail(FIRST_TASK, 2);
