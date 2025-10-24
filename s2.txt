@@ -1,0 +1,42 @@
+pan: ltl formula step3_witness
+pan:1: assertion violated  !((( !(((EP==0)&&(EP_Stack==(2+1))))&&(((pending_exp>>1)&1)==1))||((((pending_exp>>1)&1)==1)&&((EP==0)&&(tcb[2].state==4))))) (at depth 218)
+pan: wrote c2.pml.trail
+
+(Spin Version 6.5.2 -- 6 December 2019)
+Warning: Search not completed
+
+Full statespace search for:
+	never claim         	+ (step3_witness)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 92 byte, depth reached 218, errors: 1
+      107 states, stored
+        0 states, matched
+      107 transitions (= stored+matched)
+        6 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.012	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.204	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+ltl back_to_user: [] (<> ((EP>=2)))
+ltl exc_leads_to_user: [] ((! ((EP<2))) || (<> ((EP>=2))))
+ltl starvation_free_task1: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2)))))
+ltl starvation_free_task2: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1))))))
+ltl all_starvation_free: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) && ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))
+ltl step1_witness: [] (! ((EP==(2+1))))
+ltl step2_witness: [] (! ((! (((EP==0)) && ((EP_Stack==(2+1))))) || (<> (((EP==0)) && ((tcb[2].state==4))))))
+ltl step3_witness: [] (! (((! (((EP==0)) && ((EP_Stack==(2+1))))) || (<> (((EP==0)) && ((tcb[2].state==4))))) && ((((pending_exp>>1)&1)==1))))
+  the model contains 8 never claims: step3_witness, step2_witness, step1_witness, all_starvation_free, starvation_free_task2, starvation_free_task1, exc_leads_to_user, back_to_user
+  only one claim is used in a verification run
+  choose which one with ./pan -a -N name (defaults to -N back_to_user)
+  or use e.g.: spin -search -ltl back_to_user c2.pml

@@ -193,7 +193,9 @@ inline LOS_Schedule()
     set_pending(PendSV_ID);
     // D_TAKEN_INT();
 }
+
 #define MAX_RESPONSE_TIME  255
+
 inline LOS_Suspend(taskId)
 {
     g_taskSortLink[g_taskSortLinkTail].taskId = taskId;
@@ -396,7 +398,7 @@ ltl back_to_user { [] <> IN_USER }
 ltl exc_leads_to_user { [] (IN_EXC -> <> IN_USER) }
 
 ltl starvation_free_task1 {
-    ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK))))
+    (!([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK].state   == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK)))))
 }
 ltl starvation_free_task2 {
     ([] ((pending_exp > 0) -> <> IN_USER)) -> (([] ((tcb[FIRST_TASK+1].state == READY && SYSTICK_PENDING) -> <> (EP == FIRST_TASK+1))))

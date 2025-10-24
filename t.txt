@@ -1,0 +1,11 @@
+spin: c4.pml:201, Error: syntax error	saw 'a constant'
+spin: c4.pml:227, Error: syntax error	saw 'a constant'
+spin: c4.pml:230, Error: syntax error	saw 'token: ::'
+spin: c4.pml:231, Error: syntax error	saw 'keyword: od' near 'od'
+spin: c4.pml:232, Error: syntax error	saw 'a constant'
+ltl back_to_user: [] (<> ((EP>=2)))
+ltl exc_leads_to_user: [] ((! ((EP<2))) || (<> ((EP>=2))))
+ltl starvation_free_task1: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2)))))
+ltl starvation_free_task2: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1))))))
+ltl all_starvation_free: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))
+spin: c4.pml:246, Error: aborting (ana_stmnt)
