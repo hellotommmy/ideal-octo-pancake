@@ -500,6 +500,7 @@ proctype Process3() {
     
     do
     :: EXEC_WHEN_CURRENT(3, printf("Process 3 running, counter=%d\n", counter));
+    // :: assert(0);
     :: EXEC_WHEN_CURRENT(3, counter++);
     :: EXEC_WHEN_CURRENT(3, work = (work + counter * 3) % 100);
     :: EXEC_WHEN_CURRENT(3, LOS_TaskDelay(1));  /* Delay 1 tick */
@@ -528,23 +529,23 @@ proctype Process4() {
  * Formula: [] (READY -> <> RUNNING)
  * In our model: [] (tcb[i].state == READY -> <> (EP == i))
  */
-ltl starvation_free_task1 { 
-    [] ((tcb[1].state == READY) -> <> (EP == 1)) 
-}
+// ltl starvation_free_task1 { 
+//     [] ((tcb[1].state == READY) -> <> (EP == 1)) 
+// }
 
-ltl starvation_free_task2 { 
-    [] ((tcb[2].state == READY) -> <> (EP == 2)) 
-}
+// ltl starvation_free_task2 { 
+//     [] ((tcb[2].state == READY) -> <> (EP == 2)) 
+// }
 
-ltl starvation_free_task3 { 
-    [] ((tcb[3].state == READY) -> <> (EP == 3)) 
-}
+// ltl starvation_free_task3 { 
+//     [] ((tcb[3].state == READY) -> <> (EP == 3)) 
+// }
 
-ltl starvation_free_task4 { 
-    [] ((tcb[4].state == READY) -> <> (EP == 4)) 
-}
+// ltl starvation_free_task4 { 
+//     [] ((tcb[4].state == READY) -> <> (EP == 4)) 
+// }
 
-/* Combined property: all tasks are starvation-free */
+// /* Combined property: all tasks are starvation-free */
 ltl all_starvation_free {
     ([] ((tcb[1].state == READY) -> <> (EP == 1))) &&
     ([] ((tcb[2].state == READY) -> <> (EP == 2))) &&

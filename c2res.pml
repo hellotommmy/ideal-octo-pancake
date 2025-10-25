@@ -105,7 +105,7 @@ inline switch_context(new_context)
       (GET_PENDING(SysTick_ID) && BASEPRI_MASK(SysTick_ID))) && \
      EP >= FIRST_TASK)
 
-// #define INT_SAFE (!INT_TAKE)
+#define INT_SAFE (!INT_TAKE)
 
 bit chain_tick_used = 0;   /* 本次异常链中，是否已在异常内生成过一次 SysTick pending */
 
@@ -178,11 +178,106 @@ inline exp_return(tmp)
 typedef TCB {
     byte prio;
     byte state;
+    byte pendList;
 }
 
 typedef ReadyList {
     byte tasks[LIST_SIZE];
     byte tailIndex;
+}
+
+inline OsSchedResume(taskID, needSched)
+{
+    assert(tcb[taskID].state == SUSPENDED);
+    needSched = 1;
+    tcb[taskID].state = READY;
+    OsRemoveFromSortLink(taskID);
+    OsEnqueueTail(taskID, tcb[taskID].prio);
+}
+#define MAX_RESPONSE_TIME  255
+typedef SortLinkNode {
+    byte taskId;
+    byte responseTime;
+}
+SortLinkNode g_taskSortLink[NUM_OF_TASKS + 1];
+byte g_taskSortLinkTail = 0;
+inline OsRemoveFromSortLink(taskID)
+{
+    byte idx = tcb[taskID].pendList;
+    do
+    :: (idx < g_taskSortLinkTail - 1) ->
+        g_taskSortLink[idx].taskId = g_taskSortLink[idx + 1].taskId;
+        g_taskSortLink[idx].responseTime = g_taskSortLink[idx + 1].responseTime;
+        idx++
+    :: else -> break
+    od;
+    g_taskSortLink[g_taskSortLinkTail - 1].taskId = UNUSED;
+    g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
+    g_taskSortLinkTail--;
+}
+inline LOS_IntLock(intSave)
+{
+    intSave = 0;
+}
+inline LOS_IntRestore(intSave)
+{
+    intSave = 0;
+}
+byte g_taskScheduled = 1;
+inline LOS_TaskResume(taskID)
+{
+    byte     intSave;
+    byte     tempStatus;
+    byte       needSched = 0;
+
+
+    LOS_IntLock(intSave)
+    tempStatus = tcb[taskID].state;
+
+    assert(tempStatus == SUSPENDED);
+
+    OsSchedResume(taskID, needSched);
+    if
+    :: (needSched && g_taskScheduled) ->
+        LOS_IntRestore(intSave);
+        LOS_Schedule();
+    :: else -> skip
+    fi;
+
+}
+inline OsSchedSuspend(taskID, needSched)
+{
+    assert(tcb[taskID].state == READY);
+    needSched = 1;
+    tcb[taskID].state = SUSPENDED;
+    OsAdd2SortLink(taskID);
+}
+inline LOS_TaskSuspend(taskID)
+{
+    byte intSave;
+    LOS_IntLock(intSave);
+    assert(tcb[taskID].state == READY);
+    byte needSched = 0;
+    OsSchedSuspend(taskID, needSched);
+    if
+    :: (needSched && g_taskScheduled) ->
+        LOS_IntRestore(intSave);
+        LOS_Schedule();
+    :: else -> skip
+    fi;
+}
+inline OsAdd2SortLink(taskID)
+{
+    g_taskSortLink[g_taskSortLinkTail].taskId = taskID;
+    g_taskSortLink[g_taskSortLinkTail].responseTime = MAX_RESPONSE_TIME;
+    tcb[taskID].pendList = g_taskSortLinkTail;
+    g_taskSortLinkTail++;
+}
+
+
+inline LOS_Schedule()
+{
+    set_pending(PendSV_ID);
 }
 
 byte topPrio;
@@ -303,6 +398,9 @@ proctype Process2()
     do
     :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, printf("P2 running\n"))
     // :: assert(true)
+    :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskSuspend(FIRST_TASK))
+    // :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(tcb[FIRST_TASK].state == SUSPENDED))
+    :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskResume(FIRST_TASK))
     :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(EP == FIRST_TASK + 1))
     od
 }
@@ -515,6 +613,10 @@ ltl smoke_P1_user_no_pending {
 
 /***** Boot *****/
 #define RUN_ALL_EXPS() atomic { run PendSV_Handler(); run SysTick_Handler() }
+
+
+
+
 
 init
 {

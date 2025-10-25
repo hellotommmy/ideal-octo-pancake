@@ -2,7 +2,7 @@
 #define PAN_H
 
 #define SpinVersion	"Spin Version 6.5.2 -- 6 December 2019"
-#define PanSource	"c2.pml"
+#define PanSource	"c2res.pml"
 
 #define G_long	8
 #define G_int	4
@@ -140,59 +140,59 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates13	11	/* smoke_P1_user_no_pending */
-#define minseq13	921
-#define maxseq13	930
+#define minseq13	1040
+#define maxseq13	1049
 #define _endstate13	10
 
 #define _nstates12	11	/* smoke_P2_user_no_pending */
-#define minseq12	911
-#define maxseq12	920
+#define minseq12	1030
+#define maxseq12	1039
 #define _endstate12	10
 
 #define _nstates11	123	/* p2_double_context_switch */
-#define minseq11	789
-#define maxseq11	910
+#define minseq11	908
+#define maxseq11	1029
 #define _endstate11	122
 
 #define _nstates10	101	/* P2_switching_not_P1_witness_unfolded */
-#define minseq10	689
-#define maxseq10	788
+#define minseq10	808
+#define maxseq10	907
 #define _endstate10	100
 
 #define _nstates9	157	/* all_starvation_free */
-#define minseq9	533
-#define maxseq9	688
+#define minseq9	652
+#define maxseq9	807
 #define _endstate9	156
 
 #define _nstates8	76	/* starvation_free_task2 */
-#define minseq8	458
-#define maxseq8	532
+#define minseq8	577
+#define maxseq8	651
 #define _endstate8	75
 
 #define _nstates7	76	/* starvation_free_task1 */
-#define minseq7	383
-#define maxseq7	457
+#define minseq7	502
+#define maxseq7	576
 #define _endstate7	75
 
 #define _nstates6	14	/* exc_leads_to_user */
-#define minseq6	370
-#define maxseq6	382
+#define minseq6	489
+#define maxseq6	501
 #define _endstate6	13
 
 #define _nstates5	14	/* back_to_user */
-#define minseq5	357
-#define maxseq5	369
+#define minseq5	476
+#define maxseq5	488
 #define _endstate5	13
 
 #define _nstates4	66	/* :init: */
-#define minseq4	292
-#define maxseq4	356
+#define minseq4	411
+#define maxseq4	475
 #define _endstate4	65
 
-#define _nstates3	55	/* Process2 */
+#define _nstates3	174	/* Process2 */
 #define minseq3	238
-#define maxseq3	291
-#define _endstate3	54
+#define maxseq3	410
+#define _endstate3	173
 
 #define _nstates2	55	/* Process1 */
 #define minseq2	184
@@ -239,8 +239,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned short
-#define _T5	324
-#define _T2	325
+#define _T5	356
+#define _T2	357
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -258,10 +258,15 @@ extern S_F_MAP src_file0[];
 struct TCB { /* user defined type */
 	uchar prio;
 	uchar state;
+	uchar pendList;
 };
 struct ReadyList { /* user defined type */
 	uchar tasks[5];
 	uchar tailIndex;
+};
+struct SortLinkNode { /* user defined type */
+	uchar taskId;
+	uchar responseTime;
 };
 typedef struct P13 { /* smoke_P1_user_no_pending */
 	unsigned _pid : 8;  /* 0..255 */
@@ -362,10 +367,10 @@ typedef struct P4 { /* :init: */
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar i;
-	uchar _7_15_idx;
-	uchar _7_18_idx;
+	uchar _8_17_idx;
+	uchar _8_20_idx;
 } P4;
-#define Air4	(sizeof(P4) - Offsetof(P4, _7_18_idx) - 1*sizeof(uchar))
+#define Air4	(sizeof(P4) - Offsetof(P4, _8_20_idx) - 1*sizeof(uchar))
 
 #define PProcess2	((P3 *)_this)
 typedef struct P3 { /* Process2 */
@@ -375,8 +380,14 @@ typedef struct P3 { /* Process2 */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
+	uchar _7_14_24_intSave;
+	uchar _7_14_24_needSched;
+	uchar _7_15_27_intSave;
+	uchar _7_15_27_tempStatus;
+	uchar _7_15_27_needSched;
+	uchar _7_15_27_12_5_idx;
 } P3;
-#define Air3	(sizeof(P3) - 3)
+#define Air3	(sizeof(P3) - Offsetof(P3, _7_15_27_12_5_idx) - 1*sizeof(uchar))
 
 #define PProcess1	((P2 *)_this)
 typedef struct P2 { /* Process1 */
@@ -410,12 +421,12 @@ typedef struct P0 { /* PendSV_Handler */
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar tmp;
-	uchar _3_3_4_prio;
-	uchar _3_3_4_top_task;
-	uchar _3_3_4_found;
-	uchar _3_4_6_idx;
+	uchar _4_3_4_prio;
+	uchar _4_3_4_top_task;
+	uchar _4_3_4_found;
+	uchar _4_4_6_idx;
 } P0;
-#define Air0	(sizeof(P0) - Offsetof(P0, _3_4_6_idx) - 1*sizeof(uchar))
+#define Air0	(sizeof(P0) - Offsetof(P0, _4_4_6_idx) - 1*sizeof(uchar))
 
 typedef struct P14 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
@@ -636,7 +647,10 @@ typedef struct State {
 	uchar BASEPRI;
 	uchar pending_exp;
 	uchar EP_Stack;
+	uchar g_taskSortLinkTail;
+	uchar g_taskScheduled;
 	uchar topPrio;
+	struct SortLinkNode g_taskSortLink[3];
 	struct TCB tcb[4];
 	struct ReadyList readyQueue[4];
 #ifdef TRIX
@@ -678,7 +692,7 @@ typedef struct TRIX_v6 {
 #define _start6	5
 #define _start5	5
 #define _start4	1
-#define _start3	51
+#define _start3	170
 #define _start2	51
 #define _start1	46
 #define _start0	132
@@ -1041,7 +1055,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	326
+#define NTRANS	358
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);
