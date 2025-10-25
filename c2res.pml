@@ -268,6 +268,8 @@ inline LOS_TaskSuspend(taskID)
 }
 inline OsAdd2SortLink(taskID)
 {
+    assert(g_taskSortLinkTail < NUM_OF_TASKS + 1);
+    assert(g_taskSortLinkTail >= 0);
     g_taskSortLink[g_taskSortLinkTail].taskId = taskID;
     g_taskSortLink[g_taskSortLinkTail].responseTime = MAX_RESPONSE_TIME;
     tcb[taskID].pendList = g_taskSortLinkTail;
@@ -389,7 +391,7 @@ proctype Process1()
 {
     do
     :: EXEC_WHEN_CURRENT(FIRST_TASK, printf("Process1 running\\n"))
-    :: EXEC_WHEN_CURRENT(FIRST_TASK, assert(EP == FIRST_TASK))
+       EXEC_WHEN_CURRENT(FIRST_TASK, assert(EP == FIRST_TASK))
     od
 }
 
@@ -398,10 +400,10 @@ proctype Process2()
     do
     :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, printf("P2 running\n"))
     // :: assert(true)
-    :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskSuspend(FIRST_TASK))
+     EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskSuspend(FIRST_TASK))
     // :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(tcb[FIRST_TASK].state == SUSPENDED))
-    :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskResume(FIRST_TASK))
-    :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(EP == FIRST_TASK + 1))
+     EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskResume(FIRST_TASK))
+     EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(EP == FIRST_TASK + 1))
     od
 }
 
