@@ -1,0 +1,43 @@
+ltl back_to_user: [] (<> ((EP>=2)))
+ltl exc_leads_to_user: [] ((! ((EP<2))) || (<> ((EP>=2))))
+ltl starvation_free_task1: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2)))))
+ltl starvation_free_task2: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1))))))
+ltl all_starvation_free: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) && ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))
+ltl P2_switching_not_P1_witness_unfolded: [] (! (<> ((((EP==1)) && ((EP_Stack==(2+1)))) && ((((EP==1)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((EP==(2+1)))))))))))))))))
+ltl p2_double_context_switch: [] (! (<> ((((EP==3)) && ((((pending_exp>>1)&1)==1))) && ((((EP==3)) && ((((pending_exp>>1)&1)==1))) U ((((EP==1)) && ((EP_Stack==3))) && ((((EP==1)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((EP==3))))))))))))))))))
+ltl smoke_P2_user_no_pending: [] (! ((((EP==(2+1))) && ((pending_exp==0))) && ((chain_tick_used==1))))
+ltl smoke_P1_user_no_pending: [] (! ((((EP==2)) && ((pending_exp==0))) && ((chain_tick_used==1))))
+  the model contains 9 never claims: smoke_P1_user_no_pending, smoke_P2_user_no_pending, p2_double_context_switch, P2_switching_not_P1_witness_unfolded, all_starvation_free, starvation_free_task2, starvation_free_task1, exc_leads_to_user, back_to_user
+  only one claim is used in a verification run
+  choose which one with ./pan -a -N name (defaults to -N back_to_user)
+  or use e.g.: spin -search -ltl back_to_user c2res.pml
+pan: ltl formula back_to_user
+pan:1: assertion violated (tempStatus==3) (at depth 993)
+pan: wrote c2res.pml.trail
+
+(Spin Version 6.5.2 -- 6 December 2019)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (back_to_user)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	- (not selected)
+	invalid end states	- (disabled by never claim)
+
+State-vector 124 byte, depth reached 993, errors: 1
+      486 states, stored
+      232 states, matched
+      718 transitions (= stored+matched)
+     1617 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.070	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.355	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.827	total actual memory usage
+
+
+

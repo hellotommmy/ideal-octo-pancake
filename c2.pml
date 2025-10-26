@@ -105,7 +105,7 @@ inline switch_context(new_context)
       (GET_PENDING(SysTick_ID) && BASEPRI_MASK(SysTick_ID))) && \
      EP >= FIRST_TASK)
 
-// #define INT_SAFE (!INT_TAKE)
+#define INT_SAFE (!INT_TAKE)
 
 bit chain_tick_used = 0;   /* 本次异常链中，是否已在异常内生成过一次 SysTick pending */
 

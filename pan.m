@@ -5071,7 +5071,7 @@
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC :init: */
-	case 193: // STATE 1 - c2res.pml:626 - [i = 0] (0:0:1 - 1)
+	case 193: // STATE 1 - c2res.pml:664 - [i = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][1] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->i);
@@ -5081,13 +5081,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 194: // STATE 2 - c2res.pml:628 - [((i<4))] (0:0:0 - 1)
+	case 194: // STATE 2 - c2res.pml:666 - [((i<4))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][2] = 1;
 		if (!((((int)((P4 *)_this)->i)<4)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 195: // STATE 3 - c2res.pml:290 - [idx = 0] (0:0:1 - 1)
+	case 195: // STATE 3 - c2res.pml:293 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][3] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_17_idx);
@@ -5097,13 +5097,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 196: // STATE 4 - c2res.pml:291 - [((idx<5))] (0:0:0 - 1)
+	case 196: // STATE 4 - c2res.pml:294 - [((idx<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][4] = 1;
 		if (!((((int)((P4 *)_this)->_8_17_idx)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 197: // STATE 5 - c2res.pml:292 - [readyQueue[i].tasks[idx] = 255] (0:0:1 - 1)
+	case 197: // STATE 5 - c2res.pml:295 - [readyQueue[i].tasks[idx] = 255] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][5] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)((P4 *)_this)->i), 4) ].tasks[ Index(((int)((P4 *)_this)->_8_17_idx), 5) ]);
@@ -5113,7 +5113,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 198: // STATE 6 - c2res.pml:293 - [idx = (idx+1)] (0:0:1 - 1)
+	case 198: // STATE 6 - c2res.pml:296 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][6] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_17_idx);
@@ -5123,7 +5123,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 199: // STATE 12 - c2res.pml:296 - [readyQueue[i].tailIndex = 0] (0:0:1 - 3)
+	case 199: // STATE 12 - c2res.pml:299 - [readyQueue[i].tailIndex = 0] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][12] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)((P4 *)_this)->i), 4) ].tailIndex);
@@ -5133,7 +5133,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 200: // STATE 14 - c2res.pml:630 - [i = (i+1)] (0:0:1 - 1)
+	case 200: // STATE 14 - c2res.pml:668 - [i = (i+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][14] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->i);
@@ -5143,7 +5143,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 201: // STATE 20 - c2res.pml:635 - [tcb[2].prio = 2] (0:0:1 - 3)
+	case 201: // STATE 20 - c2res.pml:673 - [tcb[2].prio = 2] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][20] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[2].prio);
@@ -5153,7 +5153,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 202: // STATE 21 - c2res.pml:635 - [tcb[2].state = 1] (0:0:1 - 1)
+	case 202: // STATE 21 - c2res.pml:673 - [tcb[2].state = 1] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][21] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[2].state);
@@ -5163,13 +5163,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 203: // STATE 22 - c2res.pml:302 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
+	case 203: // STATE 22 - c2res.pml:305 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][22] = 1;
 		if (!((((int)now.readyQueue[2].tailIndex)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 204: // STATE 23 - c2res.pml:303 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = 2] (0:0:1 - 1)
+	case 204: // STATE 23 - c2res.pml:306 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = 2] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][23] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tasks[ Index(((int)now.readyQueue[2].tailIndex), 5) ]);
@@ -5179,7 +5179,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 205: // STATE 24 - c2res.pml:304 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
+	case 205: // STATE 24 - c2res.pml:307 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][24] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tailIndex);
@@ -5189,12 +5189,12 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 206: // STATE 26 - c2res.pml:305 - [assert(0)] (0:0:0 - 1)
+	case 206: // STATE 26 - c2res.pml:308 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][26] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 207: // STATE 30 - c2res.pml:636 - [tcb[(2+1)].prio = 2] (0:0:1 - 3)
+	case 207: // STATE 30 - c2res.pml:674 - [tcb[(2+1)].prio = 2] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][30] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index((2+1), 4) ].prio);
@@ -5204,7 +5204,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 208: // STATE 31 - c2res.pml:636 - [tcb[(2+1)].state = 1] (0:0:1 - 1)
+	case 208: // STATE 31 - c2res.pml:674 - [tcb[(2+1)].state = 1] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][31] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index((2+1), 4) ].state);
@@ -5214,13 +5214,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 209: // STATE 32 - c2res.pml:302 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
+	case 209: // STATE 32 - c2res.pml:305 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][32] = 1;
 		if (!((((int)now.readyQueue[2].tailIndex)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 210: // STATE 33 - c2res.pml:303 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = (2+1)] (0:0:1 - 1)
+	case 210: // STATE 33 - c2res.pml:306 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = (2+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][33] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tasks[ Index(((int)now.readyQueue[2].tailIndex), 5) ]);
@@ -5230,7 +5230,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 211: // STATE 34 - c2res.pml:304 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
+	case 211: // STATE 34 - c2res.pml:307 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][34] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tailIndex);
@@ -5240,12 +5240,12 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 212: // STATE 36 - c2res.pml:305 - [assert(0)] (0:0:0 - 1)
+	case 212: // STATE 36 - c2res.pml:308 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][36] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 213: // STATE 40 - c2res.pml:640 - [EP = 2] (0:0:1 - 3)
+	case 213: // STATE 40 - c2res.pml:678 - [EP = 2] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][40] = 1;
 		(trpt+1)->bup.oval = ((int)now.EP);
@@ -5255,7 +5255,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 214: // STATE 41 - c2res.pml:641 - [topPrio = 2] (0:0:1 - 1)
+	case 214: // STATE 41 - c2res.pml:679 - [topPrio = 2] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][41] = 1;
 		(trpt+1)->bup.oval = ((int)now.topPrio);
@@ -5265,7 +5265,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 215: // STATE 42 - c2res.pml:312 - [idx = 0] (0:0:1 - 1)
+	case 215: // STATE 42 - c2res.pml:315 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][42] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_20_idx);
@@ -5275,13 +5275,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 216: // STATE 43 - c2res.pml:313 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (0:0:0 - 1)
+	case 216: // STATE 43 - c2res.pml:316 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][43] = 1;
 		if (!((((int)((P4 *)_this)->_8_20_idx)<(((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 217: // STATE 44 - c2res.pml:314 - [readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]] (0:0:1 - 1)
+	case 217: // STATE 44 - c2res.pml:317 - [readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][44] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index(((int)((P4 *)_this)->_8_20_idx), 5) ]);
@@ -5291,7 +5291,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 218: // STATE 45 - c2res.pml:315 - [idx = (idx+1)] (0:0:1 - 1)
+	case 218: // STATE 45 - c2res.pml:318 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][45] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_20_idx);
@@ -5301,13 +5301,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 219: // STATE 51 - c2res.pml:319 - [((readyQueue[topPrio].tailIndex>0))] (0:0:0 - 1)
+	case 219: // STATE 51 - c2res.pml:322 - [((readyQueue[topPrio].tailIndex>0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][51] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 220: // STATE 52 - c2res.pml:320 - [readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255] (0:0:1 - 1)
+	case 220: // STATE 52 - c2res.pml:323 - [readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][52] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1), 5) ]);
@@ -5317,7 +5317,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 221: // STATE 53 - c2res.pml:321 - [readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)] (0:0:1 - 1)
+	case 221: // STATE 53 - c2res.pml:324 - [readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][53] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex);
@@ -5327,7 +5327,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 222: // STATE 59 - c2res.pml:643 - [tcb[EP].state = 4] (0:0:1 - 3)
+	case 222: // STATE 59 - c2res.pml:681 - [tcb[EP].state = 4] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][59] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)now.EP), 4) ].state);
@@ -5337,38 +5337,38 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 223: // STATE 60 - c2res.pml:646 - [(run PendSV_Handler())] (0:0:0 - 1)
+	case 223: // STATE 60 - c2res.pml:684 - [(run PendSV_Handler())] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][60] = 1;
 		if (!(addproc(II, 1, 0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 224: // STATE 61 - c2res.pml:646 - [(run SysTick_Handler())] (0:0:0 - 1)
+	case 224: // STATE 61 - c2res.pml:684 - [(run SysTick_Handler())] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][61] = 1;
 		if (!(addproc(II, 1, 1)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 225: // STATE 63 - c2res.pml:647 - [(run Process2())] (0:0:0 - 1)
+	case 225: // STATE 63 - c2res.pml:685 - [(run Process2())] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][63] = 1;
 		if (!(addproc(II, 1, 3)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 226: // STATE 64 - c2res.pml:648 - [(run Process1())] (0:0:0 - 1)
+	case 226: // STATE 64 - c2res.pml:686 - [(run Process1())] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][64] = 1;
 		if (!(addproc(II, 1, 2)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 227: // STATE 65 - c2res.pml:649 - [-end-] (0:0:0 - 1)
+	case 227: // STATE 65 - c2res.pml:687 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][65] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC Process2 */
-	case 228: // STATE 1 - c2res.pml:399 - [(((2+1)==EP))] (8:0:0 - 1)
+	case 228: // STATE 1 - c2res.pml:437 - [(((2+1)==EP))] (8:0:0 - 1)
 		IfNotBlocked
 		reached[3][1] = 1;
 		if (!(((2+1)==((int)now.EP))))
@@ -5393,13 +5393,13 @@
 		reached[3][9] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 230: // STATE 10 - c2res.pml:399 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 230: // STATE 10 - c2res.pml:437 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[3][10] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 231: // STATE 11 - c2res.pml:399 - [((EP>=2))] (19:0:1 - 1)
+	case 231: // STATE 11 - c2res.pml:437 - [((EP>=2))] (19:0:1 - 1)
 		IfNotBlocked
 		reached[3][11] = 1;
 		if (!((((int)now.EP)>=2)))
@@ -5416,11 +5416,11 @@
 		reached[3][16] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 232: // STATE 17 - c2res.pml:83 - [assert((EP_Stack==255))] (0:170:2 - 1)
+	case 232: // STATE 17 - c2res.pml:83 - [assert((EP_Stack==255))] (0:77:2 - 1)
 		IfNotBlocked
 		reached[3][17] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(170, 18, 170) */
+		/* merge: EP_Stack = EP(77, 18, 77) */
 		reached[3][18] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
@@ -5429,7 +5429,7 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(170, 20, 170) */
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(77, 20, 77) */
 		reached[3][20] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -5437,40 +5437,31 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(170, 24, 170) */
+		/* merge: .(goto)(77, 24, 77) */
 		reached[3][24] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 4 */
-	case 233: // STATE 24 - c2res.pml:399 - [.(goto)] (0:170:0 - 2)
+		_m = 3; goto P999; /* 3 */
+	case 233: // STATE 24 - c2res.pml:437 - [.(goto)] (0:77:0 - 2)
 		IfNotBlocked
 		reached[3][24] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 1 */
-	case 234: // STATE 22 - c2res.pml:399 - [(1)] (170:0:0 - 1)
+		_m = 3; goto P999; /* 0 */
+	case 234: // STATE 22 - c2res.pml:437 - [(1)] (77:0:0 - 1)
 		IfNotBlocked
 		reached[3][22] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(170, 24, 170) */
+		/* merge: .(goto)(77, 24, 77) */
 		reached[3][24] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 2 */
-	case 235: // STATE 26 - c2res.pml:401 - [(((2+1)==EP))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 1 */
+	case 235: // STATE 26 - c2res.pml:439 - [(((2+1)==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[3][26] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 236: // STATE 27 - c2res.pml:258 - [intSave = 0] (0:0:1 - 1)
+	case 236: // STATE 27 - c2res.pml:259 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[3][27] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_14_24_intSave);
@@ -5480,7 +5471,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 237: // STATE 28 - c2res.pml:220 - [intSave = 0] (0:40:2 - 1)
+	case 237: // STATE 28 - c2res.pml:220 - [intSave = 0] (0:42:2 - 1)
 		IfNotBlocked
 		reached[3][28] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
@@ -5490,10 +5481,10 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_14_24_intSave));
 #endif
 		;
-		/* merge: assert((tcb[2].state==1))(40, 30, 40) */
+		/* merge: assert((tcb[2].state==1))(42, 30, 42) */
 		reached[3][30] = 1;
 		spin_assert((((int)now.tcb[2].state)==1), "(tcb[2].state==1)", II, tt, t);
-		/* merge: needSched = 0(40, 31, 40) */
+		/* merge: needSched = 0(42, 31, 42) */
 		reached[3][31] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_14_24_needSched);
 		((P3 *)_this)->_7_14_24_needSched = 0;
@@ -5502,11 +5493,11 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 238: // STATE 32 - c2res.pml:250 - [assert((tcb[2].state==1))] (0:39:2 - 1)
+	case 238: // STATE 32 - c2res.pml:250 - [assert((tcb[2].state==1))] (0:41:2 - 1)
 		IfNotBlocked
 		reached[3][32] = 1;
 		spin_assert((((int)now.tcb[2].state)==1), "(tcb[2].state==1)", II, tt, t);
-		/* merge: needSched = 1(39, 33, 39) */
+		/* merge: needSched = 1(41, 33, 41) */
 		reached[3][33] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_14_24_needSched);
@@ -5515,7 +5506,7 @@
 		logval("Process2:needSched", ((int)((P3 *)_this)->_7_14_24_needSched));
 #endif
 		;
-		/* merge: tcb[2].state = 3(39, 34, 39) */
+		/* merge: tcb[2].state = 3(41, 34, 41) */
 		reached[3][34] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.tcb[2].state);
 		now.tcb[2].state = 3;
@@ -5524,9 +5515,15 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 239: // STATE 35 - c2res.pml:271 - [g_taskSortLink[g_taskSortLinkTail].taskId = 2] (0:50:4 - 1)
+	case 239: // STATE 35 - c2res.pml:272 - [assert((g_taskSortLinkTail<(2+1)))] (0:52:4 - 1)
 		IfNotBlocked
 		reached[3][35] = 1;
+		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
+		/* merge: assert((g_taskSortLinkTail>=0))(52, 36, 52) */
+		reached[3][36] = 1;
+		spin_assert((((int)now.g_taskSortLinkTail)>=0), "(g_taskSortLinkTail>=0)", II, tt, t);
+		/* merge: g_taskSortLink[g_taskSortLinkTail].taskId = 2(52, 37, 52) */
+		reached[3][37] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)now.g_taskSortLinkTail), 3) ].taskId);
 		now.g_taskSortLink[ Index(now.g_taskSortLinkTail, 3) ].taskId = 2;
@@ -5534,34 +5531,34 @@
 		logval("g_taskSortLink[g_taskSortLinkTail].taskId", ((int)now.g_taskSortLink[ Index(((int)now.g_taskSortLinkTail), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[g_taskSortLinkTail].responseTime = 255(50, 36, 50) */
-		reached[3][36] = 1;
+		/* merge: g_taskSortLink[g_taskSortLinkTail].responseTime = 255(52, 38, 52) */
+		reached[3][38] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)now.g_taskSortLinkTail), 3) ].responseTime);
 		now.g_taskSortLink[ Index(now.g_taskSortLinkTail, 3) ].responseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[g_taskSortLinkTail].responseTime", ((int)now.g_taskSortLink[ Index(((int)now.g_taskSortLinkTail), 3) ].responseTime));
 #endif
 		;
-		/* merge: tcb[2].pendList = g_taskSortLinkTail(50, 37, 50) */
-		reached[3][37] = 1;
+		/* merge: tcb[2].pendList = g_taskSortLinkTail(52, 39, 52) */
+		reached[3][39] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[2].pendList);
 		now.tcb[2].pendList = ((int)now.g_taskSortLinkTail);
 #ifdef VAR_RANGES
 		logval("tcb[2].pendList", ((int)now.tcb[2].pendList));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(50, 38, 50) */
-		reached[3][38] = 1;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(52, 40, 52) */
+		reached[3][40] = 1;
 		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
 		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
 #ifdef VAR_RANGES
 		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
 #endif
 		;
-		_m = 3; goto P999; /* 3 */
-	case 240: // STATE 41 - c2res.pml:263 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+		_m = 3; goto P999; /* 5 */
+	case 240: // STATE 43 - c2res.pml:264 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][41] = 1;
+		reached[3][43] = 1;
 		if (!((((int)((P3 *)_this)->_7_14_24_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -5571,9 +5568,9 @@
 #endif
 			((P3 *)_this)->_7_14_24_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 241: // STATE 42 - c2res.pml:224 - [intSave = 0] (0:0:1 - 1)
+	case 241: // STATE 44 - c2res.pml:224 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][42] = 1;
+		reached[3][44] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_14_24_intSave);
 		((P3 *)_this)->_7_14_24_intSave = 0;
 #ifdef VAR_RANGES
@@ -5581,67 +5578,67 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 242: // STATE 44 - c2res.pml:68 - [assert(((0<2)&&(0<8)))] (0:58:1 - 1)
+	case 242: // STATE 46 - c2res.pml:68 - [assert(((0<2)&&(0<8)))] (0:60:1 - 1)
 		IfNotBlocked
-		reached[3][44] = 1;
+		reached[3][46] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(58, 45, 58) */
-		reached[3][45] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(60, 47, 60) */
+		reached[3][47] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 51, 58) */
-		reached[3][51] = 1;
+		/* merge: .(goto)(0, 53, 60) */
+		reached[3][53] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 243: // STATE 54 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:73:1 - 1)
+	case 243: // STATE 56 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:75:1 - 1)
 		IfNotBlocked
-		reached[3][54] = 1;
+		reached[3][56] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(73, 55, 73) */
-		reached[3][55] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(75, 57, 75) */
+		reached[3][57] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 59, 73) */
-		reached[3][59] = 1;
+		/* merge: .(goto)(0, 61, 75) */
+		reached[3][61] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 244: // STATE 60 - c2res.pml:401 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 244: // STATE 62 - c2res.pml:439 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][60] = 1;
+		reached[3][62] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 245: // STATE 61 - c2res.pml:401 - [((EP>=2))] (69:0:1 - 1)
+	case 245: // STATE 63 - c2res.pml:439 - [((EP>=2))] (71:0:1 - 1)
 		IfNotBlocked
-		reached[3][61] = 1;
+		reached[3][63] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 62, 69) */
-		reached[3][62] = 1;
+		/* merge: chain_tick_used = 0(0, 64, 71) */
+		reached[3][64] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 66, 69) */
-		reached[3][66] = 1;
+		/* merge: .(goto)(0, 68, 71) */
+		reached[3][68] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 246: // STATE 67 - c2res.pml:83 - [assert((EP_Stack==255))] (0:170:2 - 1)
+	case 246: // STATE 69 - c2res.pml:83 - [assert((EP_Stack==255))] (0:146:2 - 1)
 		IfNotBlocked
-		reached[3][67] = 1;
+		reached[3][69] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(170, 68, 170) */
-		reached[3][68] = 1;
+		/* merge: EP_Stack = EP(146, 70, 146) */
+		reached[3][70] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -5649,50 +5646,41 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(170, 70, 170) */
-		reached[3][70] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(146, 72, 146) */
+		reached[3][72] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(170, 74, 170) */
-		reached[3][74] = 1;
+		/* merge: .(goto)(146, 76, 146) */
+		reached[3][76] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 4 */
-	case 247: // STATE 74 - c2res.pml:401 - [.(goto)] (0:170:0 - 2)
-		IfNotBlocked
-		reached[3][74] = 1;
-		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 1 */
-	case 248: // STATE 72 - c2res.pml:401 - [(1)] (170:0:0 - 1)
-		IfNotBlocked
-		reached[3][72] = 1;
-		if (!(1))
-			continue;
-		/* merge: .(goto)(170, 74, 170) */
-		reached[3][74] = 1;
-		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 2 */
-	case 249: // STATE 76 - c2res.pml:403 - [(((2+1)==EP))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 3 */
+	case 247: // STATE 76 - c2res.pml:439 - [.(goto)] (0:146:0 - 2)
 		IfNotBlocked
 		reached[3][76] = 1;
+		;
+		_m = 3; goto P999; /* 0 */
+	case 248: // STATE 74 - c2res.pml:439 - [(1)] (146:0:0 - 1)
+		IfNotBlocked
+		reached[3][74] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(146, 76, 146) */
+		reached[3][76] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 249: // STATE 78 - c2res.pml:441 - [(((2+1)==EP))] (0:0:0 - 1)
+		IfNotBlocked
+		reached[3][78] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 250: // STATE 77 - c2res.pml:230 - [intSave = 0] (0:81:3 - 1)
+	case 250: // STATE 79 - c2res.pml:230 - [intSave = 0] (0:83:3 - 1)
 		IfNotBlocked
-		reached[3][77] = 1;
+		reached[3][79] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_15_27_intSave);
 		((P3 *)_this)->_7_15_27_intSave = 0;
@@ -5700,16 +5688,16 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_15_27_intSave));
 #endif
 		;
-		/* merge: tempStatus = 0(81, 78, 81) */
-		reached[3][78] = 1;
+		/* merge: tempStatus = 0(83, 80, 83) */
+		reached[3][80] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_15_27_tempStatus);
 		((P3 *)_this)->_7_15_27_tempStatus = 0;
 #ifdef VAR_RANGES
 		logval("Process2:tempStatus", ((int)((P3 *)_this)->_7_15_27_tempStatus));
 #endif
 		;
-		/* merge: needSched = 0(81, 79, 81) */
-		reached[3][79] = 1;
+		/* merge: needSched = 0(83, 81, 83) */
+		reached[3][81] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_15_27_needSched);
 		((P3 *)_this)->_7_15_27_needSched = 0;
 #ifdef VAR_RANGES
@@ -5717,9 +5705,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 251: // STATE 80 - c2res.pml:220 - [intSave = 0] (0:109:2 - 1)
+	case 251: // STATE 82 - c2res.pml:220 - [intSave = 0] (0:111:2 - 1)
 		IfNotBlocked
-		reached[3][80] = 1;
+		reached[3][82] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_15_27_intSave);
 		((P3 *)_this)->_7_15_27_intSave = 0;
@@ -5727,24 +5715,24 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_15_27_intSave));
 #endif
 		;
-		/* merge: tempStatus = tcb[2].state(109, 82, 109) */
-		reached[3][82] = 1;
+		/* merge: tempStatus = tcb[2].state(111, 84, 111) */
+		reached[3][84] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_15_27_tempStatus);
 		((P3 *)_this)->_7_15_27_tempStatus = ((int)now.tcb[2].state);
 #ifdef VAR_RANGES
 		logval("Process2:tempStatus", ((int)((P3 *)_this)->_7_15_27_tempStatus));
 #endif
 		;
-		/* merge: assert((tempStatus==3))(109, 83, 109) */
-		reached[3][83] = 1;
+		/* merge: assert((tempStatus==3))(111, 85, 111) */
+		reached[3][85] = 1;
 		spin_assert((((int)((P3 *)_this)->_7_15_27_tempStatus)==3), "(tempStatus==3)", II, tt, t);
 		_m = 3; goto P999; /* 2 */
-	case 252: // STATE 84 - c2res.pml:191 - [assert((tcb[2].state==3))] (0:100:2 - 1)
+	case 252: // STATE 86 - c2res.pml:191 - [assert((tcb[2].state==3))] (0:102:2 - 1)
 		IfNotBlocked
-		reached[3][84] = 1;
+		reached[3][86] = 1;
 		spin_assert((((int)now.tcb[2].state)==3), "(tcb[2].state==3)", II, tt, t);
-		/* merge: needSched = 1(100, 85, 100) */
-		reached[3][85] = 1;
+		/* merge: needSched = 1(102, 87, 102) */
+		reached[3][87] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_15_27_needSched);
 		((P3 *)_this)->_7_15_27_needSched = 1;
@@ -5752,8 +5740,8 @@
 		logval("Process2:needSched", ((int)((P3 *)_this)->_7_15_27_needSched));
 #endif
 		;
-		/* merge: tcb[2].state = 1(100, 86, 100) */
-		reached[3][86] = 1;
+		/* merge: tcb[2].state = 1(102, 88, 102) */
+		reached[3][88] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.tcb[2].state);
 		now.tcb[2].state = 1;
 #ifdef VAR_RANGES
@@ -5761,9 +5749,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 253: // STATE 87 - c2res.pml:207 - [idx = tcb[2].pendList] (0:0:1 - 1)
+	case 253: // STATE 89 - c2res.pml:207 - [idx = tcb[2].pendList] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][87] = 1;
+		reached[3][89] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_15_27_12_5_idx);
 		((P3 *)_this)->_7_15_27_12_5_idx = ((int)now.tcb[2].pendList);
 #ifdef VAR_RANGES
@@ -5771,13 +5759,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 254: // STATE 88 - c2res.pml:208 - [((idx<(g_taskSortLinkTail-1)))] (94:0:3 - 1)
+	case 254: // STATE 90 - c2res.pml:208 - [((idx<(g_taskSortLinkTail-1)))] (96:0:3 - 1)
 		IfNotBlocked
-		reached[3][88] = 1;
+		reached[3][90] = 1;
 		if (!((((int)((P3 *)_this)->_7_15_27_12_5_idx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: g_taskSortLink[idx].taskId = g_taskSortLink[(idx+1)].taskId(94, 89, 94) */
-		reached[3][89] = 1;
+		/* merge: g_taskSortLink[idx].taskId = g_taskSortLink[(idx+1)].taskId(96, 91, 96) */
+		reached[3][91] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_15_27_12_5_idx), 3) ].taskId);
 		now.g_taskSortLink[ Index(((P3 *)_this)->_7_15_27_12_5_idx, 3) ].taskId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_15_27_12_5_idx)+1), 3) ].taskId);
@@ -5785,29 +5773,29 @@
 		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_15_27_12_5_idx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].responseTime = g_taskSortLink[(idx+1)].responseTime(94, 90, 94) */
-		reached[3][90] = 1;
+		/* merge: g_taskSortLink[idx].responseTime = g_taskSortLink[(idx+1)].responseTime(96, 92, 96) */
+		reached[3][92] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_15_27_12_5_idx), 3) ].responseTime);
 		now.g_taskSortLink[ Index(((P3 *)_this)->_7_15_27_12_5_idx, 3) ].responseTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_15_27_12_5_idx)+1), 3) ].responseTime);
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_15_27_12_5_idx), 3) ].responseTime));
 #endif
 		;
-		/* merge: idx = (idx+1)(94, 91, 94) */
-		reached[3][91] = 1;
+		/* merge: idx = (idx+1)(96, 93, 96) */
+		reached[3][93] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_15_27_12_5_idx);
 		((P3 *)_this)->_7_15_27_12_5_idx = (((int)((P3 *)_this)->_7_15_27_12_5_idx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_15_27_12_5_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 95, 94) */
-		reached[3][95] = 1;
+		/* merge: .(goto)(0, 97, 96) */
+		reached[3][97] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 255: // STATE 97 - c2res.pml:214 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:108:3 - 3)
+	case 255: // STATE 99 - c2res.pml:214 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:110:3 - 3)
 		IfNotBlocked
-		reached[3][97] = 1;
+		reached[3][99] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].taskId = 255;
@@ -5815,16 +5803,16 @@
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].taskId", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(108, 98, 108) */
-		reached[3][98] = 1;
+		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(110, 100, 110) */
+		reached[3][100] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].responseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].responseTime", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(108, 99, 108) */
-		reached[3][99] = 1;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(110, 101, 110) */
+		reached[3][101] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLinkTail);
 		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)-1);
 #ifdef VAR_RANGES
@@ -5832,13 +5820,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 256: // STATE 101 - c2res.pml:302 - [((readyQueue[tcb[2].prio].tailIndex<5))] (119:0:2 - 1)
+	case 256: // STATE 103 - c2res.pml:305 - [((readyQueue[tcb[2].prio].tailIndex<5))] (121:0:2 - 1)
 		IfNotBlocked
-		reached[3][101] = 1;
+		reached[3][103] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex)<5)))
 			continue;
-		/* merge: readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2(119, 102, 119) */
-		reached[3][102] = 1;
+		/* merge: readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2(121, 104, 121) */
+		reached[3][104] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex), 5) ]);
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex, 5) ] = 2;
@@ -5846,26 +5834,26 @@
 		logval("readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex]", ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)(119, 103, 119) */
-		reached[3][103] = 1;
+		/* merge: readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)(121, 105, 121) */
+		reached[3][105] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex);
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex)+1);
 #ifdef VAR_RANGES
 		logval("readyQueue[tcb[2].prio].tailIndex", ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(0, 107, 119) */
-		reached[3][107] = 1;
+		/* merge: .(goto)(0, 109, 121) */
+		reached[3][109] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 257: // STATE 105 - c2res.pml:305 - [assert(0)] (0:0:0 - 1)
+	case 257: // STATE 107 - c2res.pml:308 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][105] = 1;
+		reached[3][107] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 258: // STATE 110 - c2res.pml:241 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 258: // STATE 112 - c2res.pml:241 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][110] = 1;
+		reached[3][112] = 1;
 		if (!((((int)((P3 *)_this)->_7_15_27_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -5875,9 +5863,9 @@
 #endif
 			((P3 *)_this)->_7_15_27_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 259: // STATE 111 - c2res.pml:224 - [intSave = 0] (0:0:1 - 1)
+	case 259: // STATE 113 - c2res.pml:224 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][111] = 1;
+		reached[3][113] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_15_27_intSave);
 		((P3 *)_this)->_7_15_27_intSave = 0;
 #ifdef VAR_RANGES
@@ -5885,67 +5873,67 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 260: // STATE 113 - c2res.pml:68 - [assert(((0<2)&&(0<8)))] (0:127:1 - 1)
+	case 260: // STATE 115 - c2res.pml:68 - [assert(((0<2)&&(0<8)))] (0:129:1 - 1)
 		IfNotBlocked
-		reached[3][113] = 1;
+		reached[3][115] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(127, 114, 127) */
-		reached[3][114] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(129, 116, 129) */
+		reached[3][116] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 120, 127) */
-		reached[3][120] = 1;
+		/* merge: .(goto)(0, 122, 129) */
+		reached[3][122] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 261: // STATE 123 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:142:1 - 1)
+	case 261: // STATE 125 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:144:1 - 1)
 		IfNotBlocked
-		reached[3][123] = 1;
+		reached[3][125] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(142, 124, 142) */
-		reached[3][124] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(144, 126, 144) */
+		reached[3][126] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 128, 142) */
-		reached[3][128] = 1;
+		/* merge: .(goto)(0, 130, 144) */
+		reached[3][130] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 262: // STATE 129 - c2res.pml:403 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 262: // STATE 131 - c2res.pml:441 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][129] = 1;
+		reached[3][131] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 263: // STATE 130 - c2res.pml:403 - [((EP>=2))] (138:0:1 - 1)
+	case 263: // STATE 132 - c2res.pml:441 - [((EP>=2))] (140:0:1 - 1)
 		IfNotBlocked
-		reached[3][130] = 1;
+		reached[3][132] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 131, 138) */
-		reached[3][131] = 1;
+		/* merge: chain_tick_used = 0(0, 133, 140) */
+		reached[3][133] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 135, 138) */
-		reached[3][135] = 1;
+		/* merge: .(goto)(0, 137, 140) */
+		reached[3][137] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 264: // STATE 136 - c2res.pml:83 - [assert((EP_Stack==255))] (0:170:2 - 1)
+	case 264: // STATE 138 - c2res.pml:83 - [assert((EP_Stack==255))] (0:171:2 - 1)
 		IfNotBlocked
-		reached[3][136] = 1;
+		reached[3][138] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(170, 137, 170) */
-		reached[3][137] = 1;
+		/* merge: EP_Stack = EP(171, 139, 171) */
+		reached[3][139] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -5953,95 +5941,86 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(170, 139, 170) */
-		reached[3][139] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(171, 141, 171) */
+		reached[3][141] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(170, 143, 170) */
-		reached[3][143] = 1;
+		/* merge: .(goto)(171, 145, 171) */
+		reached[3][145] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 4 */
-	case 265: // STATE 143 - c2res.pml:403 - [.(goto)] (0:170:0 - 2)
-		IfNotBlocked
-		reached[3][143] = 1;
-		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 1 */
-	case 266: // STATE 141 - c2res.pml:403 - [(1)] (170:0:0 - 1)
-		IfNotBlocked
-		reached[3][141] = 1;
-		if (!(1))
-			continue;
-		/* merge: .(goto)(170, 143, 170) */
-		reached[3][143] = 1;
-		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
-		;
-		_m = 3; goto P999; /* 2 */
-	case 267: // STATE 145 - c2res.pml:404 - [(((2+1)==EP))] (152:0:0 - 1)
+		_m = 3; goto P999; /* 3 */
+	case 265: // STATE 145 - c2res.pml:441 - [.(goto)] (0:171:0 - 2)
 		IfNotBlocked
 		reached[3][145] = 1;
+		;
+		_m = 3; goto P999; /* 0 */
+	case 266: // STATE 143 - c2res.pml:441 - [(1)] (171:0:0 - 1)
+		IfNotBlocked
+		reached[3][143] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(171, 145, 171) */
+		reached[3][145] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 267: // STATE 147 - c2res.pml:442 - [(((2+1)==EP))] (154:0:0 - 1)
+		IfNotBlocked
+		reached[3][147] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
-		/* merge: assert((EP==(2+1)))(0, 146, 152) */
-		reached[3][146] = 1;
+		/* merge: assert((EP==(2+1)))(0, 148, 154) */
+		reached[3][148] = 1;
 		spin_assert((((int)now.EP)==(2+1)), "(EP==(2+1))", II, tt, t);
 		_m = 3; goto P999; /* 1 */
-	case 268: // STATE 148 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:167:1 - 1)
+	case 268: // STATE 150 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:169:1 - 1)
 		IfNotBlocked
-		reached[3][148] = 1;
+		reached[3][150] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(167, 149, 167) */
-		reached[3][149] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(169, 151, 169) */
+		reached[3][151] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 153, 167) */
-		reached[3][153] = 1;
+		/* merge: .(goto)(0, 155, 169) */
+		reached[3][155] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 269: // STATE 154 - c2res.pml:404 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 269: // STATE 156 - c2res.pml:442 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][154] = 1;
+		reached[3][156] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 270: // STATE 155 - c2res.pml:404 - [((EP>=2))] (163:0:1 - 1)
+	case 270: // STATE 157 - c2res.pml:442 - [((EP>=2))] (165:0:1 - 1)
 		IfNotBlocked
-		reached[3][155] = 1;
+		reached[3][157] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 156, 163) */
-		reached[3][156] = 1;
+		/* merge: chain_tick_used = 0(0, 158, 165) */
+		reached[3][158] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 160, 163) */
-		reached[3][160] = 1;
+		/* merge: .(goto)(0, 162, 165) */
+		reached[3][162] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 271: // STATE 161 - c2res.pml:83 - [assert((EP_Stack==255))] (0:170:2 - 1)
+	case 271: // STATE 163 - c2res.pml:83 - [assert((EP_Stack==255))] (0:172:2 - 1)
 		IfNotBlocked
-		reached[3][161] = 1;
+		reached[3][163] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(170, 162, 170) */
-		reached[3][162] = 1;
+		/* merge: EP_Stack = EP(172, 164, 172) */
+		reached[3][164] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -6049,49 +6028,49 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(170, 164, 170) */
-		reached[3][164] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(172, 166, 172) */
+		reached[3][166] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(170, 168, 170) */
-		reached[3][168] = 1;
+		/* merge: .(goto)(172, 170, 172) */
+		reached[3][170] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
+		/* merge: .(goto)(0, 173, 172) */
+		reached[3][173] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 272: // STATE 168 - c2res.pml:404 - [.(goto)] (0:170:0 - 2)
+	case 272: // STATE 170 - c2res.pml:442 - [.(goto)] (0:172:0 - 2)
 		IfNotBlocked
-		reached[3][168] = 1;
+		reached[3][170] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
+		/* merge: .(goto)(0, 173, 172) */
+		reached[3][173] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 273: // STATE 166 - c2res.pml:404 - [(1)] (170:0:0 - 1)
+	case 273: // STATE 168 - c2res.pml:442 - [(1)] (172:0:0 - 1)
 		IfNotBlocked
-		reached[3][166] = 1;
+		reached[3][168] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(170, 168, 170) */
-		reached[3][168] = 1;
+		/* merge: .(goto)(172, 170, 172) */
+		reached[3][170] = 1;
 		;
-		/* merge: .(goto)(0, 171, 170) */
-		reached[3][171] = 1;
+		/* merge: .(goto)(0, 173, 172) */
+		reached[3][173] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 274: // STATE 173 - c2res.pml:406 - [-end-] (0:0:0 - 1)
+	case 274: // STATE 175 - c2res.pml:444 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][173] = 1;
+		reached[3][175] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC Process1 */
-	case 275: // STATE 1 - c2res.pml:391 - [((2==EP))] (8:0:0 - 1)
+	case 275: // STATE 1 - c2res.pml:429 - [((2==EP))] (8:0:0 - 1)
 		IfNotBlocked
 		reached[2][1] = 1;
 		if (!((2==((int)now.EP))))
@@ -6116,13 +6095,13 @@
 		reached[2][9] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 277: // STATE 10 - c2res.pml:391 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 277: // STATE 10 - c2res.pml:429 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][10] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 278: // STATE 11 - c2res.pml:391 - [((EP>=2))] (19:0:1 - 1)
+	case 278: // STATE 11 - c2res.pml:429 - [((EP>=2))] (19:0:1 - 1)
 		IfNotBlocked
 		reached[2][11] = 1;
 		if (!((((int)now.EP)>=2)))
@@ -6139,11 +6118,11 @@
 		reached[2][16] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 279: // STATE 17 - c2res.pml:83 - [assert((EP_Stack==255))] (0:51:2 - 1)
+	case 279: // STATE 17 - c2res.pml:83 - [assert((EP_Stack==255))] (0:50:2 - 1)
 		IfNotBlocked
 		reached[2][17] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(51, 18, 51) */
+		/* merge: EP_Stack = EP(50, 18, 50) */
 		reached[2][18] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
@@ -6152,7 +6131,7 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(51, 20, 51) */
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(50, 20, 50) */
 		reached[2][20] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -6160,34 +6139,25 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(51, 24, 51) */
+		/* merge: .(goto)(50, 24, 50) */
 		reached[2][24] = 1;
 		;
-		/* merge: .(goto)(0, 52, 51) */
-		reached[2][52] = 1;
-		;
-		_m = 3; goto P999; /* 4 */
-	case 280: // STATE 24 - c2res.pml:391 - [.(goto)] (0:51:0 - 2)
+		_m = 3; goto P999; /* 3 */
+	case 280: // STATE 24 - c2res.pml:429 - [.(goto)] (0:50:0 - 2)
 		IfNotBlocked
 		reached[2][24] = 1;
 		;
-		/* merge: .(goto)(0, 52, 51) */
-		reached[2][52] = 1;
-		;
-		_m = 3; goto P999; /* 1 */
-	case 281: // STATE 22 - c2res.pml:391 - [(1)] (51:0:0 - 1)
+		_m = 3; goto P999; /* 0 */
+	case 281: // STATE 22 - c2res.pml:429 - [(1)] (50:0:0 - 1)
 		IfNotBlocked
 		reached[2][22] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(51, 24, 51) */
+		/* merge: .(goto)(50, 24, 50) */
 		reached[2][24] = 1;
 		;
-		/* merge: .(goto)(0, 52, 51) */
-		reached[2][52] = 1;
-		;
-		_m = 3; goto P999; /* 2 */
-	case 282: // STATE 26 - c2res.pml:392 - [((2==EP))] (33:0:0 - 1)
+		_m = 3; goto P999; /* 1 */
+	case 282: // STATE 26 - c2res.pml:430 - [((2==EP))] (33:0:0 - 1)
 		IfNotBlocked
 		reached[2][26] = 1;
 		if (!((2==((int)now.EP))))
@@ -6212,13 +6182,13 @@
 		reached[2][34] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 284: // STATE 35 - c2res.pml:392 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 284: // STATE 35 - c2res.pml:430 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][35] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 285: // STATE 36 - c2res.pml:392 - [((EP>=2))] (44:0:1 - 1)
+	case 285: // STATE 36 - c2res.pml:430 - [((EP>=2))] (44:0:1 - 1)
 		IfNotBlocked
 		reached[2][36] = 1;
 		if (!((((int)now.EP)>=2)))
@@ -6263,7 +6233,7 @@
 		reached[2][52] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 287: // STATE 49 - c2res.pml:392 - [.(goto)] (0:51:0 - 2)
+	case 287: // STATE 49 - c2res.pml:430 - [.(goto)] (0:51:0 - 2)
 		IfNotBlocked
 		reached[2][49] = 1;
 		;
@@ -6271,7 +6241,7 @@
 		reached[2][52] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 288: // STATE 47 - c2res.pml:392 - [(1)] (51:0:0 - 1)
+	case 288: // STATE 47 - c2res.pml:430 - [(1)] (51:0:0 - 1)
 		IfNotBlocked
 		reached[2][47] = 1;
 		if (!(1))
@@ -6283,14 +6253,14 @@
 		reached[2][52] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 289: // STATE 54 - c2res.pml:394 - [-end-] (0:0:0 - 1)
+	case 289: // STATE 54 - c2res.pml:432 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][54] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC SysTick_Handler */
-	case 290: // STATE 1 - c2res.pml:373 - [((EP==1))] (0:0:0 - 1)
+	case 290: // STATE 1 - c2res.pml:411 - [((EP==1))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][1] = 1;
 		if (!((((int)now.EP)==1)))
@@ -6315,7 +6285,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 293: // STATE 8 - c2res.pml:378 - [((1==EP))] (0:0:0 - 1)
+	case 293: // STATE 8 - c2res.pml:416 - [((1==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][8] = 1;
 		if (!((1==((int)now.EP))))
@@ -6334,7 +6304,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 295: // STATE 12 - c2res.pml:378 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 295: // STATE 12 - c2res.pml:416 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][12] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
@@ -6365,12 +6335,12 @@
 		reached[1][19] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 297: // STATE 19 - c2res.pml:378 - [.(goto)] (0:45:0 - 2)
+	case 297: // STATE 19 - c2res.pml:416 - [.(goto)] (0:45:0 - 2)
 		IfNotBlocked
 		reached[1][19] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 298: // STATE 17 - c2res.pml:378 - [(1)] (45:0:0 - 1)
+	case 298: // STATE 17 - c2res.pml:416 - [(1)] (45:0:0 - 1)
 		IfNotBlocked
 		reached[1][17] = 1;
 		if (!(1))
@@ -6379,7 +6349,7 @@
 		reached[1][19] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 299: // STATE 21 - c2res.pml:383 - [((1==EP))] (0:0:0 - 1)
+	case 299: // STATE 21 - c2res.pml:421 - [((1==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][21] = 1;
 		if (!((1==((int)now.EP))))
@@ -6455,7 +6425,7 @@
 		reached[1][35] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 303: // STATE 37 - c2res.pml:383 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 303: // STATE 37 - c2res.pml:421 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][37] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
@@ -6489,7 +6459,7 @@
 		reached[1][47] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 305: // STATE 44 - c2res.pml:383 - [.(goto)] (0:46:0 - 2)
+	case 305: // STATE 44 - c2res.pml:421 - [.(goto)] (0:46:0 - 2)
 		IfNotBlocked
 		reached[1][44] = 1;
 		;
@@ -6497,7 +6467,7 @@
 		reached[1][47] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 306: // STATE 42 - c2res.pml:383 - [(1)] (46:0:0 - 1)
+	case 306: // STATE 42 - c2res.pml:421 - [(1)] (46:0:0 - 1)
 		IfNotBlocked
 		reached[1][42] = 1;
 		if (!(1))
@@ -6509,14 +6479,14 @@
 		reached[1][47] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 307: // STATE 49 - c2res.pml:385 - [-end-] (0:0:0 - 1)
+	case 307: // STATE 49 - c2res.pml:423 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][49] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC PendSV_Handler */
-	case 308: // STATE 1 - c2res.pml:350 - [((EP==0))] (0:0:0 - 1)
+	case 308: // STATE 1 - c2res.pml:383 - [((EP==0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][1] = 1;
 		if (!((((int)now.EP)==0)))
@@ -6528,11 +6498,11 @@
 		if (!((((int)now.EP)==0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 310: // STATE 3 - c2res.pml:73 - [assert(((0<2)&&(0<8)))] (0:26:1 - 1)
+	case 310: // STATE 3 - c2res.pml:73 - [assert(((0<2)&&(0<8)))] (0:31:1 - 1)
 		IfNotBlocked
 		reached[0][3] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp&~((1<<0)))(26, 4, 26) */
+		/* merge: pending_exp = (pending_exp&~((1<<0)))(31, 4, 31) */
 		reached[0][4] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)& ~((1<<0)));
@@ -6541,13 +6511,19 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 311: // STATE 8 - c2res.pml:354 - [((0==EP))] (17:0:1 - 1)
+	case 311: // STATE 8 - c2res.pml:388 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][8] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
-		/* merge: tcb[EP_Stack].state = 1(0, 9, 17) */
+		_m = 3; goto P999; /* 0 */
+	case 312: // STATE 9 - c2res.pml:388 - [((tcb[EP_Stack].state==4))] (18:0:1 - 1)
+		IfNotBlocked
 		reached[0][9] = 1;
+		if (!((((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].state)==4)))
+			continue;
+		/* merge: tcb[EP_Stack].state = 1(0, 10, 18) */
+		reached[0][10] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].state);
 		now.tcb[ Index(now.EP_Stack, 4) ].state = 1;
 #ifdef VAR_RANGES
@@ -6555,13 +6531,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 312: // STATE 10 - c2res.pml:302 - [((readyQueue[tcb[EP_Stack].prio].tailIndex<5))] (24:0:2 - 1)
+	case 313: // STATE 11 - c2res.pml:305 - [((readyQueue[tcb[EP_Stack].prio].tailIndex<5))] (29:0:2 - 1)
 		IfNotBlocked
-		reached[0][10] = 1;
+		reached[0][11] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex)<5)))
 			continue;
-		/* merge: readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack(24, 11, 24) */
-		reached[0][11] = 1;
+		/* merge: readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack(29, 12, 29) */
+		reached[0][12] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex), 5) ]);
 		now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tailIndex, 5) ] = ((int)now.EP_Stack);
@@ -6569,35 +6545,38 @@
 		logval("readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex]", ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)(24, 12, 24) */
-		reached[0][12] = 1;
+		/* merge: readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)(29, 13, 29) */
+		reached[0][13] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex);
 		now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex)+1);
 #ifdef VAR_RANGES
 		logval("readyQueue[tcb[EP_Stack].prio].tailIndex", ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(0, 16, 24) */
-		reached[0][16] = 1;
+		/* merge: .(goto)(0, 17, 29) */
+		reached[0][17] = 1;
 		;
-		_m = 3; goto P999; /* 3 */
-	case 313: // STATE 14 - c2res.pml:305 - [assert(0)] (0:0:0 - 1)
+		/* merge: .(goto)(0, 22, 29) */
+		reached[0][22] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 314: // STATE 15 - c2res.pml:308 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][14] = 1;
+		reached[0][15] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 314: // STATE 18 - c2res.pml:354 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 315: // STATE 23 - c2res.pml:388 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][18] = 1;
+		reached[0][23] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 315: // STATE 19 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:55:2 - 1)
+	case 316: // STATE 24 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:60:2 - 1)
 		IfNotBlocked
-		reached[0][19] = 1;
+		reached[0][24] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(55, 20, 55) */
-		reached[0][20] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(60, 25, 60) */
+		reached[0][25] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -6605,41 +6584,41 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(55, 22, 55) */
-		reached[0][22] = 1;
+		/* merge: chain_tick_used = 1(60, 27, 60) */
+		reached[0][27] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(55, 25, 55) */
-		reached[0][25] = 1;
+		/* merge: .(goto)(60, 30, 60) */
+		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 316: // STATE 25 - c2res.pml:354 - [.(goto)] (0:55:0 - 2)
+	case 317: // STATE 30 - c2res.pml:388 - [.(goto)] (0:60:0 - 2)
 		IfNotBlocked
-		reached[0][25] = 1;
+		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 317: // STATE 23 - c2res.pml:354 - [(1)] (55:0:0 - 1)
+	case 318: // STATE 28 - c2res.pml:388 - [(1)] (60:0:0 - 1)
 		IfNotBlocked
-		reached[0][23] = 1;
+		reached[0][28] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(55, 25, 55) */
-		reached[0][25] = 1;
+		/* merge: .(goto)(60, 30, 60) */
+		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 318: // STATE 27 - c2res.pml:358 - [((0==EP))] (0:0:0 - 1)
+	case 319: // STATE 32 - c2res.pml:396 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][27] = 1;
+		reached[0][32] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 319: // STATE 28 - c2res.pml:329 - [prio = 0] (0:41:3 - 1)
+	case 320: // STATE 33 - c2res.pml:362 - [prio = 0] (0:46:3 - 1)
 		IfNotBlocked
-		reached[0][28] = 1;
+		reached[0][33] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P0 *)_this)->_4_3_4_prio);
 		((P0 *)_this)->_4_3_4_prio = 0;
@@ -6647,39 +6626,39 @@
 		logval("PendSV_Handler:prio", ((int)((P0 *)_this)->_4_3_4_prio));
 #endif
 		;
-		/* merge: top_task = 0(41, 29, 41) */
-		reached[0][29] = 1;
+		/* merge: top_task = 0(46, 34, 46) */
+		reached[0][34] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P0 *)_this)->_4_3_4_top_task);
 		((P0 *)_this)->_4_3_4_top_task = 0;
 #ifdef VAR_RANGES
 		logval("PendSV_Handler:top_task", ((int)((P0 *)_this)->_4_3_4_top_task));
 #endif
 		;
-		/* merge: found = 0(41, 30, 41) */
-		reached[0][30] = 1;
+		/* merge: found = 0(46, 35, 46) */
+		reached[0][35] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P0 *)_this)->_4_3_4_found);
 		((P0 *)_this)->_4_3_4_found = 0;
 #ifdef VAR_RANGES
 		logval("PendSV_Handler:found", ((int)((P0 *)_this)->_4_3_4_found));
 #endif
 		;
-		/* merge: .(goto)(0, 42, 41) */
-		reached[0][42] = 1;
+		/* merge: .(goto)(0, 47, 46) */
+		reached[0][47] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 320: // STATE 31 - c2res.pml:332 - [(((prio<4)&&!(found)))] (0:0:0 - 1)
+	case 321: // STATE 36 - c2res.pml:365 - [(((prio<4)&&!(found)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][31] = 1;
+		reached[0][36] = 1;
 		if (!(((((int)((P0 *)_this)->_4_3_4_prio)<4)&& !(((int)((P0 *)_this)->_4_3_4_found)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 321: // STATE 32 - c2res.pml:334 - [((readyQueue[prio].tailIndex>0))] (41:0:2 - 1)
+	case 322: // STATE 37 - c2res.pml:367 - [((readyQueue[prio].tailIndex>0))] (46:0:2 - 1)
 		IfNotBlocked
-		reached[0][32] = 1;
+		reached[0][37] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P0 *)_this)->_4_3_4_prio), 4) ].tailIndex)>0)))
 			continue;
-		/* merge: top_task = readyQueue[prio].tasks[0](41, 33, 41) */
-		reached[0][33] = 1;
+		/* merge: top_task = readyQueue[prio].tasks[0](46, 38, 46) */
+		reached[0][38] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P0 *)_this)->_4_3_4_top_task);
 		((P0 *)_this)->_4_3_4_top_task = ((int)now.readyQueue[ Index(((int)((P0 *)_this)->_4_3_4_prio), 4) ].tasks[0]);
@@ -6687,24 +6666,24 @@
 		logval("PendSV_Handler:top_task", ((int)((P0 *)_this)->_4_3_4_top_task));
 #endif
 		;
-		/* merge: found = 1(41, 34, 41) */
-		reached[0][34] = 1;
+		/* merge: found = 1(46, 39, 46) */
+		reached[0][39] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P0 *)_this)->_4_3_4_found);
 		((P0 *)_this)->_4_3_4_found = 1;
 #ifdef VAR_RANGES
 		logval("PendSV_Handler:found", ((int)((P0 *)_this)->_4_3_4_found));
 #endif
 		;
-		/* merge: .(goto)(0, 38, 41) */
-		reached[0][38] = 1;
+		/* merge: .(goto)(0, 43, 46) */
+		reached[0][43] = 1;
 		;
-		/* merge: .(goto)(0, 42, 41) */
-		reached[0][42] = 1;
+		/* merge: .(goto)(0, 47, 46) */
+		reached[0][47] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 322: // STATE 36 - c2res.pml:337 - [prio = (prio+1)] (0:0:1 - 1)
+	case 323: // STATE 41 - c2res.pml:370 - [prio = (prio+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[0][36] = 1;
+		reached[0][41] = 1;
 		(trpt+1)->bup.oval = ((int)((P0 *)_this)->_4_3_4_prio);
 		((P0 *)_this)->_4_3_4_prio = (((int)((P0 *)_this)->_4_3_4_prio)+1);
 #ifdef VAR_RANGES
@@ -6712,9 +6691,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 323: // STATE 44 - c2res.pml:341 - [tmp = top_task] (0:53:2 - 3)
+	case 324: // STATE 49 - c2res.pml:374 - [tmp = top_task] (0:58:2 - 3)
 		IfNotBlocked
-		reached[0][44] = 1;
+		reached[0][49] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P0 *)_this)->tmp);
 		((P0 *)_this)->tmp = ((int)((P0 *)_this)->_4_3_4_top_task);
@@ -6722,8 +6701,8 @@
 		logval("PendSV_Handler:tmp", ((int)((P0 *)_this)->tmp));
 #endif
 		;
-		/* merge: topPrio = prio(53, 45, 53) */
-		reached[0][45] = 1;
+		/* merge: topPrio = prio(58, 50, 58) */
+		reached[0][50] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.topPrio);
 		now.topPrio = ((int)((P0 *)_this)->_4_3_4_prio);
 #ifdef VAR_RANGES
@@ -6731,18 +6710,18 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 324: // STATE 47 - c2res.pml:358 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 325: // STATE 52 - c2res.pml:396 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][47] = 1;
+		reached[0][52] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 325: // STATE 48 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:82:2 - 1)
+	case 326: // STATE 53 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:87:2 - 1)
 		IfNotBlocked
-		reached[0][48] = 1;
+		reached[0][53] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(82, 49, 82) */
-		reached[0][49] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(87, 54, 87) */
+		reached[0][54] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -6750,41 +6729,41 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(82, 51, 82) */
-		reached[0][51] = 1;
+		/* merge: chain_tick_used = 1(87, 56, 87) */
+		reached[0][56] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(82, 54, 82) */
-		reached[0][54] = 1;
+		/* merge: .(goto)(87, 59, 87) */
+		reached[0][59] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 326: // STATE 54 - c2res.pml:358 - [.(goto)] (0:82:0 - 2)
+	case 327: // STATE 59 - c2res.pml:396 - [.(goto)] (0:87:0 - 2)
 		IfNotBlocked
-		reached[0][54] = 1;
+		reached[0][59] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 327: // STATE 52 - c2res.pml:358 - [(1)] (82:0:0 - 1)
+	case 328: // STATE 57 - c2res.pml:396 - [(1)] (87:0:0 - 1)
 		IfNotBlocked
-		reached[0][52] = 1;
+		reached[0][57] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(82, 54, 82) */
-		reached[0][54] = 1;
+		/* merge: .(goto)(87, 59, 87) */
+		reached[0][59] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 328: // STATE 56 - c2res.pml:360 - [((0==EP))] (0:0:0 - 1)
+	case 329: // STATE 61 - c2res.pml:398 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][56] = 1;
+		reached[0][61] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 329: // STATE 57 - c2res.pml:312 - [idx = 0] (0:0:1 - 1)
+	case 330: // STATE 62 - c2res.pml:315 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[0][57] = 1;
+		reached[0][62] = 1;
 		(trpt+1)->bup.oval = ((int)((P0 *)_this)->_4_4_6_idx);
 		((P0 *)_this)->_4_4_6_idx = 0;
 #ifdef VAR_RANGES
@@ -6792,13 +6771,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 330: // STATE 58 - c2res.pml:313 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (63:0:2 - 1)
+	case 331: // STATE 63 - c2res.pml:316 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (68:0:2 - 1)
 		IfNotBlocked
-		reached[0][58] = 1;
+		reached[0][63] = 1;
 		if (!((((int)((P0 *)_this)->_4_4_6_idx)<(((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1))))
 			continue;
-		/* merge: readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)](63, 59, 63) */
-		reached[0][59] = 1;
+		/* merge: readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)](68, 64, 68) */
+		reached[0][64] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index(((int)((P0 *)_this)->_4_4_6_idx), 5) ]);
 		now.readyQueue[ Index(now.topPrio, 4) ].tasks[ Index(((P0 *)_this)->_4_4_6_idx, 5) ] = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index((((int)((P0 *)_this)->_4_4_6_idx)+1), 5) ]);
@@ -6806,25 +6785,25 @@
 		logval("readyQueue[topPrio].tasks[PendSV_Handler:idx]", ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index(((int)((P0 *)_this)->_4_4_6_idx), 5) ]));
 #endif
 		;
-		/* merge: idx = (idx+1)(63, 60, 63) */
-		reached[0][60] = 1;
+		/* merge: idx = (idx+1)(68, 65, 68) */
+		reached[0][65] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P0 *)_this)->_4_4_6_idx);
 		((P0 *)_this)->_4_4_6_idx = (((int)((P0 *)_this)->_4_4_6_idx)+1);
 #ifdef VAR_RANGES
 		logval("PendSV_Handler:idx", ((int)((P0 *)_this)->_4_4_6_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 64, 63) */
-		reached[0][64] = 1;
+		/* merge: .(goto)(0, 69, 68) */
+		reached[0][69] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 331: // STATE 66 - c2res.pml:319 - [((readyQueue[topPrio].tailIndex>0))] (80:0:2 - 1)
+	case 332: // STATE 71 - c2res.pml:322 - [((readyQueue[topPrio].tailIndex>0))] (85:0:2 - 1)
 		IfNotBlocked
-		reached[0][66] = 1;
+		reached[0][71] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)>0)))
 			continue;
-		/* merge: readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255(80, 67, 80) */
-		reached[0][67] = 1;
+		/* merge: readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255(85, 72, 85) */
+		reached[0][72] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1), 5) ]);
 		now.readyQueue[ Index(now.topPrio, 4) ].tasks[ Index((now.readyQueue[ Index(now.topPrio, 4) ].tailIndex-1), 5) ] = 255;
@@ -6832,30 +6811,30 @@
 		logval("readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)]", ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)(80, 68, 80) */
-		reached[0][68] = 1;
+		/* merge: readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)(85, 73, 85) */
+		reached[0][73] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex);
 		now.readyQueue[ Index(now.topPrio, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1);
 #ifdef VAR_RANGES
 		logval("readyQueue[topPrio].tailIndex", ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(0, 72, 80) */
-		reached[0][72] = 1;
+		/* merge: .(goto)(0, 77, 85) */
+		reached[0][77] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 332: // STATE 74 - c2res.pml:360 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 333: // STATE 79 - c2res.pml:398 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][74] = 1;
+		reached[0][79] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 333: // STATE 75 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:93:2 - 1)
+	case 334: // STATE 80 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:98:2 - 1)
 		IfNotBlocked
-		reached[0][75] = 1;
+		reached[0][80] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(93, 76, 93) */
-		reached[0][76] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(98, 81, 98) */
+		reached[0][81] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -6863,39 +6842,39 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(93, 78, 93) */
-		reached[0][78] = 1;
+		/* merge: chain_tick_used = 1(98, 83, 98) */
+		reached[0][83] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(93, 81, 93) */
-		reached[0][81] = 1;
+		/* merge: .(goto)(98, 86, 98) */
+		reached[0][86] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 334: // STATE 81 - c2res.pml:360 - [.(goto)] (0:93:0 - 2)
+	case 335: // STATE 86 - c2res.pml:398 - [.(goto)] (0:98:0 - 2)
 		IfNotBlocked
-		reached[0][81] = 1;
+		reached[0][86] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 335: // STATE 79 - c2res.pml:360 - [(1)] (93:0:0 - 1)
+	case 336: // STATE 84 - c2res.pml:398 - [(1)] (98:0:0 - 1)
 		IfNotBlocked
-		reached[0][79] = 1;
+		reached[0][84] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(93, 81, 93) */
-		reached[0][81] = 1;
+		/* merge: .(goto)(98, 86, 98) */
+		reached[0][86] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 336: // STATE 83 - c2res.pml:361 - [((0==EP))] (91:0:1 - 1)
+	case 337: // STATE 88 - c2res.pml:399 - [((0==EP))] (96:0:1 - 1)
 		IfNotBlocked
-		reached[0][83] = 1;
+		reached[0][88] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
-		/* merge: tcb[tmp].state = 4(0, 84, 91) */
-		reached[0][84] = 1;
+		/* merge: tcb[tmp].state = 4(0, 89, 96) */
+		reached[0][89] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P0 *)_this)->tmp), 4) ].state);
 		now.tcb[ Index(((P0 *)_this)->tmp, 4) ].state = 4;
 #ifdef VAR_RANGES
@@ -6903,18 +6882,18 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 337: // STATE 85 - c2res.pml:361 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 338: // STATE 90 - c2res.pml:399 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][85] = 1;
+		reached[0][90] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 338: // STATE 86 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:106:2 - 1)
+	case 339: // STATE 91 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:111:2 - 1)
 		IfNotBlocked
-		reached[0][86] = 1;
+		reached[0][91] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(106, 87, 106) */
-		reached[0][87] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(111, 92, 111) */
+		reached[0][92] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -6922,44 +6901,44 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(106, 89, 106) */
-		reached[0][89] = 1;
+		/* merge: chain_tick_used = 1(111, 94, 111) */
+		reached[0][94] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(106, 92, 106) */
-		reached[0][92] = 1;
+		/* merge: .(goto)(111, 97, 111) */
+		reached[0][97] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 339: // STATE 92 - c2res.pml:361 - [.(goto)] (0:106:0 - 2)
+	case 340: // STATE 97 - c2res.pml:399 - [.(goto)] (0:111:0 - 2)
 		IfNotBlocked
-		reached[0][92] = 1;
+		reached[0][97] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 340: // STATE 90 - c2res.pml:361 - [(1)] (106:0:0 - 1)
+	case 341: // STATE 95 - c2res.pml:399 - [(1)] (111:0:0 - 1)
 		IfNotBlocked
-		reached[0][90] = 1;
+		reached[0][95] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(106, 92, 106) */
-		reached[0][92] = 1;
+		/* merge: .(goto)(111, 97, 111) */
+		reached[0][97] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 341: // STATE 94 - c2res.pml:362 - [((0==EP))] (0:0:0 - 1)
+	case 342: // STATE 99 - c2res.pml:400 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][94] = 1;
+		reached[0][99] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 342: // STATE 95 - c2res.pml:97 - [assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))] (0:104:1 - 1)
+	case 343: // STATE 100 - c2res.pml:97 - [assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))] (0:109:1 - 1)
 		IfNotBlocked
-		reached[0][95] = 1;
+		reached[0][100] = 1;
 		spin_assert((((((int)now.EP_Stack)!=255)&&(((int)now.EP_Stack)>=2))&&(((int)((P0 *)_this)->tmp)>=2)), "(((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2))", II, tt, t);
-		/* merge: EP_Stack = tmp(104, 96, 104) */
-		reached[0][96] = 1;
+		/* merge: EP_Stack = tmp(109, 101, 109) */
+		reached[0][101] = 1;
 		(trpt+1)->bup.oval = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)((P0 *)_this)->tmp);
 #ifdef VAR_RANGES
@@ -6967,18 +6946,18 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 343: // STATE 98 - c2res.pml:362 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 344: // STATE 103 - c2res.pml:400 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][98] = 1;
+		reached[0][103] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 344: // STATE 99 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:131:2 - 1)
+	case 345: // STATE 104 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:136:2 - 1)
 		IfNotBlocked
-		reached[0][99] = 1;
+		reached[0][104] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(131, 100, 131) */
-		reached[0][100] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(136, 105, 136) */
+		reached[0][105] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -6986,47 +6965,47 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(131, 102, 131) */
-		reached[0][102] = 1;
+		/* merge: chain_tick_used = 1(136, 107, 136) */
+		reached[0][107] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(131, 105, 131) */
-		reached[0][105] = 1;
+		/* merge: .(goto)(136, 110, 136) */
+		reached[0][110] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 345: // STATE 105 - c2res.pml:362 - [.(goto)] (0:131:0 - 2)
+	case 346: // STATE 110 - c2res.pml:400 - [.(goto)] (0:136:0 - 2)
 		IfNotBlocked
-		reached[0][105] = 1;
+		reached[0][110] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 346: // STATE 103 - c2res.pml:362 - [(1)] (131:0:0 - 1)
+	case 347: // STATE 108 - c2res.pml:400 - [(1)] (136:0:0 - 1)
 		IfNotBlocked
-		reached[0][103] = 1;
+		reached[0][108] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(131, 105, 131) */
-		reached[0][105] = 1;
+		/* merge: .(goto)(136, 110, 136) */
+		reached[0][110] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 347: // STATE 107 - c2res.pml:365 - [((0==EP))] (0:0:0 - 1)
+	case 348: // STATE 112 - c2res.pml:403 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][107] = 1;
+		reached[0][112] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 348: // STATE 108 - c2res.pml:147 - [((pending_exp>0))] (0:0:0 - 1)
+	case 349: // STATE 113 - c2res.pml:147 - [((pending_exp>0))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][108] = 1;
+		reached[0][113] = 1;
 		if (!((((int)now.pending_exp)>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 349: // STATE 109 - c2res.pml:128 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:129:4 - 1)
+	case 350: // STATE 114 - c2res.pml:128 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:134:4 - 1)
 		IfNotBlocked
-		reached[0][109] = 1;
+		reached[0][114] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)((P0 *)_this)->tmp);
 		((P0 *)_this)->tmp = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -7034,19 +7013,19 @@
 		logval("PendSV_Handler:tmp", ((int)((P0 *)_this)->tmp));
 #endif
 		;
-		/* merge: assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))(129, 111, 129) */
-		reached[0][111] = 1;
+		/* merge: assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))(134, 116, 134) */
+		reached[0][116] = 1;
 		spin_assert((((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))&&(((int)now.EP_Stack)>=2)), "(((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2))", II, tt, t);
-		/* merge: EP = tmp(129, 112, 129) */
-		reached[0][112] = 1;
+		/* merge: EP = tmp(134, 117, 134) */
+		reached[0][117] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ((int)((P0 *)_this)->tmp);
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: tmp = 255(129, 113, 129) */
-		reached[0][113] = 1;
+		/* merge: tmp = 255(134, 118, 134) */
+		reached[0][118] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P0 *)_this)->tmp);
 		((P0 *)_this)->tmp = 255;
 #ifdef VAR_RANGES
@@ -7059,16 +7038,16 @@
 		if (!readtrail)
 #endif
 			((P0 *)_this)->tmp = 0;
-		/* merge: .(goto)(0, 121, 129) */
-		reached[0][121] = 1;
+		/* merge: .(goto)(0, 126, 134) */
+		reached[0][126] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 350: // STATE 116 - c2res.pml:88 - [assert((EP_Stack!=255))] (0:129:2 - 1)
+	case 351: // STATE 121 - c2res.pml:88 - [assert((EP_Stack!=255))] (0:134:2 - 1)
 		IfNotBlocked
-		reached[0][116] = 1;
+		reached[0][121] = 1;
 		spin_assert((((int)now.EP_Stack)!=255), "(EP_Stack!=255)", II, tt, t);
-		/* merge: EP = EP_Stack(129, 117, 129) */
-		reached[0][117] = 1;
+		/* merge: EP = EP_Stack(134, 122, 134) */
+		reached[0][122] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP);
 		now.EP = ((int)now.EP_Stack);
@@ -7076,30 +7055,30 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: EP_Stack = 255(129, 118, 129) */
-		reached[0][118] = 1;
+		/* merge: EP_Stack = 255(134, 123, 134) */
+		reached[0][123] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP_Stack);
 		now.EP_Stack = 255;
 #ifdef VAR_RANGES
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: .(goto)(0, 121, 129) */
-		reached[0][121] = 1;
+		/* merge: .(goto)(0, 126, 134) */
+		reached[0][126] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 351: // STATE 123 - c2res.pml:365 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 352: // STATE 128 - c2res.pml:403 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[0][123] = 1;
+		reached[0][128] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 352: // STATE 124 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:132:2 - 1)
+	case 353: // STATE 129 - c2res.pml:68 - [assert(((1<2)&&(1<8)))] (0:137:2 - 1)
 		IfNotBlocked
-		reached[0][124] = 1;
+		reached[0][129] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(132, 125, 132) */
-		reached[0][125] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(137, 130, 137) */
+		reached[0][130] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -7107,44 +7086,44 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(132, 127, 132) */
-		reached[0][127] = 1;
+		/* merge: chain_tick_used = 1(137, 132, 137) */
+		reached[0][132] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(132, 130, 132) */
-		reached[0][130] = 1;
+		/* merge: .(goto)(137, 135, 137) */
+		reached[0][135] = 1;
 		;
-		/* merge: .(goto)(0, 133, 132) */
-		reached[0][133] = 1;
+		/* merge: .(goto)(0, 138, 137) */
+		reached[0][138] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 353: // STATE 130 - c2res.pml:365 - [.(goto)] (0:132:0 - 2)
-		IfNotBlocked
-		reached[0][130] = 1;
-		;
-		/* merge: .(goto)(0, 133, 132) */
-		reached[0][133] = 1;
-		;
-		_m = 3; goto P999; /* 1 */
-	case 354: // STATE 128 - c2res.pml:365 - [(1)] (132:0:0 - 1)
-		IfNotBlocked
-		reached[0][128] = 1;
-		if (!(1))
-			continue;
-		/* merge: .(goto)(132, 130, 132) */
-		reached[0][130] = 1;
-		;
-		/* merge: .(goto)(0, 133, 132) */
-		reached[0][133] = 1;
-		;
-		_m = 3; goto P999; /* 2 */
-	case 355: // STATE 135 - c2res.pml:367 - [-end-] (0:0:0 - 1)
+	case 354: // STATE 135 - c2res.pml:403 - [.(goto)] (0:137:0 - 2)
 		IfNotBlocked
 		reached[0][135] = 1;
+		;
+		/* merge: .(goto)(0, 138, 137) */
+		reached[0][138] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 355: // STATE 133 - c2res.pml:403 - [(1)] (137:0:0 - 1)
+		IfNotBlocked
+		reached[0][133] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(137, 135, 137) */
+		reached[0][135] = 1;
+		;
+		/* merge: .(goto)(0, 138, 137) */
+		reached[0][138] = 1;
+		;
+		_m = 3; goto P999; /* 2 */
+	case 356: // STATE 140 - c2res.pml:405 - [-end-] (0:0:0 - 1)
+		IfNotBlocked
+		reached[0][140] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 	case  _T5:	/* np_ */

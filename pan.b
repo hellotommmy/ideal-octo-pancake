@@ -724,7 +724,7 @@
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 239: // STATE 38
+	case 239: // STATE 40
 		;
 		now.g_taskSortLinkTail = trpt->bup.ovals[3];
 		now.tcb[2].pendList = trpt->bup.ovals[2];
@@ -734,26 +734,26 @@
 		ungrab_ints(trpt->bup.ovals, 4);
 		goto R999;
 
-	case 240: // STATE 41
+	case 240: // STATE 43
 		;
 	/* 0 */	((P3 *)_this)->_7_14_24_needSched = trpt->bup.oval;
 		;
 		;
 		goto R999;
 
-	case 241: // STATE 42
+	case 241: // STATE 44
 		;
 		((P3 *)_this)->_7_14_24_intSave = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 242: // STATE 45
+	case 242: // STATE 47
 		;
 		now.pending_exp = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 243: // STATE 55
+	case 243: // STATE 57
 		;
 		now.pending_exp = trpt->bup.oval;
 		;
@@ -761,13 +761,13 @@
 ;
 		;
 		
-	case 245: // STATE 62
+	case 245: // STATE 64
 		;
 		now.chain_tick_used = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 246: // STATE 70
+	case 246: // STATE 72
 		;
 		now.EP = trpt->bup.ovals[1];
 		now.EP_Stack = trpt->bup.ovals[0];
@@ -776,16 +776,16 @@
 		goto R999;
 ;
 		
-	case 247: // STATE 74
+	case 247: // STATE 76
 		goto R999;
 ;
 		
-	case 248: // STATE 72
+	case 248: // STATE 74
 		goto R999;
 ;
 		;
 		
-	case 250: // STATE 79
+	case 250: // STATE 81
 		;
 		((P3 *)_this)->_7_15_27_needSched = trpt->bup.ovals[2];
 		((P3 *)_this)->_7_15_27_tempStatus = trpt->bup.ovals[1];
@@ -794,7 +794,7 @@
 		ungrab_ints(trpt->bup.ovals, 3);
 		goto R999;
 
-	case 251: // STATE 82
+	case 251: // STATE 84
 		;
 		((P3 *)_this)->_7_15_27_tempStatus = trpt->bup.ovals[1];
 		((P3 *)_this)->_7_15_27_intSave = trpt->bup.ovals[0];
@@ -802,7 +802,7 @@
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 252: // STATE 86
+	case 252: // STATE 88
 		;
 		now.tcb[2].state = trpt->bup.ovals[1];
 		((P3 *)_this)->_7_15_27_needSched = trpt->bup.ovals[0];
@@ -810,13 +810,13 @@
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 253: // STATE 87
+	case 253: // STATE 89
 		;
 		((P3 *)_this)->_7_15_27_12_5_idx = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 254: // STATE 91
+	case 254: // STATE 93
 		;
 		((P3 *)_this)->_7_15_27_12_5_idx = trpt->bup.ovals[2];
 		now.g_taskSortLink[ Index(((P3 *)_this)->_7_15_27_12_5_idx, 3) ].responseTime = trpt->bup.ovals[1];
@@ -825,7 +825,7 @@
 		ungrab_ints(trpt->bup.ovals, 3);
 		goto R999;
 
-	case 255: // STATE 99
+	case 255: // STATE 101
 		;
 		now.g_taskSortLinkTail = trpt->bup.ovals[2];
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].responseTime = trpt->bup.ovals[1];
@@ -834,7 +834,7 @@
 		ungrab_ints(trpt->bup.ovals, 3);
 		goto R999;
 
-	case 256: // STATE 103
+	case 256: // STATE 105
 		;
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex = trpt->bup.ovals[1];
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex, 5) ] = trpt->bup.ovals[0];
@@ -844,26 +844,26 @@
 ;
 		;
 		
-	case 258: // STATE 110
+	case 258: // STATE 112
 		;
 	/* 0 */	((P3 *)_this)->_7_15_27_needSched = trpt->bup.oval;
 		;
 		;
 		goto R999;
 
-	case 259: // STATE 111
+	case 259: // STATE 113
 		;
 		((P3 *)_this)->_7_15_27_intSave = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 260: // STATE 114
+	case 260: // STATE 116
 		;
 		now.pending_exp = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 261: // STATE 124
+	case 261: // STATE 126
 		;
 		now.pending_exp = trpt->bup.oval;
 		;
@@ -871,13 +871,13 @@
 ;
 		;
 		
-	case 263: // STATE 131
+	case 263: // STATE 133
 		;
 		now.chain_tick_used = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 264: // STATE 139
+	case 264: // STATE 141
 		;
 		now.EP = trpt->bup.ovals[1];
 		now.EP_Stack = trpt->bup.ovals[0];
@@ -886,18 +886,18 @@
 		goto R999;
 ;
 		
-	case 265: // STATE 143
+	case 265: // STATE 145
 		goto R999;
 ;
 		
-	case 266: // STATE 141
+	case 266: // STATE 143
 		goto R999;
 ;
 		
-	case 267: // STATE 145
+	case 267: // STATE 147
 		goto R999;
 
-	case 268: // STATE 149
+	case 268: // STATE 151
 		;
 		now.pending_exp = trpt->bup.oval;
 		;
@@ -905,13 +905,13 @@
 ;
 		;
 		
-	case 270: // STATE 156
+	case 270: // STATE 158
 		;
 		now.chain_tick_used = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 271: // STATE 164
+	case 271: // STATE 166
 		;
 		now.EP = trpt->bup.ovals[1];
 		now.EP_Stack = trpt->bup.ovals[0];
@@ -920,14 +920,14 @@
 		goto R999;
 ;
 		
-	case 272: // STATE 168
+	case 272: // STATE 170
 		goto R999;
 ;
 		
-	case 273: // STATE 166
+	case 273: // STATE 168
 		goto R999;
 
-	case 274: // STATE 173
+	case 274: // STATE 175
 		;
 		p_restor(II);
 		;
@@ -1106,14 +1106,16 @@
 		now.pending_exp = trpt->bup.oval;
 		;
 		goto R999;
-
-	case 311: // STATE 9
+;
+		;
+		
+	case 312: // STATE 10
 		;
 		now.tcb[ Index(now.EP_Stack, 4) ].state = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 312: // STATE 12
+	case 313: // STATE 13
 		;
 		now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tailIndex = trpt->bup.ovals[1];
 		now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[ Index(now.EP_Stack, 4) ].prio, 4) ].tailIndex, 5) ] = trpt->bup.ovals[0];
@@ -1125,7 +1127,7 @@
 		;
 		;
 		
-	case 315: // STATE 22
+	case 316: // STATE 27
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1134,16 +1136,16 @@
 		goto R999;
 ;
 		
-	case 316: // STATE 25
+	case 317: // STATE 30
 		goto R999;
 ;
 		
-	case 317: // STATE 23
+	case 318: // STATE 28
 		goto R999;
 ;
 		;
 		
-	case 319: // STATE 30
+	case 320: // STATE 35
 		;
 		((P0 *)_this)->_4_3_4_found = trpt->bup.ovals[2];
 		((P0 *)_this)->_4_3_4_top_task = trpt->bup.ovals[1];
@@ -1154,7 +1156,7 @@
 ;
 		;
 		
-	case 321: // STATE 34
+	case 322: // STATE 39
 		;
 		((P0 *)_this)->_4_3_4_found = trpt->bup.ovals[1];
 		((P0 *)_this)->_4_3_4_top_task = trpt->bup.ovals[0];
@@ -1162,13 +1164,13 @@
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 322: // STATE 36
+	case 323: // STATE 41
 		;
 		((P0 *)_this)->_4_3_4_prio = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 323: // STATE 45
+	case 324: // STATE 50
 		;
 		now.topPrio = trpt->bup.ovals[1];
 		((P0 *)_this)->tmp = trpt->bup.ovals[0];
@@ -1178,7 +1180,7 @@
 ;
 		;
 		
-	case 325: // STATE 51
+	case 326: // STATE 56
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1187,22 +1189,22 @@
 		goto R999;
 ;
 		
-	case 326: // STATE 54
+	case 327: // STATE 59
 		goto R999;
 ;
 		
-	case 327: // STATE 52
+	case 328: // STATE 57
 		goto R999;
 ;
 		;
 		
-	case 329: // STATE 57
+	case 330: // STATE 62
 		;
 		((P0 *)_this)->_4_4_6_idx = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 330: // STATE 60
+	case 331: // STATE 65
 		;
 		((P0 *)_this)->_4_4_6_idx = trpt->bup.ovals[1];
 		now.readyQueue[ Index(now.topPrio, 4) ].tasks[ Index(((P0 *)_this)->_4_4_6_idx, 5) ] = trpt->bup.ovals[0];
@@ -1210,7 +1212,7 @@
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 331: // STATE 68
+	case 332: // STATE 73
 		;
 		now.readyQueue[ Index(now.topPrio, 4) ].tailIndex = trpt->bup.ovals[1];
 		now.readyQueue[ Index(now.topPrio, 4) ].tasks[ Index((now.readyQueue[ Index(now.topPrio, 4) ].tailIndex-1), 5) ] = trpt->bup.ovals[0];
@@ -1220,7 +1222,7 @@
 ;
 		;
 		
-	case 333: // STATE 78
+	case 334: // STATE 83
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1229,14 +1231,14 @@
 		goto R999;
 ;
 		
-	case 334: // STATE 81
+	case 335: // STATE 86
 		goto R999;
 ;
 		
-	case 335: // STATE 79
+	case 336: // STATE 84
 		goto R999;
 
-	case 336: // STATE 84
+	case 337: // STATE 89
 		;
 		now.tcb[ Index(((P0 *)_this)->tmp, 4) ].state = trpt->bup.oval;
 		;
@@ -1244,7 +1246,7 @@
 ;
 		;
 		
-	case 338: // STATE 89
+	case 339: // STATE 94
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1253,16 +1255,16 @@
 		goto R999;
 ;
 		
-	case 339: // STATE 92
+	case 340: // STATE 97
 		goto R999;
 ;
 		
-	case 340: // STATE 90
+	case 341: // STATE 95
 		goto R999;
 ;
 		;
 		
-	case 342: // STATE 96
+	case 343: // STATE 101
 		;
 		now.EP_Stack = trpt->bup.oval;
 		;
@@ -1270,7 +1272,7 @@
 ;
 		;
 		
-	case 344: // STATE 102
+	case 345: // STATE 107
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1279,18 +1281,18 @@
 		goto R999;
 ;
 		
-	case 345: // STATE 105
+	case 346: // STATE 110
 		goto R999;
 ;
 		
-	case 346: // STATE 103
+	case 347: // STATE 108
 		goto R999;
 ;
 		;
 		;
 		;
 		
-	case 349: // STATE 113
+	case 350: // STATE 118
 		;
 		((P0 *)_this)->tmp = trpt->bup.ovals[2];
 		now.EP = trpt->bup.ovals[1];
@@ -1299,7 +1301,7 @@
 		ungrab_ints(trpt->bup.ovals, 4);
 		goto R999;
 
-	case 350: // STATE 118
+	case 351: // STATE 123
 		;
 		now.EP_Stack = trpt->bup.ovals[1];
 		now.EP = trpt->bup.ovals[0];
@@ -1309,7 +1311,7 @@
 ;
 		;
 		
-	case 352: // STATE 127
+	case 353: // STATE 132
 		;
 		now.chain_tick_used = trpt->bup.ovals[1];
 		now.pending_exp = trpt->bup.ovals[0];
@@ -1318,14 +1320,14 @@
 		goto R999;
 ;
 		
-	case 353: // STATE 130
+	case 354: // STATE 135
 		goto R999;
 ;
 		
-	case 354: // STATE 128
+	case 355: // STATE 133
 		goto R999;
 
-	case 355: // STATE 135
+	case 356: // STATE 140
 		;
 		p_restor(II);
 		;

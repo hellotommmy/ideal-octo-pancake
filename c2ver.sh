@@ -104,7 +104,3 @@ echo "Summary:"
 echo "  - Liveness properties should have 0 errors"
 echo "  - Witness properties should have 1 error (counterexample found)"
 echo "  - Smoke tests should have 1 error (state reachable)"
-
-
-
-

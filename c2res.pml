@@ -249,6 +249,7 @@ inline OsSchedSuspend(taskID, needSched)
 {
     assert(tcb[taskID].state == READY);
     needSched = 1;
+    // OsDequeueWithId(taskID);  /* Remove from ready queue first */
     tcb[taskID].state = SUSPENDED;
     OsAdd2SortLink(taskID);
 }
@@ -325,6 +326,36 @@ inline OsDequeueHead(prioLevel)
     fi
 }
 
+/* Remove a specific task from ready queue */
+inline OsDequeueWithId(taskId)
+{
+    byte idx = 0;
+    byte found = 0;
+    byte prioLevel = tcb[taskId].prio;
+    do
+    :: (idx < readyQueue[prioLevel].tailIndex && !found) ->
+        if
+        :: (readyQueue[prioLevel].tasks[idx] == taskId) ->
+            found = 1;
+        :: else -> idx++
+        fi
+    :: else -> break
+    od;
+    assert(found == 1);
+    do
+    :: (idx < readyQueue[prioLevel].tailIndex - 1) ->
+        readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[idx + 1];
+        idx++
+    :: else -> break
+    od;
+    if
+    :: (readyQueue[prioLevel].tailIndex > 0) ->
+        readyQueue[prioLevel].tasks[readyQueue[prioLevel].tailIndex - 1] = UNUSED;
+        readyQueue[prioLevel].tailIndex--
+    :: else -> skip
+    fi
+}
+
 inline OsGetTopTask(task_return_var, task_return_prio)
 {
     byte prio = 0;
@@ -353,9 +384,14 @@ proctype PendSV_Handler()
         exp_entry(PendSV_ID);
 //  EXEC_WHEN_CURRENT_SAFE(PendSV_ID, sched_req = 0);    
         /* 把被打断的线程放回就绪队列（轮转），并选择下一个 */
+        /* 只有RUNNING状态的任务才能被放回就绪队列，避免覆盖SUSPENDED等状态 */
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
-            tcb[LAST_EP_STACK].state = READY;
-            OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
+            if
+            :: (tcb[LAST_EP_STACK].state == RUNNING) ->
+                tcb[LAST_EP_STACK].state = READY;
+                OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
+            :: else -> skip
+            fi
         );
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsGetTopTask(tmp, topPrio));
         // assert(tmp != FIRST_TASK+1);

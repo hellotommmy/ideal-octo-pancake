@@ -140,74 +140,74 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates13	11	/* smoke_P1_user_no_pending */
-#define minseq13	1040
-#define maxseq13	1049
+#define minseq13	1047
+#define maxseq13	1056
 #define _endstate13	10
 
 #define _nstates12	11	/* smoke_P2_user_no_pending */
-#define minseq12	1030
-#define maxseq12	1039
+#define minseq12	1037
+#define maxseq12	1046
 #define _endstate12	10
 
 #define _nstates11	123	/* p2_double_context_switch */
-#define minseq11	908
-#define maxseq11	1029
+#define minseq11	915
+#define maxseq11	1036
 #define _endstate11	122
 
 #define _nstates10	101	/* P2_switching_not_P1_witness_unfolded */
-#define minseq10	808
-#define maxseq10	907
+#define minseq10	815
+#define maxseq10	914
 #define _endstate10	100
 
 #define _nstates9	157	/* all_starvation_free */
-#define minseq9	652
-#define maxseq9	807
+#define minseq9	659
+#define maxseq9	814
 #define _endstate9	156
 
 #define _nstates8	76	/* starvation_free_task2 */
-#define minseq8	577
-#define maxseq8	651
+#define minseq8	584
+#define maxseq8	658
 #define _endstate8	75
 
 #define _nstates7	76	/* starvation_free_task1 */
-#define minseq7	502
-#define maxseq7	576
+#define minseq7	509
+#define maxseq7	583
 #define _endstate7	75
 
 #define _nstates6	14	/* exc_leads_to_user */
-#define minseq6	489
-#define maxseq6	501
+#define minseq6	496
+#define maxseq6	508
 #define _endstate6	13
 
 #define _nstates5	14	/* back_to_user */
-#define minseq5	476
-#define maxseq5	488
+#define minseq5	483
+#define maxseq5	495
 #define _endstate5	13
 
 #define _nstates4	66	/* :init: */
-#define minseq4	411
-#define maxseq4	475
+#define minseq4	418
+#define maxseq4	482
 #define _endstate4	65
 
-#define _nstates3	174	/* Process2 */
-#define minseq3	238
-#define maxseq3	410
-#define _endstate3	173
+#define _nstates3	176	/* Process2 */
+#define minseq3	243
+#define maxseq3	417
+#define _endstate3	175
 
 #define _nstates2	55	/* Process1 */
-#define minseq2	184
-#define maxseq2	237
+#define minseq2	189
+#define maxseq2	242
 #define _endstate2	54
 
 #define _nstates1	50	/* SysTick_Handler */
-#define minseq1	135
-#define maxseq1	183
+#define minseq1	140
+#define maxseq1	188
 #define _endstate1	49
 
-#define _nstates0	136	/* PendSV_Handler */
+#define _nstates0	141	/* PendSV_Handler */
 #define minseq0	0
-#define maxseq0	134
-#define _endstate0	135
+#define maxseq0	139
+#define _endstate0	140
 
 extern short src_ln13[];
 extern short src_ln12[];
@@ -239,8 +239,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned short
-#define _T5	356
-#define _T2	357
+#define _T5	357
+#define _T2	358
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -692,10 +692,10 @@ typedef struct TRIX_v6 {
 #define _start6	5
 #define _start5	5
 #define _start4	1
-#define _start3	170
+#define _start3	172
 #define _start2	51
 #define _start1	46
-#define _start0	132
+#define _start0	137
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -1055,7 +1055,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	358
+#define NTRANS	359
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);
