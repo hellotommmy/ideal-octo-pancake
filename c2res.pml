@@ -25,6 +25,9 @@
 /***** Executing entity (EP): exception(0/1) or user task (>= FIRST_TASK) *****/
 byte EP = NULL_byte;
 
+/***** Global Tick Counter *****/
+byte g_tickCount = 0;
+
 /***** "Ghost" BASEPRI (priority mask) — static single-level model *****/
 #define NON_IMPLEMENTED_LOW_BITS(val) (val >> 4)
 byte BASEPRI = 0;
@@ -249,7 +252,7 @@ inline OsSchedSuspend(taskID, needSched)
 {
     assert(tcb[taskID].state == READY);
     needSched = 1;
-    // OsDequeueWithId(taskID);  /* Remove from ready queue first */
+    OsDequeueWithId(taskID);  /* Remove from ready queue first - 必须保留！*/
     tcb[taskID].state = SUSPENDED;
     OsAdd2SortLink(taskID);
 }
@@ -257,13 +260,77 @@ inline LOS_TaskSuspend(taskID)
 {
     byte intSave;
     LOS_IntLock(intSave);
-    assert(tcb[taskID].state == READY);
+    
+    /* 可以suspend READY或DELAYED状态的任务 */
+    assert(tcb[taskID].state == READY || tcb[taskID].state == DELAYED);
+    
     byte needSched = 0;
-    OsSchedSuspend(taskID, needSched);
+    
+    if
+    :: (tcb[taskID].state == READY) ->
+        /* READY状态：按原流程处理 */
+        OsSchedSuspend(taskID, needSched);
+    :: (tcb[taskID].state == DELAYED) ->
+        /* DELAYED状态：直接改为SUSPENDED，不需要从就绪队列移除 */
+        needSched = 1;
+        tcb[taskID].state = SUSPENDED;
+        /* responseTime保持不变，在sortLink中 */
+    fi;
+    
     if
     :: (needSched && g_taskScheduled) ->
         LOS_IntRestore(intSave);
         LOS_Schedule();
+    :: else -> skip
+    fi;
+}
+
+/* Task Yield - voluntarily give up CPU */
+inline LOS_TaskYield()
+{
+    LOS_Schedule();  /* Simply trigger PendSV for rescheduling */
+}
+
+/* Task Delay - delay task for specified ticks */
+inline OsSchedDelay(taskID, ticks, needSched)
+{
+    assert(tcb[taskID].state == READY || tcb[taskID].state == RUNNING);
+    needSched = 1;
+    if
+    :: (tcb[taskID].state == READY) ->
+        OsDequeueWithId(taskID);  /* Remove from ready queue */
+    :: else -> skip  /* If RUNNING, will be handled by PendSV */
+    fi;
+    tcb[taskID].state = DELAYED;
+    /* Add to sortLink with responseTime = ticks */
+    assert(g_taskSortLinkTail < NUM_OF_TASKS + 1);
+    g_taskSortLink[g_taskSortLinkTail].taskId = taskID;
+    g_taskSortLink[g_taskSortLinkTail].responseTime = ticks;
+    tcb[taskID].pendList = g_taskSortLinkTail;
+    g_taskSortLinkTail++;
+}
+
+inline LOS_TaskDelay(ticks)
+{
+    byte intSave;
+    byte needSched = 0;
+    byte currentTask = EP;
+    
+    LOS_IntLock(intSave);
+    
+    if
+    :: (ticks == 0) ->
+        /* Delay 0 means yield CPU */
+        LOS_TaskYield();
+    :: (ticks > 0) ->
+        /* Delay for specified ticks */
+        OsSchedDelay(currentTask, ticks, needSched);
+        if
+        :: (needSched && g_taskScheduled) ->
+            LOS_IntRestore(intSave);
+            LOS_Schedule();
+        :: else -> skip
+        fi;
     :: else -> skip
     fi;
 }
@@ -281,6 +348,68 @@ inline OsAdd2SortLink(taskID)
 inline LOS_Schedule()
 {
     set_pending(PendSV_ID);
+}
+
+/* Process tick for delayed tasks */
+inline OsTickProcess()
+{
+    byte idx = 0;
+    byte taskId;
+    byte needSched = 0;
+    
+    /* Increment global tick counter */
+    g_tickCount++;
+    
+    /* Scan sortLink for delayed tasks */
+    do
+    :: (idx < g_taskSortLinkTail) ->
+        taskId = g_taskSortLink[idx].taskId;
+        if
+        :: (tcb[taskId].state == DELAYED && g_taskSortLink[idx].responseTime > 0) ->
+            /* Decrement responseTime */
+            g_taskSortLink[idx].responseTime--;
+            
+            if
+            :: (g_taskSortLink[idx].responseTime == 0) ->
+                /* Time expired, wake up the task */
+                tcb[taskId].state = READY;
+                OsEnqueueTail(taskId, tcb[taskId].prio);
+                
+                /* Remove from sortLink - need to shift remaining tasks */
+                byte shiftIdx = idx;
+                do
+                :: (shiftIdx < g_taskSortLinkTail - 1) ->
+                    g_taskSortLink[shiftIdx].taskId = g_taskSortLink[shiftIdx + 1].taskId;
+                    g_taskSortLink[shiftIdx].responseTime = g_taskSortLink[shiftIdx + 1].responseTime;
+                    /* Update pendList for shifted tasks */
+                    if
+                    :: (g_taskSortLink[shiftIdx].taskId != UNUSED) ->
+                        tcb[g_taskSortLink[shiftIdx].taskId].pendList = shiftIdx
+                    :: else -> skip
+                    fi;
+                    shiftIdx++
+                :: else -> break
+                od;
+                
+                g_taskSortLink[g_taskSortLinkTail - 1].taskId = UNUSED;
+                g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
+                g_taskSortLinkTail--;
+                
+                needSched = 1;
+                /* Don't increment idx, as we removed current element */
+            :: else -> idx++
+            fi
+        :: else -> idx++
+        fi
+    :: else -> break
+    od;
+    
+    /* If any task was awakened, request scheduling */
+    if
+    :: (needSched && g_taskScheduled) ->
+        set_pending(PendSV_ID)
+    :: else -> skip
+    fi
 }
 
 byte topPrio;
@@ -411,6 +540,8 @@ proctype SysTick_Handler()
     :: (EP == SysTick_ID) ->
         exp_entry(SysTick_ID);
 
+        /* Process tick: increment counter and check delayed tasks */
+        EXEC_WHEN_CURRENT_SAFE(SysTick_ID, OsTickProcess());
 
         /* tick 到达：请求调度（置位 PendSV） */
         EXEC_WHEN_CURRENT_SAFE(SysTick_ID, set_pending(PendSV_ID));
@@ -428,6 +559,7 @@ proctype Process1()
     do
     :: EXEC_WHEN_CURRENT(FIRST_TASK, printf("Process1 running\\n"))
        EXEC_WHEN_CURRENT(FIRST_TASK, assert(EP == FIRST_TASK))
+       EXEC_WHEN_CURRENT(FIRST_TASK, LOS_TaskDelay(5));
     od
 }
 
@@ -440,6 +572,8 @@ proctype Process2()
     // :: EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(tcb[FIRST_TASK].state == SUSPENDED))
      EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskResume(FIRST_TASK))
      EXEC_WHEN_CURRENT(FIRST_TASK + 1, assert(EP == FIRST_TASK + 1))
+    EXEC_WHEN_CURRENT(FIRST_TASK + 1, LOS_TaskDelay(0))
+
     od
 }
 

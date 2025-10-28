@@ -374,3 +374,32 @@ T0_init:
 accept_all:
 	skip
 }
+never delayed_become_ready {    /* !([] ((! ((tcb[2].state==2))) || (<> ((tcb[2].state==1))))) */
+T0_init:
+	do
+	:: (! ((! ((tcb[2].state==2)))) && ! (((tcb[2].state==1)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((tcb[2].state==1)))) -> goto accept_S4
+	od;
+}
+never tick_monotonic {    /* !([] ((g_tickCount<255))) */
+T0_init:
+	do
+	:: atomic { (! (((g_tickCount<255)))) -> assert(!(! (((g_tickCount<255))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}
+never delayed_not_in_ready_queue {    /* !([] ((! ((tcb[2].state==2))) || ((readyQueue[tcb[2].prio].tasks[0]!=2)))) */
+T0_init:
+	do
+	:: atomic { (! (((! ((tcb[2].state==2))) || ((readyQueue[tcb[2].prio].tasks[0]!=2))))) -> assert(!(! (((! ((tcb[2].state==2))) || ((readyQueue[tcb[2].prio].tasks[0]!=2)))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}

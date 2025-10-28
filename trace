@@ -1,0 +1,1387 @@
+ltl back_to_user: [] (<> ((EP>=2)))
+ltl exc_leads_to_user: [] ((! ((EP<2))) || (<> ((EP>=2))))
+ltl starvation_free_task1: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2)))))
+ltl starvation_free_task2: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1))))))
+ltl all_starvation_free: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) && ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))
+ltl P2_switching_not_P1_witness_unfolded: [] (! (<> ((((EP==1)) && ((EP_Stack==(2+1)))) && ((((EP==1)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((EP==(2+1)))))))))))))))))
+ltl p2_double_context_switch: [] (! (<> ((((EP==3)) && ((((pending_exp>>1)&1)==1))) && ((((EP==3)) && ((((pending_exp>>1)&1)==1))) U ((((EP==1)) && ((EP_Stack==3))) && ((((EP==1)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((EP==3))))))))))))))))))
+ltl smoke_P2_user_no_pending: [] (! ((((EP==(2+1))) && ((pending_exp==0))) && ((chain_tick_used==1))))
+ltl smoke_P1_user_no_pending: [] (! ((((EP==2)) && ((pending_exp==0))) && ((chain_tick_used==1))))
+starting claim 5
+Never claim moves to line 4	[(1)]
+  2:	proc  0 (:init::1) c2res.pml:784 (state 1)	[i = 0]
+		:init:(0):i = 0
+  4:	proc  0 (:init::1) c2res.pml:786 (state 2)	[((i<4))]
+  6:	proc  0 (:init::1) c2res.pml:408 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+  8:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 10:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 12:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 14:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 16:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 18:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+ 20:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 22:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 24:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+ 26:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 28:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 30:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+ 32:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 34:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 36:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+ 38:	proc  0 (:init::1) c2res.pml:412 (state 7)	[else]
+ 40:	proc  0 (:init::1) c2res.pml:414 (state 12)	[readyQueue[i].tailIndex = 0]
+ 42:	proc  0 (:init::1) c2res.pml:788 (state 14)	[i = (i+1)]
+		:init:(0):i = 1
+ 44:	proc  0 (:init::1) c2res.pml:786 (state 2)	[((i<4))]
+ 46:	proc  0 (:init::1) c2res.pml:408 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+ 48:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 50:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 52:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 54:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 56:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 58:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+ 60:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 62:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 64:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+ 66:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 68:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 70:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+ 72:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 74:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 76:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+ 78:	proc  0 (:init::1) c2res.pml:412 (state 7)	[else]
+ 80:	proc  0 (:init::1) c2res.pml:414 (state 12)	[readyQueue[i].tailIndex = 0]
+ 82:	proc  0 (:init::1) c2res.pml:788 (state 14)	[i = (i+1)]
+		:init:(0):i = 2
+ 84:	proc  0 (:init::1) c2res.pml:786 (state 2)	[((i<4))]
+ 86:	proc  0 (:init::1) c2res.pml:408 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+ 88:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 90:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 92:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 94:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+ 96:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 98:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+100:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+102:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+104:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+106:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+108:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+110:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+112:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+114:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+116:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+118:	proc  0 (:init::1) c2res.pml:412 (state 7)	[else]
+120:	proc  0 (:init::1) c2res.pml:414 (state 12)	[readyQueue[i].tailIndex = 0]
+122:	proc  0 (:init::1) c2res.pml:788 (state 14)	[i = (i+1)]
+		:init:(0):i = 3
+124:	proc  0 (:init::1) c2res.pml:786 (state 2)	[((i<4))]
+126:	proc  0 (:init::1) c2res.pml:408 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+128:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+130:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+132:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+134:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+136:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+138:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+140:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+142:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+144:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+146:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+148:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+150:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+152:	proc  0 (:init::1) c2res.pml:409 (state 4)	[((idx<5))]
+154:	proc  0 (:init::1) c2res.pml:410 (state 5)	[readyQueue[i].tasks[idx] = 255]
+156:	proc  0 (:init::1) c2res.pml:411 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+158:	proc  0 (:init::1) c2res.pml:412 (state 7)	[else]
+160:	proc  0 (:init::1) c2res.pml:414 (state 12)	[readyQueue[i].tailIndex = 0]
+162:	proc  0 (:init::1) c2res.pml:788 (state 14)	[i = (i+1)]
+		:init:(0):i = 4
+164:	proc  0 (:init::1) c2res.pml:789 (state 15)	[else]
+166:	proc  0 (:init::1) c2res.pml:793 (state 20)	[tcb[2].prio = 2]
+168:	proc  0 (:init::1) c2res.pml:793 (state 21)	[tcb[2].state = 1]
+170:	proc  0 (:init::1) c2res.pml:420 (state 22)	[((readyQueue[2].tailIndex<5))]
+172:	proc  0 (:init::1) c2res.pml:421 (state 23)	[readyQueue[2].tasks[readyQueue[2].tailIndex] = 2]
+174:	proc  0 (:init::1) c2res.pml:422 (state 24)	[readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)]
+176:	proc  0 (:init::1) c2res.pml:794 (state 30)	[tcb[(2+1)].prio = 2]
+178:	proc  0 (:init::1) c2res.pml:794 (state 31)	[tcb[(2+1)].state = 1]
+180:	proc  0 (:init::1) c2res.pml:420 (state 32)	[((readyQueue[2].tailIndex<5))]
+182:	proc  0 (:init::1) c2res.pml:421 (state 33)	[readyQueue[2].tasks[readyQueue[2].tailIndex] = (2+1)]
+184:	proc  0 (:init::1) c2res.pml:422 (state 34)	[readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)]
+186:	proc  0 (:init::1) c2res.pml:798 (state 40)	[EP = 2]
+		EP = 2
+188:	proc  0 (:init::1) c2res.pml:799 (state 41)	[topPrio = 2]
+		topPrio = 2
+190:	proc  0 (:init::1) c2res.pml:430 (state 42)	[idx = 0]
+		:init:(0):idx = 0
+192:	proc  0 (:init::1) c2res.pml:431 (state 43)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+194:	proc  0 (:init::1) c2res.pml:432 (state 44)	[readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]]
+196:	proc  0 (:init::1) c2res.pml:433 (state 45)	[idx = (idx+1)]
+		:init:(0):idx = 1
+198:	proc  0 (:init::1) c2res.pml:434 (state 46)	[else]
+200:	proc  0 (:init::1) c2res.pml:437 (state 51)	[((readyQueue[topPrio].tailIndex>0))]
+202:	proc  0 (:init::1) c2res.pml:438 (state 52)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+204:	proc  0 (:init::1) c2res.pml:439 (state 53)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+206:	proc  0 (:init::1) c2res.pml:801 (state 59)	[tcb[EP].state = 4]
+Starting PendSV_Handler with pid 2
+208:	proc  0 (:init::1) c2res.pml:804 (state 60)	[(run PendSV_Handler())]
+Starting SysTick_Handler with pid 3
+209:	proc  0 (:init::1) c2res.pml:804 (state 61)	[(run SysTick_Handler())]
+Starting Process2 with pid 4
+211:	proc  0 (:init::1) c2res.pml:805 (state 63)	[(run Process2())]
+Starting Process1 with pid 5
+213:	proc  0 (:init::1) c2res.pml:806 (state 64)	[(run Process1())]
+215:	proc  4 (Process1:1) c2res.pml:546 (state 1)	[((2==EP))]
+                          Process1 running\n215:	proc  4 (Process1:1) c2res.pml:546 (state 2)	[printf('Process1 running\\\\n')]
+216:	proc  4 (Process1:1) c2res.pml:546 (state 3)	[(1)]
+217:	proc  4 (Process1:1) c2res.pml:71 (state 4)	[assert(((1<2)&&(1<8)))]
+217:	proc  4 (Process1:1) c2res.pml:72 (state 5)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+218:	proc  4 (Process1:1) c2res.pml:546 (state 10)	[((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))]
+219:	proc  4 (Process1:1) c2res.pml:546 (state 11)	[((EP>=2))]
+219:	proc  4 (Process1:1) c2res.pml:546 (state 12)	[chain_tick_used = 0]
+220:	proc  4 (Process1:1) c2res.pml:86 (state 17)	[assert((EP_Stack==255))]
+220:	proc  4 (Process1:1) c2res.pml:87 (state 18)	[EP_Stack = EP]
+		EP_Stack = 2
+220:	proc  4 (Process1:1) c2res.pml:546 (state 20)	[EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		EP = 1
+		EP_Stack = 2
+222:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+224:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+225:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+225:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+227:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+228:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+228:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+228:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+228:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 1
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+229:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+230:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+231:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+232:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 69)	[(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))]
+233:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 70)	[assert(((1<2)&&(1<8)))]
+233:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 71)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+233:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 73)	[chain_tick_used = 1]
+		pending_exp = 2
+		chain_tick_used = 1
+235:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+236:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+236:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 3
+237:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+239:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+240:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+241:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+241:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+241:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+241:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+242:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+244:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+246:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+247:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+247:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 2
+249:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+250:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+250:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+251:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+251:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+251:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+252:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+254:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+255:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+255:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+255:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+256:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+257:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+258:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+259:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+260:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+261:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+262:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+263:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+263:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+263:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+264:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+265:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+265:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+266:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+268:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+269:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+270:	proc  1 (PendSV_Handler:1) c2res.pml:431 (state 63)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+270:	proc  1 (PendSV_Handler:1) c2res.pml:432 (state 64)	[readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]]
+270:	proc  1 (PendSV_Handler:1) c2res.pml:433 (state 65)	[idx = (idx+1)]
+		PendSV_Handler(1):idx = 1
+271:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+272:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+272:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+272:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+273:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+275:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+275:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+276:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+278:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+279:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+279:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+		EP_Stack = 3
+280:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+282:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+283:	proc  1 (PendSV_Handler:1) c2res.pml:150 (state 113)	[((pending_exp>0))]
+284:	proc  1 (PendSV_Handler:1) c2res.pml:131 (state 114)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		PendSV_Handler(1):tmp = 1
+284:	proc  1 (PendSV_Handler:1) c2res.pml:142 (state 116)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		PendSV_Handler(1):tmp = 1
+284:	proc  1 (PendSV_Handler:1) c2res.pml:143 (state 117)	[EP = tmp]
+		EP = 1
+		PendSV_Handler(1):tmp = 1
+284:	proc  1 (PendSV_Handler:1) c2res.pml:144 (state 118)	[tmp = 255]
+		EP = 1
+		PendSV_Handler(1):tmp = 255
+285:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+287:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+289:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+290:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+290:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+292:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+293:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+293:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+293:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+293:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 2
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+294:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+295:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+296:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+297:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 74)	[(1)]
+299:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+300:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+300:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 1
+301:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+303:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+304:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+305:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+305:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+305:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+305:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+306:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+308:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+310:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+311:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+311:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 0
+313:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+314:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+314:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+315:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+315:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+315:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+316:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+318:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+319:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+319:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+319:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+320:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+321:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+322:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+323:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+324:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+325:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+326:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+327:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+327:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 2
+327:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 2
+328:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+329:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 2
+329:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 2
+330:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+332:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+333:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+334:	proc  1 (PendSV_Handler:1) c2res.pml:431 (state 63)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+334:	proc  1 (PendSV_Handler:1) c2res.pml:432 (state 64)	[readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]]
+334:	proc  1 (PendSV_Handler:1) c2res.pml:433 (state 65)	[idx = (idx+1)]
+		PendSV_Handler(1):idx = 1
+335:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+336:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+336:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+336:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+337:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+339:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+339:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+340:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+342:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+343:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+343:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+		EP_Stack = 2
+344:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+346:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+347:	proc  1 (PendSV_Handler:1) c2res.pml:151 (state 120)	[else]
+348:	proc  1 (PendSV_Handler:1) c2res.pml:91 (state 121)	[assert((EP_Stack!=255))]
+348:	proc  1 (PendSV_Handler:1) c2res.pml:92 (state 122)	[EP = EP_Stack]
+		EP = 2
+348:	proc  1 (PendSV_Handler:1) c2res.pml:94 (state 123)	[EP_Stack = 255]
+		EP = 2
+		EP_Stack = 255
+349:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+351:	proc  4 (Process1:1) c2res.pml:547 (state 26)	[((2==EP))]
+351:	proc  4 (Process1:1) c2res.pml:547 (state 27)	[assert((EP==2))]
+352:	proc  4 (Process1:1) c2res.pml:547 (state 28)	[(1)]
+353:	proc  4 (Process1:1) c2res.pml:71 (state 29)	[assert(((1<2)&&(1<8)))]
+353:	proc  4 (Process1:1) c2res.pml:72 (state 30)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+354:	proc  4 (Process1:1) c2res.pml:547 (state 35)	[((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))]
+355:	proc  4 (Process1:1) c2res.pml:547 (state 36)	[((EP>=2))]
+355:	proc  4 (Process1:1) c2res.pml:547 (state 37)	[chain_tick_used = 0]
+		chain_tick_used = 0
+356:	proc  4 (Process1:1) c2res.pml:86 (state 42)	[assert((EP_Stack==255))]
+356:	proc  4 (Process1:1) c2res.pml:87 (state 43)	[EP_Stack = EP]
+		EP_Stack = 2
+356:	proc  4 (Process1:1) c2res.pml:547 (state 45)	[EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		EP = 1
+		EP_Stack = 2
+358:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+360:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+361:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+361:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+363:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+364:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+364:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+364:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+364:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 3
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+365:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+366:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+367:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+368:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 69)	[(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))]
+369:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 70)	[assert(((1<2)&&(1<8)))]
+369:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 71)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+369:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 73)	[chain_tick_used = 1]
+		pending_exp = 2
+		chain_tick_used = 1
+371:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+372:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+372:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 3
+373:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+375:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+376:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+377:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+377:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+377:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+377:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+378:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+380:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+382:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+383:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+383:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 2
+385:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+386:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+386:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+387:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+387:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+387:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+388:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+390:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+391:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+391:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+391:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+392:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+393:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+394:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+395:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+396:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+397:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+398:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+399:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+399:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+399:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+400:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+401:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+401:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+402:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+404:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+405:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+406:	proc  1 (PendSV_Handler:1) c2res.pml:431 (state 63)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+406:	proc  1 (PendSV_Handler:1) c2res.pml:432 (state 64)	[readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]]
+406:	proc  1 (PendSV_Handler:1) c2res.pml:433 (state 65)	[idx = (idx+1)]
+		PendSV_Handler(1):idx = 1
+407:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+408:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+408:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+408:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+409:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+411:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+411:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+412:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+414:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+415:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+415:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+		EP_Stack = 3
+416:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+418:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+419:	proc  1 (PendSV_Handler:1) c2res.pml:150 (state 113)	[((pending_exp>0))]
+420:	proc  1 (PendSV_Handler:1) c2res.pml:131 (state 114)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		PendSV_Handler(1):tmp = 1
+420:	proc  1 (PendSV_Handler:1) c2res.pml:142 (state 116)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		PendSV_Handler(1):tmp = 1
+420:	proc  1 (PendSV_Handler:1) c2res.pml:143 (state 117)	[EP = tmp]
+		EP = 1
+		PendSV_Handler(1):tmp = 1
+420:	proc  1 (PendSV_Handler:1) c2res.pml:144 (state 118)	[tmp = 255]
+		EP = 1
+		PendSV_Handler(1):tmp = 255
+421:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+423:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+425:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+426:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+426:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+428:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+429:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+429:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+429:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+429:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 4
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+430:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+431:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+432:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+433:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 74)	[(1)]
+435:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+436:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+436:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 1
+437:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+439:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+440:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+441:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+441:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+441:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+441:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+442:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+444:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+446:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+447:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+447:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 0
+449:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+450:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+450:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+451:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+451:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+451:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+452:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+454:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+455:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+455:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+455:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+456:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+457:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+458:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+459:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+460:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+461:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+462:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+463:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+463:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 2
+463:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 2
+464:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+465:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 2
+465:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 2
+466:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+468:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+469:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+470:	proc  1 (PendSV_Handler:1) c2res.pml:431 (state 63)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+470:	proc  1 (PendSV_Handler:1) c2res.pml:432 (state 64)	[readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]]
+470:	proc  1 (PendSV_Handler:1) c2res.pml:433 (state 65)	[idx = (idx+1)]
+		PendSV_Handler(1):idx = 1
+471:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+472:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+472:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+472:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+473:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+475:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+475:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+476:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+478:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+479:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+479:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+		EP_Stack = 2
+480:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+482:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+483:	proc  1 (PendSV_Handler:1) c2res.pml:151 (state 120)	[else]
+484:	proc  1 (PendSV_Handler:1) c2res.pml:91 (state 121)	[assert((EP_Stack!=255))]
+484:	proc  1 (PendSV_Handler:1) c2res.pml:92 (state 122)	[EP = EP_Stack]
+		EP = 2
+484:	proc  1 (PendSV_Handler:1) c2res.pml:94 (state 123)	[EP_Stack = 255]
+		EP = 2
+		EP_Stack = 255
+485:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+487:	proc  4 (Process1:1) c2res.pml:548 (state 51)	[((2==EP))]
+488:	proc  4 (Process1:1) c2res.pml:302 (state 52)	[intSave = 0]
+		Process1(4):intSave = 0
+488:	proc  4 (Process1:1) c2res.pml:303 (state 53)	[needSched = 0]
+		Process1(4):needSched = 0
+		Process1(4):intSave = 0
+488:	proc  4 (Process1:1) c2res.pml:305 (state 54)	[currentTask = EP]
+		Process1(4):currentTask = 2
+		Process1(4):needSched = 0
+		Process1(4):intSave = 0
+489:	proc  4 (Process1:1) c2res.pml:223 (state 55)	[intSave = 0]
+		Process1(4):intSave = 0
+490:	proc  4 (Process1:1) c2res.pml:311 (state 63)	[((5>0))]
+491:	proc  4 (Process1:1) c2res.pml:283 (state 64)	[assert(((tcb[currentTask].state==1)||(tcb[currentTask].state==4)))]
+491:	proc  4 (Process1:1) c2res.pml:284 (state 65)	[needSched = 1]
+		Process1(4):needSched = 1
+492:	proc  4 (Process1:1) c2res.pml:288 (state 99)	[else]
+493:	proc  4 (Process1:1) c2res.pml:288 (state 100)	[(1)]
+493:	proc  4 (Process1:1) c2res.pml:290 (state 103)	[tcb[currentTask].state = 2]
+493:	proc  4 (Process1:1) c2res.pml:292 (state 104)	[assert((g_taskSortLinkTail<(2+1)))]
+493:	proc  4 (Process1:1) c2res.pml:293 (state 105)	[g_taskSortLink[g_taskSortLinkTail].taskId = currentTask]
+493:	proc  4 (Process1:1) c2res.pml:294 (state 106)	[g_taskSortLink[g_taskSortLinkTail].responseTime = 5]
+493:	proc  4 (Process1:1) c2res.pml:295 (state 107)	[tcb[currentTask].pendList = g_taskSortLinkTail]
+493:	proc  4 (Process1:1) c2res.pml:296 (state 108)	[g_taskSortLinkTail = (g_taskSortLinkTail+1)]
+		g_taskSortLinkTail = 1
+494:	proc  4 (Process1:1) c2res.pml:315 (state 110)	[((needSched&&g_taskScheduled))]
+495:	proc  4 (Process1:1) c2res.pml:227 (state 111)	[intSave = 0]
+		Process1(4):intSave = 0
+496:	proc  4 (Process1:1) c2res.pml:71 (state 113)	[assert(((0<2)&&(0<8)))]
+496:	proc  4 (Process1:1) c2res.pml:72 (state 114)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 1
+497:	proc  4 (Process1:1) c2res.pml:548 (state 126)	[(1)]
+498:	proc  4 (Process1:1) c2res.pml:71 (state 127)	[assert(((1<2)&&(1<8)))]
+498:	proc  4 (Process1:1) c2res.pml:72 (state 128)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 3
+499:	proc  4 (Process1:1) c2res.pml:548 (state 133)	[((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))]
+500:	proc  4 (Process1:1) c2res.pml:548 (state 134)	[((EP>=2))]
+500:	proc  4 (Process1:1) c2res.pml:548 (state 135)	[chain_tick_used = 0]
+		chain_tick_used = 0
+501:	proc  4 (Process1:1) c2res.pml:86 (state 140)	[assert((EP_Stack==255))]
+501:	proc  4 (Process1:1) c2res.pml:87 (state 141)	[EP_Stack = EP]
+		EP_Stack = 2
+501:	proc  4 (Process1:1) c2res.pml:548 (state 143)	[EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		EP = 0
+		EP_Stack = 2
+503:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+505:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+506:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+506:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 2
+508:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+509:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 19)	[else]
+510:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 20)	[(1)]
+511:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+513:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+514:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+514:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+514:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+515:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+516:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+517:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+518:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+519:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+520:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+521:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+522:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+522:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+522:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+523:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+524:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+524:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+525:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+527:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+528:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+529:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+530:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+530:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+530:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+531:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+533:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+533:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+534:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+536:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+537:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+537:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+		EP_Stack = 3
+538:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+540:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+541:	proc  1 (PendSV_Handler:1) c2res.pml:150 (state 113)	[((pending_exp>0))]
+542:	proc  1 (PendSV_Handler:1) c2res.pml:131 (state 114)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		PendSV_Handler(1):tmp = 1
+542:	proc  1 (PendSV_Handler:1) c2res.pml:142 (state 116)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		PendSV_Handler(1):tmp = 1
+542:	proc  1 (PendSV_Handler:1) c2res.pml:143 (state 117)	[EP = tmp]
+		EP = 1
+		PendSV_Handler(1):tmp = 1
+542:	proc  1 (PendSV_Handler:1) c2res.pml:144 (state 118)	[tmp = 255]
+		EP = 1
+		PendSV_Handler(1):tmp = 255
+543:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+545:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+547:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+548:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+548:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+550:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+551:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+551:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+551:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+551:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 5
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+552:	proc  2 (SysTick_Handler:1) c2res.pml:351 (state 13)	[((idx<g_taskSortLinkTail))]
+552:	proc  2 (SysTick_Handler:1) c2res.pml:352 (state 14)	[taskId = g_taskSortLink[idx].taskId]
+		SysTick_Handler(2):taskId = 2
+553:	proc  2 (SysTick_Handler:1) c2res.pml:354 (state 15)	[(((tcb[taskId].state==2)&&(g_taskSortLink[idx].responseTime>0)))]
+553:	proc  2 (SysTick_Handler:1) c2res.pml:356 (state 16)	[g_taskSortLink[idx].responseTime = (g_taskSortLink[idx].responseTime-1)]
+554:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 47)	[else]
+555:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 48)	[idx = (idx+1)]
+		SysTick_Handler(2):idx = 1
+556:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+557:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+558:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+559:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 69)	[(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))]
+560:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 70)	[assert(((1<2)&&(1<8)))]
+560:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 71)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+560:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 73)	[chain_tick_used = 1]
+		pending_exp = 2
+		chain_tick_used = 1
+562:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+563:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+563:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 3
+564:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+566:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+567:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+568:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+568:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+568:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+568:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+569:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+571:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+573:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+574:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+574:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 2
+576:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+577:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+577:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+578:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+578:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+578:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+579:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+581:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+582:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+582:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+582:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+583:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+584:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+585:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+586:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+587:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+588:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+589:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+590:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+590:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+590:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+591:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+592:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+592:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+593:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+595:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+596:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+597:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+598:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+598:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+598:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+599:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+601:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+601:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+602:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+604:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+605:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+605:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+606:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+608:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+609:	proc  1 (PendSV_Handler:1) c2res.pml:150 (state 113)	[((pending_exp>0))]
+610:	proc  1 (PendSV_Handler:1) c2res.pml:131 (state 114)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		PendSV_Handler(1):tmp = 1
+610:	proc  1 (PendSV_Handler:1) c2res.pml:142 (state 116)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		PendSV_Handler(1):tmp = 1
+610:	proc  1 (PendSV_Handler:1) c2res.pml:143 (state 117)	[EP = tmp]
+		EP = 1
+		PendSV_Handler(1):tmp = 1
+610:	proc  1 (PendSV_Handler:1) c2res.pml:144 (state 118)	[tmp = 255]
+		EP = 1
+		PendSV_Handler(1):tmp = 255
+611:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+613:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+615:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+616:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+616:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+618:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+619:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+619:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+619:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+619:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 6
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+620:	proc  2 (SysTick_Handler:1) c2res.pml:351 (state 13)	[((idx<g_taskSortLinkTail))]
+620:	proc  2 (SysTick_Handler:1) c2res.pml:352 (state 14)	[taskId = g_taskSortLink[idx].taskId]
+		SysTick_Handler(2):taskId = 2
+621:	proc  2 (SysTick_Handler:1) c2res.pml:354 (state 15)	[(((tcb[taskId].state==2)&&(g_taskSortLink[idx].responseTime>0)))]
+621:	proc  2 (SysTick_Handler:1) c2res.pml:356 (state 16)	[g_taskSortLink[idx].responseTime = (g_taskSortLink[idx].responseTime-1)]
+622:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 47)	[else]
+623:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 48)	[idx = (idx+1)]
+		SysTick_Handler(2):idx = 1
+624:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+625:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+626:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+627:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 74)	[(1)]
+629:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+630:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+630:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 1
+631:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+633:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+634:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+635:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+635:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+635:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+635:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+636:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+638:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+640:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+641:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+641:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 0
+643:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+644:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+644:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+645:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+645:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+645:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+646:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+648:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+649:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+649:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+649:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+650:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+651:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+652:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+653:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+654:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+655:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+656:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+657:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+657:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+657:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+658:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+659:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+659:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+660:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+662:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+663:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+664:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+665:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+665:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+665:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+666:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+668:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+668:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+669:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+671:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+672:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+672:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+673:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+675:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+676:	proc  1 (PendSV_Handler:1) c2res.pml:151 (state 120)	[else]
+677:	proc  1 (PendSV_Handler:1) c2res.pml:91 (state 121)	[assert((EP_Stack!=255))]
+677:	proc  1 (PendSV_Handler:1) c2res.pml:92 (state 122)	[EP = EP_Stack]
+		EP = 3
+677:	proc  1 (PendSV_Handler:1) c2res.pml:94 (state 123)	[EP_Stack = 255]
+		EP = 3
+		EP_Stack = 255
+678:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+680:	proc  3 (Process2:1) c2res.pml:555 (state 1)	[(((2+1)==EP))]
+                      P2 running
+680:	proc  3 (Process2:1) c2res.pml:555 (state 2)	[printf('P2 running\\n')]
+681:	proc  3 (Process2:1) c2res.pml:555 (state 3)	[(1)]
+682:	proc  3 (Process2:1) c2res.pml:71 (state 4)	[assert(((1<2)&&(1<8)))]
+682:	proc  3 (Process2:1) c2res.pml:72 (state 5)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+683:	proc  3 (Process2:1) c2res.pml:555 (state 10)	[((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))]
+684:	proc  3 (Process2:1) c2res.pml:555 (state 11)	[((EP>=2))]
+684:	proc  3 (Process2:1) c2res.pml:555 (state 12)	[chain_tick_used = 0]
+		chain_tick_used = 0
+685:	proc  3 (Process2:1) c2res.pml:86 (state 17)	[assert((EP_Stack==255))]
+685:	proc  3 (Process2:1) c2res.pml:87 (state 18)	[EP_Stack = EP]
+		EP_Stack = 3
+685:	proc  3 (Process2:1) c2res.pml:555 (state 20)	[EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		EP = 1
+		EP_Stack = 3
+687:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+689:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+690:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+690:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+692:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+693:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+693:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+693:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+693:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 7
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+694:	proc  2 (SysTick_Handler:1) c2res.pml:351 (state 13)	[((idx<g_taskSortLinkTail))]
+694:	proc  2 (SysTick_Handler:1) c2res.pml:352 (state 14)	[taskId = g_taskSortLink[idx].taskId]
+		SysTick_Handler(2):taskId = 2
+695:	proc  2 (SysTick_Handler:1) c2res.pml:354 (state 15)	[(((tcb[taskId].state==2)&&(g_taskSortLink[idx].responseTime>0)))]
+695:	proc  2 (SysTick_Handler:1) c2res.pml:356 (state 16)	[g_taskSortLink[idx].responseTime = (g_taskSortLink[idx].responseTime-1)]
+696:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 47)	[else]
+697:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 48)	[idx = (idx+1)]
+		SysTick_Handler(2):idx = 1
+698:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+699:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+700:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+701:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 69)	[(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))]
+702:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 70)	[assert(((1<2)&&(1<8)))]
+702:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 71)	[pending_exp = (pending_exp|(1<<1))]
+		pending_exp = 2
+702:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 73)	[chain_tick_used = 1]
+		pending_exp = 2
+		chain_tick_used = 1
+704:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+705:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+705:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 3
+706:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+708:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+709:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+710:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+710:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+710:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+710:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+711:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+713:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+715:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+716:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+716:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 2
+718:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+719:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+719:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+720:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+720:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+720:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+721:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+723:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+724:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+724:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+724:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+725:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+726:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+727:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+728:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+729:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+730:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+731:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+732:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+732:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+732:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+733:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+734:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+734:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+735:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+737:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+738:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+739:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+740:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+740:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+740:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+741:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+743:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+743:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+744:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+746:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+747:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+747:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+748:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+750:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+751:	proc  1 (PendSV_Handler:1) c2res.pml:150 (state 113)	[((pending_exp>0))]
+752:	proc  1 (PendSV_Handler:1) c2res.pml:131 (state 114)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		PendSV_Handler(1):tmp = 1
+752:	proc  1 (PendSV_Handler:1) c2res.pml:142 (state 116)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		PendSV_Handler(1):tmp = 1
+752:	proc  1 (PendSV_Handler:1) c2res.pml:143 (state 117)	[EP = tmp]
+		EP = 1
+		PendSV_Handler(1):tmp = 1
+752:	proc  1 (PendSV_Handler:1) c2res.pml:144 (state 118)	[tmp = 255]
+		EP = 1
+		PendSV_Handler(1):tmp = 255
+753:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+755:	proc  2 (SysTick_Handler:1) c2res.pml:526 (state 1)	[((EP==1))]
+757:	proc  2 (SysTick_Handler:1) c2res.pml:136 (state 2)	[((EP==1))]
+758:	proc  2 (SysTick_Handler:1) c2res.pml:76 (state 3)	[assert(((1<2)&&(1<8)))]
+758:	proc  2 (SysTick_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<1)))]
+		pending_exp = 0
+760:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 8)	[((1==EP))]
+761:	proc  2 (SysTick_Handler:1) c2res.pml:343 (state 9)	[idx = 0]
+		SysTick_Handler(2):idx = 0
+761:	proc  2 (SysTick_Handler:1) c2res.pml:344 (state 10)	[taskId = 0]
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+761:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 11)	[needSched = 0]
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+761:	proc  2 (SysTick_Handler:1) c2res.pml:347 (state 12)	[g_tickCount = (g_tickCount+1)]
+		g_tickCount = 8
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+762:	proc  2 (SysTick_Handler:1) c2res.pml:351 (state 13)	[((idx<g_taskSortLinkTail))]
+762:	proc  2 (SysTick_Handler:1) c2res.pml:352 (state 14)	[taskId = g_taskSortLink[idx].taskId]
+		SysTick_Handler(2):taskId = 2
+763:	proc  2 (SysTick_Handler:1) c2res.pml:354 (state 15)	[(((tcb[taskId].state==2)&&(g_taskSortLink[idx].responseTime>0)))]
+763:	proc  2 (SysTick_Handler:1) c2res.pml:356 (state 16)	[g_taskSortLink[idx].responseTime = (g_taskSortLink[idx].responseTime-1)]
+764:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 47)	[else]
+765:	proc  2 (SysTick_Handler:1) c2res.pml:386 (state 48)	[idx = (idx+1)]
+		SysTick_Handler(2):idx = 1
+766:	proc  2 (SysTick_Handler:1) c2res.pml:390 (state 55)	[else]
+767:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 64)	[else]
+768:	proc  2 (SysTick_Handler:1) c2res.pml:397 (state 65)	[(1)]
+769:	proc  2 (SysTick_Handler:1) c2res.pml:530 (state 74)	[(1)]
+771:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 78)	[((1==EP))]
+772:	proc  2 (SysTick_Handler:1) c2res.pml:71 (state 79)	[assert(((0<2)&&(0<8)))]
+772:	proc  2 (SysTick_Handler:1) c2res.pml:72 (state 80)	[pending_exp = (pending_exp|(1<<0))]
+		pending_exp = 1
+773:	proc  2 (SysTick_Handler:1) c2res.pml:533 (state 87)	[(1)]
+775:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 91)	[((1==EP))]
+776:	proc  2 (SysTick_Handler:1) c2res.pml:150 (state 92)	[((pending_exp>0))]
+777:	proc  2 (SysTick_Handler:1) c2res.pml:131 (state 93)	[tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )]
+		SysTick_Handler(2):tmp = 0
+777:	proc  2 (SysTick_Handler:1) c2res.pml:142 (state 95)	[assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))]
+		SysTick_Handler(2):tmp = 0
+777:	proc  2 (SysTick_Handler:1) c2res.pml:143 (state 96)	[EP = tmp]
+		EP = 0
+		SysTick_Handler(2):tmp = 0
+777:	proc  2 (SysTick_Handler:1) c2res.pml:144 (state 97)	[tmp = 255]
+		EP = 0
+		SysTick_Handler(2):tmp = 255
+778:	proc  2 (SysTick_Handler:1) c2res.pml:538 (state 112)	[(1)]
+780:	proc  1 (PendSV_Handler:1) c2res.pml:498 (state 1)	[((EP==0))]
+782:	proc  1 (PendSV_Handler:1) c2res.pml:136 (state 2)	[((EP==0))]
+783:	proc  1 (PendSV_Handler:1) c2res.pml:76 (state 3)	[assert(((0<2)&&(0<8)))]
+783:	proc  1 (PendSV_Handler:1) c2res.pml:77 (state 4)	[pending_exp = (pending_exp&~((1<<0)))]
+		pending_exp = 0
+785:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 8)	[((0==EP))]
+786:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 9)	[((tcb[EP_Stack].state==4))]
+786:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 10)	[tcb[EP_Stack].state = 1]
+787:	proc  1 (PendSV_Handler:1) c2res.pml:420 (state 11)	[((readyQueue[tcb[EP_Stack].prio].tailIndex<5))]
+787:	proc  1 (PendSV_Handler:1) c2res.pml:421 (state 12)	[readyQueue[tcb[EP_Stack].prio].tasks[readyQueue[tcb[EP_Stack].prio].tailIndex] = EP_Stack]
+787:	proc  1 (PendSV_Handler:1) c2res.pml:422 (state 13)	[readyQueue[tcb[EP_Stack].prio].tailIndex = (readyQueue[tcb[EP_Stack].prio].tailIndex+1)]
+788:	proc  1 (PendSV_Handler:1) c2res.pml:503 (state 28)	[(1)]
+790:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 32)	[((0==EP))]
+791:	proc  1 (PendSV_Handler:1) c2res.pml:477 (state 33)	[prio = 0]
+		PendSV_Handler(1):prio = 0
+791:	proc  1 (PendSV_Handler:1) c2res.pml:478 (state 34)	[top_task = 0]
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+791:	proc  1 (PendSV_Handler:1) c2res.pml:479 (state 35)	[found = 0]
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+792:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+793:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+794:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 1
+795:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+796:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 40)	[else]
+797:	proc  1 (PendSV_Handler:1) c2res.pml:485 (state 41)	[prio = (prio+1)]
+		PendSV_Handler(1):prio = 2
+798:	proc  1 (PendSV_Handler:1) c2res.pml:480 (state 36)	[(((prio<4)&&!(found)))]
+799:	proc  1 (PendSV_Handler:1) c2res.pml:482 (state 37)	[((readyQueue[prio].tailIndex>0))]
+799:	proc  1 (PendSV_Handler:1) c2res.pml:483 (state 38)	[top_task = readyQueue[prio].tasks[0]]
+		PendSV_Handler(1):top_task = 3
+799:	proc  1 (PendSV_Handler:1) c2res.pml:484 (state 39)	[found = 1]
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+800:	proc  1 (PendSV_Handler:1) c2res.pml:487 (state 44)	[else]
+801:	proc  1 (PendSV_Handler:1) c2res.pml:489 (state 49)	[tmp = top_task]
+		PendSV_Handler(1):tmp = 3
+801:	proc  1 (PendSV_Handler:1) c2res.pml:490 (state 50)	[topPrio = prio]
+		PendSV_Handler(1):tmp = 3
+802:	proc  1 (PendSV_Handler:1) c2res.pml:511 (state 57)	[(1)]
+804:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 61)	[((0==EP))]
+805:	proc  1 (PendSV_Handler:1) c2res.pml:430 (state 62)	[idx = 0]
+		PendSV_Handler(1):idx = 0
+806:	proc  1 (PendSV_Handler:1) c2res.pml:434 (state 66)	[else]
+807:	proc  1 (PendSV_Handler:1) c2res.pml:437 (state 71)	[((readyQueue[topPrio].tailIndex>0))]
+807:	proc  1 (PendSV_Handler:1) c2res.pml:438 (state 72)	[readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255]
+807:	proc  1 (PendSV_Handler:1) c2res.pml:439 (state 73)	[readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)]
+808:	proc  1 (PendSV_Handler:1) c2res.pml:513 (state 84)	[(1)]
+810:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 88)	[((0==EP))]
+810:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 89)	[tcb[tmp].state = 4]
+811:	proc  1 (PendSV_Handler:1) c2res.pml:514 (state 95)	[(1)]
+813:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 99)	[((0==EP))]
+814:	proc  1 (PendSV_Handler:1) c2res.pml:100 (state 100)	[assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))]
+814:	proc  1 (PendSV_Handler:1) c2res.pml:102 (state 101)	[EP_Stack = tmp]
+815:	proc  1 (PendSV_Handler:1) c2res.pml:515 (state 108)	[(1)]
+817:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 112)	[((0==EP))]
+818:	proc  1 (PendSV_Handler:1) c2res.pml:151 (state 120)	[else]
+819:	proc  1 (PendSV_Handler:1) c2res.pml:91 (state 121)	[assert((EP_Stack!=255))]
+819:	proc  1 (PendSV_Handler:1) c2res.pml:92 (state 122)	[EP = EP_Stack]
+		EP = 3
+819:	proc  1 (PendSV_Handler:1) c2res.pml:94 (state 123)	[EP_Stack = 255]
+		EP = 3
+		EP_Stack = 255
+820:	proc  1 (PendSV_Handler:1) c2res.pml:518 (state 133)	[(1)]
+822:	proc  3 (Process2:1) c2res.pml:557 (state 26)	[(((2+1)==EP))]
+823:	proc  3 (Process2:1) c2res.pml:262 (state 27)	[intSave = 0]
+		Process2(3):intSave = 0
+824:	proc  3 (Process2:1) c2res.pml:223 (state 28)	[intSave = 0]
+		Process2(3):intSave = 0
+spin: c2res.pml:263, Error: assertion violated
+spin: text of failed assertion: assert((tcb[2].state==1))
+824:	proc  3 (Process2:1) c2res.pml:263 (state 30)	[assert((tcb[2].state==1))]
+		Process2(3):intSave = 0
+824:	proc  3 (Process2:1) c2res.pml:265 (state 31)	[needSched = 0]
+		Process2(3):needSched = 0
+		Process2(3):intSave = 0
+spin: trail ends after 824 steps
+#processes: 5
+		EP = 3
+		g_tickCount = 8
+		BASEPRI = 0
+		pending_exp = 0
+		EP_Stack = 255
+		chain_tick_used = 1
+		g_taskSortLink[0].taskId = 2
+		g_taskSortLink[0].responseTime = 1
+		g_taskSortLink[1].taskId = 0
+		g_taskSortLink[1].responseTime = 0
+		g_taskSortLink[2].taskId = 0
+		g_taskSortLink[2].responseTime = 0
+		g_taskSortLinkTail = 1
+		g_taskScheduled = 1
+		topPrio = 2
+		tcb[0].prio = 0
+		tcb[0].state = 0
+		tcb[0].pendList = 0
+		tcb[1].prio = 0
+		tcb[1].state = 0
+		tcb[1].pendList = 0
+		tcb[2].prio = 2
+		tcb[2].state = 2
+		tcb[2].pendList = 0
+		tcb[3].prio = 2
+		tcb[3].state = 4
+		tcb[3].pendList = 0
+		readyQueue[0].tasks[0] = 255
+		readyQueue[0].tasks[1] = 255
+		readyQueue[0].tasks[2] = 255
+		readyQueue[0].tasks[3] = 255
+		readyQueue[0].tasks[4] = 255
+		readyQueue[0].tailIndex = 0
+		readyQueue[1].tasks[0] = 255
+		readyQueue[1].tasks[1] = 255
+		readyQueue[1].tasks[2] = 255
+		readyQueue[1].tasks[3] = 255
+		readyQueue[1].tasks[4] = 255
+		readyQueue[1].tailIndex = 0
+		readyQueue[2].tasks[0] = 255
+		readyQueue[2].tasks[1] = 255
+		readyQueue[2].tasks[2] = 255
+		readyQueue[2].tasks[3] = 255
+		readyQueue[2].tasks[4] = 255
+		readyQueue[2].tailIndex = 0
+		readyQueue[3].tasks[0] = 255
+		readyQueue[3].tasks[1] = 255
+		readyQueue[3].tasks[2] = 255
+		readyQueue[3].tasks[3] = 255
+		readyQueue[3].tasks[4] = 255
+		readyQueue[3].tailIndex = 0
+824:	proc  4 (Process1:1) c2res.pml:545 (state 149)
+		Process1(4):prioLevel = 0
+		Process1(4):found = 0
+		Process1(4):idx = 0
+		Process1(4):currentTask = 2
+		Process1(4):needSched = 1
+		Process1(4):intSave = 0
+824:	proc  3 (Process2:1) c2res.pml:252 (state 74)
+		Process2(3):prioLevel = 0
+		Process2(3):found = 0
+		Process2(3):idx = 0
+		Process2(3):currentTask = 0
+		Process2(3):needSched = 0
+		Process2(3):intSave = 0
+		Process2(3):idx = 0
+		Process2(3):needSched = 0
+		Process2(3):tempStatus = 0
+		Process2(3):intSave = 0
+		Process2(3):prioLevel = 0
+		Process2(3):found = 0
+		Process2(3):idx = 0
+		Process2(3):needSched = 0
+		Process2(3):intSave = 0
+824:	proc  2 (SysTick_Handler:1) c2res.pml:525 (state 116)
+		SysTick_Handler(2):shiftIdx = 0
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 2
+		SysTick_Handler(2):idx = 1
+		SysTick_Handler(2):tmp = 255
+824:	proc  1 (PendSV_Handler:1) c2res.pml:497 (state 137)
+		PendSV_Handler(1):idx = 0
+		PendSV_Handler(1):found = 1
+		PendSV_Handler(1):top_task = 3
+		PendSV_Handler(1):prio = 2
+		PendSV_Handler(1):tmp = 3
+824:	proc  0 (:init::1) c2res.pml:807 (state 65) <valid end state>
+		:init:(0):idx = 1
+		:init:(0):idx = 5
+		:init:(0):i = 4
+824:	proc  - (back_to_user:1) _spin_nvr.tmp:2 (state 5)
+5 processes created
