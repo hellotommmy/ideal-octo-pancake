@@ -154,3 +154,26 @@ ltl delayed_not_in_ready_queue {
         (readyQueue[tcb[FIRST_TASK].prio].tasks[0] != FIRST_TASK))
 }
 
+/* 
+ * FORMAL VERIFICATION: SortLink is always sorted (LTL version)
+ * 
+ * This LTL property verifies that sortLink is always sorted by responseTime.
+ * We check that consecutive elements maintain ascending order.
+ * 
+ * Property: Always (if there are at least 2 elements in sortLink,
+ *                   then first element <= second element)
+ */
+ltl sortlink_is_sorted {
+    [] ((g_taskSortLinkTail >= 2) -> 
+        (g_taskSortLink[0].responseTime <= g_taskSortLink[1].responseTime))
+}
+
+/* 
+ * Extended check: If sortLink has 3 elements, check first three are sorted
+ */
+ltl sortlink_three_sorted {
+    [] ((g_taskSortLinkTail >= 3) -> 
+        ((g_taskSortLink[0].responseTime <= g_taskSortLink[1].responseTime) &&
+         (g_taskSortLink[1].responseTime <= g_taskSortLink[2].responseTime)))
+}
+

@@ -33,6 +33,8 @@ declare -A LTL_PROPERTIES=(
     ["delayed_become_ready"]="Delayed tasks eventually ready"
     ["tick_monotonic"]="Tick counter monotonic"
     ["delayed_not_in_ready_queue"]="Delayed not in ready queue"
+    ["sortlink_is_sorted"]="SortLink is always sorted (2 elements)"
+    ["sortlink_three_sorted"]="SortLink is always sorted (3 elements)"
 )
 
 # ===== Functions =====
@@ -98,17 +100,35 @@ EOF
 }
 
 compile_model() {
-    print_info "Compiling model..."
+    local use_ltl="$1"
+    local gcc_flags="$GCC_OPTS"
+    
+    # If using LTL, remove -DSAFETY (it disables -a option)
+    if [ -n "$use_ltl" ]; then
+        gcc_flags=$(echo "$gcc_flags" | sed 's/-DSAFETY//')
+        print_info "Compiling model for LTL verification..."
+    else
+        print_info "Compiling model for safety checking..."
+    fi
+    
+    echo ""
+    echo -e "${BLUE}[Command 1]${NC} spin -a $MODEL_FILE"
     if [ -n "$VERBOSE" ]; then
         spin -a $MODEL_FILE
-        gcc $GCC_OPTS -o $PAN_EXECUTABLE pan.c
     else
         spin -a $MODEL_FILE 2>&1 | grep -E "(error|warning)" || true
-        gcc $GCC_OPTS -o $PAN_EXECUTABLE pan.c 2>&1 | grep -E "(error|warning)" || true
+    fi
+    
+    echo -e "${BLUE}[Command 2]${NC} gcc $gcc_flags -o $PAN_EXECUTABLE pan.c"
+    if [ -n "$VERBOSE" ]; then
+        gcc $gcc_flags -o $PAN_EXECUTABLE pan.c
+    else
+        gcc $gcc_flags -o $PAN_EXECUTABLE pan.c 2>&1 | grep -E "(error|warning)" || true
     fi
     
     if [ $? -eq 0 ]; then
         print_success "Model compiled successfully"
+        echo ""
         return 0
     else
         print_error "Compilation failed"
@@ -127,28 +147,34 @@ run_verification() {
         print_header "Verification (No LTL - Assertion Checking Only)"
     fi
     
-    # Compile
-    if ! compile_model; then
+    # Compile (pass ltl_name to determine compilation flags)
+    if ! compile_model "$ltl_name"; then
         return 1
     fi
     
     # Run verification
     print_info "Running verification..."
     local start_time=$(date +%s)
+    local result=0
     
     local ltl_flag=""
     if [ -n "$ltl_name" ]; then
         ltl_flag="-a -N $ltl_name"
     fi
     
+    # Show the actual command being executed
+    echo ""
+    echo -e "${BLUE}[Command 3]${NC} ./$PAN_EXECUTABLE $ltl_flag $DEPTH $WIDTH"
+    echo ""
+    
     if [ -n "$VERBOSE" ]; then
         ./$PAN_EXECUTABLE $ltl_flag $DEPTH $WIDTH
-        local result=$?
+        result=$?
     else
         # Save full output to temp file
         local temp_output=$(mktemp)
         ./$PAN_EXECUTABLE $ltl_flag $DEPTH $WIDTH > "$temp_output" 2>&1
-        local result=$?
+        result=$?
         
         # Display the output (full statistics are important)
         cat "$temp_output"

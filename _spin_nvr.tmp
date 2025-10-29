@@ -403,3 +403,21 @@ T0_init:
 accept_all:
 	skip
 }
+never sortlink_is_sorted {    /* !([] ((! ((g_taskSortLinkTail>=2))) || ((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)))) */
+T0_init:
+	do
+	:: atomic { (! (((! ((g_taskSortLinkTail>=2))) || ((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime))))) -> assert(!(! (((! ((g_taskSortLinkTail>=2))) || ((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}
+never sortlink_three_sorted {    /* !([] ((! ((g_taskSortLinkTail>=3))) || (((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)) && ((g_taskSortLink[1].responseTime<=g_taskSortLink[2].responseTime))))) */
+T0_init:
+	do
+	:: atomic { (! (((! ((g_taskSortLinkTail>=3))) || (((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)) && ((g_taskSortLink[1].responseTime<=g_taskSortLink[2].responseTime)))))) -> assert(!(! (((! ((g_taskSortLinkTail>=3))) || (((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)) && ((g_taskSortLink[1].responseTime<=g_taskSortLink[2].responseTime))))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}

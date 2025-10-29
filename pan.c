@@ -73,6 +73,14 @@ globinit(void)
 #endif
 	*proc_offset, *q_offset;
 void
+locinit18(int h)
+{
+}
+void
+locinit17(int h)
+{
+}
+void
 locinit16(int h)
 {
 }
@@ -546,6 +554,33 @@ int _;	/* predefined write-only variable */
 	#define Index(x, y)	x
 #endif
 
+short src_ln18 [] = {
+	  0, 417, 417, 417, 418, 418, 416, 420, 
+	416, 421, 422,   0, };
+S_F_MAP src_file18 [] = {
+	{ "-", 0, 0 },
+	{ "_spin_nvr.tmp", 1, 10 },
+	{ "-", 11, 12 }
+};
+short *src_claim;
+uchar reached18 [] = {
+	  0,   1,   0,   1,   1,   1,   0,   1, 
+	  1,   1,   0,   0, };
+uchar *loopstate18;
+
+short src_ln17 [] = {
+	  0, 408, 408, 408, 409, 409, 407, 411, 
+	407, 412, 413,   0, };
+S_F_MAP src_file17 [] = {
+	{ "-", 0, 0 },
+	{ "_spin_nvr.tmp", 1, 10 },
+	{ "-", 11, 12 }
+};
+uchar reached17 [] = {
+	  0,   1,   0,   1,   1,   1,   0,   1, 
+	  1,   1,   0,   0, };
+uchar *loopstate17;
+
 short src_ln16 [] = {
 	  0, 399, 399, 399, 400, 400, 398, 402, 
 	398, 403, 404,   0, };
@@ -554,7 +589,6 @@ S_F_MAP src_file16 [] = {
 	{ "_spin_nvr.tmp", 1, 10 },
 	{ "-", 11, 12 }
 };
-short *src_claim;
 uchar reached16 [] = {
 	  0,   1,   0,   1,   1,   1,   0,   1, 
 	  1,   1,   0,   0, };
@@ -822,14 +856,14 @@ uchar reached5 [] = {
 uchar *loopstate5;
 
 short src_ln4 [] = {
-	  0,  33,  35, 123, 124, 125, 126, 127, 
-	127, 123, 129, 123, 129, 121,  37,  38, 
-	 38,  34,  42,  34,  42,  42, 135, 136, 
-	137, 138, 138, 134, 140, 133,  43,  43, 
-	135, 136, 137, 138, 138, 134, 140, 133, 
-	 46,  47, 145, 146, 147, 148, 149, 149, 
-	145, 151, 145, 152, 153, 154, 155, 155, 
-	151, 157, 143,  49,  52,  52,  52,  53, 
+	  0,  33,  35, 124, 125, 126, 127, 128, 
+	128, 124, 130, 124, 130, 122,  37,  38, 
+	 38,  34,  42,  34,  42,  42, 136, 137, 
+	138, 139, 139, 135, 141, 134,  43,  43, 
+	136, 137, 138, 139, 139, 135, 141, 134, 
+	 46,  47, 146, 147, 148, 149, 150, 150, 
+	146, 152, 146, 153, 154, 155, 156, 156, 
+	152, 158, 144,  49,  52,  52,  52,  53, 
 	 54,  55,   0, };
 S_F_MAP src_file4 [] = {
 	{ "-", 0, 0 },
@@ -857,46 +891,63 @@ uchar reached4 [] = {
 uchar *loopstate4;
 
 short src_ln3 [] = {
-	  0,  16,  16,  16,  44,  45,  43,  16, 
+	  0,  16,  16,  16,  45,  46,  44,  16, 
 	 16,  16,  16,  16,  16,  16,  16,  16, 
-	 16,  56,  57,  55,  16,  16,  16,  16, 
-	 16,  16,  17,  50, 101, 100,  53,  57, 
-	 58,  40,  41, 163, 164, 165, 166, 168, 
-	169, 170, 170, 167, 172, 172, 172, 165, 
-	174, 165, 174, 176, 177, 178, 179, 179, 
-	175, 181, 175, 182, 183, 184, 185, 185, 
-	181, 187, 161,  43, 211, 212, 213, 214, 
-	215, 216, 210,  39,  61,  63,  64,  57, 
-	 68,  69, 106, 105,  44,  45,  43,   5, 
-	 72,  72,  68,  74,  48,  17,  44,  45, 
-	 43,  17,  17,  17,  17,  17,  17,  17, 
-	 17,  17,  17,  56,  57,  55,  17,  17, 
-	 17,  17,  17,  17,  18,  21,  22,  24, 
-	101, 100,  25,  27,  11,  12,  13, 222, 
-	223, 224, 225, 226, 227, 227, 222, 229, 
-	222, 229, 230, 231, 220, 135, 136, 137, 
-	138, 138, 134, 140, 133,  10,  31, 106, 
-	105,  44,  45,  43,   5,  34,  34,  30, 
-	 36,  19,  18,  44,  45,  43,  18,  18, 
+	 16,  57,  58,  56,  16,  16,  16,  16, 
+	 16,  16,  17,  50, 102, 101,  53,  57, 
+	 58,  40,  41, 164, 165, 166, 167, 169, 
+	170, 171, 171, 168, 173, 173, 173, 166, 
+	175, 166, 175, 177, 178, 179, 180, 180, 
+	176, 182, 176, 183, 184, 185, 186, 186, 
+	182, 188, 162,  43, 217, 218, 219, 220, 
+	222, 222, 223, 226, 227, 229, 231, 232, 
+	233, 234, 230, 236, 236, 236, 228, 240, 
+	228, 240, 242, 244, 245, 246, 247, 250, 
+	250, 251, 251, 249, 253, 253, 254, 254, 
+	241, 258, 241, 258, 259, 260, 261, 265, 
+	266, 267, 267, 264, 271, 335, 338, 339, 
+	342, 343, 344, 344, 338, 346, 338, 333, 
+	215, 276,  39,  61,  63,  64,  57,  68, 
+	 69, 107, 106,  45,  46,  44,   5,  72, 
+	 72,  68,  74,  48,  17,  45,  46,  44, 
+	 17,  17,  17,  17,  17,  17,  17,  17, 
+	 17,  17,  57,  58,  56,  17,  17,  17, 
+	 17,  17,  17,  18,  21,  22,  24, 102, 
+	101,  25,  27,  11,  12,  13, 283, 285, 
+	286, 287, 288, 289, 290, 290, 285, 292, 
+	285, 292, 293, 294, 302, 304, 305, 308, 
+	309, 311, 312, 316, 308, 318, 318, 318, 
+	301, 322, 335, 338, 339, 342, 343, 344, 
+	344, 338, 346, 338, 333, 281, 136, 137, 
+	138, 139, 139, 135, 141, 134,  10,  31, 
+	107, 106,  45,  46,  44,   5,  34,  34, 
+	 30,  36,  19,  18,  45,  46,  44,  18, 
 	 18,  18,  18,  18,  18,  18,  18,  18, 
-	 56,  57,  55,  18,  18,  18,  18,  18, 
-	 18,  19,  19,  19,  44,  45,  43,  19, 
+	 18,  57,  58,  56,  18,  18,  18,  18, 
+	 18,  18,  19,  19,  19,  45,  46,  44, 
 	 19,  19,  19,  19,  19,  19,  19,  19, 
-	 19,  56,  57,  55,  19,  19,  19,  19, 
-	 19,  19,  20, 104, 105, 107, 101, 100, 
-	110,  44,  45,  43,   5,  78, 113,  85, 
-	 86,  88, 163, 164, 165, 166, 168, 169, 
-	170, 170, 167, 172, 172, 172, 165, 174, 
-	165, 174, 176, 177, 178, 179, 179, 175, 
-	181, 175, 182, 183, 184, 185, 185, 181, 
-	187, 161,  90,  90,  87,  92,  92,  94, 
-	 95,  96,  97,  98,  84, 117, 106, 105, 
-	 44,  45,  43,   5, 120, 120, 116, 122, 
-	122, 122, 109, 124, 102,  20,  44,  45, 
-	 43,  20,  20,  20,  20,  20,  20,  20, 
-	 20,  20,  20,  56,  57,  55,  20,  20, 
-	 20,  20,  20,  20,  15,  22,  15,  22, 
-	  0, };
+	 19,  19,  57,  58,  56,  19,  19,  19, 
+	 19,  19,  19,  20, 100, 101, 103, 102, 
+	101, 106,  45,  46,  44,   5,  78, 109, 
+	 85,  86,  88, 164, 165, 166, 167, 169, 
+	170, 171, 171, 168, 173, 173, 173, 166, 
+	175, 166, 175, 177, 178, 179, 180, 180, 
+	176, 182, 176, 183, 184, 185, 186, 186, 
+	182, 188, 162,  90,  90,  87,  92,  92, 
+	217, 218, 219, 220, 222, 222, 223, 226, 
+	227, 229, 231, 232, 233, 234, 230, 236, 
+	236, 236, 228, 240, 228, 240, 242, 244, 
+	245, 246, 247, 250, 250, 251, 251, 249, 
+	253, 253, 254, 254, 241, 258, 241, 258, 
+	259, 260, 261, 265, 266, 267, 267, 264, 
+	271, 335, 338, 339, 342, 343, 344, 344, 
+	338, 346, 338, 333, 215,  84, 113, 107, 
+	106,  45,  46,  44,   5, 116, 116, 112, 
+	118, 118, 118, 105, 120,  98,  20,  45, 
+	 46,  44,  20,  20,  20,  20,  20,  20, 
+	 20,  20,  20,  20,  57,  58,  56,  20, 
+	 20,  20,  20,  20,  20,  15,  22,  15, 
+	 22,   0, };
 S_F_MAP src_file3 [] = {
 	{ "-", 0, 0 },
 	{ "processes.pml", 1, 3 },
@@ -909,46 +960,48 @@ S_F_MAP src_file3 [] = {
 	{ "scheduler.pml", 30, 34 },
 	{ "data_structures.pml", 35, 66 },
 	{ "scheduler.pml", 67, 67 },
-	{ "data_structures.pml", 68, 74 },
-	{ "scheduler.pml", 75, 81 },
-	{ "data_structures.pml", 82, 86 },
-	{ "scheduler.pml", 87, 92 },
-	{ "processes.pml", 93, 93 },
-	{ "data_structures.pml", 94, 96 },
-	{ "processes.pml", 97, 106 },
-	{ "data_structures.pml", 107, 109 },
-	{ "processes.pml", 110, 116 },
-	{ "scheduler.pml", 117, 119 },
-	{ "data_structures.pml", 120, 121 },
-	{ "scheduler.pml", 122, 126 },
-	{ "data_structures.pml", 127, 148 },
-	{ "scheduler.pml", 149, 150 },
-	{ "data_structures.pml", 151, 155 },
-	{ "scheduler.pml", 156, 161 },
-	{ "processes.pml", 162, 162 },
-	{ "data_structures.pml", 163, 165 },
-	{ "processes.pml", 166, 175 },
-	{ "data_structures.pml", 176, 178 },
-	{ "processes.pml", 179, 187 },
-	{ "data_structures.pml", 188, 190 },
-	{ "processes.pml", 191, 200 },
-	{ "data_structures.pml", 201, 203 },
-	{ "processes.pml", 204, 210 },
-	{ "scheduler.pml", 211, 213 },
-	{ "data_structures.pml", 214, 215 },
-	{ "scheduler.pml", 216, 216 },
-	{ "data_structures.pml", 217, 219 },
-	{ "scheduler.pml", 220, 225 },
-	{ "data_structures.pml", 226, 257 },
-	{ "scheduler.pml", 258, 269 },
-	{ "data_structures.pml", 270, 274 },
-	{ "scheduler.pml", 275, 284 },
-	{ "processes.pml", 285, 285 },
-	{ "data_structures.pml", 286, 288 },
-	{ "processes.pml", 289, 298 },
-	{ "data_structures.pml", 299, 301 },
-	{ "processes.pml", 302, 311 },
-	{ "-", 312, 313 }
+	{ "data_structures.pml", 68, 129 },
+	{ "scheduler.pml", 130, 136 },
+	{ "data_structures.pml", 137, 141 },
+	{ "scheduler.pml", 142, 147 },
+	{ "processes.pml", 148, 148 },
+	{ "data_structures.pml", 149, 151 },
+	{ "processes.pml", 152, 161 },
+	{ "data_structures.pml", 162, 164 },
+	{ "processes.pml", 165, 171 },
+	{ "scheduler.pml", 172, 174 },
+	{ "data_structures.pml", 175, 176 },
+	{ "scheduler.pml", 177, 181 },
+	{ "data_structures.pml", 182, 229 },
+	{ "scheduler.pml", 230, 231 },
+	{ "data_structures.pml", 232, 236 },
+	{ "scheduler.pml", 237, 242 },
+	{ "processes.pml", 243, 243 },
+	{ "data_structures.pml", 244, 246 },
+	{ "processes.pml", 247, 256 },
+	{ "data_structures.pml", 257, 259 },
+	{ "processes.pml", 260, 268 },
+	{ "data_structures.pml", 269, 271 },
+	{ "processes.pml", 272, 281 },
+	{ "data_structures.pml", 282, 284 },
+	{ "processes.pml", 285, 291 },
+	{ "scheduler.pml", 292, 294 },
+	{ "data_structures.pml", 295, 296 },
+	{ "scheduler.pml", 297, 297 },
+	{ "data_structures.pml", 298, 300 },
+	{ "scheduler.pml", 301, 306 },
+	{ "data_structures.pml", 307, 338 },
+	{ "scheduler.pml", 339, 343 },
+	{ "data_structures.pml", 344, 404 },
+	{ "scheduler.pml", 405, 406 },
+	{ "data_structures.pml", 407, 411 },
+	{ "scheduler.pml", 412, 421 },
+	{ "processes.pml", 422, 422 },
+	{ "data_structures.pml", 423, 425 },
+	{ "processes.pml", 426, 435 },
+	{ "data_structures.pml", 436, 438 },
+	{ "processes.pml", 439, 448 },
+	{ "-", 449, 450 }
 };
 uchar reached3 [] = {
 	  0,   1,   0,   1,   1,   0,   0,   1, 
@@ -960,58 +1013,82 @@ uchar reached3 [] = {
 	  1,   1,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   1,   1,   0,   0,   1,   0, 
 	  0,   1,   0,   0,   1,   0,   0,   0, 
-	  0,   0,   0,   0,   1,   0,   0,   0, 
-	  1,   1,   1,   0,   1,   0,   1,   0, 
-	  1,   1,   0,   1,   0,   1,   1,   0, 
-	  0,   1,   0,   1,   1,   1,   0,   1, 
-	  1,   0,   1,   1,   0,   0,   0,   1, 
-	  0,   0,   1,   0,   1,   1,   0,   0, 
+	  0,   0,   0,   0,   0,   1,   1,   0, 
+	  1,   0,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   1,   0,   0,   0,   0,   1, 
+	  0,   1,   0,   0,   1,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   0,   1, 
+	  0,   1,   1,   0,   1,   1,   0,   1, 
+	  0,   0,   1,   1,   0,   1,   1,   0, 
+	  1,   0,   0,   1,   0,   0,   0,   1, 
+	  1,   1,   0,   1,   0,   1,   0,   1, 
+	  1,   0,   1,   0,   1,   1,   0,   0, 
+	  1,   0,   1,   1,   1,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   1,   0, 
+	  0,   1,   0,   1,   1,   0,   0,   1, 
+	  0,   0,   0,   1,   0,   0,   1,   0, 
 	  1,   0,   0,   0,   1,   0,   0,   1, 
-	  1,   0,   0,   0,   1,   0,   0,   1, 
-	  1,   0,   0,   0,   0,   1,   0,   0, 
-	  1,   0,   1,   1,   0,   0,   1,   1, 
-	  0,   1,   0,   1,   0,   1,   1,   0, 
+	  1,   0,   0,   0,   1,   0,   1,   0, 
+	  1,   0,   1,   0,   0,   1,   1,   1, 
+	  0,   1,   1,   0,   1,   0,   0,   1, 
 	  1,   0,   1,   1,   0,   0,   1,   0, 
-	  1,   1,   1,   0,   1,   1,   0,   1, 
-	  1,   0,   0,   0,   1,   0,   0,   1, 
+	  0,   1,   0,   1,   1,   0,   0,   1, 
+	  1,   0,   1,   0,   1,   0,   1,   1, 
 	  0,   1,   0,   1,   1,   0,   0,   1, 
 	  0,   1,   1,   1,   0,   1,   1,   0, 
 	  1,   1,   0,   0,   0,   1,   0,   0, 
-	  1,   0,   1,   1,   0,   0,   1,   0, 
-	  1,   1,   0,   1,   1,   0,   1,   1, 
-	  0,   1,   1,   0,   0,   1,   1,   0, 
-	  1,   0,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   1,   0,   0,   1,   1,   0, 
-	  1,   1,   1,   0,   0,   1,   0,   0, 
-	  1,   0,   1,   0,   0,   1,   0,   0, 
-	  0,   0,   0,   0,   0,   1,   1,   0, 
-	  1,   0,   1,   0,   1,   1,   0,   1, 
-	  1,   1,   0,   1,   0,   1,   1,   0, 
-	  0,   1,   0,   1,   1,   1,   0,   1, 
-	  1,   0,   1,   1,   0,   0,   0,   1, 
-	  0,   0,   1,   0,   0,   1,   1,   0, 
-	  0, };
+	  1,   0,   1,   0,   1,   1,   0,   0, 
+	  1,   0,   1,   1,   1,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   1,   0, 
+	  0,   1,   0,   1,   1,   0,   0,   1, 
+	  0,   1,   1,   0,   1,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   1,   1, 
+	  0,   1,   0,   0,   1,   1,   0,   0, 
+	  1,   1,   0,   1,   0,   0,   1,   1, 
+	  0,   1,   1,   1,   0,   0,   1,   0, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  1,   0,   0,   0,   0,   0,   0,   0, 
+	  0,   1,   1,   0,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   1,   0,   1,   0, 
+	  0,   0,   0,   1,   0,   1,   0,   0, 
+	  1,   0,   1,   1,   0,   1,   1,   0, 
+	  0,   0,   0,   1,   0,   1,   1,   0, 
+	  1,   1,   0,   1,   0,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   1,   1, 
+	  0,   1,   0,   1,   0,   1,   1,   0, 
+	  1,   1,   1,   0,   1,   0,   1,   1, 
+	  0,   0,   1,   0,   1,   1,   1,   0, 
+	  1,   1,   0,   1,   1,   0,   0,   0, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
+	  0,   0, };
 uchar *loopstate3;
 
 short src_ln2 [] = {
-	  0,   7,   7,   7,  44,  45,  43,   7, 
+	  0,   7,   7,   7,  45,  46,  44,   7, 
 	  7,   7,   7,   7,   7,   7,   7,   7, 
-	  7,  56,  57,  55,   7,   7,   7,   7, 
-	  7,   7,   8,   8,   8,  44,  45,  43, 
+	  7,  57,  58,  56,   7,   7,   7,   7, 
+	  7,   7,   8,   8,   8,  45,  46,  44, 
 	  8,   8,   8,   8,   8,   8,   8,   8, 
-	  8,   8,  56,  57,  55,   8,   8,   8, 
-	  8,   8,   8,   9, 104, 105, 107, 101, 
-	100, 110,  44,  45,  43,   5,  78, 113, 
-	 85,  86,  88, 163, 164, 165, 166, 168, 
-	169, 170, 170, 167, 172, 172, 172, 165, 
-	174, 165, 174, 176, 177, 178, 179, 179, 
-	175, 181, 175, 182, 183, 184, 185, 185, 
-	181, 187, 161,  90,  90,  87,  92,  92, 
-	 94,  95,  96,  97,  98,  84, 117, 106, 
-	105,  44,  45,  43,   5, 120, 120, 116, 
-	122, 122, 122, 109, 124, 102,   9,  44, 
-	 45,  43,   9,   9,   9,   9,   9,   9, 
-	  9,   9,   9,   9,  56,  57,  55,   9, 
+	  8,   8,  57,  58,  56,   8,   8,   8, 
+	  8,   8,   8,   9, 100, 101, 103, 102, 
+	101, 106,  45,  46,  44,   5,  78, 109, 
+	 85,  86,  88, 164, 165, 166, 167, 169, 
+	170, 171, 171, 168, 173, 173, 173, 166, 
+	175, 166, 175, 177, 178, 179, 180, 180, 
+	176, 182, 176, 183, 184, 185, 186, 186, 
+	182, 188, 162,  90,  90,  87,  92,  92, 
+	217, 218, 219, 220, 222, 222, 223, 226, 
+	227, 229, 231, 232, 233, 234, 230, 236, 
+	236, 236, 228, 240, 228, 240, 242, 244, 
+	245, 246, 247, 250, 250, 251, 251, 249, 
+	253, 253, 254, 254, 241, 258, 241, 258, 
+	259, 260, 261, 265, 266, 267, 267, 264, 
+	271, 335, 338, 339, 342, 343, 344, 344, 
+	338, 346, 338, 333, 215,  84, 113, 107, 
+	106,  45,  46,  44,   5, 116, 116, 112, 
+	118, 118, 118, 105, 120,  98,   9,  45, 
+	 46,  44,   9,   9,   9,   9,   9,   9, 
+	  9,   9,   9,   9,  57,  58,  56,   9, 
 	  9,   9,   9,   9,   9,   6,  11,   6, 
 	 11,   0, };
 S_F_MAP src_file2 [] = {
@@ -1031,15 +1108,17 @@ S_F_MAP src_file2 [] = {
 	{ "data_structures.pml", 58, 60 },
 	{ "scheduler.pml", 61, 66 },
 	{ "data_structures.pml", 67, 98 },
-	{ "scheduler.pml", 99, 110 },
-	{ "data_structures.pml", 111, 115 },
-	{ "scheduler.pml", 116, 125 },
-	{ "processes.pml", 126, 126 },
-	{ "data_structures.pml", 127, 129 },
-	{ "processes.pml", 130, 139 },
-	{ "data_structures.pml", 140, 142 },
-	{ "processes.pml", 143, 152 },
-	{ "-", 153, 154 }
+	{ "scheduler.pml", 99, 103 },
+	{ "data_structures.pml", 104, 164 },
+	{ "scheduler.pml", 165, 166 },
+	{ "data_structures.pml", 167, 171 },
+	{ "scheduler.pml", 172, 181 },
+	{ "processes.pml", 182, 182 },
+	{ "data_structures.pml", 183, 185 },
+	{ "processes.pml", 186, 195 },
+	{ "data_structures.pml", 196, 198 },
+	{ "processes.pml", 199, 208 },
+	{ "-", 209, 210 }
 };
 uchar reached2 [] = {
 	  0,   1,   0,   1,   1,   0,   0,   1, 
@@ -1055,7 +1134,14 @@ uchar reached2 [] = {
 	  1,   1,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   1,   1,   0,   0,   1,   0, 
 	  0,   1,   0,   1,   0,   0,   1,   0, 
-	  0,   0,   0,   0,   0,   0,   1,   1, 
+	  1,   0,   0,   0,   0,   0,   0,   0, 
+	  0,   1,   1,   0,   1,   0,   0,   1, 
+	  1,   0,   0,   1,   1,   0,   1,   0, 
+	  0,   0,   0,   1,   0,   1,   0,   0, 
+	  1,   0,   1,   1,   0,   1,   1,   0, 
+	  0,   0,   0,   1,   0,   1,   1,   0, 
+	  1,   1,   0,   1,   0,   0,   1,   1, 
+	  0,   1,   1,   0,   0,   0,   1,   1, 
 	  0,   1,   0,   1,   0,   1,   1,   0, 
 	  1,   1,   1,   0,   1,   0,   1,   1, 
 	  0,   0,   1,   0,   1,   1,   1,   0, 
@@ -1065,48 +1151,58 @@ uchar reached2 [] = {
 uchar *loopstate2;
 
 short src_ln1 [] = {
-	  0, 219,  80,  50,  51,  49,  80,  79, 
-	223, 130, 131, 134, 134, 138, 139, 141, 
-	143, 146, 148, 135, 136, 137, 138, 138, 
-	134, 140, 133, 153, 154, 155, 156, 159, 
-	160, 161, 161, 158, 163, 163, 164, 164, 
-	153, 167, 153, 167, 168, 169, 171, 173, 
-	173, 145, 175, 175, 175, 140, 177, 177, 
-	177, 137, 181, 137, 182,  44,  45,  43, 
-	184, 184, 181, 186, 128, 113,  44,  45, 
-	 43, 114, 115, 112, 117, 111, 223, 226, 
-	 44,  45,  43, 113,  44,  45,  43, 114, 
-	115, 112, 117, 111, 226, 229,  94,  75, 
-	 74,  86,  87,  88,  84,  95,  62,  63, 
-	 64,  61,  93,  97,  92, 113,  44,  45, 
-	 43, 114, 115, 112, 117, 111, 229, 218, 
-	231, 218, 231,   0, };
+	  0, 303,  81,  51,  52,  50,  81,  80, 
+	307, 154, 155, 158, 158, 166, 168, 169, 
+	175, 176, 181, 182, 190, 192, 194, 136, 
+	137, 138, 139, 139, 135, 141, 134, 199, 
+	200, 201, 202, 205, 206, 207, 207, 204, 
+	209, 209, 210, 210, 199, 213, 199, 213, 
+	214, 215, 335, 338, 339, 342, 343, 344, 
+	344, 338, 346, 338, 333, 220, 223, 229, 
+	231, 233, 181, 235, 235, 235, 174, 243, 
+	174, 244, 247, 248, 249, 251, 252, 254, 
+	255, 257, 251, 259, 246, 260, 260, 260, 
+	243, 262, 165, 265, 266,  45,  46,  44, 
+	268, 268, 265, 270, 152, 114,  45,  46, 
+	 44, 115, 116, 113, 118, 112, 307, 310, 
+	 45,  46,  44, 114,  45,  46,  44, 115, 
+	116, 113, 118, 112, 310, 313,  95,  76, 
+	 75,  87,  88,  89,  85,  96,  63,  64, 
+	 65,  62,  94,  98,  93, 114,  45,  46, 
+	 44, 115, 116, 113, 118, 112, 313, 302, 
+	315, 302, 315,   0, };
 S_F_MAP src_file1 [] = {
 	{ "-", 0, 0 },
 	{ "scheduler.pml", 1, 1 },
 	{ "data_structures.pml", 2, 7 },
-	{ "scheduler.pml", 8, 18 },
-	{ "data_structures.pml", 19, 26 },
-	{ "scheduler.pml", 27, 60 },
-	{ "data_structures.pml", 61, 63 },
-	{ "scheduler.pml", 64, 68 },
-	{ "data_structures.pml", 69, 77 },
-	{ "scheduler.pml", 78, 79 },
-	{ "data_structures.pml", 80, 91 },
-	{ "scheduler.pml", 92, 93 },
-	{ "data_structures.pml", 94, 117 },
-	{ "scheduler.pml", 118, 122 },
-	{ "-", 123, 124 }
+	{ "scheduler.pml", 8, 22 },
+	{ "data_structures.pml", 23, 30 },
+	{ "scheduler.pml", 31, 49 },
+	{ "data_structures.pml", 50, 60 },
+	{ "scheduler.pml", 61, 92 },
+	{ "data_structures.pml", 93, 95 },
+	{ "scheduler.pml", 96, 100 },
+	{ "data_structures.pml", 101, 109 },
+	{ "scheduler.pml", 110, 111 },
+	{ "data_structures.pml", 112, 123 },
+	{ "scheduler.pml", 124, 125 },
+	{ "data_structures.pml", 126, 149 },
+	{ "scheduler.pml", 150, 154 },
+	{ "-", 155, 156 }
 };
 uchar reached1 [] = {
 	  0,   1,   1,   1,   0,   0,   1,   0, 
-	  1,   1,   0,   0,   0,   1,   0,   1, 
-	  0,   1,   0,   1,   0,   0,   1,   0, 
-	  1,   1,   0,   0,   1,   0,   0,   1, 
-	  0,   1,   0,   0,   1,   0,   1,   0, 
-	  0,   1,   1,   0,   0,   0,   0,   1, 
+	  1,   1,   0,   0,   0,   1,   1,   1, 
+	  1,   0,   0,   1,   1,   1,   0,   1, 
+	  0,   0,   1,   0,   1,   1,   0,   0, 
+	  1,   0,   0,   1,   0,   1,   0,   0, 
+	  1,   0,   1,   0,   0,   1,   1,   0, 
+	  0,   0,   1,   0,   1,   0,   0,   1, 
 	  0,   0,   1,   1,   0,   0,   1,   1, 
-	  1,   0,   1,   1,   1,   1,   0,   0, 
+	  1,   0,   0,   1,   1,   1,   0,   1, 
+	  1,   1,   1,   0,   1,   0,   1,   0, 
+	  1,   0,   0,   1,   0,   1,   1,   1, 
+	  0,   1,   0,   1,   1,   1,   0,   0, 
 	  1,   1,   0,   1,   0,   1,   1,   0, 
 	  0,   0,   1,   1,   1,   0,   0,   1, 
 	  1,   0,   0,   1,   1,   0,   0,   0, 
@@ -1118,25 +1214,25 @@ uchar reached1 [] = {
 uchar *loopstate1;
 
 short src_ln0 [] = {
-	  0, 193,  80,  50,  51,  49,  80,  79, 
-	197, 197, 197, 135, 136, 137, 138, 138, 
-	134, 140, 133, 197, 197, 197, 197, 113, 
-	 44,  45,  43, 114, 115, 112, 117, 111, 
-	197, 205, 192, 193, 194, 195, 197, 198, 
-	199, 200, 200, 196, 202, 202, 202, 194, 
-	204, 194, 204, 205, 190, 113,  44,  45, 
-	 43, 114, 115, 112, 117, 111, 205, 206, 
-	145, 146, 147, 148, 149, 149, 145, 151, 
-	145, 152, 153, 154, 155, 155, 151, 157, 
-	143, 113,  44,  45,  43, 114, 115, 112, 
-	117, 111, 206, 207, 207, 113,  44,  45, 
-	 43, 114, 115, 112, 117, 111, 207, 208, 
-	 69,  70,  68, 113,  44,  45,  43, 114, 
-	115, 112, 117, 111, 208, 211,  94,  75, 
-	 74,  86,  87,  88,  84,  95,  62,  63, 
-	 64,  61,  93,  97,  92, 113,  44,  45, 
-	 43, 114, 115, 112, 117, 111, 211, 192, 
-	213, 192, 213,   0, };
+	  0, 277,  81,  51,  52,  50,  81,  80, 
+	281, 281, 281, 136, 137, 138, 139, 139, 
+	135, 141, 134, 281, 281, 281, 281, 114, 
+	 45,  46,  44, 115, 116, 113, 118, 112, 
+	281, 289, 193, 194, 195, 196, 198, 199, 
+	200, 201, 201, 197, 203, 203, 203, 195, 
+	205, 195, 205, 206, 191, 114,  45,  46, 
+	 44, 115, 116, 113, 118, 112, 289, 290, 
+	146, 147, 148, 149, 150, 150, 146, 152, 
+	146, 153, 154, 155, 156, 156, 152, 158, 
+	144, 114,  45,  46,  44, 115, 116, 113, 
+	118, 112, 290, 291, 291, 114,  45,  46, 
+	 44, 115, 116, 113, 118, 112, 291, 292, 
+	 70,  71,  69, 114,  45,  46,  44, 115, 
+	116, 113, 118, 112, 292, 295,  95,  76, 
+	 75,  87,  88,  89,  85,  96,  63,  64, 
+	 65,  62,  94,  98,  93, 114,  45,  46, 
+	 44, 115, 116, 113, 118, 112, 295, 276, 
+	297, 276, 297,   0, };
 S_F_MAP src_file0 [] = {
 	{ "-", 0, 0 },
 	{ "scheduler.pml", 1, 1 },
@@ -1179,11 +1275,13 @@ uchar reached0 [] = {
 	  0,   0,   1,   1,   1,   0,   0,   0, 
 	  1,   1,   0,   0, };
 uchar *loopstate0;
-uchar reached17[3];  /* np_ */
-uchar *loopstate17;  /* np_ */
+uchar reached19[3];  /* np_ */
+uchar *loopstate19;  /* np_ */
 struct {
 	int tp; short *src;
 } src_all[] = {
+	{ 18, &src_ln18[0] },
+	{ 17, &src_ln17[0] },
 	{ 16, &src_ln16[0] },
 	{ 15, &src_ln15[0] },
 	{ 14, &src_ln14[0] },
@@ -1204,6 +1302,8 @@ struct {
 	{ 0, (short *) 0 }
 };
 S_F_MAP *flref[] = {
+	src_file18,
+	src_file17,
 	src_file16,
 	src_file15,
 	src_file14,
@@ -1229,9 +1329,9 @@ struct {
 	{ (char *) 0, "" }
 };
 
-short Air[] = {  (short) Air0, (short) Air1, (short) Air2, (short) Air3, (short) Air4, (short) Air5, (short) Air6, (short) Air7, (short) Air8, (short) Air9, (short) Air10, (short) Air11, (short) Air12, (short) Air13, (short) Air14, (short) Air15, (short) Air16, (short) Air17
+short Air[] = {  (short) Air0, (short) Air1, (short) Air2, (short) Air3, (short) Air4, (short) Air5, (short) Air6, (short) Air7, (short) Air8, (short) Air9, (short) Air10, (short) Air11, (short) Air12, (short) Air13, (short) Air14, (short) Air15, (short) Air16, (short) Air17, (short) Air18, (short) Air19
 #ifndef NOCLAIM
-	, (short) Air18
+	, (short) Air20
 #endif
 	 };
 char *procname[] = {
@@ -1252,6 +1352,8 @@ char *procname[] = {
    "delayed_become_ready",
    "tick_monotonic",
    "delayed_not_in_ready_queue",
+   "sortlink_is_sorted",
+   "sortlink_three_sorted",
    ":np_:",
 	0
 };
@@ -1276,21 +1378,23 @@ int Btypes[] = {
    1,	/* delayed_become_ready */
    1,	/* tick_monotonic */
    1,	/* delayed_not_in_ready_queue */
+   1,	/* sortlink_is_sorted */
+   1,	/* sortlink_three_sorted */
    0	/* :np_: */
 };
 
 #ifndef NOCLAIM
 uchar spin_c_typ[NCLAIMS]; /* claim-types */
 #endif
-uchar *accpstate[18];
-uchar *progstate[18];
-uchar *loopstate[18];
-uchar *reached[18];
-uchar *stopstate[18];
-uchar *visstate[18];
-short *mapstate[18];
+uchar *accpstate[20];
+uchar *progstate[20];
+uchar *loopstate[20];
+uchar *reached[20];
+uchar *stopstate[20];
+uchar *visstate[20];
+short *mapstate[20];
 #ifdef HAS_CODE
-	int NrStates[18];
+	int NrStates[20];
 #endif
 #ifdef TRIX
 int what_p_size(int);
@@ -1463,8 +1567,10 @@ addproc(int calling_pid, int priority, int n)
 	case 15: j = sizeof(P15); break;
 	case 16: j = sizeof(P16); break;
 	case 17: j = sizeof(P17); break;
-#ifndef NOCLAIM
 	case 18: j = sizeof(P18); break;
+	case 19: j = sizeof(P19); break;
+#ifndef NOCLAIM
+	case 20: j = sizeof(P20); break;
 #endif
 	default: Uerror("bad proc - addproc");
 	}
@@ -1559,46 +1665,52 @@ addproc(int calling_pid, int priority, int n)
 	}
 	switch (n) {
 #ifndef NOCLAIM
-	case 18:	/* claim select */
-		spin_c_typ[0] = 16; /* delayed_not_in_ready_queue */
-		((P18 *)pptr(h))->c_cur[0] = 6;
+	case 20:	/* claim select */
+		spin_c_typ[0] = 18; /* sortlink_three_sorted */
+		((P20 *)pptr(h))->c_cur[0] = 6;
+		reached18[6]=1;
+		spin_c_typ[1] = 17; /* sortlink_is_sorted */
+		((P20 *)pptr(h))->c_cur[1] = 6;
+		reached17[6]=1;
+		spin_c_typ[2] = 16; /* delayed_not_in_ready_queue */
+		((P20 *)pptr(h))->c_cur[2] = 6;
 		reached16[6]=1;
-		spin_c_typ[1] = 15; /* tick_monotonic */
-		((P18 *)pptr(h))->c_cur[1] = 6;
+		spin_c_typ[3] = 15; /* tick_monotonic */
+		((P20 *)pptr(h))->c_cur[3] = 6;
 		reached15[6]=1;
-		spin_c_typ[2] = 14; /* delayed_become_ready */
-		((P18 *)pptr(h))->c_cur[2] = 5;
+		spin_c_typ[4] = 14; /* delayed_become_ready */
+		((P20 *)pptr(h))->c_cur[4] = 5;
 		reached14[5]=1;
-		spin_c_typ[3] = 13; /* smoke_P1_user_no_pending */
-		((P18 *)pptr(h))->c_cur[3] = 6;
+		spin_c_typ[5] = 13; /* smoke_P1_user_no_pending */
+		((P20 *)pptr(h))->c_cur[5] = 6;
 		reached13[6]=1;
-		spin_c_typ[4] = 12; /* smoke_P2_user_no_pending */
-		((P18 *)pptr(h))->c_cur[4] = 6;
+		spin_c_typ[6] = 12; /* smoke_P2_user_no_pending */
+		((P20 *)pptr(h))->c_cur[6] = 6;
 		reached12[6]=1;
-		spin_c_typ[5] = 11; /* p2_double_context_switch */
-		((P18 *)pptr(h))->c_cur[5] = 20;
+		spin_c_typ[7] = 11; /* p2_double_context_switch */
+		((P20 *)pptr(h))->c_cur[7] = 20;
 		reached11[20]=1;
-		spin_c_typ[6] = 10; /* P2_switching_not_P1_witness_unfolded */
-		((P18 *)pptr(h))->c_cur[6] = 18;
+		spin_c_typ[8] = 10; /* P2_switching_not_P1_witness_unfolded */
+		((P20 *)pptr(h))->c_cur[8] = 18;
 		reached10[18]=1;
-		spin_c_typ[7] = 9; /* all_starvation_free */
-		((P18 *)pptr(h))->c_cur[7] = 19;
+		spin_c_typ[9] = 9; /* all_starvation_free */
+		((P20 *)pptr(h))->c_cur[9] = 19;
 		reached9[19]=1;
-		spin_c_typ[8] = 8; /* starvation_free_task2 */
-		((P18 *)pptr(h))->c_cur[8] = 11;
+		spin_c_typ[10] = 8; /* starvation_free_task2 */
+		((P20 *)pptr(h))->c_cur[10] = 11;
 		reached8[11]=1;
-		spin_c_typ[9] = 7; /* starvation_free_task1 */
-		((P18 *)pptr(h))->c_cur[9] = 11;
+		spin_c_typ[11] = 7; /* starvation_free_task1 */
+		((P20 *)pptr(h))->c_cur[11] = 11;
 		reached7[11]=1;
-		spin_c_typ[10] = 6; /* exc_leads_to_user */
-		((P18 *)pptr(h))->c_cur[10] = 5;
+		spin_c_typ[12] = 6; /* exc_leads_to_user */
+		((P20 *)pptr(h))->c_cur[12] = 5;
 		reached6[5]=1;
-		spin_c_typ[11] = 5; /* back_to_user */
-		((P18 *)pptr(h))->c_cur[11] = 5;
+		spin_c_typ[13] = 5; /* back_to_user */
+		((P20 *)pptr(h))->c_cur[13] = 5;
 		reached5[5]=1;
-		((P18 *)pptr(h))->_t = 5;
-		((P18 *)pptr(h))->_p = 5;
-		((P18 *)pptr(h))->_n = 11; /* back_to_user */
+		((P20 *)pptr(h))->_t = 5;
+		((P20 *)pptr(h))->_p = 5;
+		((P20 *)pptr(h))->_n = 13; /* back_to_user */
 		src_claim = src_ln5;
 #ifndef BFS
 		if (whichclaim == -1 && claimname == NULL)
@@ -1610,14 +1722,46 @@ addproc(int calling_pid, int priority, int n)
 		break;
 
 #endif
-	case 17:	/* np_ */
-		((P17 *)pptr(h))->_t = 17;
-		((P17 *)pptr(h))->_p = 0;
+	case 19:	/* np_ */
+		((P19 *)pptr(h))->_t = 19;
+		((P19 *)pptr(h))->_p = 0;
 #ifdef HAS_PRIORITY
-		((P17 *)pptr(h))->_priority = priority;
+		((P19 *)pptr(h))->_priority = priority;
 #endif
-		reached17[0] = 1;
-		accpstate[17][1] = 1;
+		reached19[0] = 1;
+		accpstate[19][1] = 1;
+		break;
+	case 18:	/* sortlink_three_sorted */
+		((P18 *)pptr(h))->_t = 18;
+		((P18 *)pptr(h))->_p = 6;
+#ifdef HAS_PRIORITY
+		((P18 *)pptr(h))->_priority = priority; /* was: 1 */
+#endif
+		reached18[6]=1;
+		src_claim = src_ln18;
+		/* params: */
+		/* locals: */
+#ifdef VAR_RANGES
+#endif
+#ifdef HAS_CODE
+		locinit18(h);
+#endif
+		break;
+	case 17:	/* sortlink_is_sorted */
+		((P17 *)pptr(h))->_t = 17;
+		((P17 *)pptr(h))->_p = 6;
+#ifdef HAS_PRIORITY
+		((P17 *)pptr(h))->_priority = priority; /* was: 1 */
+#endif
+		reached17[6]=1;
+		src_claim = src_ln17;
+		/* params: */
+		/* locals: */
+#ifdef VAR_RANGES
+#endif
+#ifdef HAS_CODE
+		locinit17(h);
+#endif
 		break;
 	case 16:	/* delayed_not_in_ready_queue */
 		((P16 *)pptr(h))->_t = 16;
@@ -1832,33 +1976,61 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 3:	/* Process2 */
 		((P3 *)pptr(h))->_t = 3;
-		((P3 *)pptr(h))->_p = 308;
+		((P3 *)pptr(h))->_p = 445;
 #ifdef HAS_PRIORITY
 		((P3 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached3[308]=1;
+		reached3[445]=1;
 		/* params: */
 		/* locals: */
 		((P3 *)pptr(h))->_7_16_29_intSave = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_insertPos = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_idx = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_found = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_tmpId = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_tmpTime = 0;
 		((P3 *)pptr(h))->_7_17_32_intSave = 0;
 		((P3 *)pptr(h))->_7_17_32_tempStatus = 0;
 		((P3 *)pptr(h))->_7_19_37_intSave = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_insertPos = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_idx = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_found = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_tmpId = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_tmpTime = 0;
 #ifdef VAR_RANGES
 		logval("Process2:intSave", ((P3 *)pptr(h))->_7_16_29_intSave);
 		logval("Process2:needSched", ((P3 *)pptr(h))->_7_16_29_needSched);
-		logval("Process2:idx", ((P3 *)pptr(h))->_7_16_29_24_6_idx);
-		logval("Process2:found", ((P3 *)pptr(h))->_7_16_29_24_6_found);
-		logval("Process2:prioLevel", ((P3 *)pptr(h))->_7_16_29_24_6_prioLevel);
+		logval("Process2:idx", ((P3 *)pptr(h))->_7_16_29_25_7_idx);
+		logval("Process2:found", ((P3 *)pptr(h))->_7_16_29_25_7_found);
+		logval("Process2:prioLevel", ((P3 *)pptr(h))->_7_16_29_25_7_prioLevel);
+		logval("Process2:insertPos", ((P3 *)pptr(h))->_7_16_29_25_8_3_insertPos);
+		logval("Process2:idx", ((P3 *)pptr(h))->_7_16_29_25_8_3_idx);
+		logval("Process2:found", ((P3 *)pptr(h))->_7_16_29_25_8_3_found);
+		logval("Process2:tmpId", ((P3 *)pptr(h))->_7_16_29_25_8_3_tmpId);
+		logval("Process2:tmpTime", ((P3 *)pptr(h))->_7_16_29_25_8_3_tmpTime);
+		logval("Process2:checkIdx", ((P3 *)pptr(h))->_7_16_29_25_8_3_1_checkIdx);
+		logval("Process2:isValid", ((P3 *)pptr(h))->_7_16_29_25_8_3_1_isValid);
 		logval("Process2:intSave", ((P3 *)pptr(h))->_7_17_32_intSave);
 		logval("Process2:tempStatus", ((P3 *)pptr(h))->_7_17_32_tempStatus);
 		logval("Process2:needSched", ((P3 *)pptr(h))->_7_17_32_needSched);
-		logval("Process2:idx", ((P3 *)pptr(h))->_7_17_32_28_9_idx);
+		logval("Process2:idx", ((P3 *)pptr(h))->_7_17_32_29_10_idx);
+		logval("Process2:removedIdx", ((P3 *)pptr(h))->_7_17_32_29_10_removedIdx);
+		logval("Process2:newFirstTime", ((P3 *)pptr(h))->_7_17_32_29_10_newFirstTime);
+		logval("Process2:checkIdx", ((P3 *)pptr(h))->_7_17_32_29_10_4_checkIdx);
+		logval("Process2:isValid", ((P3 *)pptr(h))->_7_17_32_29_10_4_isValid);
 		logval("Process2:intSave", ((P3 *)pptr(h))->_7_19_37_intSave);
 		logval("Process2:needSched", ((P3 *)pptr(h))->_7_19_37_needSched);
 		logval("Process2:currentTask", ((P3 *)pptr(h))->_7_19_37_currentTask);
-		logval("Process2:idx", ((P3 *)pptr(h))->_7_19_37_33_13_idx);
-		logval("Process2:found", ((P3 *)pptr(h))->_7_19_37_33_13_found);
-		logval("Process2:prioLevel", ((P3 *)pptr(h))->_7_19_37_33_13_prioLevel);
+		logval("Process2:idx", ((P3 *)pptr(h))->_7_19_37_34_14_idx);
+		logval("Process2:found", ((P3 *)pptr(h))->_7_19_37_34_14_found);
+		logval("Process2:prioLevel", ((P3 *)pptr(h))->_7_19_37_34_14_prioLevel);
+		logval("Process2:insertPos", ((P3 *)pptr(h))->_7_19_37_34_15_insertPos);
+		logval("Process2:idx", ((P3 *)pptr(h))->_7_19_37_34_15_idx);
+		logval("Process2:found", ((P3 *)pptr(h))->_7_19_37_34_15_found);
+		logval("Process2:tmpId", ((P3 *)pptr(h))->_7_19_37_34_15_tmpId);
+		logval("Process2:tmpTime", ((P3 *)pptr(h))->_7_19_37_34_15_tmpTime);
+		logval("Process2:checkIdx", ((P3 *)pptr(h))->_7_19_37_34_15_6_checkIdx);
+		logval("Process2:isValid", ((P3 *)pptr(h))->_7_19_37_34_15_6_isValid);
 #endif
 #ifdef HAS_CODE
 		locinit3(h);
@@ -1866,21 +2038,33 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 2:	/* Process1 */
 		((P2 *)pptr(h))->_t = 2;
-		((P2 *)pptr(h))->_p = 149;
+		((P2 *)pptr(h))->_p = 205;
 #ifdef HAS_PRIORITY
 		((P2 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached2[149]=1;
+		reached2[205]=1;
 		/* params: */
 		/* locals: */
 		((P2 *)pptr(h))->_6_14_24_intSave = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_insertPos = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_idx = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_found = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_tmpId = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_tmpTime = 0;
 #ifdef VAR_RANGES
 		logval("Process1:intSave", ((P2 *)pptr(h))->_6_14_24_intSave);
 		logval("Process1:needSched", ((P2 *)pptr(h))->_6_14_24_needSched);
 		logval("Process1:currentTask", ((P2 *)pptr(h))->_6_14_24_currentTask);
-		logval("Process1:idx", ((P2 *)pptr(h))->_6_14_24_20_4_idx);
-		logval("Process1:found", ((P2 *)pptr(h))->_6_14_24_20_4_found);
-		logval("Process1:prioLevel", ((P2 *)pptr(h))->_6_14_24_20_4_prioLevel);
+		logval("Process1:idx", ((P2 *)pptr(h))->_6_14_24_21_4_idx);
+		logval("Process1:found", ((P2 *)pptr(h))->_6_14_24_21_4_found);
+		logval("Process1:prioLevel", ((P2 *)pptr(h))->_6_14_24_21_4_prioLevel);
+		logval("Process1:insertPos", ((P2 *)pptr(h))->_6_14_24_21_5_insertPos);
+		logval("Process1:idx", ((P2 *)pptr(h))->_6_14_24_21_5_idx);
+		logval("Process1:found", ((P2 *)pptr(h))->_6_14_24_21_5_found);
+		logval("Process1:tmpId", ((P2 *)pptr(h))->_6_14_24_21_5_tmpId);
+		logval("Process1:tmpTime", ((P2 *)pptr(h))->_6_14_24_21_5_tmpTime);
+		logval("Process1:checkIdx", ((P2 *)pptr(h))->_6_14_24_21_5_2_checkIdx);
+		logval("Process1:isValid", ((P2 *)pptr(h))->_6_14_24_21_5_2_isValid);
 #endif
 #ifdef HAS_CODE
 		locinit2(h);
@@ -1888,11 +2072,11 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 1:	/* SysTick_Handler */
 		((P1 *)pptr(h))->_t = 1;
-		((P1 *)pptr(h))->_p = 119;
+		((P1 *)pptr(h))->_p = 151;
 #ifdef HAS_PRIORITY
 		((P1 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached1[119]=1;
+		reached1[151]=1;
 		/* params: */
 		/* locals: */
 		((P1 *)pptr(h))->tmp = 255;
@@ -1902,7 +2086,11 @@ addproc(int calling_pid, int priority, int n)
 		logval("SysTick_Handler:idx", ((P1 *)pptr(h))->_5_9_14_idx);
 		logval("SysTick_Handler:taskId", ((P1 *)pptr(h))->_5_9_14_taskId);
 		logval("SysTick_Handler:needSched", ((P1 *)pptr(h))->_5_9_14_needSched);
+		logval("SysTick_Handler:taskResponseTime", ((P1 *)pptr(h))->_5_9_14_taskResponseTime);
 		logval("SysTick_Handler:shiftIdx", ((P1 *)pptr(h))->_5_9_14_shiftIdx);
+		logval("SysTick_Handler:checkIdx", ((P1 *)pptr(h))->_5_9_14_12_checkIdx);
+		logval("SysTick_Handler:isValid", ((P1 *)pptr(h))->_5_9_14_12_isValid);
+		logval("SysTick_Handler:firstTime", ((P1 *)pptr(h))->_5_9_14_firstTime);
 #endif
 #ifdef HAS_CODE
 		locinit1(h);
@@ -1972,6 +2160,8 @@ col_p(int i, char *z)
 	case 15: j = sizeof(P15); break;
 	case 16: j = sizeof(P16); break;
 	case 17: j = sizeof(P17); break;
+	case 18: j = sizeof(P18); break;
+	case 19: j = sizeof(P19); break;
 	default: Uerror("bad proctype - collapse");
 	}
 	if (z) x = z; else x = scratch;
@@ -2067,6 +2257,8 @@ run(void)
 	Maxbody = max(Maxbody, ((int) sizeof(P15)));
 	Maxbody = max(Maxbody, ((int) sizeof(P16)));
 	Maxbody = max(Maxbody, ((int) sizeof(P17)));
+	Maxbody = max(Maxbody, ((int) sizeof(P18)));
+	Maxbody = max(Maxbody, ((int) sizeof(P19)));
 	reached[0] = reached0;
 	reached[1] = reached1;
 	reached[2] = reached2;
@@ -2085,6 +2277,8 @@ run(void)
 	reached[15] = reached15;
 	reached[16] = reached16;
 	reached[17] = reached17;
+	reached[18] = reached18;
+	reached[19] = reached19;
 	accpstate[0] = (uchar *) emalloc(_nstates0);
 	accpstate[1] = (uchar *) emalloc(_nstates1);
 	accpstate[2] = (uchar *) emalloc(_nstates2);
@@ -2103,6 +2297,8 @@ run(void)
 	accpstate[15] = (uchar *) emalloc(_nstates15);
 	accpstate[16] = (uchar *) emalloc(_nstates16);
 	accpstate[17] = (uchar *) emalloc(_nstates17);
+	accpstate[18] = (uchar *) emalloc(_nstates18);
+	accpstate[19] = (uchar *) emalloc(_nstates19);
 	progstate[0] = (uchar *) emalloc(_nstates0);
 	progstate[1] = (uchar *) emalloc(_nstates1);
 	progstate[2] = (uchar *) emalloc(_nstates2);
@@ -2121,6 +2317,8 @@ run(void)
 	progstate[15] = (uchar *) emalloc(_nstates15);
 	progstate[16] = (uchar *) emalloc(_nstates16);
 	progstate[17] = (uchar *) emalloc(_nstates17);
+	progstate[18] = (uchar *) emalloc(_nstates18);
+	progstate[19] = (uchar *) emalloc(_nstates19);
 	loopstate0 = loopstate[0] = (uchar *) emalloc(_nstates0);
 	loopstate1 = loopstate[1] = (uchar *) emalloc(_nstates1);
 	loopstate2 = loopstate[2] = (uchar *) emalloc(_nstates2);
@@ -2139,6 +2337,8 @@ run(void)
 	loopstate15 = loopstate[15] = (uchar *) emalloc(_nstates15);
 	loopstate16 = loopstate[16] = (uchar *) emalloc(_nstates16);
 	loopstate17 = loopstate[17] = (uchar *) emalloc(_nstates17);
+	loopstate18 = loopstate[18] = (uchar *) emalloc(_nstates18);
+	loopstate19 = loopstate[19] = (uchar *) emalloc(_nstates19);
 	stopstate[0] = (uchar *) emalloc(_nstates0);
 	stopstate[1] = (uchar *) emalloc(_nstates1);
 	stopstate[2] = (uchar *) emalloc(_nstates2);
@@ -2157,6 +2357,8 @@ run(void)
 	stopstate[15] = (uchar *) emalloc(_nstates15);
 	stopstate[16] = (uchar *) emalloc(_nstates16);
 	stopstate[17] = (uchar *) emalloc(_nstates17);
+	stopstate[18] = (uchar *) emalloc(_nstates18);
+	stopstate[19] = (uchar *) emalloc(_nstates19);
 	visstate[0] = (uchar *) emalloc(_nstates0);
 	visstate[1] = (uchar *) emalloc(_nstates1);
 	visstate[2] = (uchar *) emalloc(_nstates2);
@@ -2175,6 +2377,8 @@ run(void)
 	visstate[15] = (uchar *) emalloc(_nstates15);
 	visstate[16] = (uchar *) emalloc(_nstates16);
 	visstate[17] = (uchar *) emalloc(_nstates17);
+	visstate[18] = (uchar *) emalloc(_nstates18);
+	visstate[19] = (uchar *) emalloc(_nstates19);
 	mapstate[0] = (short *) emalloc(_nstates0 * sizeof(short));
 	mapstate[1] = (short *) emalloc(_nstates1 * sizeof(short));
 	mapstate[2] = (short *) emalloc(_nstates2 * sizeof(short));
@@ -2193,6 +2397,8 @@ run(void)
 	mapstate[15] = (short *) emalloc(_nstates15 * sizeof(short));
 	mapstate[16] = (short *) emalloc(_nstates16 * sizeof(short));
 	mapstate[17] = (short *) emalloc(_nstates17 * sizeof(short));
+	mapstate[18] = (short *) emalloc(_nstates18 * sizeof(short));
+	mapstate[19] = (short *) emalloc(_nstates19 * sizeof(short));
 	stopstate[0][_endstate0] = 1;
 	stopstate[1][_endstate1] = 1;
 	stopstate[2][_endstate2] = 1;
@@ -2211,6 +2417,8 @@ run(void)
 	stopstate[15][_endstate15] = 1;
 	stopstate[16][_endstate16] = 1;
 	stopstate[17][_endstate17] = 1;
+	stopstate[18][_endstate18] = 1;
+	stopstate[19][_endstate19] = 1;
 #ifdef HAS_CODE
 	NrStates[0] = _nstates0;
 	NrStates[1] = _nstates1;
@@ -2230,12 +2438,16 @@ run(void)
 	NrStates[15] = _nstates15;
 	NrStates[16] = _nstates16;
 	NrStates[17] = _nstates17;
+	NrStates[18] = _nstates18;
+	NrStates[19] = _nstates19;
 #endif
 
 	Maxbody = max(Maxbody, sizeof(State)-VECTORSZ);
 	if ((Maxbody % WS) != 0)
 		Maxbody += WS - (Maxbody % WS);
 
+	accpstate[18][9] = 1;
+	accpstate[17][9] = 1;
 	accpstate[16][9] = 1;
 	accpstate[15][9] = 1;
 	accpstate[14][10] = 1;
@@ -2274,6 +2486,8 @@ run(void)
 	retrans(14, _nstates14, _start14, src_ln14, reached14, loopstate14);
 	retrans(15, _nstates15, _start15, src_ln15, reached15, loopstate15);
 	retrans(16, _nstates16, _start16, src_ln16, reached16, loopstate16);
+	retrans(17, _nstates17, _start17, src_ln17, reached17, loopstate17);
+	retrans(18, _nstates18, _start18, src_ln18, reached18, loopstate18);
 	if (state_tables)
 	{ if (dodot) exit(0);
 	  printf("\nTransition Type: ");
@@ -13630,6 +13844,8 @@ do_reach(void)
 	r_ck(reached14, _nstates14, 14, src_ln14, src_file14);
 	r_ck(reached15, _nstates15, 15, src_ln15, src_file15);
 	r_ck(reached16, _nstates16, 16, src_ln16, src_file16);
+	r_ck(reached17, _nstates17, 17, src_ln17, src_file17);
+	r_ck(reached18, _nstates18, 18, src_ln18, src_file18);
 }
 
 void
@@ -13638,6 +13854,7 @@ iniglobals(int calling_pid)
 		now.chain_tick_used = 0;
 		now.EP = 255;
 		now.g_tickCount = 0;
+		now.g_schedResponseTime = 255;
 		now.BASEPRI = 0;
 		now.pending_exp = 0;
 		now.EP_Stack = 255;
@@ -13694,6 +13911,7 @@ iniglobals(int calling_pid)
 		logval("chain_tick_used", now.chain_tick_used);
 		logval("EP", now.EP);
 		logval("g_tickCount", now.g_tickCount);
+		logval("g_schedResponseTime", now.g_schedResponseTime);
 		logval("BASEPRI", now.BASEPRI);
 		logval("pending_exp", now.pending_exp);
 		logval("EP_Stack", now.EP_Stack);
@@ -13842,6 +14060,8 @@ what_p_size(int t)
 	case 15: j = sizeof(P15); break;
 	case 16: j = sizeof(P16); break;
 	case 17: j = sizeof(P17); break;
+	case 18: j = sizeof(P18); break;
+	case 19: j = sizeof(P19); break;
 	default: Uerror("bad proctype");
 	}
 	return j;
@@ -15459,6 +15679,7 @@ c_globals(void)
 	printf("global vars:\n");
 	printf("	byte   EP:	%d\n", now.EP);
 	printf("	byte   g_tickCount:	%d\n", now.g_tickCount);
+	printf("	byte   g_schedResponseTime:	%d\n", now.g_schedResponseTime);
 	printf("	byte   BASEPRI:	%d\n", now.BASEPRI);
 	printf("	byte   pending_exp:	%d\n", now.pending_exp);
 	printf("	byte   EP_Stack:	%d\n", now.EP_Stack);
@@ -15520,6 +15741,12 @@ void
 c_locals(int pid, int tp)
 {	/* int i; */
 	switch(tp) {
+	case 18:
+		/* none */
+		break;
+	case 17:
+		/* none */
+		break;
 	case 16:
 		/* none */
 		break;
@@ -15566,28 +15793,53 @@ c_locals(int pid, int tp)
 		printf("local vars proc %d (Process2):\n", pid);
 	printf("	byte   intSave:	%d\n", ((P3 *)pptr(pid))->_7_16_29_intSave);
 	printf("	byte   needSched:	%d\n", ((P3 *)pptr(pid))->_7_16_29_needSched);
-	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_16_29_24_6_idx);
-	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_16_29_24_6_found);
-	printf("	byte   prioLevel:	%d\n", ((P3 *)pptr(pid))->_7_16_29_24_6_prioLevel);
+	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_7_idx);
+	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_7_found);
+	printf("	byte   prioLevel:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_7_prioLevel);
+	printf("	byte   insertPos:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_insertPos);
+	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_idx);
+	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_found);
+	printf("	byte   tmpId:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_tmpId);
+	printf("	byte   tmpTime:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_tmpTime);
+	printf("	byte   checkIdx:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_1_checkIdx);
+	printf("	byte   isValid:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_1_isValid);
 	printf("	byte   intSave:	%d\n", ((P3 *)pptr(pid))->_7_17_32_intSave);
 	printf("	byte   tempStatus:	%d\n", ((P3 *)pptr(pid))->_7_17_32_tempStatus);
 	printf("	byte   needSched:	%d\n", ((P3 *)pptr(pid))->_7_17_32_needSched);
-	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_28_9_idx);
+	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_idx);
+	printf("	byte   removedIdx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_removedIdx);
+	printf("	byte   newFirstTime:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_newFirstTime);
+	printf("	byte   checkIdx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_4_checkIdx);
+	printf("	byte   isValid:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_4_isValid);
 	printf("	byte   intSave:	%d\n", ((P3 *)pptr(pid))->_7_19_37_intSave);
 	printf("	byte   needSched:	%d\n", ((P3 *)pptr(pid))->_7_19_37_needSched);
 	printf("	byte   currentTask:	%d\n", ((P3 *)pptr(pid))->_7_19_37_currentTask);
-	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_19_37_33_13_idx);
-	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_19_37_33_13_found);
-	printf("	byte   prioLevel:	%d\n", ((P3 *)pptr(pid))->_7_19_37_33_13_prioLevel);
+	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_14_idx);
+	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_14_found);
+	printf("	byte   prioLevel:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_14_prioLevel);
+	printf("	byte   insertPos:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_insertPos);
+	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_idx);
+	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_found);
+	printf("	byte   tmpId:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_tmpId);
+	printf("	byte   tmpTime:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_tmpTime);
+	printf("	byte   checkIdx:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_6_checkIdx);
+	printf("	byte   isValid:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_6_isValid);
 		break;
 	case 2:
 		printf("local vars proc %d (Process1):\n", pid);
 	printf("	byte   intSave:	%d\n", ((P2 *)pptr(pid))->_6_14_24_intSave);
 	printf("	byte   needSched:	%d\n", ((P2 *)pptr(pid))->_6_14_24_needSched);
 	printf("	byte   currentTask:	%d\n", ((P2 *)pptr(pid))->_6_14_24_currentTask);
-	printf("	byte   idx:	%d\n", ((P2 *)pptr(pid))->_6_14_24_20_4_idx);
-	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_6_14_24_20_4_found);
-	printf("	byte   prioLevel:	%d\n", ((P2 *)pptr(pid))->_6_14_24_20_4_prioLevel);
+	printf("	byte   idx:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_4_idx);
+	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_4_found);
+	printf("	byte   prioLevel:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_4_prioLevel);
+	printf("	byte   insertPos:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_insertPos);
+	printf("	byte   idx:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_idx);
+	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_found);
+	printf("	byte   tmpId:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_tmpId);
+	printf("	byte   tmpTime:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_tmpTime);
+	printf("	byte   checkIdx:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_2_checkIdx);
+	printf("	byte   isValid:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_2_isValid);
 		break;
 	case 1:
 		printf("local vars proc %d (SysTick_Handler):\n", pid);
@@ -15595,7 +15847,11 @@ c_locals(int pid, int tp)
 	printf("	byte   idx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_idx);
 	printf("	byte   taskId:	%d\n", ((P1 *)pptr(pid))->_5_9_14_taskId);
 	printf("	byte   needSched:	%d\n", ((P1 *)pptr(pid))->_5_9_14_needSched);
+	printf("	byte   taskResponseTime:	%d\n", ((P1 *)pptr(pid))->_5_9_14_taskResponseTime);
 	printf("	byte   shiftIdx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_shiftIdx);
+	printf("	byte   checkIdx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_12_checkIdx);
+	printf("	byte   isValid:	%d\n", ((P1 *)pptr(pid))->_5_9_14_12_isValid);
+	printf("	byte   firstTime:	%d\n", ((P1 *)pptr(pid))->_5_9_14_firstTime);
 		break;
 	case 0:
 		printf("local vars proc %d (PendSV_Handler):\n", pid);
@@ -15617,7 +15873,7 @@ c_chandump(int unused)
 {	unused++; /* avoid complaints */
 }
 
-Trans *t_id_lkup[1403];
+Trans *t_id_lkup[1648];
 
 
 #ifdef BFS_PAR
