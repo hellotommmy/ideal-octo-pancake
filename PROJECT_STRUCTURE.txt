@@ -1,0 +1,39 @@
+项目结构 - Delay溢出验证
+════════════════════════════════════════════════════════════
+
+ideal-octo-pancake/
+│
+├── 【正常验证文件 - 日常使用】
+│   ├── main.pml                          ← 正常验证入口
+│   ├── scheduler.pml                     ← 生产调度器
+│   ├── processes.pml                     ← 正常测试进程
+│   ├── data_structures.pml               ← 数据结构（共享）
+│   ├── macros.pml                        ← 宏定义（共享）
+│   └── ltl_properties.pml                ← LTL性质（共享）
+│
+├── 【Delay溢出验证文件 - 专项测试】
+│   ├── main_overflow_test.pml            ← Delay验证入口 ⭐
+│   ├── bad_scheduler.pml                 ← 验证调度器 ⭐
+│   ├── processes_delay_overflow_test.pml ← 溢出测试进程 ⭐
+│   └── main_delay_verify.pml             ← 基本delay验证
+│
+├── 【自动化脚本】
+│   └── verify_delay_overflow.sh          ← 一键验证脚本 🚀
+│
+└── 【文档】
+    ├── START_HERE.md                     ← 快速导航 📍 从这里开始！
+    ├── README_DELAY_VERIFICATION.md      ← 快速开始指南
+    ├── USAGE_GUIDE.md                    ← 完整使用指南
+    ├── DELAY_VERIFICATION_README.md      ← 技术深入
+    ├── IMPLEMENTATION_SUMMARY.md         ← 实现总结
+    └── DELAY_OVERFLOW_FILES.txt          ← 文件清单
+
+════════════════════════════════════════════════════════════
+
+快速开始：
+  $ ./verify_delay_overflow.sh
+
+详细说明：
+  $ cat START_HERE.md
+
+════════════════════════════════════════════════════════════

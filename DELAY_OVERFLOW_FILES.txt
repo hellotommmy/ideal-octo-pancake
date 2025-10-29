@@ -1,0 +1,130 @@
+========================================
+Delay Overflow Verification Files
+========================================
+
+PURPOSE:
+这些文件用于验证 scheduler.pml 中的 delay 溢出bug
+Bug: g_tickCount + ticks 可能溢出，导致任务过早唤醒
+
+========================================
+NEW FILES CREATED:
+========================================
+
+1. bad_scheduler.pml
+   - 带验证功能的调度器
+   - 追踪 ticksActuallyWaited 和 requestedDelay
+   - 包含断言: requestedDelay <= ticksActuallyWaited
+   - 仅用于验证，不用于生产
+
+2. main_overflow_test.pml
+   - Delay溢出验证的主模型入口
+   - 使用 bad_scheduler.pml 代替 scheduler.pml
+   - 使用 processes_delay_overflow_test.pml
+
+3. processes_delay_overflow_test.pml
+   - 溢出测试专用进程
+   - 初始化 g_tickCount = 245（接近255）
+   - 初始化验证数组
+   - 触发溢出场景
+
+4. main_delay_verify.pml
+   - 基本的delay验证主文件
+   - 使用正常的processes.pml
+   - 适合常规delay测试
+
+5. verify_delay_overflow.sh
+   - 便捷的自动化验证脚本
+   - 自动编译和运行溢出测试
+   - 可执行 (chmod +x)
+
+6. DELAY_VERIFICATION_README.md
+   - Delay验证的详细说明
+   - Bug描述和示例
+   - 验证原理和使用方法
+
+7. USAGE_GUIDE.md
+   - 完整的使用指南
+   - 正常验证 vs Delay验证的区别
+   - 工作流程和最佳实践
+
+========================================
+QUICK START:
+========================================
+
+验证Delay溢出Bug:
+  $ ./verify_delay_overflow.sh
+
+或手动执行:
+  $ spin -a main_overflow_test.pml
+  $ gcc -o pan pan.c -O2
+  $ ./pan
+
+预期结果（如果bug存在）:
+  assertion violated: requestedDelay[taskId] <= ticksActuallyWaited[taskId]
+
+========================================
+FILE RELATIONSHIPS:
+========================================
+
+正常验证流程:
+  main.pml
+    → scheduler.pml (正常版本)
+    → processes.pml
+
+Delay溢出验证流程:
+  main_overflow_test.pml
+    → bad_scheduler.pml (验证版本)
+    → processes_delay_overflow_test.pml
+
+========================================
+KEY DIFFERENCES:
+========================================
+
+scheduler.pml vs bad_scheduler.pml:
+  ✓ bad_scheduler 添加了 ticksActuallyWaited[] 数组
+  ✓ bad_scheduler 添加了 requestedDelay[] 数组
+  ✓ bad_scheduler 在 LOS_TaskDelay 中记录请求
+  ✓ bad_scheduler 在 OsTickProcess 中追踪等待时间
+  ✓ bad_scheduler 在唤醒时验证形式化规约
+
+processes.pml vs processes_delay_overflow_test.pml:
+  ✓ overflow版本设置 g_tickCount = 245
+  ✓ overflow版本初始化验证数组
+  ✓ overflow版本的delay参数更大（触发溢出）
+
+========================================
+IMPORTANT NOTES:
+========================================
+
+1. bad_scheduler.pml 仅用于验证，不要用于生产模型
+2. 平时验证用 main.pml + scheduler.pml
+3. 只在测试delay正确性时使用 main_overflow_test.pml
+4. 两套文件需要保持同步（除验证代码外）
+5. ticks必须 < 255（在bad_scheduler中强制）
+
+========================================
+VERIFICATION PROPERTY:
+========================================
+
+形式化规约:
+  ∀ task t, delay d:
+    当调用 LOS_TaskDelay(d) 后，
+    任务实际等待时间 Δt 必须满足: d ≤ Δt
+
+实现:
+  assert(requestedDelay[taskId] <= ticksActuallyWaited[taskId]);
+
+违反时:
+  说明任务被过早唤醒（溢出bug）
+
+========================================
+NEXT STEPS:
+========================================
+
+1. 阅读 USAGE_GUIDE.md 了解详细用法
+2. 运行 ./verify_delay_overflow.sh 检测bug
+3. 如果发现bug，修复 scheduler.pml
+4. 重新运行两种验证确保修复正确
+
+========================================
+

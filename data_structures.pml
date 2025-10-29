@@ -4,6 +4,7 @@
 byte EP = NULL_byte;
 byte g_tickCount = 0;
 byte g_schedResponseTime = MAX_RESPONSE_TIME;  /* Earliest wakeup time in sortLink */
+byte g_overflowedResponseTime = MAX_RESPONSE_TIME;  /* Earliest wakeup time in overflowedSortLink */
 byte BASEPRI = 0;
 byte pending_exp = 0;
 byte EP_Stack = NULL_byte;
@@ -32,6 +33,10 @@ TCB tcb[LAST_TASK + 1];
 ReadyList readyQueue[NUM_PRIORITIES];
 SortLinkNode g_taskSortLink[NUM_OF_TASKS + 1];
 byte g_taskSortLinkTail = 0;
+
+/* Overflow queue for tasks that would wrap around the 255 tick boundary */
+SortLinkNode overflowedSortLink[NUM_OF_TASKS + 1];
+byte overflowedSortLinkTail = 0;
 
 /***** Basic Inline Functions *****/
 inline MSR_BASEPRI(val)
@@ -208,8 +213,13 @@ inline OsGetTopTask(task_return_var, task_return_prio)
 
 /***** SortLink Operations *****/
 /* 
- * Add task to sortLink with sorted insertion by responseTime (ascending order).
- * This allows OsTickProcess to stop scanning at the first non-expired task.
+ * Add task to sortLink with sorted insertion - DUAL QUEUE VERSION
+ * 
+ * Automatically determines whether to add to normal queue or overflow queue:
+ * - If wakeupTime < g_tickCount: overflow occurred, add to overflowedSortLink
+ * - Otherwise: add to g_taskSortLink (normal queue)
+ * 
+ * This solves the byte overflow bug where g_tickCount + ticks wraps around.
  */
 inline OsAdd2SortLinkSorted(taskID, wakeupTime)
 {
@@ -218,57 +228,110 @@ inline OsAdd2SortLinkSorted(taskID, wakeupTime)
     byte found;
     byte tmpId;
     byte tmpTime;
+    byte willOverflow;
     
-    assert(g_taskSortLinkTail < NUM_OF_TASKS + 1);
-    assert(g_taskSortLinkTail >= 0);
+    /* Detect overflow: if wakeupTime < g_tickCount, byte addition wrapped around */
+    willOverflow = (wakeupTime < g_tickCount);
     
-    /* Find insertion position */
-    insertPos = 0;
-    found = 0;
-    do
-    :: (insertPos < g_taskSortLinkTail && found == 0) ->
-        if
-        :: (wakeupTime < g_taskSortLink[insertPos].responseTime) -> 
-            found = 1
-        :: (wakeupTime >= g_taskSortLink[insertPos].responseTime) -> 
-            insertPos++
-        fi
-    :: else -> break
-    od;
-    
-    /* Shift elements from tail down to insertPos */
-    idx = g_taskSortLinkTail;
-    do
-    :: (idx > insertPos) ->
-        /* Copy from [idx-1] to [idx] */
-        tmpId = g_taskSortLink[idx - 1].taskId;
-        tmpTime = g_taskSortLink[idx - 1].responseTime;
-        g_taskSortLink[idx].taskId = tmpId;
-        g_taskSortLink[idx].responseTime = tmpTime;
-        /* Update pendList if valid task */
-        if
-        :: (tmpId != UNUSED) -> tcb[tmpId].pendList = idx
-        :: (tmpId == UNUSED) -> skip
-        fi;
-        idx--
-    :: (idx <= insertPos) -> break
-    od;
-    
-    /* Insert new task at insertPos */
-    g_taskSortLink[insertPos].taskId = taskID;
-    g_taskSortLink[insertPos].responseTime = wakeupTime;
-    tcb[taskID].pendList = insertPos;
-    g_taskSortLinkTail++;
-    
-    /* Update earliest wakeup time if this task is now first (for DELAYED tasks) */
     if
-    :: (insertPos == 0 && wakeupTime < MAX_RESPONSE_TIME) ->
-        g_schedResponseTime = wakeupTime
-    :: else -> skip
-    fi;
-    
-    /* Verify sortLink remains sorted after insertion */
-    AssertSortLinkIsSorted()
+    :: (willOverflow) ->
+        /* ===== ADD TO OVERFLOW QUEUE ===== */
+        assert(overflowedSortLinkTail < NUM_OF_TASKS + 1);
+        
+        /* Find insertion position in overflow queue */
+        insertPos = 0;
+        found = 0;
+        do
+        :: (insertPos < overflowedSortLinkTail && found == 0) ->
+            if
+            :: (wakeupTime < overflowedSortLink[insertPos].responseTime) -> 
+                found = 1
+            :: else -> 
+                insertPos++
+            fi
+        :: else -> break
+        od;
+        
+        /* Shift elements in overflow queue */
+        idx = overflowedSortLinkTail;
+        do
+        :: (idx > insertPos) ->
+            tmpId = overflowedSortLink[idx - 1].taskId;
+            tmpTime = overflowedSortLink[idx - 1].responseTime;
+            overflowedSortLink[idx].taskId = tmpId;
+            overflowedSortLink[idx].responseTime = tmpTime;
+            if
+            :: (tmpId != UNUSED) -> 
+                tcb[tmpId].pendList = 128 + idx  /* Mark as overflow queue */
+            :: else -> skip
+            fi;
+            idx--
+        :: else -> break
+        od;
+        
+        /* Insert into overflow queue */
+        overflowedSortLink[insertPos].taskId = taskID;
+        overflowedSortLink[insertPos].responseTime = wakeupTime;
+        tcb[taskID].pendList = 128 + insertPos;  /* Mark as overflow queue */
+        overflowedSortLinkTail++;
+        
+        /* Update overflow queue earliest wakeup time */
+        if
+        :: (insertPos == 0 && wakeupTime < MAX_RESPONSE_TIME) ->
+            g_overflowedResponseTime = wakeupTime
+        :: else -> skip
+        fi
+        
+    :: else ->
+        /* ===== ADD TO NORMAL QUEUE ===== */
+        assert(g_taskSortLinkTail < NUM_OF_TASKS + 1);
+        
+        /* Find insertion position */
+        insertPos = 0;
+        found = 0;
+        do
+        :: (insertPos < g_taskSortLinkTail && found == 0) ->
+            if
+            :: (wakeupTime < g_taskSortLink[insertPos].responseTime) -> 
+                found = 1
+            :: else -> 
+                insertPos++
+            fi
+        :: else -> break
+        od;
+        
+        /* Shift elements */
+        idx = g_taskSortLinkTail;
+        do
+        :: (idx > insertPos) ->
+            tmpId = g_taskSortLink[idx - 1].taskId;
+            tmpTime = g_taskSortLink[idx - 1].responseTime;
+            g_taskSortLink[idx].taskId = tmpId;
+            g_taskSortLink[idx].responseTime = tmpTime;
+            if
+            :: (tmpId != UNUSED) -> tcb[tmpId].pendList = idx
+            :: else -> skip
+            fi;
+            idx--
+        :: else -> break
+        od;
+        
+        /* Insert into normal queue */
+        g_taskSortLink[insertPos].taskId = taskID;
+        g_taskSortLink[insertPos].responseTime = wakeupTime;
+        tcb[taskID].pendList = insertPos;
+        g_taskSortLinkTail++;
+        
+        /* Update normal queue earliest wakeup time */
+        if
+        :: (insertPos == 0 && wakeupTime < MAX_RESPONSE_TIME) ->
+            g_schedResponseTime = wakeupTime
+        :: else -> skip
+        fi;
+        
+        /* Verify normal queue remains sorted */
+        AssertSortLinkIsSorted()
+    fi
 }
 
 /* Legacy function for SUSPENDED tasks - uses MAX_RESPONSE_TIME */
@@ -279,47 +342,89 @@ inline OsAdd2SortLink(taskID)
 
 inline OsRemoveFromSortLink(taskID)
 {
-    byte idx = tcb[taskID].pendList;
-    byte removedIdx = idx;
+    byte pendListValue = tcb[taskID].pendList;
+    byte idx;
+    byte removedIdx;
+    byte newFirstTime;
     
-    do
-    :: (idx < g_taskSortLinkTail - 1) ->
-        g_taskSortLink[idx].taskId = g_taskSortLink[idx + 1].taskId;
-        g_taskSortLink[idx].responseTime = g_taskSortLink[idx + 1].responseTime;
-        idx++
-    :: else -> break
-    od;
-    g_taskSortLink[g_taskSortLinkTail - 1].taskId = UNUSED;
-    g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
-    g_taskSortLinkTail--;
-    
-    /* 
-     * Update earliest wakeup time after removal.
-     * OPTIMIZATION: SUSPENDED tasks (responseTime = MAX_RESPONSE_TIME) are 
-     * naturally sorted to the end. If we see one, we can stop immediately.
-     */
+    /* Check which queue the task is in based on pendList encoding */
     if
-    :: (g_taskSortLinkTail == 0) ->
-        /* sortLink is empty */
-        g_schedResponseTime = MAX_RESPONSE_TIME
-    :: (removedIdx == 0 && g_taskSortLinkTail > 0) ->
-        /* Removed the first element, update to new first */
-        byte newFirstTime = g_taskSortLink[0].responseTime;
+    :: (pendListValue < 128) ->
+        /* ===== REMOVE FROM NORMAL QUEUE ===== */
+        idx = pendListValue;
+        removedIdx = idx;
+        
+        do
+        :: (idx < g_taskSortLinkTail - 1) ->
+            g_taskSortLink[idx].taskId = g_taskSortLink[idx + 1].taskId;
+            g_taskSortLink[idx].responseTime = g_taskSortLink[idx + 1].responseTime;
+            /* Update pendList for shifted tasks */
+            if
+            :: (g_taskSortLink[idx].taskId != UNUSED) ->
+                tcb[g_taskSortLink[idx].taskId].pendList = idx
+            :: else -> skip
+            fi;
+            idx++
+        :: else -> break
+        od;
+        g_taskSortLink[g_taskSortLinkTail - 1].taskId = UNUSED;
+        g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
+        g_taskSortLinkTail--;
+        
+        /* Update earliest wakeup time after removal */
         if
-        :: (newFirstTime < MAX_RESPONSE_TIME) ->
-            /* First task has finite wakeup time (DELAYED) */
-            g_schedResponseTime = newFirstTime
-        :: else ->
-            /* First task is SUSPENDED (responseTime = MAX_RESPONSE_TIME).
-             * Since sortLink is sorted, all following are also SUSPENDED.
-             * No need to scan further! */
+        :: (g_taskSortLinkTail == 0) ->
             g_schedResponseTime = MAX_RESPONSE_TIME
+        :: (removedIdx == 0 && g_taskSortLinkTail > 0) ->
+            newFirstTime = g_taskSortLink[0].responseTime;
+            if
+            :: (newFirstTime < MAX_RESPONSE_TIME) ->
+                g_schedResponseTime = newFirstTime
+            :: else ->
+                g_schedResponseTime = MAX_RESPONSE_TIME
+            fi
+        :: else -> skip
+        fi;
+        
+        AssertSortLinkIsSorted()
+        
+    :: else ->
+        /* ===== REMOVE FROM OVERFLOW QUEUE ===== */
+        idx = pendListValue - 128;  /* Decode actual index */
+        removedIdx = idx;
+        
+        do
+        :: (idx < overflowedSortLinkTail - 1) ->
+            overflowedSortLink[idx].taskId = overflowedSortLink[idx + 1].taskId;
+            overflowedSortLink[idx].responseTime = overflowedSortLink[idx + 1].responseTime;
+            /* Update pendList for shifted tasks */
+            if
+            :: (overflowedSortLink[idx].taskId != UNUSED) ->
+                tcb[overflowedSortLink[idx].taskId].pendList = 128 + idx
+            :: else -> skip
+            fi;
+            idx++
+        :: else -> break
+        od;
+        overflowedSortLink[overflowedSortLinkTail - 1].taskId = UNUSED;
+        overflowedSortLink[overflowedSortLinkTail - 1].responseTime = UNUSED;
+        overflowedSortLinkTail--;
+        
+        /* Update overflow queue earliest wakeup time */
+        if
+        :: (overflowedSortLinkTail == 0) ->
+            g_overflowedResponseTime = MAX_RESPONSE_TIME
+        :: (removedIdx == 0 && overflowedSortLinkTail > 0) ->
+            newFirstTime = overflowedSortLink[0].responseTime;
+            if
+            :: (newFirstTime < MAX_RESPONSE_TIME) ->
+                g_overflowedResponseTime = newFirstTime
+            :: else ->
+                g_overflowedResponseTime = MAX_RESPONSE_TIME
+            fi
+        :: else -> skip
         fi
-    :: else -> skip  /* Didn't remove first, no need to update */
-    fi;
-    
-    /* Verify sortLink remains sorted after removal */
-    AssertSortLinkIsSorted()
+    fi
 }
 
 /* 

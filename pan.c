@@ -856,14 +856,14 @@ uchar reached5 [] = {
 uchar *loopstate5;
 
 short src_ln4 [] = {
-	  0,  33,  35, 124, 125, 126, 127, 128, 
-	128, 124, 130, 124, 130, 122,  37,  38, 
-	 38,  34,  42,  34,  42,  42, 136, 137, 
-	138, 139, 139, 135, 141, 134,  43,  43, 
-	136, 137, 138, 139, 139, 135, 141, 134, 
-	 46,  47, 146, 147, 148, 149, 150, 150, 
-	146, 152, 146, 153, 154, 155, 156, 156, 
-	152, 158, 144,  49,  52,  52,  52,  53, 
+	  0,  33,  35, 129, 130, 131, 132, 133, 
+	133, 129, 135, 129, 135, 127,  37,  38, 
+	 38,  34,  42,  34,  42,  42, 141, 142, 
+	143, 144, 144, 140, 146, 139,  43,  43, 
+	141, 142, 143, 144, 144, 140, 146, 139, 
+	 46,  47, 151, 152, 153, 154, 155, 155, 
+	151, 157, 151, 158, 159, 160, 161, 161, 
+	157, 163, 149,  49,  52,  52,  52,  53, 
 	 54,  55,   0, };
 S_F_MAP src_file4 [] = {
 	{ "-", 0, 0 },
@@ -891,61 +891,79 @@ uchar reached4 [] = {
 uchar *loopstate4;
 
 short src_ln3 [] = {
-	  0,  16,  16,  16,  45,  46,  44,  16, 
+	  0,  16,  16,  16,  50,  51,  49,  16, 
 	 16,  16,  16,  16,  16,  16,  16,  16, 
-	 16,  57,  58,  56,  16,  16,  16,  16, 
-	 16,  16,  17,  50, 102, 101,  53,  57, 
-	 58,  40,  41, 164, 165, 166, 167, 169, 
-	170, 171, 171, 168, 173, 173, 173, 166, 
-	175, 166, 175, 177, 178, 179, 180, 180, 
-	176, 182, 176, 183, 184, 185, 186, 186, 
-	182, 188, 162,  43, 217, 218, 219, 220, 
-	222, 222, 223, 226, 227, 229, 231, 232, 
-	233, 234, 230, 236, 236, 236, 228, 240, 
-	228, 240, 242, 244, 245, 246, 247, 250, 
-	250, 251, 251, 249, 253, 253, 254, 254, 
-	241, 258, 241, 258, 259, 260, 261, 265, 
-	266, 267, 267, 264, 271, 335, 338, 339, 
-	342, 343, 344, 344, 338, 346, 338, 333, 
-	215, 276,  39,  61,  63,  64,  57,  68, 
-	 69, 107, 106,  45,  46,  44,   5,  72, 
-	 72,  68,  74,  48,  17,  45,  46,  44, 
+	 16,  62,  63,  61,  16,  16,  16,  16, 
+	 16,  16,  17,  50, 107, 106,  53,  57, 
+	 58,  40,  41, 169, 170, 171, 172, 174, 
+	175, 176, 176, 173, 178, 178, 178, 171, 
+	180, 171, 180, 182, 183, 184, 185, 185, 
+	181, 187, 181, 188, 189, 190, 191, 191, 
+	187, 193, 167,  43, 227, 228, 229, 230, 
+	231, 234, 234, 237, 239, 242, 243, 245, 
+	247, 248, 249, 250, 246, 252, 252, 252, 
+	244, 256, 244, 256, 258, 259, 260, 261, 
+	262, 264, 265, 266, 266, 263, 268, 268, 
+	269, 269, 257, 273, 257, 273, 274, 275, 
+	276, 280, 281, 282, 282, 279, 285, 285, 
+	287, 290, 291, 293, 295, 296, 297, 298, 
+	294, 300, 300, 300, 292, 304, 292, 304, 
+	306, 307, 308, 309, 310, 312, 312, 313, 
+	313, 311, 315, 315, 316, 316, 305, 320, 
+	305, 320, 321, 322, 323, 327, 328, 329, 
+	329, 326, 333, 440, 443, 444, 447, 448, 
+	449, 449, 443, 451, 443, 438, 236, 335, 
+	225, 339,  39,  61,  63,  64,  57,  68, 
+	 69, 112, 111,  50,  51,  49,   5,  72, 
+	 72,  68,  74,  48,  17,  50,  51,  49, 
 	 17,  17,  17,  17,  17,  17,  17,  17, 
-	 17,  17,  57,  58,  56,  17,  17,  17, 
-	 17,  17,  17,  18,  21,  22,  24, 102, 
-	101,  25,  27,  11,  12,  13, 283, 285, 
-	286, 287, 288, 289, 290, 290, 285, 292, 
-	285, 292, 293, 294, 302, 304, 305, 308, 
-	309, 311, 312, 316, 308, 318, 318, 318, 
-	301, 322, 335, 338, 339, 342, 343, 344, 
-	344, 338, 346, 338, 333, 281, 136, 137, 
-	138, 139, 139, 135, 141, 134,  10,  31, 
-	107, 106,  45,  46,  44,   5,  34,  34, 
-	 30,  36,  19,  18,  45,  46,  44,  18, 
+	 17,  17,  62,  63,  61,  17,  17,  17, 
+	 17,  17,  17,  18,  21,  22,  24, 107, 
+	106,  25,  27,  11,  12,  13, 346, 347, 
+	348, 351, 352, 354, 355, 358, 359, 360, 
+	363, 364, 365, 365, 362, 367, 367, 368, 
+	368, 357, 370, 357, 370, 371, 372, 376, 
+	377, 378, 379, 381, 382, 383, 384, 380, 
+	386, 386, 386, 375, 389, 440, 443, 444, 
+	447, 448, 449, 449, 443, 451, 443, 438, 
+	391, 393, 394, 397, 398, 399, 402, 403, 
+	404, 404, 401, 406, 406, 407, 407, 396, 
+	409, 396, 409, 410, 411, 415, 416, 417, 
+	418, 420, 421, 422, 423, 419, 425, 425, 
+	425, 414, 427, 351, 428, 344, 141, 142, 
+	143, 144, 144, 140, 146, 139,  10,  31, 
+	112, 111,  50,  51,  49,   5,  34,  34, 
+	 30,  36,  19,  18,  50,  51,  49,  18, 
 	 18,  18,  18,  18,  18,  18,  18,  18, 
-	 18,  57,  58,  56,  18,  18,  18,  18, 
-	 18,  18,  19,  19,  19,  45,  46,  44, 
+	 18,  62,  63,  61,  18,  18,  18,  18, 
+	 18,  18,  19,  19,  19,  50,  51,  49, 
 	 19,  19,  19,  19,  19,  19,  19,  19, 
-	 19,  19,  57,  58,  56,  19,  19,  19, 
-	 19,  19,  19,  20, 100, 101, 103, 102, 
-	101, 106,  45,  46,  44,   5,  78, 109, 
-	 85,  86,  88, 164, 165, 166, 167, 169, 
-	170, 171, 171, 168, 173, 173, 173, 166, 
-	175, 166, 175, 177, 178, 179, 180, 180, 
-	176, 182, 176, 183, 184, 185, 186, 186, 
-	182, 188, 162,  90,  90,  87,  92,  92, 
-	217, 218, 219, 220, 222, 222, 223, 226, 
-	227, 229, 231, 232, 233, 234, 230, 236, 
-	236, 236, 228, 240, 228, 240, 242, 244, 
-	245, 246, 247, 250, 250, 251, 251, 249, 
-	253, 253, 254, 254, 241, 258, 241, 258, 
-	259, 260, 261, 265, 266, 267, 267, 264, 
-	271, 335, 338, 339, 342, 343, 344, 344, 
-	338, 346, 338, 333, 215,  84, 113, 107, 
-	106,  45,  46,  44,   5, 116, 116, 112, 
-	118, 118, 118, 105, 120,  98,  20,  45, 
-	 46,  44,  20,  20,  20,  20,  20,  20, 
-	 20,  20,  20,  20,  57,  58,  56,  20, 
+	 19,  19,  62,  63,  61,  19,  19,  19, 
+	 19,  19,  19,  20, 100, 101, 103, 107, 
+	106, 106,  50,  51,  49,   5,  78, 109, 
+	 85,  86,  88, 169, 170, 171, 172, 174, 
+	175, 176, 176, 173, 178, 178, 178, 171, 
+	180, 171, 180, 182, 183, 184, 185, 185, 
+	181, 187, 181, 188, 189, 190, 191, 191, 
+	187, 193, 167,  90,  90,  87,  92,  92, 
+	227, 228, 229, 230, 231, 234, 234, 237, 
+	239, 242, 243, 245, 247, 248, 249, 250, 
+	246, 252, 252, 252, 244, 256, 244, 256, 
+	258, 259, 260, 261, 262, 264, 265, 266, 
+	266, 263, 268, 268, 269, 269, 257, 273, 
+	257, 273, 274, 275, 276, 280, 281, 282, 
+	282, 279, 285, 285, 287, 290, 291, 293, 
+	295, 296, 297, 298, 294, 300, 300, 300, 
+	292, 304, 292, 304, 306, 307, 308, 309, 
+	310, 312, 312, 313, 313, 311, 315, 315, 
+	316, 316, 305, 320, 305, 320, 321, 322, 
+	323, 327, 328, 329, 329, 326, 333, 440, 
+	443, 444, 447, 448, 449, 449, 443, 451, 
+	443, 438, 236, 335, 225,  84, 113, 112, 
+	111,  50,  51,  49,   5, 116, 116, 112, 
+	118, 118, 118, 105, 120,  98,  20,  50, 
+	 51,  49,  20,  20,  20,  20,  20,  20, 
+	 20,  20,  20,  20,  62,  63,  61,  20, 
 	 20,  20,  20,  20,  20,  15,  22,  15, 
 	 22,   0, };
 S_F_MAP src_file3 [] = {
@@ -960,48 +978,48 @@ S_F_MAP src_file3 [] = {
 	{ "scheduler.pml", 30, 34 },
 	{ "data_structures.pml", 35, 66 },
 	{ "scheduler.pml", 67, 67 },
-	{ "data_structures.pml", 68, 129 },
-	{ "scheduler.pml", 130, 136 },
-	{ "data_structures.pml", 137, 141 },
-	{ "scheduler.pml", 142, 147 },
-	{ "processes.pml", 148, 148 },
-	{ "data_structures.pml", 149, 151 },
-	{ "processes.pml", 152, 161 },
-	{ "data_structures.pml", 162, 164 },
-	{ "processes.pml", 165, 171 },
-	{ "scheduler.pml", 172, 174 },
-	{ "data_structures.pml", 175, 176 },
-	{ "scheduler.pml", 177, 181 },
-	{ "data_structures.pml", 182, 229 },
-	{ "scheduler.pml", 230, 231 },
-	{ "data_structures.pml", 232, 236 },
-	{ "scheduler.pml", 237, 242 },
-	{ "processes.pml", 243, 243 },
-	{ "data_structures.pml", 244, 246 },
-	{ "processes.pml", 247, 256 },
-	{ "data_structures.pml", 257, 259 },
-	{ "processes.pml", 260, 268 },
-	{ "data_structures.pml", 269, 271 },
-	{ "processes.pml", 272, 281 },
-	{ "data_structures.pml", 282, 284 },
-	{ "processes.pml", 285, 291 },
-	{ "scheduler.pml", 292, 294 },
-	{ "data_structures.pml", 295, 296 },
-	{ "scheduler.pml", 297, 297 },
-	{ "data_structures.pml", 298, 300 },
-	{ "scheduler.pml", 301, 306 },
-	{ "data_structures.pml", 307, 338 },
-	{ "scheduler.pml", 339, 343 },
-	{ "data_structures.pml", 344, 404 },
-	{ "scheduler.pml", 405, 406 },
-	{ "data_structures.pml", 407, 411 },
-	{ "scheduler.pml", 412, 421 },
-	{ "processes.pml", 422, 422 },
-	{ "data_structures.pml", 423, 425 },
-	{ "processes.pml", 426, 435 },
-	{ "data_structures.pml", 436, 438 },
-	{ "processes.pml", 439, 448 },
-	{ "-", 449, 450 }
+	{ "data_structures.pml", 68, 177 },
+	{ "scheduler.pml", 178, 184 },
+	{ "data_structures.pml", 185, 189 },
+	{ "scheduler.pml", 190, 195 },
+	{ "processes.pml", 196, 196 },
+	{ "data_structures.pml", 197, 199 },
+	{ "processes.pml", 200, 209 },
+	{ "data_structures.pml", 210, 212 },
+	{ "processes.pml", 213, 219 },
+	{ "scheduler.pml", 220, 222 },
+	{ "data_structures.pml", 223, 224 },
+	{ "scheduler.pml", 225, 229 },
+	{ "data_structures.pml", 230, 325 },
+	{ "scheduler.pml", 326, 327 },
+	{ "data_structures.pml", 328, 332 },
+	{ "scheduler.pml", 333, 338 },
+	{ "processes.pml", 339, 339 },
+	{ "data_structures.pml", 340, 342 },
+	{ "processes.pml", 343, 352 },
+	{ "data_structures.pml", 353, 355 },
+	{ "processes.pml", 356, 364 },
+	{ "data_structures.pml", 365, 367 },
+	{ "processes.pml", 368, 377 },
+	{ "data_structures.pml", 378, 380 },
+	{ "processes.pml", 381, 387 },
+	{ "scheduler.pml", 388, 390 },
+	{ "data_structures.pml", 391, 392 },
+	{ "scheduler.pml", 393, 393 },
+	{ "data_structures.pml", 394, 396 },
+	{ "scheduler.pml", 397, 402 },
+	{ "data_structures.pml", 403, 434 },
+	{ "scheduler.pml", 435, 439 },
+	{ "data_structures.pml", 440, 548 },
+	{ "scheduler.pml", 549, 550 },
+	{ "data_structures.pml", 551, 555 },
+	{ "scheduler.pml", 556, 565 },
+	{ "processes.pml", 566, 566 },
+	{ "data_structures.pml", 567, 569 },
+	{ "processes.pml", 570, 579 },
+	{ "data_structures.pml", 580, 582 },
+	{ "processes.pml", 583, 592 },
+	{ "-", 593, 594 }
 };
 uchar reached3 [] = {
 	  0,   1,   0,   1,   1,   0,   0,   1, 
@@ -1013,13 +1031,19 @@ uchar reached3 [] = {
 	  1,   1,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   1,   1,   0,   0,   1,   0, 
 	  0,   1,   0,   0,   1,   0,   0,   0, 
-	  0,   0,   0,   0,   0,   1,   1,   0, 
-	  1,   0,   0,   1,   1,   0,   0,   1, 
-	  1,   0,   1,   0,   0,   0,   0,   1, 
-	  0,   1,   0,   0,   1,   0,   1,   1, 
-	  0,   1,   1,   0,   0,   0,   0,   1, 
-	  0,   1,   1,   0,   1,   1,   0,   1, 
-	  0,   0,   1,   1,   0,   1,   1,   0, 
+	  0,   0,   0,   1,   0,   0,   0,   1, 
+	  1,   0,   1,   0,   0,   1,   1,   0, 
+	  0,   1,   1,   0,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  1,   0,   0,   1,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   1,   0,   1,   1, 
+	  0,   0,   0,   1,   1,   0,   1,   0, 
+	  0,   1,   1,   0,   0,   1,   1,   0, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  0,   0,   1,   0,   1,   0,   0,   1, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   1,   0,   0, 
+	  1,   1,   0,   1,   1,   0,   0,   1, 
 	  1,   0,   0,   1,   0,   0,   0,   1, 
 	  1,   1,   0,   1,   0,   1,   0,   1, 
 	  1,   0,   1,   0,   1,   1,   0,   0, 
@@ -1027,11 +1051,17 @@ uchar reached3 [] = {
 	  0,   1,   1,   0,   0,   0,   1,   0, 
 	  0,   1,   0,   1,   1,   0,   0,   1, 
 	  0,   0,   0,   1,   0,   0,   1,   0, 
-	  1,   0,   0,   0,   1,   0,   0,   1, 
-	  1,   0,   0,   0,   1,   0,   1,   0, 
-	  1,   0,   1,   0,   0,   1,   1,   1, 
-	  0,   1,   1,   0,   1,   0,   0,   1, 
-	  1,   0,   1,   1,   0,   0,   1,   0, 
+	  0,   0,   1,   0,   0,   1,   0,   0, 
+	  1,   0,   1,   0,   0,   1,   0,   1, 
+	  0,   0,   1,   1,   0,   0,   0,   1, 
+	  0,   1,   0,   1,   0,   1,   0,   0, 
+	  1,   1,   1,   0,   1,   1,   0,   1, 
+	  0,   0,   1,   1,   0,   1,   1,   0, 
+	  1,   0,   0,   1,   0,   0,   1,   0, 
+	  1,   0,   0,   1,   0,   1,   0,   0, 
+	  1,   1,   0,   0,   0,   1,   0,   1, 
+	  0,   1,   0,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   0,   1,   0,   1,   0, 
 	  0,   1,   0,   1,   1,   0,   0,   1, 
 	  1,   0,   1,   0,   1,   0,   1,   1, 
 	  0,   1,   0,   1,   1,   0,   0,   1, 
@@ -1047,14 +1077,20 @@ uchar reached3 [] = {
 	  1,   1,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   1,   1,   0,   0,   1,   0, 
 	  0,   1,   0,   1,   0,   0,   1,   0, 
-	  1,   0,   0,   0,   0,   0,   0,   0, 
-	  0,   1,   1,   0,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   1,   0,   1,   0, 
-	  0,   0,   0,   1,   0,   1,   0,   0, 
-	  1,   0,   1,   1,   0,   1,   1,   0, 
-	  0,   0,   0,   1,   0,   1,   1,   0, 
-	  1,   1,   0,   1,   0,   0,   1,   1, 
-	  0,   1,   1,   0,   0,   0,   1,   1, 
+	  1,   0,   0,   0,   0,   0,   0,   1, 
+	  0,   0,   0,   1,   1,   0,   1,   0, 
+	  0,   1,   1,   0,   0,   1,   1,   0, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  0,   0,   1,   0,   1,   0,   0,   1, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  1,   0,   1,   0,   0,   1,   1,   0, 
+	  0,   1,   1,   0,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  1,   0,   0,   1,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   1,   0,   1,   1, 
+	  0,   1,   0,   0,   1,   1,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   0,   1,   0,   1,   1,   0, 
 	  1,   1,   1,   0,   1,   0,   1,   1, 
 	  0,   0,   1,   0,   1,   1,   1,   0, 
@@ -1064,31 +1100,37 @@ uchar reached3 [] = {
 uchar *loopstate3;
 
 short src_ln2 [] = {
-	  0,   7,   7,   7,  45,  46,  44,   7, 
+	  0,   7,   7,   7,  50,  51,  49,   7, 
 	  7,   7,   7,   7,   7,   7,   7,   7, 
-	  7,  57,  58,  56,   7,   7,   7,   7, 
-	  7,   7,   8,   8,   8,  45,  46,  44, 
+	  7,  62,  63,  61,   7,   7,   7,   7, 
+	  7,   7,   8,   8,   8,  50,  51,  49, 
 	  8,   8,   8,   8,   8,   8,   8,   8, 
-	  8,   8,  57,  58,  56,   8,   8,   8, 
-	  8,   8,   8,   9, 100, 101, 103, 102, 
-	101, 106,  45,  46,  44,   5,  78, 109, 
-	 85,  86,  88, 164, 165, 166, 167, 169, 
-	170, 171, 171, 168, 173, 173, 173, 166, 
-	175, 166, 175, 177, 178, 179, 180, 180, 
-	176, 182, 176, 183, 184, 185, 186, 186, 
-	182, 188, 162,  90,  90,  87,  92,  92, 
-	217, 218, 219, 220, 222, 222, 223, 226, 
-	227, 229, 231, 232, 233, 234, 230, 236, 
-	236, 236, 228, 240, 228, 240, 242, 244, 
-	245, 246, 247, 250, 250, 251, 251, 249, 
-	253, 253, 254, 254, 241, 258, 241, 258, 
-	259, 260, 261, 265, 266, 267, 267, 264, 
-	271, 335, 338, 339, 342, 343, 344, 344, 
-	338, 346, 338, 333, 215,  84, 113, 107, 
-	106,  45,  46,  44,   5, 116, 116, 112, 
-	118, 118, 118, 105, 120,  98,   9,  45, 
-	 46,  44,   9,   9,   9,   9,   9,   9, 
-	  9,   9,   9,   9,  57,  58,  56,   9, 
+	  8,   8,  62,  63,  61,   8,   8,   8, 
+	  8,   8,   8,   9, 100, 101, 103, 107, 
+	106, 106,  50,  51,  49,   5,  78, 109, 
+	 85,  86,  88, 169, 170, 171, 172, 174, 
+	175, 176, 176, 173, 178, 178, 178, 171, 
+	180, 171, 180, 182, 183, 184, 185, 185, 
+	181, 187, 181, 188, 189, 190, 191, 191, 
+	187, 193, 167,  90,  90,  87,  92,  92, 
+	227, 228, 229, 230, 231, 234, 234, 237, 
+	239, 242, 243, 245, 247, 248, 249, 250, 
+	246, 252, 252, 252, 244, 256, 244, 256, 
+	258, 259, 260, 261, 262, 264, 265, 266, 
+	266, 263, 268, 268, 269, 269, 257, 273, 
+	257, 273, 274, 275, 276, 280, 281, 282, 
+	282, 279, 285, 285, 287, 290, 291, 293, 
+	295, 296, 297, 298, 294, 300, 300, 300, 
+	292, 304, 292, 304, 306, 307, 308, 309, 
+	310, 312, 312, 313, 313, 311, 315, 315, 
+	316, 316, 305, 320, 305, 320, 321, 322, 
+	323, 327, 328, 329, 329, 326, 333, 440, 
+	443, 444, 447, 448, 449, 449, 443, 451, 
+	443, 438, 236, 335, 225,  84, 113, 112, 
+	111,  50,  51,  49,   5, 116, 116, 112, 
+	118, 118, 118, 105, 120,  98,   9,  50, 
+	 51,  49,   9,   9,   9,   9,   9,   9, 
+	  9,   9,   9,   9,  62,  63,  61,   9, 
 	  9,   9,   9,   9,   9,   6,  11,   6, 
 	 11,   0, };
 S_F_MAP src_file2 [] = {
@@ -1109,16 +1151,16 @@ S_F_MAP src_file2 [] = {
 	{ "scheduler.pml", 61, 66 },
 	{ "data_structures.pml", 67, 98 },
 	{ "scheduler.pml", 99, 103 },
-	{ "data_structures.pml", 104, 164 },
-	{ "scheduler.pml", 165, 166 },
-	{ "data_structures.pml", 167, 171 },
-	{ "scheduler.pml", 172, 181 },
-	{ "processes.pml", 182, 182 },
-	{ "data_structures.pml", 183, 185 },
-	{ "processes.pml", 186, 195 },
-	{ "data_structures.pml", 196, 198 },
-	{ "processes.pml", 199, 208 },
-	{ "-", 209, 210 }
+	{ "data_structures.pml", 104, 212 },
+	{ "scheduler.pml", 213, 214 },
+	{ "data_structures.pml", 215, 219 },
+	{ "scheduler.pml", 220, 229 },
+	{ "processes.pml", 230, 230 },
+	{ "data_structures.pml", 231, 233 },
+	{ "processes.pml", 234, 243 },
+	{ "data_structures.pml", 244, 246 },
+	{ "processes.pml", 247, 256 },
+	{ "-", 257, 258 }
 };
 uchar reached2 [] = {
 	  0,   1,   0,   1,   1,   0,   0,   1, 
@@ -1134,14 +1176,20 @@ uchar reached2 [] = {
 	  1,   1,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   1,   1,   0,   0,   1,   0, 
 	  0,   1,   0,   1,   0,   0,   1,   0, 
-	  1,   0,   0,   0,   0,   0,   0,   0, 
-	  0,   1,   1,   0,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   1,   0,   1,   0, 
-	  0,   0,   0,   1,   0,   1,   0,   0, 
-	  1,   0,   1,   1,   0,   1,   1,   0, 
-	  0,   0,   0,   1,   0,   1,   1,   0, 
-	  1,   1,   0,   1,   0,   0,   1,   1, 
-	  0,   1,   1,   0,   0,   0,   1,   1, 
+	  1,   0,   0,   0,   0,   0,   0,   1, 
+	  0,   0,   0,   1,   1,   0,   1,   0, 
+	  0,   1,   1,   0,   0,   1,   1,   0, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  0,   0,   1,   0,   1,   0,   0,   1, 
+	  1,   0,   0,   0,   0,   1,   0,   1, 
+	  1,   0,   1,   1,   0,   0,   0,   1, 
+	  1,   0,   1,   0,   0,   1,   1,   0, 
+	  0,   1,   1,   0,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  1,   0,   0,   1,   1,   0,   0,   0, 
+	  0,   1,   0,   1,   1,   0,   1,   1, 
+	  0,   1,   0,   0,   1,   1,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   1, 
 	  0,   1,   0,   1,   0,   1,   1,   0, 
 	  1,   1,   1,   0,   1,   0,   1,   1, 
 	  0,   0,   1,   0,   1,   1,   1,   0, 
@@ -1151,88 +1199,98 @@ uchar reached2 [] = {
 uchar *loopstate2;
 
 short src_ln1 [] = {
-	  0, 303,  81,  51,  52,  50,  81,  80, 
-	307, 154, 155, 158, 158, 166, 168, 169, 
-	175, 176, 181, 182, 190, 192, 194, 136, 
-	137, 138, 139, 139, 135, 141, 134, 199, 
-	200, 201, 202, 205, 206, 207, 207, 204, 
-	209, 209, 210, 210, 199, 213, 199, 213, 
-	214, 215, 335, 338, 339, 342, 343, 344, 
-	344, 338, 346, 338, 333, 220, 223, 229, 
-	231, 233, 181, 235, 235, 235, 174, 243, 
-	174, 244, 247, 248, 249, 251, 252, 254, 
-	255, 257, 251, 259, 246, 260, 260, 260, 
-	243, 262, 165, 265, 266,  45,  46,  44, 
-	268, 268, 265, 270, 152, 114,  45,  46, 
-	 44, 115, 116, 113, 118, 112, 307, 310, 
-	 45,  46,  44, 114,  45,  46,  44, 115, 
-	116, 113, 118, 112, 310, 313,  95,  76, 
-	 75,  87,  88,  89,  85,  96,  63,  64, 
-	 65,  62,  94,  98,  93, 114,  45,  46, 
-	 44, 115, 116, 113, 118, 112, 313, 302, 
-	315, 302, 315,   0, };
+	  0, 360,  86,  56,  57,  55,  86,  85, 
+	364, 154, 155, 156, 159, 159, 166, 168, 
+	170, 172, 172, 173, 177, 178, 179, 179, 
+	176, 182, 182, 183, 183, 169, 187, 169, 
+	187, 191, 192, 193, 194, 190, 198, 198, 
+	199, 202, 204, 205, 206, 207, 208, 208, 
+	203, 211, 203, 211, 211, 165, 215, 215, 
+	223, 225, 226, 232, 233, 238, 239, 247, 
+	249, 251, 141, 142, 143, 144, 144, 140, 
+	146, 139, 256, 257, 258, 259, 262, 263, 
+	264, 264, 261, 266, 266, 267, 267, 256, 
+	270, 256, 270, 271, 272, 440, 443, 444, 
+	447, 448, 449, 449, 443, 451, 443, 438, 
+	277, 280, 286, 288, 290, 238, 292, 292, 
+	292, 231, 300, 231, 301, 304, 305, 306, 
+	308, 309, 311, 312, 314, 308, 316, 303, 
+	317, 317, 317, 300, 319, 222, 322, 323, 
+	 50,  51,  49, 325, 325, 322, 327, 152, 
+	119,  50,  51,  49, 120, 121, 118, 123, 
+	117, 364, 367,  50,  51,  49, 119,  50, 
+	 51,  49, 120, 121, 118, 123, 117, 367, 
+	370, 100,  81,  80,  92,  93,  94,  90, 
+	101,  68,  69,  70,  67,  99, 103,  98, 
+	119,  50,  51,  49, 120, 121, 118, 123, 
+	117, 370, 359, 372, 359, 372,   0, };
 S_F_MAP src_file1 [] = {
 	{ "-", 0, 0 },
 	{ "scheduler.pml", 1, 1 },
 	{ "data_structures.pml", 2, 7 },
-	{ "scheduler.pml", 8, 22 },
-	{ "data_structures.pml", 23, 30 },
-	{ "scheduler.pml", 31, 49 },
-	{ "data_structures.pml", 50, 60 },
-	{ "scheduler.pml", 61, 92 },
-	{ "data_structures.pml", 93, 95 },
-	{ "scheduler.pml", 96, 100 },
-	{ "data_structures.pml", 101, 109 },
-	{ "scheduler.pml", 110, 111 },
-	{ "data_structures.pml", 112, 123 },
-	{ "scheduler.pml", 124, 125 },
-	{ "data_structures.pml", 126, 149 },
-	{ "scheduler.pml", 150, 154 },
-	{ "-", 155, 156 }
+	{ "scheduler.pml", 8, 65 },
+	{ "data_structures.pml", 66, 73 },
+	{ "scheduler.pml", 74, 92 },
+	{ "data_structures.pml", 93, 103 },
+	{ "scheduler.pml", 104, 135 },
+	{ "data_structures.pml", 136, 138 },
+	{ "scheduler.pml", 139, 143 },
+	{ "data_structures.pml", 144, 152 },
+	{ "scheduler.pml", 153, 154 },
+	{ "data_structures.pml", 155, 166 },
+	{ "scheduler.pml", 167, 168 },
+	{ "data_structures.pml", 169, 192 },
+	{ "scheduler.pml", 193, 197 },
+	{ "-", 198, 199 }
 };
 uchar reached1 [] = {
 	  0,   1,   1,   1,   0,   0,   1,   0, 
-	  1,   1,   0,   0,   0,   1,   1,   1, 
-	  1,   0,   0,   1,   1,   1,   0,   1, 
-	  0,   0,   1,   0,   1,   1,   0,   0, 
+	  1,   1,   0,   0,   0,   0,   1,   0, 
+	  1,   0,   0,   0,   1,   0,   1,   0, 
+	  0,   1,   0,   1,   0,   0,   1,   1, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  0,   0,   1,   0,   0,   0,   1,   0, 
+	  0,   1,   1,   1,   0,   0,   1,   0, 
+	  1,   1,   1,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   0,   0,   1,   0,   1, 
+	  1,   0,   0,   1,   0,   0,   1,   0, 
 	  1,   0,   0,   1,   0,   1,   0,   0, 
-	  1,   0,   1,   0,   0,   1,   1,   0, 
-	  0,   0,   1,   0,   1,   0,   0,   1, 
+	  1,   1,   0,   0,   0,   1,   0,   1, 
+	  0,   0,   1,   0,   0,   1,   1,   0, 
+	  0,   1,   1,   1,   0,   0,   1,   1, 
+	  1,   0,   1,   1,   1,   1,   0,   1, 
+	  0,   1,   0,   1,   0,   0,   1,   0, 
+	  1,   1,   1,   0,   1,   0,   1,   1, 
+	  1,   0,   0,   1,   1,   0,   1,   0, 
+	  1,   1,   0,   0,   0,   1,   1,   1, 
 	  0,   0,   1,   1,   0,   0,   1,   1, 
-	  1,   0,   0,   1,   1,   1,   0,   1, 
-	  1,   1,   1,   0,   1,   0,   1,   0, 
-	  1,   0,   0,   1,   0,   1,   1,   1, 
-	  0,   1,   0,   1,   1,   1,   0,   0, 
-	  1,   1,   0,   1,   0,   1,   1,   0, 
-	  0,   0,   1,   1,   1,   0,   0,   1, 
-	  1,   0,   0,   1,   1,   0,   0,   0, 
-	  1,   1,   1,   0,   0,   1,   1,   1, 
-	  1,   0,   0,   0,   0,   1,   1,   0, 
-	  0,   0,   1,   1,   0,   1,   1,   0, 
-	  0,   0,   1,   1,   1,   0,   0,   0, 
-	  1,   1,   0,   0, };
+	  0,   0,   0,   1,   1,   1,   0,   0, 
+	  1,   1,   1,   1,   0,   0,   0,   0, 
+	  1,   1,   0,   0,   0,   1,   1,   0, 
+	  1,   1,   0,   0,   0,   1,   1,   1, 
+	  0,   0,   0,   1,   1,   0,   0, };
 uchar *loopstate1;
 
 short src_ln0 [] = {
-	  0, 277,  81,  51,  52,  50,  81,  80, 
-	281, 281, 281, 136, 137, 138, 139, 139, 
-	135, 141, 134, 281, 281, 281, 281, 114, 
-	 45,  46,  44, 115, 116, 113, 118, 112, 
-	281, 289, 193, 194, 195, 196, 198, 199, 
-	200, 201, 201, 197, 203, 203, 203, 195, 
-	205, 195, 205, 206, 191, 114,  45,  46, 
-	 44, 115, 116, 113, 118, 112, 289, 290, 
-	146, 147, 148, 149, 150, 150, 146, 152, 
-	146, 153, 154, 155, 156, 156, 152, 158, 
-	144, 114,  45,  46,  44, 115, 116, 113, 
-	118, 112, 290, 291, 291, 114,  45,  46, 
-	 44, 115, 116, 113, 118, 112, 291, 292, 
-	 70,  71,  69, 114,  45,  46,  44, 115, 
-	116, 113, 118, 112, 292, 295,  95,  76, 
-	 75,  87,  88,  89,  85,  96,  63,  64, 
-	 65,  62,  94,  98,  93, 114,  45,  46, 
-	 44, 115, 116, 113, 118, 112, 295, 276, 
-	297, 276, 297,   0, };
+	  0, 334,  86,  56,  57,  55,  86,  85, 
+	338, 338, 338, 141, 142, 143, 144, 144, 
+	140, 146, 139, 338, 338, 338, 338, 119, 
+	 50,  51,  49, 120, 121, 118, 123, 117, 
+	338, 346, 198, 199, 200, 201, 203, 204, 
+	205, 206, 206, 202, 208, 208, 208, 200, 
+	210, 200, 210, 211, 196, 119,  50,  51, 
+	 49, 120, 121, 118, 123, 117, 346, 347, 
+	151, 152, 153, 154, 155, 155, 151, 157, 
+	151, 158, 159, 160, 161, 161, 157, 163, 
+	149, 119,  50,  51,  49, 120, 121, 118, 
+	123, 117, 347, 348, 348, 119,  50,  51, 
+	 49, 120, 121, 118, 123, 117, 348, 349, 
+	 75,  76,  74, 119,  50,  51,  49, 120, 
+	121, 118, 123, 117, 349, 352, 100,  81, 
+	 80,  92,  93,  94,  90, 101,  68,  69, 
+	 70,  67,  99, 103,  98, 119,  50,  51, 
+	 49, 120, 121, 118, 123, 117, 352, 333, 
+	354, 333, 354,   0, };
 S_F_MAP src_file0 [] = {
 	{ "-", 0, 0 },
 	{ "scheduler.pml", 1, 1 },
@@ -1976,11 +2034,11 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 3:	/* Process2 */
 		((P3 *)pptr(h))->_t = 3;
-		((P3 *)pptr(h))->_p = 445;
+		((P3 *)pptr(h))->_p = 589;
 #ifdef HAS_PRIORITY
 		((P3 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached3[445]=1;
+		reached3[589]=1;
 		/* params: */
 		/* locals: */
 		((P3 *)pptr(h))->_7_16_29_intSave = 0;
@@ -1989,14 +2047,19 @@ addproc(int calling_pid, int priority, int n)
 		((P3 *)pptr(h))->_7_16_29_25_8_3_found = 0;
 		((P3 *)pptr(h))->_7_16_29_25_8_3_tmpId = 0;
 		((P3 *)pptr(h))->_7_16_29_25_8_3_tmpTime = 0;
+		((P3 *)pptr(h))->_7_16_29_25_8_3_willOverflow = 0;
 		((P3 *)pptr(h))->_7_17_32_intSave = 0;
 		((P3 *)pptr(h))->_7_17_32_tempStatus = 0;
+		((P3 *)pptr(h))->_7_17_32_29_10_idx = 0;
+		((P3 *)pptr(h))->_7_17_32_29_10_removedIdx = 0;
+		((P3 *)pptr(h))->_7_17_32_29_10_newFirstTime = 0;
 		((P3 *)pptr(h))->_7_19_37_intSave = 0;
 		((P3 *)pptr(h))->_7_19_37_34_15_insertPos = 0;
 		((P3 *)pptr(h))->_7_19_37_34_15_idx = 0;
 		((P3 *)pptr(h))->_7_19_37_34_15_found = 0;
 		((P3 *)pptr(h))->_7_19_37_34_15_tmpId = 0;
 		((P3 *)pptr(h))->_7_19_37_34_15_tmpTime = 0;
+		((P3 *)pptr(h))->_7_19_37_34_15_willOverflow = 0;
 #ifdef VAR_RANGES
 		logval("Process2:intSave", ((P3 *)pptr(h))->_7_16_29_intSave);
 		logval("Process2:needSched", ((P3 *)pptr(h))->_7_16_29_needSched);
@@ -2008,11 +2071,13 @@ addproc(int calling_pid, int priority, int n)
 		logval("Process2:found", ((P3 *)pptr(h))->_7_16_29_25_8_3_found);
 		logval("Process2:tmpId", ((P3 *)pptr(h))->_7_16_29_25_8_3_tmpId);
 		logval("Process2:tmpTime", ((P3 *)pptr(h))->_7_16_29_25_8_3_tmpTime);
+		logval("Process2:willOverflow", ((P3 *)pptr(h))->_7_16_29_25_8_3_willOverflow);
 		logval("Process2:checkIdx", ((P3 *)pptr(h))->_7_16_29_25_8_3_1_checkIdx);
 		logval("Process2:isValid", ((P3 *)pptr(h))->_7_16_29_25_8_3_1_isValid);
 		logval("Process2:intSave", ((P3 *)pptr(h))->_7_17_32_intSave);
 		logval("Process2:tempStatus", ((P3 *)pptr(h))->_7_17_32_tempStatus);
 		logval("Process2:needSched", ((P3 *)pptr(h))->_7_17_32_needSched);
+		logval("Process2:pendListValue", ((P3 *)pptr(h))->_7_17_32_29_10_pendListValue);
 		logval("Process2:idx", ((P3 *)pptr(h))->_7_17_32_29_10_idx);
 		logval("Process2:removedIdx", ((P3 *)pptr(h))->_7_17_32_29_10_removedIdx);
 		logval("Process2:newFirstTime", ((P3 *)pptr(h))->_7_17_32_29_10_newFirstTime);
@@ -2029,6 +2094,7 @@ addproc(int calling_pid, int priority, int n)
 		logval("Process2:found", ((P3 *)pptr(h))->_7_19_37_34_15_found);
 		logval("Process2:tmpId", ((P3 *)pptr(h))->_7_19_37_34_15_tmpId);
 		logval("Process2:tmpTime", ((P3 *)pptr(h))->_7_19_37_34_15_tmpTime);
+		logval("Process2:willOverflow", ((P3 *)pptr(h))->_7_19_37_34_15_willOverflow);
 		logval("Process2:checkIdx", ((P3 *)pptr(h))->_7_19_37_34_15_6_checkIdx);
 		logval("Process2:isValid", ((P3 *)pptr(h))->_7_19_37_34_15_6_isValid);
 #endif
@@ -2038,11 +2104,11 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 2:	/* Process1 */
 		((P2 *)pptr(h))->_t = 2;
-		((P2 *)pptr(h))->_p = 205;
+		((P2 *)pptr(h))->_p = 253;
 #ifdef HAS_PRIORITY
 		((P2 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached2[205]=1;
+		reached2[253]=1;
 		/* params: */
 		/* locals: */
 		((P2 *)pptr(h))->_6_14_24_intSave = 0;
@@ -2051,6 +2117,7 @@ addproc(int calling_pid, int priority, int n)
 		((P2 *)pptr(h))->_6_14_24_21_5_found = 0;
 		((P2 *)pptr(h))->_6_14_24_21_5_tmpId = 0;
 		((P2 *)pptr(h))->_6_14_24_21_5_tmpTime = 0;
+		((P2 *)pptr(h))->_6_14_24_21_5_willOverflow = 0;
 #ifdef VAR_RANGES
 		logval("Process1:intSave", ((P2 *)pptr(h))->_6_14_24_intSave);
 		logval("Process1:needSched", ((P2 *)pptr(h))->_6_14_24_needSched);
@@ -2063,6 +2130,7 @@ addproc(int calling_pid, int priority, int n)
 		logval("Process1:found", ((P2 *)pptr(h))->_6_14_24_21_5_found);
 		logval("Process1:tmpId", ((P2 *)pptr(h))->_6_14_24_21_5_tmpId);
 		logval("Process1:tmpTime", ((P2 *)pptr(h))->_6_14_24_21_5_tmpTime);
+		logval("Process1:willOverflow", ((P2 *)pptr(h))->_6_14_24_21_5_willOverflow);
 		logval("Process1:checkIdx", ((P2 *)pptr(h))->_6_14_24_21_5_2_checkIdx);
 		logval("Process1:isValid", ((P2 *)pptr(h))->_6_14_24_21_5_2_isValid);
 #endif
@@ -2072,11 +2140,11 @@ addproc(int calling_pid, int priority, int n)
 		break;
 	case 1:	/* SysTick_Handler */
 		((P1 *)pptr(h))->_t = 1;
-		((P1 *)pptr(h))->_p = 151;
+		((P1 *)pptr(h))->_p = 194;
 #ifdef HAS_PRIORITY
 		((P1 *)pptr(h))->_priority = priority; /* was: 1 */
 #endif
-		reached1[151]=1;
+		reached1[194]=1;
 		/* params: */
 		/* locals: */
 		((P1 *)pptr(h))->tmp = 255;
@@ -2086,6 +2154,8 @@ addproc(int calling_pid, int priority, int n)
 		logval("SysTick_Handler:idx", ((P1 *)pptr(h))->_5_9_14_idx);
 		logval("SysTick_Handler:taskId", ((P1 *)pptr(h))->_5_9_14_taskId);
 		logval("SysTick_Handler:needSched", ((P1 *)pptr(h))->_5_9_14_needSched);
+		logval("SysTick_Handler:oldTickCount", ((P1 *)pptr(h))->_5_9_14_oldTickCount);
+		logval("SysTick_Handler:newIdx", ((P1 *)pptr(h))->_5_9_14_newIdx);
 		logval("SysTick_Handler:taskResponseTime", ((P1 *)pptr(h))->_5_9_14_taskResponseTime);
 		logval("SysTick_Handler:shiftIdx", ((P1 *)pptr(h))->_5_9_14_shiftIdx);
 		logval("SysTick_Handler:checkIdx", ((P1 *)pptr(h))->_5_9_14_12_checkIdx);
@@ -13855,12 +13925,14 @@ iniglobals(int calling_pid)
 		now.EP = 255;
 		now.g_tickCount = 0;
 		now.g_schedResponseTime = 255;
+		g_overflowedResponseTime = 255;
 		now.BASEPRI = 0;
 		now.pending_exp = 0;
 		now.EP_Stack = 255;
 		now.topPrio = 0;
 		now.g_taskScheduled = 1;
 		now.g_taskSortLinkTail = 0;
+		now.overflowedSortLinkTail = 0;
 		now.tcb[0].prio = 0;
 		now.tcb[0].state = 0;
 		now.tcb[0].pendList = 0;
@@ -13907,6 +13979,12 @@ iniglobals(int calling_pid)
 		now.g_taskSortLink[1].responseTime = 0;
 		now.g_taskSortLink[2].taskId = 0;
 		now.g_taskSortLink[2].responseTime = 0;
+		now.overflowedSortLink[0].taskId = 0;
+		now.overflowedSortLink[0].responseTime = 0;
+		now.overflowedSortLink[1].taskId = 0;
+		now.overflowedSortLink[1].responseTime = 0;
+		now.overflowedSortLink[2].taskId = 0;
+		now.overflowedSortLink[2].responseTime = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", now.chain_tick_used);
 		logval("EP", now.EP);
@@ -13918,6 +13996,7 @@ iniglobals(int calling_pid)
 		logval("topPrio", now.topPrio);
 		logval("g_taskScheduled", now.g_taskScheduled);
 		logval("g_taskSortLinkTail", now.g_taskSortLinkTail);
+		logval("overflowedSortLinkTail", now.overflowedSortLinkTail);
 		logval("tcb[0].prio", now.tcb[0].prio);
 		logval("tcb[0].state", now.tcb[0].state);
 		logval("tcb[0].pendList", now.tcb[0].pendList);
@@ -13964,6 +14043,12 @@ iniglobals(int calling_pid)
 		logval("g_taskSortLink[1].responseTime", now.g_taskSortLink[1].responseTime);
 		logval("g_taskSortLink[2].taskId", now.g_taskSortLink[2].taskId);
 		logval("g_taskSortLink[2].responseTime", now.g_taskSortLink[2].responseTime);
+		logval("overflowedSortLink[0].taskId", now.overflowedSortLink[0].taskId);
+		logval("overflowedSortLink[0].responseTime", now.overflowedSortLink[0].responseTime);
+		logval("overflowedSortLink[1].taskId", now.overflowedSortLink[1].taskId);
+		logval("overflowedSortLink[1].responseTime", now.overflowedSortLink[1].responseTime);
+		logval("overflowedSortLink[2].taskId", now.overflowedSortLink[2].taskId);
+		logval("overflowedSortLink[2].responseTime", now.overflowedSortLink[2].responseTime);
 #endif
 }
 
@@ -15736,6 +15821,14 @@ c_globals(void)
 	printf("	byte   taskId:	%d\n", now.g_taskSortLink[ 2 ].taskId);
 	printf("	byte   responseTime:	%d\n", now.g_taskSortLink[ 2 ].responseTime);
 	printf("	byte   g_taskSortLinkTail:	%d\n", now.g_taskSortLinkTail);
+		printf("	(struct overflowedSortLink)\n");
+	printf("	byte   taskId:	%d\n", now.overflowedSortLink[ 0 ].taskId);
+	printf("	byte   responseTime:	%d\n", now.overflowedSortLink[ 0 ].responseTime);
+	printf("	byte   taskId:	%d\n", now.overflowedSortLink[ 1 ].taskId);
+	printf("	byte   responseTime:	%d\n", now.overflowedSortLink[ 1 ].responseTime);
+	printf("	byte   taskId:	%d\n", now.overflowedSortLink[ 2 ].taskId);
+	printf("	byte   responseTime:	%d\n", now.overflowedSortLink[ 2 ].responseTime);
+	printf("	byte   overflowedSortLinkTail:	%d\n", now.overflowedSortLinkTail);
 }
 void
 c_locals(int pid, int tp)
@@ -15801,11 +15894,13 @@ c_locals(int pid, int tp)
 	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_found);
 	printf("	byte   tmpId:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_tmpId);
 	printf("	byte   tmpTime:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_tmpTime);
+	printf("	byte   willOverflow:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_willOverflow);
 	printf("	byte   checkIdx:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_1_checkIdx);
 	printf("	byte   isValid:	%d\n", ((P3 *)pptr(pid))->_7_16_29_25_8_3_1_isValid);
 	printf("	byte   intSave:	%d\n", ((P3 *)pptr(pid))->_7_17_32_intSave);
 	printf("	byte   tempStatus:	%d\n", ((P3 *)pptr(pid))->_7_17_32_tempStatus);
 	printf("	byte   needSched:	%d\n", ((P3 *)pptr(pid))->_7_17_32_needSched);
+	printf("	byte   pendListValue:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_pendListValue);
 	printf("	byte   idx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_idx);
 	printf("	byte   removedIdx:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_removedIdx);
 	printf("	byte   newFirstTime:	%d\n", ((P3 *)pptr(pid))->_7_17_32_29_10_newFirstTime);
@@ -15822,6 +15917,7 @@ c_locals(int pid, int tp)
 	printf("	byte   found:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_found);
 	printf("	byte   tmpId:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_tmpId);
 	printf("	byte   tmpTime:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_tmpTime);
+	printf("	byte   willOverflow:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_willOverflow);
 	printf("	byte   checkIdx:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_6_checkIdx);
 	printf("	byte   isValid:	%d\n", ((P3 *)pptr(pid))->_7_19_37_34_15_6_isValid);
 		break;
@@ -15838,6 +15934,7 @@ c_locals(int pid, int tp)
 	printf("	byte   found:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_found);
 	printf("	byte   tmpId:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_tmpId);
 	printf("	byte   tmpTime:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_tmpTime);
+	printf("	byte   willOverflow:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_willOverflow);
 	printf("	byte   checkIdx:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_2_checkIdx);
 	printf("	byte   isValid:	%d\n", ((P2 *)pptr(pid))->_6_14_24_21_5_2_isValid);
 		break;
@@ -15847,6 +15944,8 @@ c_locals(int pid, int tp)
 	printf("	byte   idx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_idx);
 	printf("	byte   taskId:	%d\n", ((P1 *)pptr(pid))->_5_9_14_taskId);
 	printf("	byte   needSched:	%d\n", ((P1 *)pptr(pid))->_5_9_14_needSched);
+	printf("	byte   oldTickCount:	%d\n", ((P1 *)pptr(pid))->_5_9_14_oldTickCount);
+	printf("	byte   newIdx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_newIdx);
 	printf("	byte   taskResponseTime:	%d\n", ((P1 *)pptr(pid))->_5_9_14_taskResponseTime);
 	printf("	byte   shiftIdx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_shiftIdx);
 	printf("	byte   checkIdx:	%d\n", ((P1 *)pptr(pid))->_5_9_14_12_checkIdx);
@@ -15873,7 +15972,7 @@ c_chandump(int unused)
 {	unused++; /* avoid complaints */
 }
 
-Trans *t_id_lkup[1648];
+Trans *t_id_lkup[1883];
 
 
 #ifdef BFS_PAR

@@ -5402,7 +5402,7 @@
 		if (!((((int)((P4 *)_this)->i)<4)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 206: // STATE 3 - data_structures.pml:124 - [idx = 0] (0:0:1 - 1)
+	case 206: // STATE 3 - data_structures.pml:129 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][3] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_20_idx);
@@ -5412,13 +5412,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 207: // STATE 4 - data_structures.pml:125 - [((idx<5))] (0:0:0 - 1)
+	case 207: // STATE 4 - data_structures.pml:130 - [((idx<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][4] = 1;
 		if (!((((int)((P4 *)_this)->_8_20_idx)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 208: // STATE 5 - data_structures.pml:126 - [readyQueue[i].tasks[idx] = 255] (0:0:1 - 1)
+	case 208: // STATE 5 - data_structures.pml:131 - [readyQueue[i].tasks[idx] = 255] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][5] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)((P4 *)_this)->i), 4) ].tasks[ Index(((int)((P4 *)_this)->_8_20_idx), 5) ]);
@@ -5428,7 +5428,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 209: // STATE 6 - data_structures.pml:127 - [idx = (idx+1)] (0:0:1 - 1)
+	case 209: // STATE 6 - data_structures.pml:132 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][6] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_20_idx);
@@ -5438,7 +5438,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 210: // STATE 12 - data_structures.pml:130 - [readyQueue[i].tailIndex = 0] (0:0:1 - 3)
+	case 210: // STATE 12 - data_structures.pml:135 - [readyQueue[i].tailIndex = 0] (0:0:1 - 3)
 		IfNotBlocked
 		reached[4][12] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)((P4 *)_this)->i), 4) ].tailIndex);
@@ -5478,13 +5478,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 214: // STATE 22 - data_structures.pml:136 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
+	case 214: // STATE 22 - data_structures.pml:141 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][22] = 1;
 		if (!((((int)now.readyQueue[2].tailIndex)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 215: // STATE 23 - data_structures.pml:137 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = 2] (0:0:1 - 1)
+	case 215: // STATE 23 - data_structures.pml:142 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = 2] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][23] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tasks[ Index(((int)now.readyQueue[2].tailIndex), 5) ]);
@@ -5494,7 +5494,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 216: // STATE 24 - data_structures.pml:138 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
+	case 216: // STATE 24 - data_structures.pml:143 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][24] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tailIndex);
@@ -5504,7 +5504,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 217: // STATE 26 - data_structures.pml:139 - [assert(0)] (0:0:0 - 1)
+	case 217: // STATE 26 - data_structures.pml:144 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][26] = 1;
 		spin_assert(0, "0", II, tt, t);
@@ -5529,13 +5529,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 220: // STATE 32 - data_structures.pml:136 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
+	case 220: // STATE 32 - data_structures.pml:141 - [((readyQueue[2].tailIndex<5))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][32] = 1;
 		if (!((((int)now.readyQueue[2].tailIndex)<5)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 221: // STATE 33 - data_structures.pml:137 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = (2+1)] (0:0:1 - 1)
+	case 221: // STATE 33 - data_structures.pml:142 - [readyQueue[2].tasks[readyQueue[2].tailIndex] = (2+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][33] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tasks[ Index(((int)now.readyQueue[2].tailIndex), 5) ]);
@@ -5545,7 +5545,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 222: // STATE 34 - data_structures.pml:138 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
+	case 222: // STATE 34 - data_structures.pml:143 - [readyQueue[2].tailIndex = (readyQueue[2].tailIndex+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][34] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[2].tailIndex);
@@ -5555,7 +5555,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 223: // STATE 36 - data_structures.pml:139 - [assert(0)] (0:0:0 - 1)
+	case 223: // STATE 36 - data_structures.pml:144 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][36] = 1;
 		spin_assert(0, "0", II, tt, t);
@@ -5580,7 +5580,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 226: // STATE 42 - data_structures.pml:146 - [idx = 0] (0:0:1 - 1)
+	case 226: // STATE 42 - data_structures.pml:151 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][42] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_23_idx);
@@ -5590,13 +5590,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 227: // STATE 43 - data_structures.pml:147 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (0:0:0 - 1)
+	case 227: // STATE 43 - data_structures.pml:152 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][43] = 1;
 		if (!((((int)((P4 *)_this)->_8_23_idx)<(((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 228: // STATE 44 - data_structures.pml:148 - [readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]] (0:0:1 - 1)
+	case 228: // STATE 44 - data_structures.pml:153 - [readyQueue[topPrio].tasks[idx] = readyQueue[topPrio].tasks[(idx+1)]] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][44] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index(((int)((P4 *)_this)->_8_23_idx), 5) ]);
@@ -5606,7 +5606,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 229: // STATE 45 - data_structures.pml:149 - [idx = (idx+1)] (0:0:1 - 1)
+	case 229: // STATE 45 - data_structures.pml:154 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][45] = 1;
 		(trpt+1)->bup.oval = ((int)((P4 *)_this)->_8_23_idx);
@@ -5616,13 +5616,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 230: // STATE 51 - data_structures.pml:153 - [((readyQueue[topPrio].tailIndex>0))] (0:0:0 - 1)
+	case 230: // STATE 51 - data_structures.pml:158 - [((readyQueue[topPrio].tailIndex>0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[4][51] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 231: // STATE 52 - data_structures.pml:154 - [readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255] (0:0:1 - 1)
+	case 231: // STATE 52 - data_structures.pml:159 - [readyQueue[topPrio].tasks[(readyQueue[topPrio].tailIndex-1)] = 255] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][52] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1), 5) ]);
@@ -5632,7 +5632,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 232: // STATE 53 - data_structures.pml:155 - [readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)] (0:0:1 - 1)
+	case 232: // STATE 53 - data_structures.pml:160 - [readyQueue[topPrio].tailIndex = (readyQueue[topPrio].tailIndex-1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[4][53] = 1;
 		(trpt+1)->bup.oval = ((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex);
@@ -5692,7 +5692,7 @@
 		reached[3][2] = 1;
 		Printf("P2 running\n");
 		_m = 3; goto P999; /* 1 */
-	case 240: // STATE 4 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:23:1 - 1)
+	case 240: // STATE 4 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:23:1 - 1)
 		IfNotBlocked
 		reached[3][4] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -5731,11 +5731,11 @@
 		reached[3][16] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 243: // STATE 17 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:170:2 - 1)
+	case 243: // STATE 17 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:218:2 - 1)
 		IfNotBlocked
 		reached[3][17] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(170, 18, 170) */
+		/* merge: EP_Stack = EP(218, 18, 218) */
 		reached[3][18] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
@@ -5744,7 +5744,7 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(170, 20, 170) */
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(218, 20, 218) */
 		reached[3][20] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -5752,21 +5752,21 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(170, 24, 170) */
+		/* merge: .(goto)(218, 24, 218) */
 		reached[3][24] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 244: // STATE 24 - processes.pml:16 - [.(goto)] (0:170:0 - 2)
+	case 244: // STATE 24 - processes.pml:16 - [.(goto)] (0:218:0 - 2)
 		IfNotBlocked
 		reached[3][24] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 245: // STATE 22 - processes.pml:16 - [(1)] (170:0:0 - 1)
+	case 245: // STATE 22 - processes.pml:16 - [(1)] (218:0:0 - 1)
 		IfNotBlocked
 		reached[3][22] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(170, 24, 170) */
+		/* merge: .(goto)(218, 24, 218) */
 		reached[3][24] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
@@ -5786,7 +5786,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 248: // STATE 28 - data_structures.pml:102 - [intSave = 0] (0:134:2 - 1)
+	case 248: // STATE 28 - data_structures.pml:107 - [intSave = 0] (0:182:2 - 1)
 		IfNotBlocked
 		reached[3][28] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
@@ -5796,10 +5796,10 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_16_29_intSave));
 #endif
 		;
-		/* merge: assert(((tcb[2].state==1)||(tcb[2].state==2)))(134, 30, 134) */
+		/* merge: assert(((tcb[2].state==1)||(tcb[2].state==2)))(182, 30, 182) */
 		reached[3][30] = 1;
 		spin_assert(((((int)now.tcb[2].state)==1)||(((int)now.tcb[2].state)==2)), "((tcb[2].state==1)||(tcb[2].state==2))", II, tt, t);
-		/* merge: needSched = 0(134, 31, 134) */
+		/* merge: needSched = 0(182, 31, 182) */
 		reached[3][31] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_needSched);
 		((P3 *)_this)->_7_16_29_needSched = 0;
@@ -5827,7 +5827,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 251: // STATE 35 - data_structures.pml:164 - [idx = 0] (0:47:3 - 1)
+	case 251: // STATE 35 - data_structures.pml:169 - [idx = 0] (0:47:3 - 1)
 		IfNotBlocked
 		reached[3][35] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
@@ -5857,13 +5857,13 @@
 		reached[3][48] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 252: // STATE 38 - data_structures.pml:167 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
+	case 252: // STATE 38 - data_structures.pml:172 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[3][38] = 1;
 		if (!(((((int)((P3 *)_this)->_7_16_29_25_7_idx)<((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex))&& !(((int)((P3 *)_this)->_7_16_29_25_7_found)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 253: // STATE 39 - data_structures.pml:169 - [((readyQueue[prioLevel].tasks[idx]==2))] (47:0:1 - 1)
+	case 253: // STATE 39 - data_structures.pml:174 - [((readyQueue[prioLevel].tasks[idx]==2))] (47:0:1 - 1)
 		IfNotBlocked
 		reached[3][39] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tasks[ Index(((int)((P3 *)_this)->_7_16_29_25_7_idx), 5) ])==2)))
@@ -5883,7 +5883,7 @@
 		reached[3][48] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 254: // STATE 42 - data_structures.pml:171 - [idx = (idx+1)] (0:0:1 - 1)
+	case 254: // STATE 42 - data_structures.pml:176 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[3][42] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_7_idx);
@@ -5893,7 +5893,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 255: // STATE 50 - data_structures.pml:175 - [assert((found==1))] (0:56:0 - 3)
+	case 255: // STATE 50 - data_structures.pml:180 - [assert((found==1))] (0:56:0 - 3)
 		IfNotBlocked
 		reached[3][50] = 1;
 		spin_assert((((int)((P3 *)_this)->_7_16_29_25_7_found)==1), "(found==1)", II, tt, t);
@@ -5901,7 +5901,7 @@
 		reached[3][57] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 256: // STATE 51 - data_structures.pml:177 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (56:0:2 - 1)
+	case 256: // STATE 51 - data_structures.pml:182 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (56:0:2 - 1)
 		IfNotBlocked
 		reached[3][51] = 1;
 		if (!((((int)((P3 *)_this)->_7_16_29_25_7_idx)<(((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex)-1))))
@@ -5927,12 +5927,12 @@
 		reached[3][57] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 257: // STATE 59 - data_structures.pml:183 - [((readyQueue[prioLevel].tailIndex>0))] (129:0:3 - 1)
+	case 257: // STATE 59 - data_structures.pml:188 - [((readyQueue[prioLevel].tailIndex>0))] (177:0:3 - 1)
 		IfNotBlocked
 		reached[3][59] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex)>0)))
 			continue;
-		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(129, 60, 129) */
+		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(177, 60, 177) */
 		reached[3][60] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex)-1), 5) ]);
@@ -5941,7 +5941,7 @@
 		logval("readyQueue[Process2:prioLevel].tasks[(readyQueue[Process2:prioLevel].tailIndex-1)]", ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex)-1), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(129, 61, 129) */
+		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(177, 61, 177) */
 		reached[3][61] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex);
 		now.readyQueue[ Index(((P3 *)_this)->_7_16_29_25_7_prioLevel, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex)-1);
@@ -5949,10 +5949,10 @@
 		logval("readyQueue[Process2:prioLevel].tailIndex", ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_16_29_25_7_prioLevel), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(129, 65, 129) */
+		/* merge: .(goto)(177, 65, 177) */
 		reached[3][65] = 1;
 		;
-		/* merge: tcb[2].state = 3(129, 67, 129) */
+		/* merge: tcb[2].state = 3(177, 67, 177) */
 		reached[3][67] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[2].state);
 		now.tcb[2].state = 3;
@@ -5961,15 +5961,15 @@
 #endif
 		;
 		_m = 3; goto P999; /* 4 */
-	case 258: // STATE 63 - data_structures.pml:186 - [(1)] (129:0:1 - 1)
+	case 258: // STATE 63 - data_structures.pml:191 - [(1)] (177:0:1 - 1)
 		IfNotBlocked
 		reached[3][63] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(129, 65, 129) */
+		/* merge: .(goto)(177, 65, 177) */
 		reached[3][65] = 1;
 		;
-		/* merge: tcb[2].state = 3(129, 67, 129) */
+		/* merge: tcb[2].state = 3(177, 67, 177) */
 		reached[3][67] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[2].state);
 		now.tcb[2].state = 3;
@@ -5978,7 +5978,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 259: // STATE 67 - scheduler.pml:43 - [tcb[2].state = 3] (0:129:1 - 3)
+	case 259: // STATE 67 - scheduler.pml:43 - [tcb[2].state = 3] (0:177:1 - 3)
 		IfNotBlocked
 		reached[3][67] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[2].state);
@@ -5988,7 +5988,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 260: // STATE 68 - data_structures.pml:217 - [insertPos = 0] (0:86:7 - 1)
+	case 260: // STATE 68 - data_structures.pml:227 - [insertPos = 0] (0:174:7 - 1)
 		IfNotBlocked
 		reached[3][68] = 1;
 		(trpt+1)->bup.ovals = grab_ints(7);
@@ -5998,7 +5998,7 @@
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
 #endif
 		;
-		/* merge: idx = 0(86, 69, 86) */
+		/* merge: idx = 0(174, 69, 174) */
 		reached[3][69] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
 		((P3 *)_this)->_7_16_29_25_8_3_idx = 0;
@@ -6006,7 +6006,7 @@
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #endif
 		;
-		/* merge: found = 0(86, 70, 86) */
+		/* merge: found = 0(174, 70, 174) */
 		reached[3][70] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
 		((P3 *)_this)->_7_16_29_25_8_3_found = 0;
@@ -6014,7 +6014,7 @@
 		logval("Process2:found", ((int)((P3 *)_this)->_7_16_29_25_8_3_found));
 #endif
 		;
-		/* merge: tmpId = 0(86, 71, 86) */
+		/* merge: tmpId = 0(174, 71, 174) */
 		reached[3][71] = 1;
 		(trpt+1)->bup.ovals[3] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
 		((P3 *)_this)->_7_16_29_25_8_3_tmpId = 0;
@@ -6022,7 +6022,7 @@
 		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId));
 #endif
 		;
-		/* merge: tmpTime = 0(86, 72, 86) */
+		/* merge: tmpTime = 0(174, 72, 174) */
 		reached[3][72] = 1;
 		(trpt+1)->bup.ovals[4] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
 		((P3 *)_this)->_7_16_29_25_8_3_tmpTime = 0;
@@ -6030,290 +6030,246 @@
 		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime));
 #endif
 		;
-		/* merge: assert((g_taskSortLinkTail<(2+1)))(86, 73, 86) */
+		/* merge: willOverflow = 0(174, 73, 174) */
 		reached[3][73] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
-		/* merge: assert((g_taskSortLinkTail>=0))(86, 74, 86) */
+		(trpt+1)->bup.ovals[5] = ((int)((P3 *)_this)->_7_16_29_25_8_3_willOverflow);
+		((P3 *)_this)->_7_16_29_25_8_3_willOverflow = 0;
+#ifdef VAR_RANGES
+		logval("Process2:willOverflow", ((int)((P3 *)_this)->_7_16_29_25_8_3_willOverflow));
+#endif
+		;
+		/* merge: willOverflow = (255<g_tickCount)(174, 74, 174) */
 		reached[3][74] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)>=0), "(g_taskSortLinkTail>=0)", II, tt, t);
-		/* merge: insertPos = 0(86, 75, 86) */
+		(trpt+1)->bup.ovals[6] = ((int)((P3 *)_this)->_7_16_29_25_8_3_willOverflow);
+		((P3 *)_this)->_7_16_29_25_8_3_willOverflow = (255<((int)now.g_tickCount));
+#ifdef VAR_RANGES
+		logval("Process2:willOverflow", ((int)((P3 *)_this)->_7_16_29_25_8_3_willOverflow));
+#endif
+		;
+		_m = 3; goto P999; /* 6 */
+	case 261: // STATE 75 - data_structures.pml:237 - [(willOverflow)] (88:0:3 - 1)
+		IfNotBlocked
 		reached[3][75] = 1;
-		(trpt+1)->bup.ovals[5] = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
+		if (!(((int)((P3 *)_this)->_7_16_29_25_8_3_willOverflow)))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _7_16_29_25_8_3_willOverflow */  (trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_16_29_25_8_3_willOverflow;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P3 *)_this)->_7_16_29_25_8_3_willOverflow = 0;
+		/* merge: assert((overflowedSortLinkTail<(2+1)))(88, 76, 88) */
+		reached[3][76] = 1;
+		spin_assert((((int)now.overflowedSortLinkTail)<(2+1)), "(overflowedSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(88, 77, 88) */
+		reached[3][77] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
 		((P3 *)_this)->_7_16_29_25_8_3_insertPos = 0;
 #ifdef VAR_RANGES
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
 #endif
 		;
-		/* merge: found = 0(86, 76, 86) */
-		reached[3][76] = 1;
-		(trpt+1)->bup.ovals[6] = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
+		/* merge: found = 0(88, 78, 88) */
+		reached[3][78] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
 		((P3 *)_this)->_7_16_29_25_8_3_found = 0;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_16_29_25_8_3_found));
 #endif
 		;
-		/* merge: .(goto)(0, 87, 86) */
-		reached[3][87] = 1;
+		/* merge: .(goto)(0, 89, 88) */
+		reached[3][89] = 1;
 		;
-		_m = 3; goto P999; /* 9 */
-	case 261: // STATE 77 - data_structures.pml:229 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 4 */
+	case 262: // STATE 79 - data_structures.pml:245 - [(((insertPos<overflowedSortLinkTail)&&(found==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][77] = 1;
-		if (!(((((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P3 *)_this)->_7_16_29_25_8_3_found)==0))))
+		reached[3][79] = 1;
+		if (!(((((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)<((int)now.overflowedSortLinkTail))&&(((int)((P3 *)_this)->_7_16_29_25_8_3_found)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 262: // STATE 78 - data_structures.pml:231 - [((255<g_taskSortLink[insertPos].responseTime))] (86:0:1 - 1)
+	case 263: // STATE 80 - data_structures.pml:247 - [((255<overflowedSortLink[insertPos].responseTime))] (88:0:1 - 1)
 		IfNotBlocked
-		reached[3][78] = 1;
-		if (!((255<((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime))))
+		reached[3][80] = 1;
+		if (!((255<((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime))))
 			continue;
-		/* merge: found = 1(0, 79, 86) */
-		reached[3][79] = 1;
+		/* merge: found = 1(0, 81, 88) */
+		reached[3][81] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
 		((P3 *)_this)->_7_16_29_25_8_3_found = 1;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_16_29_25_8_3_found));
 #endif
 		;
-		/* merge: .(goto)(0, 83, 86) */
-		reached[3][83] = 1;
+		/* merge: .(goto)(0, 85, 88) */
+		reached[3][85] = 1;
 		;
-		/* merge: .(goto)(0, 87, 86) */
-		reached[3][87] = 1;
+		/* merge: .(goto)(0, 89, 88) */
+		reached[3][89] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 263: // STATE 80 - data_structures.pml:233 - [((255>=g_taskSortLink[insertPos].responseTime))] (86:0:1 - 1)
+	case 264: // STATE 83 - data_structures.pml:250 - [insertPos = (insertPos+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][80] = 1;
-		if (!((255>=((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime))))
-			continue;
-		/* merge: insertPos = (insertPos+1)(0, 81, 86) */
-		reached[3][81] = 1;
+		reached[3][83] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
 		((P3 *)_this)->_7_16_29_25_8_3_insertPos = (((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)+1);
 #ifdef VAR_RANGES
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
 #endif
 		;
-		/* merge: .(goto)(0, 83, 86) */
-		reached[3][83] = 1;
-		;
-		/* merge: .(goto)(0, 87, 86) */
-		reached[3][87] = 1;
-		;
-		_m = 3; goto P999; /* 3 */
-	case 264: // STATE 89 - data_structures.pml:240 - [idx = g_taskSortLinkTail] (0:104:1 - 3)
+		_m = 3; goto P999; /* 0 */
+	case 265: // STATE 91 - data_structures.pml:256 - [idx = overflowedSortLinkTail] (0:106:1 - 3)
 		IfNotBlocked
-		reached[3][89] = 1;
+		reached[3][91] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
-		((P3 *)_this)->_7_16_29_25_8_3_idx = ((int)now.g_taskSortLinkTail);
+		((P3 *)_this)->_7_16_29_25_8_3_idx = ((int)now.overflowedSortLinkTail);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 105, 104) */
-		reached[3][105] = 1;
+		/* merge: .(goto)(0, 107, 106) */
+		reached[3][107] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 265: // STATE 90 - data_structures.pml:242 - [((idx>insertPos))] (99:0:4 - 1)
+	case 266: // STATE 92 - data_structures.pml:258 - [((idx>insertPos))] (101:0:4 - 1)
 		IfNotBlocked
-		reached[3][90] = 1;
+		reached[3][92] = 1;
 		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)>((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos))))
 			continue;
-		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(99, 91, 99) */
-		reached[3][91] = 1;
+		/* merge: tmpId = overflowedSortLink[(idx-1)].taskId(101, 93, 101) */
+		reached[3][93] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
-		((P3 *)_this)->_7_16_29_25_8_3_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].taskId);
+		((P3 *)_this)->_7_16_29_25_8_3_tmpId = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].taskId);
 #ifdef VAR_RANGES
 		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId));
 #endif
 		;
-		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(99, 92, 99) */
-		reached[3][92] = 1;
+		/* merge: tmpTime = overflowedSortLink[(idx-1)].responseTime(101, 94, 101) */
+		reached[3][94] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
-		((P3 *)_this)->_7_16_29_25_8_3_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].responseTime);
+		((P3 *)_this)->_7_16_29_25_8_3_tmpTime = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].responseTime);
 #ifdef VAR_RANGES
 		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].taskId = tmpId(99, 93, 99) */
-		reached[3][93] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
+		/* merge: overflowedSortLink[idx].taskId = tmpId(101, 95, 101) */
+		reached[3][95] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId));
+		logval("overflowedSortLink[Process2:idx].taskId", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].responseTime = tmpTime(99, 94, 99) */
-		reached[3][94] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
+		/* merge: overflowedSortLink[idx].responseTime = tmpTime(101, 96, 101) */
+		reached[3][96] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime));
+		logval("overflowedSortLink[Process2:idx].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime));
 #endif
 		;
 		_m = 3; goto P999; /* 4 */
-	case 266: // STATE 95 - data_structures.pml:250 - [((tmpId!=255))] (104:0:2 - 1)
+	case 267: // STATE 97 - data_structures.pml:264 - [((tmpId!=255))] (106:0:2 - 1)
 		IfNotBlocked
-		reached[3][95] = 1;
+		reached[3][97] = 1;
 		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId)!=255)))
 			continue;
-		/* merge: tcb[tmpId].pendList = idx(104, 96, 104) */
-		reached[3][96] = 1;
+		/* merge: tcb[tmpId].pendList = (128+idx)(106, 98, 106) */
+		reached[3][98] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId), 4) ].pendList);
-		now.tcb[ Index(((P3 *)_this)->_7_16_29_25_8_3_tmpId, 4) ].pendList = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+		now.tcb[ Index(((P3 *)_this)->_7_16_29_25_8_3_tmpId, 4) ].pendList = (128+((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #ifdef VAR_RANGES
 		logval("tcb[Process2:tmpId].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId), 4) ].pendList));
 #endif
 		;
-		/* merge: .(goto)(104, 100, 104) */
-		reached[3][100] = 1;
+		/* merge: .(goto)(106, 102, 106) */
+		reached[3][102] = 1;
 		;
-		/* merge: idx = (idx-1)(104, 101, 104) */
-		reached[3][101] = 1;
+		/* merge: idx = (idx-1)(106, 103, 106) */
+		reached[3][103] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
 		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 105, 104) */
-		reached[3][105] = 1;
+		/* merge: .(goto)(0, 107, 106) */
+		reached[3][107] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 267: // STATE 97 - data_structures.pml:251 - [((tmpId==255))] (0:0:1 - 1)
+	case 268: // STATE 100 - data_structures.pml:266 - [(1)] (106:0:1 - 1)
 		IfNotBlocked
-		reached[3][97] = 1;
-		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId)==255)))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _7_16_29_25_8_3_tmpId */  (trpt+1)->bup.oval = ((P3 *)_this)->_7_16_29_25_8_3_tmpId;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P3 *)_this)->_7_16_29_25_8_3_tmpId = 0;
-		_m = 3; goto P999; /* 0 */
-	case 268: // STATE 98 - data_structures.pml:251 - [(1)] (104:0:1 - 1)
-		IfNotBlocked
-		reached[3][98] = 1;
+		reached[3][100] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(104, 100, 104) */
-		reached[3][100] = 1;
+		/* merge: .(goto)(106, 102, 106) */
+		reached[3][102] = 1;
 		;
-		/* merge: idx = (idx-1)(104, 101, 104) */
-		reached[3][101] = 1;
+		/* merge: idx = (idx-1)(106, 103, 106) */
+		reached[3][103] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
 		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 105, 104) */
-		reached[3][105] = 1;
+		/* merge: .(goto)(0, 107, 106) */
+		reached[3][107] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 269: // STATE 101 - data_structures.pml:253 - [idx = (idx-1)] (0:104:1 - 3)
+	case 269: // STATE 103 - data_structures.pml:268 - [idx = (idx-1)] (0:106:1 - 3)
 		IfNotBlocked
-		reached[3][101] = 1;
+		reached[3][103] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
 		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 105, 104) */
-		reached[3][105] = 1;
+		/* merge: .(goto)(0, 107, 106) */
+		reached[3][107] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 270: // STATE 102 - data_structures.pml:254 - [((idx<=insertPos))] (115:0:5 - 1)
+	case 270: // STATE 109 - data_structures.pml:273 - [overflowedSortLink[insertPos].taskId = 2] (0:117:4 - 3)
 		IfNotBlocked
-		reached[3][102] = 1;
-		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)<=((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos))))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _7_16_29_25_8_3_idx */  (trpt+1)->bup.ovals = grab_ints(5);
-		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_16_29_25_8_3_idx;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P3 *)_this)->_7_16_29_25_8_3_idx = 0;
-		/* merge: goto :b17(115, 103, 115) */
-		reached[3][103] = 1;
-		;
-		/* merge: g_taskSortLink[insertPos].taskId = 2(115, 107, 115) */
-		reached[3][107] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].taskId = 2;
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId));
-#endif
-		;
-		/* merge: g_taskSortLink[insertPos].responseTime = 255(115, 108, 115) */
-		reached[3][108] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].responseTime = 255;
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime));
-#endif
-		;
-		/* merge: tcb[2].pendList = insertPos(115, 109, 115) */
 		reached[3][109] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.tcb[2].pendList);
-		now.tcb[2].pendList = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
-#ifdef VAR_RANGES
-		logval("tcb[2].pendList", ((int)now.tcb[2].pendList));
-#endif
-		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(115, 110, 115) */
-		reached[3][110] = 1;
-		(trpt+1)->bup.ovals[4] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
-#ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
-#endif
-		;
-		_m = 3; goto P999; /* 5 */
-	case 271: // STATE 107 - data_structures.pml:258 - [g_taskSortLink[insertPos].taskId = 2] (0:115:4 - 3)
-		IfNotBlocked
-		reached[3][107] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
-		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].taskId = 2;
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].taskId = 2;
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId));
+		logval("overflowedSortLink[Process2:insertPos].taskId", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[insertPos].responseTime = 255(115, 108, 115) */
-		reached[3][108] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].responseTime = 255;
+		/* merge: overflowedSortLink[insertPos].responseTime = 255(117, 110, 117) */
+		reached[3][110] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].responseTime = 255;
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime));
+		logval("overflowedSortLink[Process2:insertPos].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime));
 #endif
 		;
-		/* merge: tcb[2].pendList = insertPos(115, 109, 115) */
-		reached[3][109] = 1;
+		/* merge: tcb[2].pendList = (128+insertPos)(117, 111, 117) */
+		reached[3][111] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[2].pendList);
-		now.tcb[2].pendList = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
+		now.tcb[2].pendList = (128+((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
 #ifdef VAR_RANGES
 		logval("tcb[2].pendList", ((int)now.tcb[2].pendList));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(115, 110, 115) */
-		reached[3][110] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+		/* merge: overflowedSortLinkTail = (overflowedSortLinkTail+1)(117, 112, 117) */
+		reached[3][112] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = (((int)now.overflowedSortLinkTail)+1);
 #ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
 #endif
 		;
 		_m = 3; goto P999; /* 3 */
-	case 272: // STATE 111 - data_structures.pml:265 - [(((insertPos==0)&&(255<255)))] (127:0:2 - 1)
+	case 271: // STATE 113 - data_structures.pml:280 - [(((insertPos==0)&&(255<255)))] (193:0:2 - 1)
 		IfNotBlocked
-		reached[3][111] = 1;
+		reached[3][113] = 1;
 		if (!(((((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)==0)&&(255<255))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -6323,21 +6279,261 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_16_29_25_8_3_insertPos = 0;
-		/* merge: g_schedResponseTime = 255(0, 112, 127) */
-		reached[3][112] = 1;
+		/* merge: g_overflowedResponseTime = 255(0, 114, 193) */
+		reached[3][114] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(0, 118, 193) */
+		reached[3][118] = 1;
+		;
+		/* merge: .(goto)(0, 175, 193) */
+		reached[3][175] = 1;
+		;
+		/* merge: .(goto)(0, 183, 193) */
+		reached[3][183] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 272: // STATE 120 - data_structures.pml:287 - [assert((g_taskSortLinkTail<(2+1)))] (0:132:2 - 1)
+		IfNotBlocked
+		reached[3][120] = 1;
+		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(132, 121, 132) */
+		reached[3][121] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
+		((P3 *)_this)->_7_16_29_25_8_3_insertPos = 0;
+#ifdef VAR_RANGES
+		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
+#endif
+		;
+		/* merge: found = 0(132, 122, 132) */
+		reached[3][122] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
+		((P3 *)_this)->_7_16_29_25_8_3_found = 0;
+#ifdef VAR_RANGES
+		logval("Process2:found", ((int)((P3 *)_this)->_7_16_29_25_8_3_found));
+#endif
+		;
+		/* merge: .(goto)(0, 133, 132) */
+		reached[3][133] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 273: // STATE 123 - data_structures.pml:293 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		IfNotBlocked
+		reached[3][123] = 1;
+		if (!(((((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P3 *)_this)->_7_16_29_25_8_3_found)==0))))
+			continue;
+		_m = 3; goto P999; /* 0 */
+	case 274: // STATE 124 - data_structures.pml:295 - [((255<g_taskSortLink[insertPos].responseTime))] (132:0:1 - 1)
+		IfNotBlocked
+		reached[3][124] = 1;
+		if (!((255<((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime))))
+			continue;
+		/* merge: found = 1(0, 125, 132) */
+		reached[3][125] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_found);
+		((P3 *)_this)->_7_16_29_25_8_3_found = 1;
+#ifdef VAR_RANGES
+		logval("Process2:found", ((int)((P3 *)_this)->_7_16_29_25_8_3_found));
+#endif
+		;
+		/* merge: .(goto)(0, 129, 132) */
+		reached[3][129] = 1;
+		;
+		/* merge: .(goto)(0, 133, 132) */
+		reached[3][133] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 275: // STATE 127 - data_structures.pml:298 - [insertPos = (insertPos+1)] (0:0:1 - 1)
+		IfNotBlocked
+		reached[3][127] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
+		((P3 *)_this)->_7_16_29_25_8_3_insertPos = (((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)+1);
+#ifdef VAR_RANGES
+		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 276: // STATE 135 - data_structures.pml:304 - [idx = g_taskSortLinkTail] (0:150:1 - 3)
+		IfNotBlocked
+		reached[3][135] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+		((P3 *)_this)->_7_16_29_25_8_3_idx = ((int)now.g_taskSortLinkTail);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 151, 150) */
+		reached[3][151] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 277: // STATE 136 - data_structures.pml:306 - [((idx>insertPos))] (145:0:4 - 1)
+		IfNotBlocked
+		reached[3][136] = 1;
+		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)>((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos))))
+			continue;
+		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(145, 137, 145) */
+		reached[3][137] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
+		((P3 *)_this)->_7_16_29_25_8_3_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].taskId);
+#ifdef VAR_RANGES
+		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId));
+#endif
+		;
+		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(145, 138, 145) */
+		reached[3][138] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
+		((P3 *)_this)->_7_16_29_25_8_3_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1), 3) ].responseTime);
+#ifdef VAR_RANGES
+		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].taskId = tmpId(145, 139, 145) */
+		reached[3][139] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].responseTime = tmpTime(145, 140, 145) */
+		reached[3][140] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_16_29_25_8_3_tmpTime);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_idx), 3) ].responseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 4 */
+	case 278: // STATE 141 - data_structures.pml:312 - [((tmpId!=255))] (150:0:2 - 1)
+		IfNotBlocked
+		reached[3][141] = 1;
+		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId)!=255)))
+			continue;
+		/* merge: tcb[tmpId].pendList = idx(150, 142, 150) */
+		reached[3][142] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId), 4) ].pendList);
+		now.tcb[ Index(((P3 *)_this)->_7_16_29_25_8_3_tmpId, 4) ].pendList = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+#ifdef VAR_RANGES
+		logval("tcb[Process2:tmpId].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_tmpId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(150, 146, 150) */
+		reached[3][146] = 1;
+		;
+		/* merge: idx = (idx-1)(150, 147, 150) */
+		reached[3][147] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 151, 150) */
+		reached[3][151] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 279: // STATE 144 - data_structures.pml:313 - [(1)] (150:0:1 - 1)
+		IfNotBlocked
+		reached[3][144] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(150, 146, 150) */
+		reached[3][146] = 1;
+		;
+		/* merge: idx = (idx-1)(150, 147, 150) */
+		reached[3][147] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 151, 150) */
+		reached[3][151] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 280: // STATE 147 - data_structures.pml:315 - [idx = (idx-1)] (0:150:1 - 3)
+		IfNotBlocked
+		reached[3][147] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_idx);
+		((P3 *)_this)->_7_16_29_25_8_3_idx = (((int)((P3 *)_this)->_7_16_29_25_8_3_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_16_29_25_8_3_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 151, 150) */
+		reached[3][151] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 281: // STATE 153 - data_structures.pml:320 - [g_taskSortLink[insertPos].taskId = 2] (0:161:4 - 3)
+		IfNotBlocked
+		reached[3][153] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].taskId = 2;
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[insertPos].responseTime = 255(161, 154, 161) */
+		reached[3][154] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_16_29_25_8_3_insertPos, 3) ].responseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos), 3) ].responseTime));
+#endif
+		;
+		/* merge: tcb[2].pendList = insertPos(161, 155, 161) */
+		reached[3][155] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.tcb[2].pendList);
+		now.tcb[2].pendList = ((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos);
+#ifdef VAR_RANGES
+		logval("tcb[2].pendList", ((int)now.tcb[2].pendList));
+#endif
+		;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(161, 156, 161) */
+		reached[3][156] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
+		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+#ifdef VAR_RANGES
+		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+#endif
+		;
+		_m = 3; goto P999; /* 3 */
+	case 282: // STATE 157 - data_structures.pml:327 - [(((insertPos==0)&&(255<255)))] (173:0:2 - 1)
+		IfNotBlocked
+		reached[3][157] = 1;
+		if (!(((((int)((P3 *)_this)->_7_16_29_25_8_3_insertPos)==0)&&(255<255))))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _7_16_29_25_8_3_insertPos */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_16_29_25_8_3_insertPos;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P3 *)_this)->_7_16_29_25_8_3_insertPos = 0;
+		/* merge: g_schedResponseTime = 255(0, 158, 173) */
+		reached[3][158] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 116, 127) */
-		reached[3][116] = 1;
+		/* merge: .(goto)(0, 162, 173) */
+		reached[3][162] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 273: // STATE 117 - data_structures.pml:335 - [checkIdx = 0] (0:124:3 - 1)
+	case 283: // STATE 163 - data_structures.pml:440 - [checkIdx = 0] (0:170:3 - 1)
 		IfNotBlocked
-		reached[3][117] = 1;
+		reached[3][163] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx);
 		((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx = 0;
@@ -6345,8 +6541,8 @@
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx));
 #endif
 		;
-		/* merge: isValid = 1(124, 118, 124) */
-		reached[3][118] = 1;
+		/* merge: isValid = 1(170, 164, 170) */
+		reached[3][164] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_16_29_25_8_3_1_isValid);
 		((P3 *)_this)->_7_16_29_25_8_3_1_isValid = 1;
 #ifdef VAR_RANGES
@@ -6359,37 +6555,37 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_16_29_25_8_3_1_isValid = 0;
-		/* merge: .(goto)(0, 125, 124) */
-		reached[3][125] = 1;
+		/* merge: .(goto)(0, 171, 170) */
+		reached[3][171] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 274: // STATE 119 - data_structures.pml:339 - [((checkIdx<(g_taskSortLinkTail-1)))] (124:0:1 - 1)
+	case 284: // STATE 165 - data_structures.pml:444 - [((checkIdx<(g_taskSortLinkTail-1)))] (170:0:1 - 1)
 		IfNotBlocked
-		reached[3][119] = 1;
+		reached[3][165] = 1;
 		if (!((((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(124, 120, 124) */
-		reached[3][120] = 1;
+		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(170, 166, 170) */
+		reached[3][166] = 1;
 		spin_assert((((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx), 3) ].responseTime)<=((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx)+1), 3) ].responseTime)), "(g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime)", II, tt, t);
-		/* merge: checkIdx = (checkIdx+1)(124, 121, 124) */
-		reached[3][121] = 1;
+		/* merge: checkIdx = (checkIdx+1)(170, 167, 170) */
+		reached[3][167] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx);
 		((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx = (((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_16_29_25_8_3_1_checkIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 125, 124) */
-		reached[3][125] = 1;
+		/* merge: .(goto)(0, 171, 170) */
+		reached[3][171] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 275: // STATE 131 - scheduler.pml:61 - [((tcb[2].state==2))] (145:0:2 - 1)
+	case 285: // STATE 179 - scheduler.pml:61 - [((tcb[2].state==2))] (193:0:2 - 1)
 		IfNotBlocked
-		reached[3][131] = 1;
+		reached[3][179] = 1;
 		if (!((((int)now.tcb[2].state)==2)))
 			continue;
-		/* merge: needSched = 1(145, 132, 145) */
-		reached[3][132] = 1;
+		/* merge: needSched = 1(193, 180, 193) */
+		reached[3][180] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_16_29_needSched);
 		((P3 *)_this)->_7_16_29_needSched = 1;
@@ -6397,21 +6593,21 @@
 		logval("Process2:needSched", ((int)((P3 *)_this)->_7_16_29_needSched));
 #endif
 		;
-		/* merge: tcb[2].state = 3(145, 133, 145) */
-		reached[3][133] = 1;
+		/* merge: tcb[2].state = 3(193, 181, 193) */
+		reached[3][181] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.tcb[2].state);
 		now.tcb[2].state = 3;
 #ifdef VAR_RANGES
 		logval("tcb[2].state", ((int)now.tcb[2].state));
 #endif
 		;
-		/* merge: .(goto)(0, 135, 145) */
-		reached[3][135] = 1;
+		/* merge: .(goto)(0, 183, 193) */
+		reached[3][183] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 276: // STATE 136 - scheduler.pml:69 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 286: // STATE 184 - scheduler.pml:69 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][136] = 1;
+		reached[3][184] = 1;
 		if (!((((int)((P3 *)_this)->_7_16_29_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -6421,9 +6617,9 @@
 #endif
 			((P3 *)_this)->_7_16_29_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 277: // STATE 137 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
+	case 287: // STATE 185 - data_structures.pml:112 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][137] = 1;
+		reached[3][185] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_16_29_intSave);
 		((P3 *)_this)->_7_16_29_intSave = 0;
 #ifdef VAR_RANGES
@@ -6431,67 +6627,67 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 278: // STATE 139 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:153:1 - 1)
+	case 288: // STATE 187 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:201:1 - 1)
 		IfNotBlocked
-		reached[3][139] = 1;
+		reached[3][187] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(153, 140, 153) */
-		reached[3][140] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(201, 188, 201) */
+		reached[3][188] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 146, 153) */
-		reached[3][146] = 1;
+		/* merge: .(goto)(0, 194, 201) */
+		reached[3][194] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 279: // STATE 149 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:168:1 - 1)
+	case 289: // STATE 197 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:216:1 - 1)
 		IfNotBlocked
-		reached[3][149] = 1;
+		reached[3][197] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(168, 150, 168) */
-		reached[3][150] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(216, 198, 216) */
+		reached[3][198] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 154, 168) */
-		reached[3][154] = 1;
+		/* merge: .(goto)(0, 202, 216) */
+		reached[3][202] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 280: // STATE 155 - processes.pml:17 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 290: // STATE 203 - processes.pml:17 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][155] = 1;
+		reached[3][203] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 281: // STATE 156 - processes.pml:17 - [((EP>=2))] (164:0:1 - 1)
+	case 291: // STATE 204 - processes.pml:17 - [((EP>=2))] (212:0:1 - 1)
 		IfNotBlocked
-		reached[3][156] = 1;
+		reached[3][204] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 157, 164) */
-		reached[3][157] = 1;
+		/* merge: chain_tick_used = 0(0, 205, 212) */
+		reached[3][205] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 161, 164) */
-		reached[3][161] = 1;
+		/* merge: .(goto)(0, 209, 212) */
+		reached[3][209] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 282: // STATE 162 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:265:2 - 1)
+	case 292: // STATE 210 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:361:2 - 1)
 		IfNotBlocked
-		reached[3][162] = 1;
+		reached[3][210] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(265, 163, 265) */
-		reached[3][163] = 1;
+		/* merge: EP_Stack = EP(361, 211, 361) */
+		reached[3][211] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -6499,41 +6695,41 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(265, 165, 265) */
-		reached[3][165] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(361, 213, 361) */
+		reached[3][213] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(265, 169, 265) */
-		reached[3][169] = 1;
+		/* merge: .(goto)(361, 217, 361) */
+		reached[3][217] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 283: // STATE 169 - processes.pml:17 - [.(goto)] (0:265:0 - 2)
+	case 293: // STATE 217 - processes.pml:17 - [.(goto)] (0:361:0 - 2)
 		IfNotBlocked
-		reached[3][169] = 1;
+		reached[3][217] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 284: // STATE 167 - processes.pml:17 - [(1)] (265:0:0 - 1)
+	case 294: // STATE 215 - processes.pml:17 - [(1)] (361:0:0 - 1)
 		IfNotBlocked
-		reached[3][167] = 1;
+		reached[3][215] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(265, 169, 265) */
-		reached[3][169] = 1;
+		/* merge: .(goto)(361, 217, 361) */
+		reached[3][217] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 285: // STATE 171 - processes.pml:18 - [(((2+1)==EP))] (0:0:0 - 1)
+	case 295: // STATE 219 - processes.pml:18 - [(((2+1)==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][171] = 1;
+		reached[3][219] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 286: // STATE 172 - scheduler.pml:21 - [intSave = 0] (0:176:3 - 1)
+	case 296: // STATE 220 - scheduler.pml:21 - [intSave = 0] (0:224:3 - 1)
 		IfNotBlocked
-		reached[3][172] = 1;
+		reached[3][220] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_intSave);
 		((P3 *)_this)->_7_17_32_intSave = 0;
@@ -6541,16 +6737,16 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_17_32_intSave));
 #endif
 		;
-		/* merge: tempStatus = 0(176, 173, 176) */
-		reached[3][173] = 1;
+		/* merge: tempStatus = 0(224, 221, 224) */
+		reached[3][221] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_tempStatus);
 		((P3 *)_this)->_7_17_32_tempStatus = 0;
 #ifdef VAR_RANGES
 		logval("Process2:tempStatus", ((int)((P3 *)_this)->_7_17_32_tempStatus));
 #endif
 		;
-		/* merge: needSched = 0(176, 174, 176) */
-		reached[3][174] = 1;
+		/* merge: needSched = 0(224, 222, 224) */
+		reached[3][222] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_17_32_needSched);
 		((P3 *)_this)->_7_17_32_needSched = 0;
 #ifdef VAR_RANGES
@@ -6558,9 +6754,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 287: // STATE 175 - data_structures.pml:102 - [intSave = 0] (0:230:2 - 1)
+	case 297: // STATE 223 - data_structures.pml:107 - [intSave = 0] (0:326:2 - 1)
 		IfNotBlocked
-		reached[3][175] = 1;
+		reached[3][223] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_intSave);
 		((P3 *)_this)->_7_17_32_intSave = 0;
@@ -6568,24 +6764,24 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_17_32_intSave));
 #endif
 		;
-		/* merge: tempStatus = tcb[2].state(230, 177, 230) */
-		reached[3][177] = 1;
+		/* merge: tempStatus = tcb[2].state(326, 225, 326) */
+		reached[3][225] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_tempStatus);
 		((P3 *)_this)->_7_17_32_tempStatus = ((int)now.tcb[2].state);
 #ifdef VAR_RANGES
 		logval("Process2:tempStatus", ((int)((P3 *)_this)->_7_17_32_tempStatus));
 #endif
 		;
-		/* merge: assert((tempStatus==3))(230, 178, 230) */
-		reached[3][178] = 1;
+		/* merge: assert((tempStatus==3))(326, 226, 326) */
+		reached[3][226] = 1;
 		spin_assert((((int)((P3 *)_this)->_7_17_32_tempStatus)==3), "(tempStatus==3)", II, tt, t);
 		_m = 3; goto P999; /* 2 */
-	case 288: // STATE 179 - scheduler.pml:11 - [assert((tcb[2].state==3))] (0:221:2 - 1)
+	case 298: // STATE 227 - scheduler.pml:11 - [assert((tcb[2].state==3))] (0:317:2 - 1)
 		IfNotBlocked
-		reached[3][179] = 1;
+		reached[3][227] = 1;
 		spin_assert((((int)now.tcb[2].state)==3), "(tcb[2].state==3)", II, tt, t);
-		/* merge: needSched = 1(221, 180, 221) */
-		reached[3][180] = 1;
+		/* merge: needSched = 1(317, 228, 317) */
+		reached[3][228] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_needSched);
 		((P3 *)_this)->_7_17_32_needSched = 1;
@@ -6593,8 +6789,8 @@
 		logval("Process2:needSched", ((int)((P3 *)_this)->_7_17_32_needSched));
 #endif
 		;
-		/* merge: tcb[2].state = 1(221, 181, 221) */
-		reached[3][181] = 1;
+		/* merge: tcb[2].state = 1(317, 229, 317) */
+		reached[3][229] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.tcb[2].state);
 		now.tcb[2].state = 1;
 #ifdef VAR_RANGES
@@ -6602,65 +6798,155 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 289: // STATE 182 - data_structures.pml:283 - [idx = tcb[2].pendList] (0:190:2 - 1)
+	case 299: // STATE 230 - data_structures.pml:346 - [pendListValue = tcb[2].pendList] (0:315:4 - 1)
 		IfNotBlocked
-		reached[3][182] = 1;
-		(trpt+1)->bup.ovals = grab_ints(2);
-		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
-		((P3 *)_this)->_7_17_32_29_10_idx = ((int)now.tcb[2].pendList);
+		reached[3][230] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_29_10_pendListValue);
+		((P3 *)_this)->_7_17_32_29_10_pendListValue = ((int)now.tcb[2].pendList);
+#ifdef VAR_RANGES
+		logval("Process2:pendListValue", ((int)((P3 *)_this)->_7_17_32_29_10_pendListValue));
+#endif
+		;
+		/* merge: idx = 0(315, 231, 315) */
+		reached[3][231] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = 0;
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
 #endif
 		;
-		/* merge: removedIdx = idx(190, 183, 190) */
-		reached[3][183] = 1;
+		/* merge: removedIdx = 0(315, 232, 315) */
+		reached[3][232] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx);
+		((P3 *)_this)->_7_17_32_29_10_removedIdx = 0;
+#ifdef VAR_RANGES
+		logval("Process2:removedIdx", ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx));
+#endif
+		;
+		/* merge: newFirstTime = 0(315, 233, 315) */
+		reached[3][233] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime);
+		((P3 *)_this)->_7_17_32_29_10_newFirstTime = 0;
+#ifdef VAR_RANGES
+		logval("Process2:newFirstTime", ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime));
+#endif
+		;
+		_m = 3; goto P999; /* 3 */
+	case 300: // STATE 234 - data_structures.pml:352 - [((pendListValue<128))] (249:0:2 - 1)
+		IfNotBlocked
+		reached[3][234] = 1;
+		if (!((((int)((P3 *)_this)->_7_17_32_29_10_pendListValue)<128)))
+			continue;
+		/* merge: idx = pendListValue(249, 235, 249) */
+		reached[3][235] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = ((int)((P3 *)_this)->_7_17_32_29_10_pendListValue);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: removedIdx = idx(249, 236, 249) */
+		reached[3][236] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx);
 		((P3 *)_this)->_7_17_32_29_10_removedIdx = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
 #ifdef VAR_RANGES
 		logval("Process2:removedIdx", ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 191, 190) */
-		reached[3][191] = 1;
+		/* merge: .(goto)(0, 250, 249) */
+		reached[3][250] = 1;
 		;
-		_m = 3; goto P999; /* 2 */
-	case 290: // STATE 184 - data_structures.pml:286 - [((idx<(g_taskSortLinkTail-1)))] (190:0:3 - 1)
+		_m = 3; goto P999; /* 3 */
+	case 301: // STATE 237 - data_structures.pml:358 - [((idx<(g_taskSortLinkTail-1)))] (244:0:2 - 1)
 		IfNotBlocked
-		reached[3][184] = 1;
+		reached[3][237] = 1;
 		if (!((((int)((P3 *)_this)->_7_17_32_29_10_idx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: g_taskSortLink[idx].taskId = g_taskSortLink[(idx+1)].taskId(190, 185, 190) */
-		reached[3][185] = 1;
-		(trpt+1)->bup.ovals = grab_ints(3);
+		/* merge: g_taskSortLink[idx].taskId = g_taskSortLink[(idx+1)].taskId(244, 238, 244) */
+		reached[3][238] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId);
 		now.g_taskSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].taskId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_17_32_29_10_idx)+1), 3) ].taskId);
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].responseTime = g_taskSortLink[(idx+1)].responseTime(190, 186, 190) */
-		reached[3][186] = 1;
+		/* merge: g_taskSortLink[idx].responseTime = g_taskSortLink[(idx+1)].responseTime(244, 239, 244) */
+		reached[3][239] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].responseTime);
 		now.g_taskSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].responseTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_17_32_29_10_idx)+1), 3) ].responseTime);
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].responseTime));
 #endif
 		;
-		/* merge: idx = (idx+1)(190, 187, 190) */
-		reached[3][187] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		_m = 3; goto P999; /* 2 */
+	case 302: // STATE 240 - data_structures.pml:363 - [((g_taskSortLink[idx].taskId!=255))] (249:0:2 - 1)
+		IfNotBlocked
+		reached[3][240] = 1;
+		if (!((((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId)!=255)))
+			continue;
+		/* merge: tcb[g_taskSortLink[idx].taskId].pendList = idx(249, 241, 249) */
+		reached[3][241] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId), 4) ].pendList);
+		now.tcb[ Index(now.g_taskSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].taskId, 4) ].pendList = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+#ifdef VAR_RANGES
+		logval("tcb[g_taskSortLink[Process2:idx].taskId].pendList", ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(249, 245, 249) */
+		reached[3][245] = 1;
+		;
+		/* merge: idx = (idx+1)(249, 246, 249) */
+		reached[3][246] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
 		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 191, 190) */
-		reached[3][191] = 1;
+		/* merge: .(goto)(0, 250, 249) */
+		reached[3][250] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 291: // STATE 193 - data_structures.pml:292 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:208:3 - 3)
+	case 303: // STATE 243 - data_structures.pml:365 - [(1)] (249:0:1 - 1)
 		IfNotBlocked
-		reached[3][193] = 1;
+		reached[3][243] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(249, 245, 249) */
+		reached[3][245] = 1;
+		;
+		/* merge: idx = (idx+1)(249, 246, 249) */
+		reached[3][246] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 250, 249) */
+		reached[3][250] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 304: // STATE 246 - data_structures.pml:367 - [idx = (idx+1)] (0:249:1 - 3)
+		IfNotBlocked
+		reached[3][246] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 250, 249) */
+		reached[3][250] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 305: // STATE 252 - data_structures.pml:370 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:267:3 - 3)
+		IfNotBlocked
+		reached[3][252] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].taskId = 255;
@@ -6668,16 +6954,16 @@
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].taskId", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(208, 194, 208) */
-		reached[3][194] = 1;
+		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(267, 253, 267) */
+		reached[3][253] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].responseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].responseTime", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(208, 195, 208) */
-		reached[3][195] = 1;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(267, 254, 267) */
+		reached[3][254] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLinkTail);
 		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)-1);
 #ifdef VAR_RANGES
@@ -6685,26 +6971,26 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 292: // STATE 196 - data_structures.pml:302 - [((g_taskSortLinkTail==0))] (220:0:1 - 1)
+	case 306: // STATE 255 - data_structures.pml:376 - [((g_taskSortLinkTail==0))] (279:0:1 - 1)
 		IfNotBlocked
-		reached[3][196] = 1;
+		reached[3][255] = 1;
 		if (!((((int)now.g_taskSortLinkTail)==0)))
 			continue;
-		/* merge: g_schedResponseTime = 255(0, 197, 220) */
-		reached[3][197] = 1;
+		/* merge: g_schedResponseTime = 255(0, 256, 279) */
+		reached[3][256] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 209, 220) */
-		reached[3][209] = 1;
+		/* merge: .(goto)(0, 268, 279) */
+		reached[3][268] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 293: // STATE 198 - data_structures.pml:305 - [(((removedIdx==0)&&(g_taskSortLinkTail>0)))] (204:0:2 - 1)
+	case 307: // STATE 257 - data_structures.pml:378 - [(((removedIdx==0)&&(g_taskSortLinkTail>0)))] (263:0:2 - 1)
 		IfNotBlocked
-		reached[3][198] = 1;
+		reached[3][257] = 1;
 		if (!(((((int)((P3 *)_this)->_7_17_32_29_10_removedIdx)==0)&&(((int)now.g_taskSortLinkTail)>0))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -6714,8 +7000,8 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_17_32_29_10_removedIdx = 0;
-		/* merge: newFirstTime = g_taskSortLink[0].responseTime(0, 199, 204) */
-		reached[3][199] = 1;
+		/* merge: newFirstTime = g_taskSortLink[0].responseTime(0, 258, 263) */
+		reached[3][258] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime);
 		((P3 *)_this)->_7_17_32_29_10_newFirstTime = ((int)now.g_taskSortLink[0].responseTime);
 #ifdef VAR_RANGES
@@ -6723,29 +7009,29 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 294: // STATE 200 - data_structures.pml:309 - [((newFirstTime<255))] (220:0:1 - 1)
+	case 308: // STATE 259 - data_structures.pml:381 - [((newFirstTime<255))] (279:0:1 - 1)
 		IfNotBlocked
-		reached[3][200] = 1;
+		reached[3][259] = 1;
 		if (!((((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime)<255)))
 			continue;
-		/* merge: g_schedResponseTime = newFirstTime(0, 201, 220) */
-		reached[3][201] = 1;
+		/* merge: g_schedResponseTime = newFirstTime(0, 260, 279) */
+		reached[3][260] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime);
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 205, 220) */
-		reached[3][205] = 1;
+		/* merge: .(goto)(0, 264, 279) */
+		reached[3][264] = 1;
 		;
-		/* merge: .(goto)(0, 209, 220) */
-		reached[3][209] = 1;
+		/* merge: .(goto)(0, 268, 279) */
+		reached[3][268] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 295: // STATE 203 - data_structures.pml:316 - [g_schedResponseTime = 255] (0:0:1 - 1)
+	case 309: // STATE 262 - data_structures.pml:384 - [g_schedResponseTime = 255] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][203] = 1;
+		reached[3][262] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = 255;
 #ifdef VAR_RANGES
@@ -6753,9 +7039,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 296: // STATE 210 - data_structures.pml:335 - [checkIdx = 0] (0:217:3 - 1)
+	case 310: // STATE 269 - data_structures.pml:440 - [checkIdx = 0] (0:276:3 - 1)
 		IfNotBlocked
-		reached[3][210] = 1;
+		reached[3][269] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx);
 		((P3 *)_this)->_7_17_32_29_10_4_checkIdx = 0;
@@ -6763,8 +7049,8 @@
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx));
 #endif
 		;
-		/* merge: isValid = 1(217, 211, 217) */
-		reached[3][211] = 1;
+		/* merge: isValid = 1(276, 270, 276) */
+		reached[3][270] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_4_isValid);
 		((P3 *)_this)->_7_17_32_29_10_4_isValid = 1;
 #ifdef VAR_RANGES
@@ -6777,37 +7063,245 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_17_32_29_10_4_isValid = 0;
-		/* merge: .(goto)(0, 218, 217) */
-		reached[3][218] = 1;
+		/* merge: .(goto)(0, 277, 276) */
+		reached[3][277] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 297: // STATE 212 - data_structures.pml:339 - [((checkIdx<(g_taskSortLinkTail-1)))] (217:0:1 - 1)
+	case 311: // STATE 271 - data_structures.pml:444 - [((checkIdx<(g_taskSortLinkTail-1)))] (276:0:1 - 1)
 		IfNotBlocked
-		reached[3][212] = 1;
+		reached[3][271] = 1;
 		if (!((((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(217, 213, 217) */
-		reached[3][213] = 1;
+		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(276, 272, 276) */
+		reached[3][272] = 1;
 		spin_assert((((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx), 3) ].responseTime)<=((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx)+1), 3) ].responseTime)), "(g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime)", II, tt, t);
-		/* merge: checkIdx = (checkIdx+1)(217, 214, 217) */
-		reached[3][214] = 1;
+		/* merge: checkIdx = (checkIdx+1)(276, 273, 276) */
+		reached[3][273] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx);
 		((P3 *)_this)->_7_17_32_29_10_4_checkIdx = (((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_17_32_29_10_4_checkIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 218, 217) */
-		reached[3][218] = 1;
+		/* merge: .(goto)(0, 277, 276) */
+		reached[3][277] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 298: // STATE 222 - data_structures.pml:136 - [((readyQueue[tcb[2].prio].tailIndex<5))] (240:0:2 - 1)
+	case 312: // STATE 281 - data_structures.pml:393 - [idx = (pendListValue-128)] (0:295:2 - 1)
 		IfNotBlocked
-		reached[3][222] = 1;
+		reached[3][281] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_pendListValue)-128);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: removedIdx = idx(295, 282, 295) */
+		reached[3][282] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx);
+		((P3 *)_this)->_7_17_32_29_10_removedIdx = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+#ifdef VAR_RANGES
+		logval("Process2:removedIdx", ((int)((P3 *)_this)->_7_17_32_29_10_removedIdx));
+#endif
+		;
+		/* merge: .(goto)(0, 296, 295) */
+		reached[3][296] = 1;
+		;
+		_m = 3; goto P999; /* 2 */
+	case 313: // STATE 283 - data_structures.pml:397 - [((idx<(overflowedSortLinkTail-1)))] (290:0:2 - 1)
+		IfNotBlocked
+		reached[3][283] = 1;
+		if (!((((int)((P3 *)_this)->_7_17_32_29_10_idx)<(((int)now.overflowedSortLinkTail)-1))))
+			continue;
+		/* merge: overflowedSortLink[idx].taskId = overflowedSortLink[(idx+1)].taskId(290, 284, 290) */
+		reached[3][284] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].taskId = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_17_32_29_10_idx)+1), 3) ].taskId);
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[Process2:idx].taskId", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId));
+#endif
+		;
+		/* merge: overflowedSortLink[idx].responseTime = overflowedSortLink[(idx+1)].responseTime(290, 285, 290) */
+		reached[3][285] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].responseTime = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_17_32_29_10_idx)+1), 3) ].responseTime);
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[Process2:idx].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].responseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 2 */
+	case 314: // STATE 286 - data_structures.pml:402 - [((overflowedSortLink[idx].taskId!=255))] (295:0:2 - 1)
+		IfNotBlocked
+		reached[3][286] = 1;
+		if (!((((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId)!=255)))
+			continue;
+		/* merge: tcb[overflowedSortLink[idx].taskId].pendList = (128+idx)(295, 287, 295) */
+		reached[3][287] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId), 4) ].pendList);
+		now.tcb[ Index(now.overflowedSortLink[ Index(((P3 *)_this)->_7_17_32_29_10_idx, 3) ].taskId, 4) ].pendList = (128+((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#ifdef VAR_RANGES
+		logval("tcb[overflowedSortLink[Process2:idx].taskId].pendList", ((int)now.tcb[ Index(((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_17_32_29_10_idx), 3) ].taskId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(295, 291, 295) */
+		reached[3][291] = 1;
+		;
+		/* merge: idx = (idx+1)(295, 292, 295) */
+		reached[3][292] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 296, 295) */
+		reached[3][296] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 315: // STATE 289 - data_structures.pml:404 - [(1)] (295:0:1 - 1)
+		IfNotBlocked
+		reached[3][289] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(295, 291, 295) */
+		reached[3][291] = 1;
+		;
+		/* merge: idx = (idx+1)(295, 292, 295) */
+		reached[3][292] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 296, 295) */
+		reached[3][296] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 316: // STATE 292 - data_structures.pml:406 - [idx = (idx+1)] (0:295:1 - 3)
+		IfNotBlocked
+		reached[3][292] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_29_10_idx);
+		((P3 *)_this)->_7_17_32_29_10_idx = (((int)((P3 *)_this)->_7_17_32_29_10_idx)+1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_17_32_29_10_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 296, 295) */
+		reached[3][296] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 317: // STATE 298 - data_structures.pml:409 - [overflowedSortLink[(overflowedSortLinkTail-1)].taskId = 255] (0:313:3 - 3)
+		IfNotBlocked
+		reached[3][298] = 1;
+		(trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index((((int)now.overflowedSortLinkTail)-1), 3) ].taskId);
+		now.overflowedSortLink[ Index((now.overflowedSortLinkTail-1), 3) ].taskId = 255;
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[(overflowedSortLinkTail-1)].taskId", ((int)now.overflowedSortLink[ Index((((int)now.overflowedSortLinkTail)-1), 3) ].taskId));
+#endif
+		;
+		/* merge: overflowedSortLink[(overflowedSortLinkTail-1)].responseTime = 255(313, 299, 313) */
+		reached[3][299] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index((((int)now.overflowedSortLinkTail)-1), 3) ].responseTime);
+		now.overflowedSortLink[ Index((now.overflowedSortLinkTail-1), 3) ].responseTime = 255;
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[(overflowedSortLinkTail-1)].responseTime", ((int)now.overflowedSortLink[ Index((((int)now.overflowedSortLinkTail)-1), 3) ].responseTime));
+#endif
+		;
+		/* merge: overflowedSortLinkTail = (overflowedSortLinkTail-1)(313, 300, 313) */
+		reached[3][300] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = (((int)now.overflowedSortLinkTail)-1);
+#ifdef VAR_RANGES
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
+#endif
+		;
+		_m = 3; goto P999; /* 2 */
+	case 318: // STATE 301 - data_structures.pml:415 - [((overflowedSortLinkTail==0))] (325:0:1 - 1)
+		IfNotBlocked
+		reached[3][301] = 1;
+		if (!((((int)now.overflowedSortLinkTail)==0)))
+			continue;
+		/* merge: g_overflowedResponseTime = 255(0, 302, 325) */
+		reached[3][302] = 1;
+		(trpt+1)->bup.oval = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(0, 314, 325) */
+		reached[3][314] = 1;
+		;
+		/* merge: .(goto)(0, 316, 325) */
+		reached[3][316] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 319: // STATE 303 - data_structures.pml:417 - [(((removedIdx==0)&&(overflowedSortLinkTail>0)))] (309:0:2 - 1)
+		IfNotBlocked
+		reached[3][303] = 1;
+		if (!(((((int)((P3 *)_this)->_7_17_32_29_10_removedIdx)==0)&&(((int)now.overflowedSortLinkTail)>0))))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _7_17_32_29_10_removedIdx */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_17_32_29_10_removedIdx;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P3 *)_this)->_7_17_32_29_10_removedIdx = 0;
+		/* merge: newFirstTime = overflowedSortLink[0].responseTime(0, 304, 309) */
+		reached[3][304] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime);
+		((P3 *)_this)->_7_17_32_29_10_newFirstTime = ((int)now.overflowedSortLink[0].responseTime);
+#ifdef VAR_RANGES
+		logval("Process2:newFirstTime", ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime));
+#endif
+		;
+		_m = 3; goto P999; /* 1 */
+	case 320: // STATE 305 - data_structures.pml:420 - [((newFirstTime<255))] (325:0:1 - 1)
+		IfNotBlocked
+		reached[3][305] = 1;
+		if (!((((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime)<255)))
+			continue;
+		/* merge: g_overflowedResponseTime = newFirstTime(0, 306, 325) */
+		reached[3][306] = 1;
+		(trpt+1)->bup.oval = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = ((int)((P3 *)_this)->_7_17_32_29_10_newFirstTime);
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(0, 310, 325) */
+		reached[3][310] = 1;
+		;
+		/* merge: .(goto)(0, 314, 325) */
+		reached[3][314] = 1;
+		;
+		/* merge: .(goto)(0, 316, 325) */
+		reached[3][316] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 321: // STATE 308 - data_structures.pml:423 - [g_overflowedResponseTime = 255] (0:0:1 - 1)
+		IfNotBlocked
+		reached[3][308] = 1;
+		(trpt+1)->bup.oval = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 322: // STATE 318 - data_structures.pml:141 - [((readyQueue[tcb[2].prio].tailIndex<5))] (336:0:2 - 1)
+		IfNotBlocked
+		reached[3][318] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex)<5)))
 			continue;
-		/* merge: readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2(240, 223, 240) */
-		reached[3][223] = 1;
+		/* merge: readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex] = 2(336, 319, 336) */
+		reached[3][319] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex), 5) ]);
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex, 5) ] = 2;
@@ -6815,26 +7309,26 @@
 		logval("readyQueue[tcb[2].prio].tasks[readyQueue[tcb[2].prio].tailIndex]", ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)(240, 224, 240) */
-		reached[3][224] = 1;
+		/* merge: readyQueue[tcb[2].prio].tailIndex = (readyQueue[tcb[2].prio].tailIndex+1)(336, 320, 336) */
+		reached[3][320] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex);
 		now.readyQueue[ Index(now.tcb[2].prio, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex)+1);
 #ifdef VAR_RANGES
 		logval("readyQueue[tcb[2].prio].tailIndex", ((int)now.readyQueue[ Index(((int)now.tcb[2].prio), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(0, 228, 240) */
-		reached[3][228] = 1;
+		/* merge: .(goto)(0, 324, 336) */
+		reached[3][324] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 299: // STATE 226 - data_structures.pml:139 - [assert(0)] (0:0:0 - 1)
+	case 323: // STATE 322 - data_structures.pml:144 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][226] = 1;
+		reached[3][322] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 300: // STATE 231 - scheduler.pml:31 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 324: // STATE 327 - scheduler.pml:31 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][231] = 1;
+		reached[3][327] = 1;
 		if (!((((int)((P3 *)_this)->_7_17_32_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -6844,9 +7338,9 @@
 #endif
 			((P3 *)_this)->_7_17_32_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 301: // STATE 232 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
+	case 325: // STATE 328 - data_structures.pml:112 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][232] = 1;
+		reached[3][328] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_17_32_intSave);
 		((P3 *)_this)->_7_17_32_intSave = 0;
 #ifdef VAR_RANGES
@@ -6854,67 +7348,67 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 302: // STATE 234 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:248:1 - 1)
+	case 326: // STATE 330 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:344:1 - 1)
 		IfNotBlocked
-		reached[3][234] = 1;
+		reached[3][330] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(248, 235, 248) */
-		reached[3][235] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(344, 331, 344) */
+		reached[3][331] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 241, 248) */
-		reached[3][241] = 1;
+		/* merge: .(goto)(0, 337, 344) */
+		reached[3][337] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 303: // STATE 244 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:263:1 - 1)
+	case 327: // STATE 340 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:359:1 - 1)
 		IfNotBlocked
-		reached[3][244] = 1;
+		reached[3][340] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(263, 245, 263) */
-		reached[3][245] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(359, 341, 359) */
+		reached[3][341] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 249, 263) */
-		reached[3][249] = 1;
+		/* merge: .(goto)(0, 345, 359) */
+		reached[3][345] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 304: // STATE 250 - processes.pml:18 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 328: // STATE 346 - processes.pml:18 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][250] = 1;
+		reached[3][346] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 305: // STATE 251 - processes.pml:18 - [((EP>=2))] (259:0:1 - 1)
+	case 329: // STATE 347 - processes.pml:18 - [((EP>=2))] (355:0:1 - 1)
 		IfNotBlocked
-		reached[3][251] = 1;
+		reached[3][347] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 252, 259) */
-		reached[3][252] = 1;
+		/* merge: chain_tick_used = 0(0, 348, 355) */
+		reached[3][348] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 256, 259) */
-		reached[3][256] = 1;
+		/* merge: .(goto)(0, 352, 355) */
+		reached[3][352] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 306: // STATE 257 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:290:2 - 1)
+	case 330: // STATE 353 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:386:2 - 1)
 		IfNotBlocked
-		reached[3][257] = 1;
+		reached[3][353] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(290, 258, 290) */
-		reached[3][258] = 1;
+		/* merge: EP_Stack = EP(386, 354, 386) */
+		reached[3][354] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -6922,86 +7416,86 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(290, 260, 290) */
-		reached[3][260] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(386, 356, 386) */
+		reached[3][356] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(290, 264, 290) */
-		reached[3][264] = 1;
+		/* merge: .(goto)(386, 360, 386) */
+		reached[3][360] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 307: // STATE 264 - processes.pml:18 - [.(goto)] (0:290:0 - 2)
+	case 331: // STATE 360 - processes.pml:18 - [.(goto)] (0:386:0 - 2)
 		IfNotBlocked
-		reached[3][264] = 1;
+		reached[3][360] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 308: // STATE 262 - processes.pml:18 - [(1)] (290:0:0 - 1)
+	case 332: // STATE 358 - processes.pml:18 - [(1)] (386:0:0 - 1)
 		IfNotBlocked
-		reached[3][262] = 1;
+		reached[3][358] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(290, 264, 290) */
-		reached[3][264] = 1;
+		/* merge: .(goto)(386, 360, 386) */
+		reached[3][360] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 309: // STATE 266 - processes.pml:19 - [(((2+1)==EP))] (273:0:0 - 1)
+	case 333: // STATE 362 - processes.pml:19 - [(((2+1)==EP))] (369:0:0 - 1)
 		IfNotBlocked
-		reached[3][266] = 1;
+		reached[3][362] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
-		/* merge: assert((EP==(2+1)))(0, 267, 273) */
-		reached[3][267] = 1;
+		/* merge: assert((EP==(2+1)))(0, 363, 369) */
+		reached[3][363] = 1;
 		spin_assert((((int)now.EP)==(2+1)), "(EP==(2+1))", II, tt, t);
 		_m = 3; goto P999; /* 1 */
-	case 310: // STATE 269 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:288:1 - 1)
+	case 334: // STATE 365 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:384:1 - 1)
 		IfNotBlocked
-		reached[3][269] = 1;
+		reached[3][365] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(288, 270, 288) */
-		reached[3][270] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(384, 366, 384) */
+		reached[3][366] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 274, 288) */
-		reached[3][274] = 1;
+		/* merge: .(goto)(0, 370, 384) */
+		reached[3][370] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 311: // STATE 275 - processes.pml:19 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 335: // STATE 371 - processes.pml:19 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][275] = 1;
+		reached[3][371] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 312: // STATE 276 - processes.pml:19 - [((EP>=2))] (284:0:1 - 1)
+	case 336: // STATE 372 - processes.pml:19 - [((EP>=2))] (380:0:1 - 1)
 		IfNotBlocked
-		reached[3][276] = 1;
+		reached[3][372] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 277, 284) */
-		reached[3][277] = 1;
+		/* merge: chain_tick_used = 0(0, 373, 380) */
+		reached[3][373] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 281, 284) */
-		reached[3][281] = 1;
+		/* merge: .(goto)(0, 377, 380) */
+		reached[3][377] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 313: // STATE 282 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:444:2 - 1)
+	case 337: // STATE 378 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:588:2 - 1)
 		IfNotBlocked
-		reached[3][282] = 1;
+		reached[3][378] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(444, 283, 444) */
-		reached[3][283] = 1;
+		/* merge: EP_Stack = EP(588, 379, 588) */
+		reached[3][379] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -7009,41 +7503,41 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(444, 285, 444) */
-		reached[3][285] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(588, 381, 588) */
+		reached[3][381] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(444, 289, 444) */
-		reached[3][289] = 1;
+		/* merge: .(goto)(588, 385, 588) */
+		reached[3][385] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 314: // STATE 289 - processes.pml:19 - [.(goto)] (0:444:0 - 2)
+	case 338: // STATE 385 - processes.pml:19 - [.(goto)] (0:588:0 - 2)
 		IfNotBlocked
-		reached[3][289] = 1;
+		reached[3][385] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 315: // STATE 287 - processes.pml:19 - [(1)] (444:0:0 - 1)
+	case 339: // STATE 383 - processes.pml:19 - [(1)] (588:0:0 - 1)
 		IfNotBlocked
-		reached[3][287] = 1;
+		reached[3][383] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(444, 289, 444) */
-		reached[3][289] = 1;
+		/* merge: .(goto)(588, 385, 588) */
+		reached[3][385] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 316: // STATE 291 - processes.pml:20 - [(((2+1)==EP))] (0:0:0 - 1)
+	case 340: // STATE 387 - processes.pml:20 - [(((2+1)==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][291] = 1;
+		reached[3][387] = 1;
 		if (!(((2+1)==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 317: // STATE 292 - scheduler.pml:100 - [intSave = 0] (0:296:3 - 1)
+	case 341: // STATE 388 - scheduler.pml:100 - [intSave = 0] (0:392:3 - 1)
 		IfNotBlocked
-		reached[3][292] = 1;
+		reached[3][388] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_intSave);
 		((P3 *)_this)->_7_19_37_intSave = 0;
@@ -7051,16 +7545,16 @@
 		logval("Process2:intSave", ((int)((P3 *)_this)->_7_19_37_intSave));
 #endif
 		;
-		/* merge: needSched = 0(296, 293, 296) */
-		reached[3][293] = 1;
+		/* merge: needSched = 0(392, 389, 392) */
+		reached[3][389] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_needSched);
 		((P3 *)_this)->_7_19_37_needSched = 0;
 #ifdef VAR_RANGES
 		logval("Process2:needSched", ((int)((P3 *)_this)->_7_19_37_needSched));
 #endif
 		;
-		/* merge: currentTask = EP(296, 294, 296) */
-		reached[3][294] = 1;
+		/* merge: currentTask = EP(392, 390, 392) */
+		reached[3][390] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_19_37_currentTask);
 		((P3 *)_this)->_7_19_37_currentTask = ((int)now.EP);
 #ifdef VAR_RANGES
@@ -7068,9 +7562,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 318: // STATE 295 - data_structures.pml:102 - [intSave = 0] (0:0:1 - 1)
+	case 342: // STATE 391 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][295] = 1;
+		reached[3][391] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_intSave);
 		((P3 *)_this)->_7_19_37_intSave = 0;
 #ifdef VAR_RANGES
@@ -7078,40 +7572,40 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 319: // STATE 297 - scheduler.pml:106 - [((0==0))] (0:0:0 - 1)
+	case 343: // STATE 393 - scheduler.pml:106 - [((0==0))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][297] = 1;
+		reached[3][393] = 1;
 		if (!((0==0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 320: // STATE 298 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:427:1 - 1)
+	case 344: // STATE 394 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:571:1 - 1)
 		IfNotBlocked
-		reached[3][298] = 1;
+		reached[3][394] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(427, 299, 427) */
-		reached[3][299] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(571, 395, 571) */
+		reached[3][395] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 420, 427) */
-		reached[3][420] = 1;
+		/* merge: .(goto)(0, 564, 571) */
+		reached[3][564] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 321: // STATE 303 - scheduler.pml:109 - [((0>0))] (0:0:0 - 1)
+	case 345: // STATE 399 - scheduler.pml:109 - [((0>0))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][303] = 1;
+		reached[3][399] = 1;
 		if (!((0>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 322: // STATE 304 - scheduler.pml:85 - [assert(((tcb[currentTask].state==1)||(tcb[currentTask].state==4)))] (0:341:1 - 1)
+	case 346: // STATE 400 - scheduler.pml:85 - [assert(((tcb[currentTask].state==1)||(tcb[currentTask].state==4)))] (0:437:1 - 1)
 		IfNotBlocked
-		reached[3][304] = 1;
+		reached[3][400] = 1;
 		spin_assert(((((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state)==1)||(((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state)==4)), "((tcb[currentTask].state==1)||(tcb[currentTask].state==4))", II, tt, t);
-		/* merge: needSched = 1(341, 305, 341) */
-		reached[3][305] = 1;
+		/* merge: needSched = 1(437, 401, 437) */
+		reached[3][401] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_needSched);
 		((P3 *)_this)->_7_19_37_needSched = 1;
 #ifdef VAR_RANGES
@@ -7119,15 +7613,15 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 323: // STATE 306 - scheduler.pml:88 - [((tcb[currentTask].state==1))] (0:0:0 - 1)
+	case 347: // STATE 402 - scheduler.pml:88 - [((tcb[currentTask].state==1))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][306] = 1;
+		reached[3][402] = 1;
 		if (!((((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state)==1)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 324: // STATE 307 - data_structures.pml:164 - [idx = 0] (0:319:3 - 1)
+	case 348: // STATE 403 - data_structures.pml:169 - [idx = 0] (0:415:3 - 1)
 		IfNotBlocked
-		reached[3][307] = 1;
+		reached[3][403] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_14_idx);
 		((P3 *)_this)->_7_19_37_34_14_idx = 0;
@@ -7135,55 +7629,55 @@
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_14_idx));
 #endif
 		;
-		/* merge: found = 0(319, 308, 319) */
-		reached[3][308] = 1;
+		/* merge: found = 0(415, 404, 415) */
+		reached[3][404] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_14_found);
 		((P3 *)_this)->_7_19_37_34_14_found = 0;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_14_found));
 #endif
 		;
-		/* merge: prioLevel = tcb[currentTask].prio(319, 309, 319) */
-		reached[3][309] = 1;
+		/* merge: prioLevel = tcb[currentTask].prio(415, 405, 415) */
+		reached[3][405] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_19_37_34_14_prioLevel);
 		((P3 *)_this)->_7_19_37_34_14_prioLevel = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].prio);
 #ifdef VAR_RANGES
 		logval("Process2:prioLevel", ((int)((P3 *)_this)->_7_19_37_34_14_prioLevel));
 #endif
 		;
-		/* merge: .(goto)(0, 320, 319) */
-		reached[3][320] = 1;
+		/* merge: .(goto)(0, 416, 415) */
+		reached[3][416] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 325: // STATE 310 - data_structures.pml:167 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
+	case 349: // STATE 406 - data_structures.pml:172 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][310] = 1;
+		reached[3][406] = 1;
 		if (!(((((int)((P3 *)_this)->_7_19_37_34_14_idx)<((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex))&& !(((int)((P3 *)_this)->_7_19_37_34_14_found)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 326: // STATE 311 - data_structures.pml:169 - [((readyQueue[prioLevel].tasks[idx]==currentTask))] (319:0:1 - 1)
+	case 350: // STATE 407 - data_structures.pml:174 - [((readyQueue[prioLevel].tasks[idx]==currentTask))] (415:0:1 - 1)
 		IfNotBlocked
-		reached[3][311] = 1;
+		reached[3][407] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index(((int)((P3 *)_this)->_7_19_37_34_14_idx), 5) ])==((int)((P3 *)_this)->_7_19_37_currentTask))))
 			continue;
-		/* merge: found = 1(0, 312, 319) */
-		reached[3][312] = 1;
+		/* merge: found = 1(0, 408, 415) */
+		reached[3][408] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_14_found);
 		((P3 *)_this)->_7_19_37_34_14_found = 1;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_14_found));
 #endif
 		;
-		/* merge: .(goto)(0, 316, 319) */
-		reached[3][316] = 1;
+		/* merge: .(goto)(0, 412, 415) */
+		reached[3][412] = 1;
 		;
-		/* merge: .(goto)(0, 320, 319) */
-		reached[3][320] = 1;
+		/* merge: .(goto)(0, 416, 415) */
+		reached[3][416] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 327: // STATE 314 - data_structures.pml:171 - [idx = (idx+1)] (0:0:1 - 1)
+	case 351: // STATE 410 - data_structures.pml:176 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][314] = 1;
+		reached[3][410] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_14_idx);
 		((P3 *)_this)->_7_19_37_34_14_idx = (((int)((P3 *)_this)->_7_19_37_34_14_idx)+1);
 #ifdef VAR_RANGES
@@ -7191,21 +7685,21 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 328: // STATE 322 - data_structures.pml:175 - [assert((found==1))] (0:328:0 - 3)
+	case 352: // STATE 418 - data_structures.pml:180 - [assert((found==1))] (0:424:0 - 3)
 		IfNotBlocked
-		reached[3][322] = 1;
+		reached[3][418] = 1;
 		spin_assert((((int)((P3 *)_this)->_7_19_37_34_14_found)==1), "(found==1)", II, tt, t);
-		/* merge: .(goto)(0, 329, 328) */
-		reached[3][329] = 1;
+		/* merge: .(goto)(0, 425, 424) */
+		reached[3][425] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 329: // STATE 323 - data_structures.pml:177 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (328:0:2 - 1)
+	case 353: // STATE 419 - data_structures.pml:182 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (424:0:2 - 1)
 		IfNotBlocked
-		reached[3][323] = 1;
+		reached[3][419] = 1;
 		if (!((((int)((P3 *)_this)->_7_19_37_34_14_idx)<(((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex)-1))))
 			continue;
-		/* merge: readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[(idx+1)](328, 324, 328) */
-		reached[3][324] = 1;
+		/* merge: readyQueue[prioLevel].tasks[idx] = readyQueue[prioLevel].tasks[(idx+1)](424, 420, 424) */
+		reached[3][420] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index(((int)((P3 *)_this)->_7_19_37_34_14_idx), 5) ]);
 		now.readyQueue[ Index(((P3 *)_this)->_7_19_37_34_14_prioLevel, 4) ].tasks[ Index(((P3 *)_this)->_7_19_37_34_14_idx, 5) ] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index((((int)((P3 *)_this)->_7_19_37_34_14_idx)+1), 5) ]);
@@ -7213,25 +7707,25 @@
 		logval("readyQueue[Process2:prioLevel].tasks[Process2:idx]", ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index(((int)((P3 *)_this)->_7_19_37_34_14_idx), 5) ]));
 #endif
 		;
-		/* merge: idx = (idx+1)(328, 325, 328) */
-		reached[3][325] = 1;
+		/* merge: idx = (idx+1)(424, 421, 424) */
+		reached[3][421] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_14_idx);
 		((P3 *)_this)->_7_19_37_34_14_idx = (((int)((P3 *)_this)->_7_19_37_34_14_idx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_14_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 329, 328) */
-		reached[3][329] = 1;
+		/* merge: .(goto)(0, 425, 424) */
+		reached[3][425] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 330: // STATE 331 - data_structures.pml:183 - [((readyQueue[prioLevel].tailIndex>0))] (404:0:3 - 1)
+	case 354: // STATE 427 - data_structures.pml:188 - [((readyQueue[prioLevel].tailIndex>0))] (548:0:3 - 1)
 		IfNotBlocked
-		reached[3][331] = 1;
+		reached[3][427] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex)>0)))
 			continue;
-		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(404, 332, 404) */
-		reached[3][332] = 1;
+		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(548, 428, 548) */
+		reached[3][428] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex)-1), 5) ]);
 		now.readyQueue[ Index(((P3 *)_this)->_7_19_37_34_14_prioLevel, 4) ].tasks[ Index((now.readyQueue[ Index(((P3 *)_this)->_7_19_37_34_14_prioLevel, 4) ].tailIndex-1), 5) ] = 255;
@@ -7239,22 +7733,22 @@
 		logval("readyQueue[Process2:prioLevel].tasks[(readyQueue[Process2:prioLevel].tailIndex-1)]", ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex)-1), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(404, 333, 404) */
-		reached[3][333] = 1;
+		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(548, 429, 548) */
+		reached[3][429] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex);
 		now.readyQueue[ Index(((P3 *)_this)->_7_19_37_34_14_prioLevel, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex)-1);
 #ifdef VAR_RANGES
 		logval("readyQueue[Process2:prioLevel].tailIndex", ((int)now.readyQueue[ Index(((int)((P3 *)_this)->_7_19_37_34_14_prioLevel), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(404, 337, 404) */
-		reached[3][337] = 1;
+		/* merge: .(goto)(548, 433, 548) */
+		reached[3][433] = 1;
 		;
-		/* merge: .(goto)(404, 342, 404) */
-		reached[3][342] = 1;
+		/* merge: .(goto)(548, 438, 548) */
+		reached[3][438] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(404, 343, 404) */
-		reached[3][343] = 1;
+		/* merge: tcb[currentTask].state = 2(548, 439, 548) */
+		reached[3][439] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state);
 		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].state = 2;
 #ifdef VAR_RANGES
@@ -7262,19 +7756,19 @@
 #endif
 		;
 		_m = 3; goto P999; /* 5 */
-	case 331: // STATE 335 - data_structures.pml:186 - [(1)] (404:0:1 - 1)
+	case 355: // STATE 431 - data_structures.pml:191 - [(1)] (548:0:1 - 1)
 		IfNotBlocked
-		reached[3][335] = 1;
+		reached[3][431] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(404, 337, 404) */
-		reached[3][337] = 1;
+		/* merge: .(goto)(548, 433, 548) */
+		reached[3][433] = 1;
 		;
-		/* merge: .(goto)(404, 342, 404) */
-		reached[3][342] = 1;
+		/* merge: .(goto)(548, 438, 548) */
+		reached[3][438] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(404, 343, 404) */
-		reached[3][343] = 1;
+		/* merge: tcb[currentTask].state = 2(548, 439, 548) */
+		reached[3][439] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state);
 		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].state = 2;
 #ifdef VAR_RANGES
@@ -7282,16 +7776,16 @@
 #endif
 		;
 		_m = 3; goto P999; /* 3 */
-	case 332: // STATE 340 - scheduler.pml:90 - [(1)] (404:0:1 - 1)
+	case 356: // STATE 436 - scheduler.pml:90 - [(1)] (548:0:1 - 1)
 		IfNotBlocked
-		reached[3][340] = 1;
+		reached[3][436] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(404, 342, 404) */
-		reached[3][342] = 1;
+		/* merge: .(goto)(548, 438, 548) */
+		reached[3][438] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(404, 343, 404) */
-		reached[3][343] = 1;
+		/* merge: tcb[currentTask].state = 2(548, 439, 548) */
+		reached[3][439] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state);
 		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].state = 2;
 #ifdef VAR_RANGES
@@ -7299,9 +7793,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 333: // STATE 343 - scheduler.pml:92 - [tcb[currentTask].state = 2] (0:404:1 - 5)
+	case 357: // STATE 439 - scheduler.pml:92 - [tcb[currentTask].state = 2] (0:548:1 - 5)
 		IfNotBlocked
-		reached[3][343] = 1;
+		reached[3][439] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].state);
 		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].state = 2;
 #ifdef VAR_RANGES
@@ -7309,9 +7803,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 334: // STATE 344 - data_structures.pml:217 - [insertPos = 0] (0:362:7 - 1)
+	case 358: // STATE 440 - data_structures.pml:227 - [insertPos = 0] (0:546:7 - 1)
 		IfNotBlocked
-		reached[3][344] = 1;
+		reached[3][440] = 1;
 		(trpt+1)->bup.ovals = grab_ints(7);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
 		((P3 *)_this)->_7_19_37_34_15_insertPos = 0;
@@ -7319,322 +7813,278 @@
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
 #endif
 		;
-		/* merge: idx = 0(362, 345, 362) */
-		reached[3][345] = 1;
+		/* merge: idx = 0(546, 441, 546) */
+		reached[3][441] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
 		((P3 *)_this)->_7_19_37_34_15_idx = 0;
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #endif
 		;
-		/* merge: found = 0(362, 346, 362) */
-		reached[3][346] = 1;
+		/* merge: found = 0(546, 442, 546) */
+		reached[3][442] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_19_37_34_15_found);
 		((P3 *)_this)->_7_19_37_34_15_found = 0;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_15_found));
 #endif
 		;
-		/* merge: tmpId = 0(362, 347, 362) */
-		reached[3][347] = 1;
+		/* merge: tmpId = 0(546, 443, 546) */
+		reached[3][443] = 1;
 		(trpt+1)->bup.ovals[3] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
 		((P3 *)_this)->_7_19_37_34_15_tmpId = 0;
 #ifdef VAR_RANGES
 		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_19_37_34_15_tmpId));
 #endif
 		;
-		/* merge: tmpTime = 0(362, 348, 362) */
-		reached[3][348] = 1;
+		/* merge: tmpTime = 0(546, 444, 546) */
+		reached[3][444] = 1;
 		(trpt+1)->bup.ovals[4] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
 		((P3 *)_this)->_7_19_37_34_15_tmpTime = 0;
 #ifdef VAR_RANGES
 		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime));
 #endif
 		;
-		/* merge: assert((g_taskSortLinkTail<(2+1)))(362, 349, 362) */
-		reached[3][349] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
-		/* merge: assert((g_taskSortLinkTail>=0))(362, 350, 362) */
-		reached[3][350] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)>=0), "(g_taskSortLinkTail>=0)", II, tt, t);
-		/* merge: insertPos = 0(362, 351, 362) */
-		reached[3][351] = 1;
-		(trpt+1)->bup.ovals[5] = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
+		/* merge: willOverflow = 0(546, 445, 546) */
+		reached[3][445] = 1;
+		(trpt+1)->bup.ovals[5] = ((int)((P3 *)_this)->_7_19_37_34_15_willOverflow);
+		((P3 *)_this)->_7_19_37_34_15_willOverflow = 0;
+#ifdef VAR_RANGES
+		logval("Process2:willOverflow", ((int)((P3 *)_this)->_7_19_37_34_15_willOverflow));
+#endif
+		;
+		/* merge: willOverflow = ((g_tickCount+0)<g_tickCount)(546, 446, 546) */
+		reached[3][446] = 1;
+		(trpt+1)->bup.ovals[6] = ((int)((P3 *)_this)->_7_19_37_34_15_willOverflow);
+		((P3 *)_this)->_7_19_37_34_15_willOverflow = ((((int)now.g_tickCount)+0)<((int)now.g_tickCount));
+#ifdef VAR_RANGES
+		logval("Process2:willOverflow", ((int)((P3 *)_this)->_7_19_37_34_15_willOverflow));
+#endif
+		;
+		_m = 3; goto P999; /* 6 */
+	case 359: // STATE 447 - data_structures.pml:237 - [(willOverflow)] (460:0:3 - 1)
+		IfNotBlocked
+		reached[3][447] = 1;
+		if (!(((int)((P3 *)_this)->_7_19_37_34_15_willOverflow)))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _7_19_37_34_15_willOverflow */  (trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_19_37_34_15_willOverflow;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P3 *)_this)->_7_19_37_34_15_willOverflow = 0;
+		/* merge: assert((overflowedSortLinkTail<(2+1)))(460, 448, 460) */
+		reached[3][448] = 1;
+		spin_assert((((int)now.overflowedSortLinkTail)<(2+1)), "(overflowedSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(460, 449, 460) */
+		reached[3][449] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
 		((P3 *)_this)->_7_19_37_34_15_insertPos = 0;
 #ifdef VAR_RANGES
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
 #endif
 		;
-		/* merge: found = 0(362, 352, 362) */
-		reached[3][352] = 1;
-		(trpt+1)->bup.ovals[6] = ((int)((P3 *)_this)->_7_19_37_34_15_found);
+		/* merge: found = 0(460, 450, 460) */
+		reached[3][450] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P3 *)_this)->_7_19_37_34_15_found);
 		((P3 *)_this)->_7_19_37_34_15_found = 0;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_15_found));
 #endif
 		;
-		/* merge: .(goto)(0, 363, 362) */
-		reached[3][363] = 1;
+		/* merge: .(goto)(0, 461, 460) */
+		reached[3][461] = 1;
 		;
-		_m = 3; goto P999; /* 9 */
-	case 335: // STATE 353 - data_structures.pml:229 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 4 */
+	case 360: // STATE 451 - data_structures.pml:245 - [(((insertPos<overflowedSortLinkTail)&&(found==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][353] = 1;
-		if (!(((((int)((P3 *)_this)->_7_19_37_34_15_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P3 *)_this)->_7_19_37_34_15_found)==0))))
+		reached[3][451] = 1;
+		if (!(((((int)((P3 *)_this)->_7_19_37_34_15_insertPos)<((int)now.overflowedSortLinkTail))&&(((int)((P3 *)_this)->_7_19_37_34_15_found)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 336: // STATE 354 - data_structures.pml:231 - [(((g_tickCount+0)<g_taskSortLink[insertPos].responseTime))] (362:0:1 - 1)
+	case 361: // STATE 452 - data_structures.pml:247 - [(((g_tickCount+0)<overflowedSortLink[insertPos].responseTime))] (460:0:1 - 1)
 		IfNotBlocked
-		reached[3][354] = 1;
-		if (!(((((int)now.g_tickCount)+0)<((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime))))
+		reached[3][452] = 1;
+		if (!(((((int)now.g_tickCount)+0)<((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime))))
 			continue;
-		/* merge: found = 1(0, 355, 362) */
-		reached[3][355] = 1;
+		/* merge: found = 1(0, 453, 460) */
+		reached[3][453] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_found);
 		((P3 *)_this)->_7_19_37_34_15_found = 1;
 #ifdef VAR_RANGES
 		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_15_found));
 #endif
 		;
-		/* merge: .(goto)(0, 359, 362) */
-		reached[3][359] = 1;
+		/* merge: .(goto)(0, 457, 460) */
+		reached[3][457] = 1;
 		;
-		/* merge: .(goto)(0, 363, 362) */
-		reached[3][363] = 1;
+		/* merge: .(goto)(0, 461, 460) */
+		reached[3][461] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 337: // STATE 356 - data_structures.pml:233 - [(((g_tickCount+0)>=g_taskSortLink[insertPos].responseTime))] (362:0:1 - 1)
+	case 362: // STATE 455 - data_structures.pml:250 - [insertPos = (insertPos+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][356] = 1;
-		if (!(((((int)now.g_tickCount)+0)>=((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime))))
-			continue;
-		/* merge: insertPos = (insertPos+1)(0, 357, 362) */
-		reached[3][357] = 1;
+		reached[3][455] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
 		((P3 *)_this)->_7_19_37_34_15_insertPos = (((int)((P3 *)_this)->_7_19_37_34_15_insertPos)+1);
 #ifdef VAR_RANGES
 		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
 #endif
 		;
-		/* merge: .(goto)(0, 359, 362) */
-		reached[3][359] = 1;
-		;
-		/* merge: .(goto)(0, 363, 362) */
-		reached[3][363] = 1;
-		;
-		_m = 3; goto P999; /* 3 */
-	case 338: // STATE 365 - data_structures.pml:240 - [idx = g_taskSortLinkTail] (0:380:1 - 3)
+		_m = 3; goto P999; /* 0 */
+	case 363: // STATE 463 - data_structures.pml:256 - [idx = overflowedSortLinkTail] (0:478:1 - 3)
 		IfNotBlocked
-		reached[3][365] = 1;
+		reached[3][463] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
-		((P3 *)_this)->_7_19_37_34_15_idx = ((int)now.g_taskSortLinkTail);
+		((P3 *)_this)->_7_19_37_34_15_idx = ((int)now.overflowedSortLinkTail);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 381, 380) */
-		reached[3][381] = 1;
+		/* merge: .(goto)(0, 479, 478) */
+		reached[3][479] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 339: // STATE 366 - data_structures.pml:242 - [((idx>insertPos))] (375:0:4 - 1)
+	case 364: // STATE 464 - data_structures.pml:258 - [((idx>insertPos))] (473:0:4 - 1)
 		IfNotBlocked
-		reached[3][366] = 1;
+		reached[3][464] = 1;
 		if (!((((int)((P3 *)_this)->_7_19_37_34_15_idx)>((int)((P3 *)_this)->_7_19_37_34_15_insertPos))))
 			continue;
-		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(375, 367, 375) */
-		reached[3][367] = 1;
+		/* merge: tmpId = overflowedSortLink[(idx-1)].taskId(473, 465, 473) */
+		reached[3][465] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
-		((P3 *)_this)->_7_19_37_34_15_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].taskId);
+		((P3 *)_this)->_7_19_37_34_15_tmpId = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].taskId);
 #ifdef VAR_RANGES
 		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_19_37_34_15_tmpId));
 #endif
 		;
-		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(375, 368, 375) */
-		reached[3][368] = 1;
+		/* merge: tmpTime = overflowedSortLink[(idx-1)].responseTime(473, 466, 473) */
+		reached[3][466] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
-		((P3 *)_this)->_7_19_37_34_15_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].responseTime);
+		((P3 *)_this)->_7_19_37_34_15_tmpTime = ((int)now.overflowedSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].responseTime);
 #ifdef VAR_RANGES
 		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].taskId = tmpId(375, 369, 375) */
-		reached[3][369] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
+		/* merge: overflowedSortLink[idx].taskId = tmpId(473, 467, 473) */
+		reached[3][467] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId));
+		logval("overflowedSortLink[Process2:idx].taskId", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].responseTime = tmpTime(375, 370, 375) */
-		reached[3][370] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
+		/* merge: overflowedSortLink[idx].responseTime = tmpTime(473, 468, 473) */
+		reached[3][468] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime));
+		logval("overflowedSortLink[Process2:idx].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime));
 #endif
 		;
 		_m = 3; goto P999; /* 4 */
-	case 340: // STATE 371 - data_structures.pml:250 - [((tmpId!=255))] (380:0:2 - 1)
+	case 365: // STATE 469 - data_structures.pml:264 - [((tmpId!=255))] (478:0:2 - 1)
 		IfNotBlocked
-		reached[3][371] = 1;
+		reached[3][469] = 1;
 		if (!((((int)((P3 *)_this)->_7_19_37_34_15_tmpId)!=255)))
 			continue;
-		/* merge: tcb[tmpId].pendList = idx(380, 372, 380) */
-		reached[3][372] = 1;
+		/* merge: tcb[tmpId].pendList = (128+idx)(478, 470, 478) */
+		reached[3][470] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_34_15_tmpId), 4) ].pendList);
-		now.tcb[ Index(((P3 *)_this)->_7_19_37_34_15_tmpId, 4) ].pendList = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+		now.tcb[ Index(((P3 *)_this)->_7_19_37_34_15_tmpId, 4) ].pendList = (128+((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #ifdef VAR_RANGES
 		logval("tcb[Process2:tmpId].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_34_15_tmpId), 4) ].pendList));
 #endif
 		;
-		/* merge: .(goto)(380, 376, 380) */
-		reached[3][376] = 1;
+		/* merge: .(goto)(478, 474, 478) */
+		reached[3][474] = 1;
 		;
-		/* merge: idx = (idx-1)(380, 377, 380) */
-		reached[3][377] = 1;
+		/* merge: idx = (idx-1)(478, 475, 478) */
+		reached[3][475] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
 		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 381, 380) */
-		reached[3][381] = 1;
+		/* merge: .(goto)(0, 479, 478) */
+		reached[3][479] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 341: // STATE 373 - data_structures.pml:251 - [((tmpId==255))] (0:0:1 - 1)
+	case 366: // STATE 472 - data_structures.pml:266 - [(1)] (478:0:1 - 1)
 		IfNotBlocked
-		reached[3][373] = 1;
-		if (!((((int)((P3 *)_this)->_7_19_37_34_15_tmpId)==255)))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _7_19_37_34_15_tmpId */  (trpt+1)->bup.oval = ((P3 *)_this)->_7_19_37_34_15_tmpId;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P3 *)_this)->_7_19_37_34_15_tmpId = 0;
-		_m = 3; goto P999; /* 0 */
-	case 342: // STATE 374 - data_structures.pml:251 - [(1)] (380:0:1 - 1)
-		IfNotBlocked
-		reached[3][374] = 1;
+		reached[3][472] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(380, 376, 380) */
-		reached[3][376] = 1;
+		/* merge: .(goto)(478, 474, 478) */
+		reached[3][474] = 1;
 		;
-		/* merge: idx = (idx-1)(380, 377, 380) */
-		reached[3][377] = 1;
+		/* merge: idx = (idx-1)(478, 475, 478) */
+		reached[3][475] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
 		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 381, 380) */
-		reached[3][381] = 1;
+		/* merge: .(goto)(0, 479, 478) */
+		reached[3][479] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 343: // STATE 377 - data_structures.pml:253 - [idx = (idx-1)] (0:380:1 - 3)
+	case 367: // STATE 475 - data_structures.pml:268 - [idx = (idx-1)] (0:478:1 - 3)
 		IfNotBlocked
-		reached[3][377] = 1;
+		reached[3][475] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
 		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 381, 380) */
-		reached[3][381] = 1;
+		/* merge: .(goto)(0, 479, 478) */
+		reached[3][479] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 344: // STATE 378 - data_structures.pml:254 - [((idx<=insertPos))] (391:0:5 - 1)
+	case 368: // STATE 481 - data_structures.pml:273 - [overflowedSortLink[insertPos].taskId = currentTask] (0:489:4 - 3)
 		IfNotBlocked
-		reached[3][378] = 1;
-		if (!((((int)((P3 *)_this)->_7_19_37_34_15_idx)<=((int)((P3 *)_this)->_7_19_37_34_15_insertPos))))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _7_19_37_34_15_idx */  (trpt+1)->bup.ovals = grab_ints(5);
-		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_19_37_34_15_idx;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P3 *)_this)->_7_19_37_34_15_idx = 0;
-		/* merge: goto :b24(391, 379, 391) */
-		reached[3][379] = 1;
-		;
-		/* merge: g_taskSortLink[insertPos].taskId = currentTask(391, 383, 391) */
-		reached[3][383] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_currentTask);
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId));
-#endif
-		;
-		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+0)(391, 384, 391) */
-		reached[3][384] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+0);
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime));
-#endif
-		;
-		/* merge: tcb[currentTask].pendList = insertPos(391, 385, 391) */
-		reached[3][385] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList);
-		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].pendList = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
-#ifdef VAR_RANGES
-		logval("tcb[Process2:currentTask].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList));
-#endif
-		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(391, 386, 391) */
-		reached[3][386] = 1;
-		(trpt+1)->bup.ovals[4] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
-#ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
-#endif
-		;
-		_m = 3; goto P999; /* 5 */
-	case 345: // STATE 383 - data_structures.pml:258 - [g_taskSortLink[insertPos].taskId = currentTask] (0:391:4 - 3)
-		IfNotBlocked
-		reached[3][383] = 1;
+		reached[3][481] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
-		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_currentTask);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_currentTask);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId));
+		logval("overflowedSortLink[Process2:insertPos].taskId", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+0)(391, 384, 391) */
-		reached[3][384] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+0);
+		/* merge: overflowedSortLink[insertPos].responseTime = (g_tickCount+0)(489, 482, 489) */
+		reached[3][482] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+0);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime));
+		logval("overflowedSortLink[Process2:insertPos].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime));
 #endif
 		;
-		/* merge: tcb[currentTask].pendList = insertPos(391, 385, 391) */
-		reached[3][385] = 1;
+		/* merge: tcb[currentTask].pendList = (128+insertPos)(489, 483, 489) */
+		reached[3][483] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList);
-		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].pendList = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
+		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].pendList = (128+((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
 #ifdef VAR_RANGES
 		logval("tcb[Process2:currentTask].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(391, 386, 391) */
-		reached[3][386] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+		/* merge: overflowedSortLinkTail = (overflowedSortLinkTail+1)(489, 484, 489) */
+		reached[3][484] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = (((int)now.overflowedSortLinkTail)+1);
 #ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
 #endif
 		;
 		_m = 3; goto P999; /* 3 */
-	case 346: // STATE 387 - data_structures.pml:265 - [(((insertPos==0)&&((g_tickCount+0)<255)))] (403:0:2 - 1)
+	case 369: // STATE 485 - data_structures.pml:280 - [(((insertPos==0)&&((g_tickCount+0)<255)))] (559:0:2 - 1)
 		IfNotBlocked
-		reached[3][387] = 1;
+		reached[3][485] = 1;
 		if (!(((((int)((P3 *)_this)->_7_19_37_34_15_insertPos)==0)&&((((int)now.g_tickCount)+0)<255))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -7644,21 +8094,258 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_19_37_34_15_insertPos = 0;
-		/* merge: g_schedResponseTime = (g_tickCount+0)(0, 388, 403) */
-		reached[3][388] = 1;
+		/* merge: g_overflowedResponseTime = (g_tickCount+0)(0, 486, 559) */
+		reached[3][486] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = (((int)now.g_tickCount)+0);
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(0, 490, 559) */
+		reached[3][490] = 1;
+		;
+		/* merge: .(goto)(0, 547, 559) */
+		reached[3][547] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 370: // STATE 492 - data_structures.pml:287 - [assert((g_taskSortLinkTail<(2+1)))] (0:504:2 - 1)
+		IfNotBlocked
+		reached[3][492] = 1;
+		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(504, 493, 504) */
+		reached[3][493] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
+		((P3 *)_this)->_7_19_37_34_15_insertPos = 0;
+#ifdef VAR_RANGES
+		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
+#endif
+		;
+		/* merge: found = 0(504, 494, 504) */
+		reached[3][494] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_found);
+		((P3 *)_this)->_7_19_37_34_15_found = 0;
+#ifdef VAR_RANGES
+		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_15_found));
+#endif
+		;
+		/* merge: .(goto)(0, 505, 504) */
+		reached[3][505] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 371: // STATE 495 - data_structures.pml:293 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		IfNotBlocked
+		reached[3][495] = 1;
+		if (!(((((int)((P3 *)_this)->_7_19_37_34_15_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P3 *)_this)->_7_19_37_34_15_found)==0))))
+			continue;
+		_m = 3; goto P999; /* 0 */
+	case 372: // STATE 496 - data_structures.pml:295 - [(((g_tickCount+0)<g_taskSortLink[insertPos].responseTime))] (504:0:1 - 1)
+		IfNotBlocked
+		reached[3][496] = 1;
+		if (!(((((int)now.g_tickCount)+0)<((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime))))
+			continue;
+		/* merge: found = 1(0, 497, 504) */
+		reached[3][497] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_found);
+		((P3 *)_this)->_7_19_37_34_15_found = 1;
+#ifdef VAR_RANGES
+		logval("Process2:found", ((int)((P3 *)_this)->_7_19_37_34_15_found));
+#endif
+		;
+		/* merge: .(goto)(0, 501, 504) */
+		reached[3][501] = 1;
+		;
+		/* merge: .(goto)(0, 505, 504) */
+		reached[3][505] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 373: // STATE 499 - data_structures.pml:298 - [insertPos = (insertPos+1)] (0:0:1 - 1)
+		IfNotBlocked
+		reached[3][499] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
+		((P3 *)_this)->_7_19_37_34_15_insertPos = (((int)((P3 *)_this)->_7_19_37_34_15_insertPos)+1);
+#ifdef VAR_RANGES
+		logval("Process2:insertPos", ((int)((P3 *)_this)->_7_19_37_34_15_insertPos));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 374: // STATE 507 - data_structures.pml:304 - [idx = g_taskSortLinkTail] (0:522:1 - 3)
+		IfNotBlocked
+		reached[3][507] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+		((P3 *)_this)->_7_19_37_34_15_idx = ((int)now.g_taskSortLinkTail);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 523, 522) */
+		reached[3][523] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 375: // STATE 508 - data_structures.pml:306 - [((idx>insertPos))] (517:0:4 - 1)
+		IfNotBlocked
+		reached[3][508] = 1;
+		if (!((((int)((P3 *)_this)->_7_19_37_34_15_idx)>((int)((P3 *)_this)->_7_19_37_34_15_insertPos))))
+			continue;
+		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(517, 509, 517) */
+		reached[3][509] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
+		((P3 *)_this)->_7_19_37_34_15_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].taskId);
+#ifdef VAR_RANGES
+		logval("Process2:tmpId", ((int)((P3 *)_this)->_7_19_37_34_15_tmpId));
+#endif
+		;
+		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(517, 510, 517) */
+		reached[3][510] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
+		((P3 *)_this)->_7_19_37_34_15_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_idx)-1), 3) ].responseTime);
+#ifdef VAR_RANGES
+		logval("Process2:tmpTime", ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].taskId = tmpId(517, 511, 517) */
+		reached[3][511] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_34_15_tmpId);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].responseTime = tmpTime(517, 512, 517) */
+		reached[3][512] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_idx, 3) ].responseTime = ((int)((P3 *)_this)->_7_19_37_34_15_tmpTime);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_idx), 3) ].responseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 4 */
+	case 376: // STATE 513 - data_structures.pml:312 - [((tmpId!=255))] (522:0:2 - 1)
+		IfNotBlocked
+		reached[3][513] = 1;
+		if (!((((int)((P3 *)_this)->_7_19_37_34_15_tmpId)!=255)))
+			continue;
+		/* merge: tcb[tmpId].pendList = idx(522, 514, 522) */
+		reached[3][514] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_34_15_tmpId), 4) ].pendList);
+		now.tcb[ Index(((P3 *)_this)->_7_19_37_34_15_tmpId, 4) ].pendList = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+#ifdef VAR_RANGES
+		logval("tcb[Process2:tmpId].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_34_15_tmpId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(522, 518, 522) */
+		reached[3][518] = 1;
+		;
+		/* merge: idx = (idx-1)(522, 519, 522) */
+		reached[3][519] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 523, 522) */
+		reached[3][523] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 377: // STATE 516 - data_structures.pml:313 - [(1)] (522:0:1 - 1)
+		IfNotBlocked
+		reached[3][516] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(522, 518, 522) */
+		reached[3][518] = 1;
+		;
+		/* merge: idx = (idx-1)(522, 519, 522) */
+		reached[3][519] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 523, 522) */
+		reached[3][523] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 378: // STATE 519 - data_structures.pml:315 - [idx = (idx-1)] (0:522:1 - 3)
+		IfNotBlocked
+		reached[3][519] = 1;
+		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_idx);
+		((P3 *)_this)->_7_19_37_34_15_idx = (((int)((P3 *)_this)->_7_19_37_34_15_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process2:idx", ((int)((P3 *)_this)->_7_19_37_34_15_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 523, 522) */
+		reached[3][523] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 379: // STATE 525 - data_structures.pml:320 - [g_taskSortLink[insertPos].taskId = currentTask] (0:533:4 - 3)
+		IfNotBlocked
+		reached[3][525] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].taskId = ((int)((P3 *)_this)->_7_19_37_currentTask);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+0)(533, 526, 533) */
+		reached[3][526] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P3 *)_this)->_7_19_37_34_15_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+0);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process2:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_insertPos), 3) ].responseTime));
+#endif
+		;
+		/* merge: tcb[currentTask].pendList = insertPos(533, 527, 533) */
+		reached[3][527] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList);
+		now.tcb[ Index(((P3 *)_this)->_7_19_37_currentTask, 4) ].pendList = ((int)((P3 *)_this)->_7_19_37_34_15_insertPos);
+#ifdef VAR_RANGES
+		logval("tcb[Process2:currentTask].pendList", ((int)now.tcb[ Index(((int)((P3 *)_this)->_7_19_37_currentTask), 4) ].pendList));
+#endif
+		;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(533, 528, 533) */
+		reached[3][528] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
+		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+#ifdef VAR_RANGES
+		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+#endif
+		;
+		_m = 3; goto P999; /* 3 */
+	case 380: // STATE 529 - data_structures.pml:327 - [(((insertPos==0)&&((g_tickCount+0)<255)))] (545:0:2 - 1)
+		IfNotBlocked
+		reached[3][529] = 1;
+		if (!(((((int)((P3 *)_this)->_7_19_37_34_15_insertPos)==0)&&((((int)now.g_tickCount)+0)<255))))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _7_19_37_34_15_insertPos */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P3 *)_this)->_7_19_37_34_15_insertPos;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P3 *)_this)->_7_19_37_34_15_insertPos = 0;
+		/* merge: g_schedResponseTime = (g_tickCount+0)(0, 530, 545) */
+		reached[3][530] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = (((int)now.g_tickCount)+0);
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 392, 403) */
-		reached[3][392] = 1;
+		/* merge: .(goto)(0, 534, 545) */
+		reached[3][534] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 347: // STATE 393 - data_structures.pml:335 - [checkIdx = 0] (0:400:3 - 1)
+	case 381: // STATE 535 - data_structures.pml:440 - [checkIdx = 0] (0:542:3 - 1)
 		IfNotBlocked
-		reached[3][393] = 1;
+		reached[3][535] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx);
 		((P3 *)_this)->_7_19_37_34_15_6_checkIdx = 0;
@@ -7666,8 +8353,8 @@
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx));
 #endif
 		;
-		/* merge: isValid = 1(400, 394, 400) */
-		reached[3][394] = 1;
+		/* merge: isValid = 1(542, 536, 542) */
+		reached[3][536] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P3 *)_this)->_7_19_37_34_15_6_isValid);
 		((P3 *)_this)->_7_19_37_34_15_6_isValid = 1;
 #ifdef VAR_RANGES
@@ -7680,33 +8367,33 @@
 		if (!readtrail)
 #endif
 			((P3 *)_this)->_7_19_37_34_15_6_isValid = 0;
-		/* merge: .(goto)(0, 401, 400) */
-		reached[3][401] = 1;
+		/* merge: .(goto)(0, 543, 542) */
+		reached[3][543] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 348: // STATE 395 - data_structures.pml:339 - [((checkIdx<(g_taskSortLinkTail-1)))] (400:0:1 - 1)
+	case 382: // STATE 537 - data_structures.pml:444 - [((checkIdx<(g_taskSortLinkTail-1)))] (542:0:1 - 1)
 		IfNotBlocked
-		reached[3][395] = 1;
+		reached[3][537] = 1;
 		if (!((((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(400, 396, 400) */
-		reached[3][396] = 1;
+		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(542, 538, 542) */
+		reached[3][538] = 1;
 		spin_assert((((int)now.g_taskSortLink[ Index(((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx), 3) ].responseTime)<=((int)now.g_taskSortLink[ Index((((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx)+1), 3) ].responseTime)), "(g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime)", II, tt, t);
-		/* merge: checkIdx = (checkIdx+1)(400, 397, 400) */
-		reached[3][397] = 1;
+		/* merge: checkIdx = (checkIdx+1)(542, 539, 542) */
+		reached[3][539] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx);
 		((P3 *)_this)->_7_19_37_34_15_6_checkIdx = (((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx)+1);
 #ifdef VAR_RANGES
 		logval("Process2:checkIdx", ((int)((P3 *)_this)->_7_19_37_34_15_6_checkIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 401, 400) */
-		reached[3][401] = 1;
+		/* merge: .(goto)(0, 543, 542) */
+		reached[3][543] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 349: // STATE 406 - scheduler.pml:113 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 383: // STATE 550 - scheduler.pml:113 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][406] = 1;
+		reached[3][550] = 1;
 		if (!((((int)((P3 *)_this)->_7_19_37_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -7716,9 +8403,9 @@
 #endif
 			((P3 *)_this)->_7_19_37_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 350: // STATE 407 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
+	case 384: // STATE 551 - data_structures.pml:112 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[3][407] = 1;
+		reached[3][551] = 1;
 		(trpt+1)->bup.oval = ((int)((P3 *)_this)->_7_19_37_intSave);
 		((P3 *)_this)->_7_19_37_intSave = 0;
 #ifdef VAR_RANGES
@@ -7726,70 +8413,70 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 351: // STATE 409 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:427:1 - 1)
+	case 385: // STATE 553 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:571:1 - 1)
 		IfNotBlocked
-		reached[3][409] = 1;
+		reached[3][553] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(427, 410, 427) */
-		reached[3][410] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(571, 554, 571) */
+		reached[3][554] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 416, 427) */
-		reached[3][416] = 1;
+		/* merge: .(goto)(0, 560, 571) */
+		reached[3][560] = 1;
 		;
-		/* merge: .(goto)(0, 420, 427) */
-		reached[3][420] = 1;
+		/* merge: .(goto)(0, 564, 571) */
+		reached[3][564] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 352: // STATE 423 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:442:1 - 1)
+	case 386: // STATE 567 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:586:1 - 1)
 		IfNotBlocked
-		reached[3][423] = 1;
+		reached[3][567] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(442, 424, 442) */
-		reached[3][424] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(586, 568, 586) */
+		reached[3][568] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 428, 442) */
-		reached[3][428] = 1;
+		/* merge: .(goto)(0, 572, 586) */
+		reached[3][572] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 353: // STATE 429 - processes.pml:20 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 387: // STATE 573 - processes.pml:20 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][429] = 1;
+		reached[3][573] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 354: // STATE 430 - processes.pml:20 - [((EP>=2))] (438:0:1 - 1)
+	case 388: // STATE 574 - processes.pml:20 - [((EP>=2))] (582:0:1 - 1)
 		IfNotBlocked
-		reached[3][430] = 1;
+		reached[3][574] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 431, 438) */
-		reached[3][431] = 1;
+		/* merge: chain_tick_used = 0(0, 575, 582) */
+		reached[3][575] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 435, 438) */
-		reached[3][435] = 1;
+		/* merge: .(goto)(0, 579, 582) */
+		reached[3][579] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 355: // STATE 436 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:445:2 - 1)
+	case 389: // STATE 580 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:589:2 - 1)
 		IfNotBlocked
-		reached[3][436] = 1;
+		reached[3][580] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(445, 437, 445) */
-		reached[3][437] = 1;
+		/* merge: EP_Stack = EP(589, 581, 589) */
+		reached[3][581] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -7797,49 +8484,49 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(445, 439, 445) */
-		reached[3][439] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(589, 583, 589) */
+		reached[3][583] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(445, 443, 445) */
-		reached[3][443] = 1;
+		/* merge: .(goto)(589, 587, 589) */
+		reached[3][587] = 1;
 		;
-		/* merge: .(goto)(0, 446, 445) */
-		reached[3][446] = 1;
+		/* merge: .(goto)(0, 590, 589) */
+		reached[3][590] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 356: // STATE 443 - processes.pml:20 - [.(goto)] (0:445:0 - 2)
+	case 390: // STATE 587 - processes.pml:20 - [.(goto)] (0:589:0 - 2)
 		IfNotBlocked
-		reached[3][443] = 1;
+		reached[3][587] = 1;
 		;
-		/* merge: .(goto)(0, 446, 445) */
-		reached[3][446] = 1;
+		/* merge: .(goto)(0, 590, 589) */
+		reached[3][590] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 357: // STATE 441 - processes.pml:20 - [(1)] (445:0:0 - 1)
+	case 391: // STATE 585 - processes.pml:20 - [(1)] (589:0:0 - 1)
 		IfNotBlocked
-		reached[3][441] = 1;
+		reached[3][585] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(445, 443, 445) */
-		reached[3][443] = 1;
+		/* merge: .(goto)(589, 587, 589) */
+		reached[3][587] = 1;
 		;
-		/* merge: .(goto)(0, 446, 445) */
-		reached[3][446] = 1;
+		/* merge: .(goto)(0, 590, 589) */
+		reached[3][590] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 358: // STATE 448 - processes.pml:22 - [-end-] (0:0:0 - 1)
+	case 392: // STATE 592 - processes.pml:22 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
-		reached[3][448] = 1;
+		reached[3][592] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC Process1 */
-	case 359: // STATE 1 - processes.pml:7 - [((2==EP))] (8:0:0 - 1)
+	case 393: // STATE 1 - processes.pml:7 - [((2==EP))] (8:0:0 - 1)
 		IfNotBlocked
 		reached[2][1] = 1;
 		if (!((2==((int)now.EP))))
@@ -7848,7 +8535,7 @@
 		reached[2][2] = 1;
 		Printf("Process1 running\\n");
 		_m = 3; goto P999; /* 1 */
-	case 360: // STATE 4 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:23:1 - 1)
+	case 394: // STATE 4 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:23:1 - 1)
 		IfNotBlocked
 		reached[2][4] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -7864,13 +8551,13 @@
 		reached[2][9] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 361: // STATE 10 - processes.pml:7 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 395: // STATE 10 - processes.pml:7 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][10] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 362: // STATE 11 - processes.pml:7 - [((EP>=2))] (19:0:1 - 1)
+	case 396: // STATE 11 - processes.pml:7 - [((EP>=2))] (19:0:1 - 1)
 		IfNotBlocked
 		reached[2][11] = 1;
 		if (!((((int)now.EP)>=2)))
@@ -7887,7 +8574,7 @@
 		reached[2][16] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 363: // STATE 17 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:50:2 - 1)
+	case 397: // STATE 17 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:50:2 - 1)
 		IfNotBlocked
 		reached[2][17] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
@@ -7912,12 +8599,12 @@
 		reached[2][24] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 364: // STATE 24 - processes.pml:7 - [.(goto)] (0:50:0 - 2)
+	case 398: // STATE 24 - processes.pml:7 - [.(goto)] (0:50:0 - 2)
 		IfNotBlocked
 		reached[2][24] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 365: // STATE 22 - processes.pml:7 - [(1)] (50:0:0 - 1)
+	case 399: // STATE 22 - processes.pml:7 - [(1)] (50:0:0 - 1)
 		IfNotBlocked
 		reached[2][22] = 1;
 		if (!(1))
@@ -7926,7 +8613,7 @@
 		reached[2][24] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 366: // STATE 26 - processes.pml:8 - [((2==EP))] (33:0:0 - 1)
+	case 400: // STATE 26 - processes.pml:8 - [((2==EP))] (33:0:0 - 1)
 		IfNotBlocked
 		reached[2][26] = 1;
 		if (!((2==((int)now.EP))))
@@ -7935,7 +8622,7 @@
 		reached[2][27] = 1;
 		spin_assert((((int)now.EP)==2), "(EP==2)", II, tt, t);
 		_m = 3; goto P999; /* 1 */
-	case 367: // STATE 29 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:48:1 - 1)
+	case 401: // STATE 29 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:48:1 - 1)
 		IfNotBlocked
 		reached[2][29] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -7951,13 +8638,13 @@
 		reached[2][34] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 368: // STATE 35 - processes.pml:8 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 402: // STATE 35 - processes.pml:8 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][35] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 369: // STATE 36 - processes.pml:8 - [((EP>=2))] (44:0:1 - 1)
+	case 403: // STATE 36 - processes.pml:8 - [((EP>=2))] (44:0:1 - 1)
 		IfNotBlocked
 		reached[2][36] = 1;
 		if (!((((int)now.EP)>=2)))
@@ -7974,11 +8661,11 @@
 		reached[2][41] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 370: // STATE 42 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:204:2 - 1)
+	case 404: // STATE 42 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:252:2 - 1)
 		IfNotBlocked
 		reached[2][42] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(204, 43, 204) */
+		/* merge: EP_Stack = EP(252, 43, 252) */
 		reached[2][43] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
@@ -7987,7 +8674,7 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(204, 45, 204) */
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(252, 45, 252) */
 		reached[2][45] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -7995,31 +8682,31 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(204, 49, 204) */
+		/* merge: .(goto)(252, 49, 252) */
 		reached[2][49] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 371: // STATE 49 - processes.pml:8 - [.(goto)] (0:204:0 - 2)
+	case 405: // STATE 49 - processes.pml:8 - [.(goto)] (0:252:0 - 2)
 		IfNotBlocked
 		reached[2][49] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 372: // STATE 47 - processes.pml:8 - [(1)] (204:0:0 - 1)
+	case 406: // STATE 47 - processes.pml:8 - [(1)] (252:0:0 - 1)
 		IfNotBlocked
 		reached[2][47] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(204, 49, 204) */
+		/* merge: .(goto)(252, 49, 252) */
 		reached[2][49] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 373: // STATE 51 - processes.pml:9 - [((2==EP))] (0:0:0 - 1)
+	case 407: // STATE 51 - processes.pml:9 - [((2==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][51] = 1;
 		if (!((2==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 374: // STATE 52 - scheduler.pml:100 - [intSave = 0] (0:56:3 - 1)
+	case 408: // STATE 52 - scheduler.pml:100 - [intSave = 0] (0:56:3 - 1)
 		IfNotBlocked
 		reached[2][52] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
@@ -8046,7 +8733,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 375: // STATE 55 - data_structures.pml:102 - [intSave = 0] (0:0:1 - 1)
+	case 409: // STATE 55 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][55] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_intSave);
@@ -8056,17 +8743,17 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 376: // STATE 57 - scheduler.pml:106 - [((5==0))] (0:0:0 - 1)
+	case 410: // STATE 57 - scheduler.pml:106 - [((5==0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][57] = 1;
 		if (!((5==0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 377: // STATE 58 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:187:1 - 1)
+	case 411: // STATE 58 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:235:1 - 1)
 		IfNotBlocked
 		reached[2][58] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(187, 59, 187) */
+		/* merge: pending_exp = (pending_exp|(1<<0))(235, 59, 235) */
 		reached[2][59] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
@@ -8074,17 +8761,17 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 180, 187) */
-		reached[2][180] = 1;
+		/* merge: .(goto)(0, 228, 235) */
+		reached[2][228] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 378: // STATE 63 - scheduler.pml:109 - [((5>0))] (0:0:0 - 1)
+	case 412: // STATE 63 - scheduler.pml:109 - [((5>0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][63] = 1;
 		if (!((5>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 379: // STATE 64 - scheduler.pml:85 - [assert(((tcb[currentTask].state==1)||(tcb[currentTask].state==4)))] (0:101:1 - 1)
+	case 413: // STATE 64 - scheduler.pml:85 - [assert(((tcb[currentTask].state==1)||(tcb[currentTask].state==4)))] (0:101:1 - 1)
 		IfNotBlocked
 		reached[2][64] = 1;
 		spin_assert(((((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state)==1)||(((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state)==4)), "((tcb[currentTask].state==1)||(tcb[currentTask].state==4))", II, tt, t);
@@ -8097,13 +8784,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 380: // STATE 66 - scheduler.pml:88 - [((tcb[currentTask].state==1))] (0:0:0 - 1)
+	case 414: // STATE 66 - scheduler.pml:88 - [((tcb[currentTask].state==1))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][66] = 1;
 		if (!((((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state)==1)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 381: // STATE 67 - data_structures.pml:164 - [idx = 0] (0:79:3 - 1)
+	case 415: // STATE 67 - data_structures.pml:169 - [idx = 0] (0:79:3 - 1)
 		IfNotBlocked
 		reached[2][67] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
@@ -8133,13 +8820,13 @@
 		reached[2][80] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 382: // STATE 70 - data_structures.pml:167 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
+	case 416: // STATE 70 - data_structures.pml:172 - [(((idx<readyQueue[prioLevel].tailIndex)&&!(found)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[2][70] = 1;
 		if (!(((((int)((P2 *)_this)->_6_14_24_21_4_idx)<((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex))&& !(((int)((P2 *)_this)->_6_14_24_21_4_found)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 383: // STATE 71 - data_structures.pml:169 - [((readyQueue[prioLevel].tasks[idx]==currentTask))] (79:0:1 - 1)
+	case 417: // STATE 71 - data_structures.pml:174 - [((readyQueue[prioLevel].tasks[idx]==currentTask))] (79:0:1 - 1)
 		IfNotBlocked
 		reached[2][71] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tasks[ Index(((int)((P2 *)_this)->_6_14_24_21_4_idx), 5) ])==((int)((P2 *)_this)->_6_14_24_currentTask))))
@@ -8159,7 +8846,7 @@
 		reached[2][80] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 384: // STATE 74 - data_structures.pml:171 - [idx = (idx+1)] (0:0:1 - 1)
+	case 418: // STATE 74 - data_structures.pml:176 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][74] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_4_idx);
@@ -8169,7 +8856,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 385: // STATE 82 - data_structures.pml:175 - [assert((found==1))] (0:88:0 - 3)
+	case 419: // STATE 82 - data_structures.pml:180 - [assert((found==1))] (0:88:0 - 3)
 		IfNotBlocked
 		reached[2][82] = 1;
 		spin_assert((((int)((P2 *)_this)->_6_14_24_21_4_found)==1), "(found==1)", II, tt, t);
@@ -8177,7 +8864,7 @@
 		reached[2][89] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 386: // STATE 83 - data_structures.pml:177 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (88:0:2 - 1)
+	case 420: // STATE 83 - data_structures.pml:182 - [((idx<(readyQueue[prioLevel].tailIndex-1)))] (88:0:2 - 1)
 		IfNotBlocked
 		reached[2][83] = 1;
 		if (!((((int)((P2 *)_this)->_6_14_24_21_4_idx)<(((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex)-1))))
@@ -8203,12 +8890,12 @@
 		reached[2][89] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 387: // STATE 91 - data_structures.pml:183 - [((readyQueue[prioLevel].tailIndex>0))] (164:0:3 - 1)
+	case 421: // STATE 91 - data_structures.pml:188 - [((readyQueue[prioLevel].tailIndex>0))] (212:0:3 - 1)
 		IfNotBlocked
 		reached[2][91] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex)>0)))
 			continue;
-		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(164, 92, 164) */
+		/* merge: readyQueue[prioLevel].tasks[(readyQueue[prioLevel].tailIndex-1)] = 255(212, 92, 212) */
 		reached[2][92] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex)-1), 5) ]);
@@ -8217,7 +8904,7 @@
 		logval("readyQueue[Process1:prioLevel].tasks[(readyQueue[Process1:prioLevel].tailIndex-1)]", ((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tasks[ Index((((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex)-1), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(164, 93, 164) */
+		/* merge: readyQueue[prioLevel].tailIndex = (readyQueue[prioLevel].tailIndex-1)(212, 93, 212) */
 		reached[2][93] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex);
 		now.readyQueue[ Index(((P2 *)_this)->_6_14_24_21_4_prioLevel, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex)-1);
@@ -8225,13 +8912,13 @@
 		logval("readyQueue[Process1:prioLevel].tailIndex", ((int)now.readyQueue[ Index(((int)((P2 *)_this)->_6_14_24_21_4_prioLevel), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(164, 97, 164) */
+		/* merge: .(goto)(212, 97, 212) */
 		reached[2][97] = 1;
 		;
-		/* merge: .(goto)(164, 102, 164) */
+		/* merge: .(goto)(212, 102, 212) */
 		reached[2][102] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(164, 103, 164) */
+		/* merge: tcb[currentTask].state = 2(212, 103, 212) */
 		reached[2][103] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state);
 		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].state = 2;
@@ -8240,18 +8927,18 @@
 #endif
 		;
 		_m = 3; goto P999; /* 5 */
-	case 388: // STATE 95 - data_structures.pml:186 - [(1)] (164:0:1 - 1)
+	case 422: // STATE 95 - data_structures.pml:191 - [(1)] (212:0:1 - 1)
 		IfNotBlocked
 		reached[2][95] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(164, 97, 164) */
+		/* merge: .(goto)(212, 97, 212) */
 		reached[2][97] = 1;
 		;
-		/* merge: .(goto)(164, 102, 164) */
+		/* merge: .(goto)(212, 102, 212) */
 		reached[2][102] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(164, 103, 164) */
+		/* merge: tcb[currentTask].state = 2(212, 103, 212) */
 		reached[2][103] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state);
 		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].state = 2;
@@ -8260,15 +8947,15 @@
 #endif
 		;
 		_m = 3; goto P999; /* 3 */
-	case 389: // STATE 100 - scheduler.pml:90 - [(1)] (164:0:1 - 1)
+	case 423: // STATE 100 - scheduler.pml:90 - [(1)] (212:0:1 - 1)
 		IfNotBlocked
 		reached[2][100] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(164, 102, 164) */
+		/* merge: .(goto)(212, 102, 212) */
 		reached[2][102] = 1;
 		;
-		/* merge: tcb[currentTask].state = 2(164, 103, 164) */
+		/* merge: tcb[currentTask].state = 2(212, 103, 212) */
 		reached[2][103] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state);
 		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].state = 2;
@@ -8277,7 +8964,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 390: // STATE 103 - scheduler.pml:92 - [tcb[currentTask].state = 2] (0:164:1 - 5)
+	case 424: // STATE 103 - scheduler.pml:92 - [tcb[currentTask].state = 2] (0:212:1 - 5)
 		IfNotBlocked
 		reached[2][103] = 1;
 		(trpt+1)->bup.oval = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].state);
@@ -8287,7 +8974,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 391: // STATE 104 - data_structures.pml:217 - [insertPos = 0] (0:122:7 - 1)
+	case 425: // STATE 104 - data_structures.pml:227 - [insertPos = 0] (0:210:7 - 1)
 		IfNotBlocked
 		reached[2][104] = 1;
 		(trpt+1)->bup.ovals = grab_ints(7);
@@ -8297,7 +8984,7 @@
 		logval("Process1:insertPos", ((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
 #endif
 		;
-		/* merge: idx = 0(122, 105, 122) */
+		/* merge: idx = 0(210, 105, 210) */
 		reached[2][105] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
 		((P2 *)_this)->_6_14_24_21_5_idx = 0;
@@ -8305,7 +8992,7 @@
 		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #endif
 		;
-		/* merge: found = 0(122, 106, 122) */
+		/* merge: found = 0(210, 106, 210) */
 		reached[2][106] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P2 *)_this)->_6_14_24_21_5_found);
 		((P2 *)_this)->_6_14_24_21_5_found = 0;
@@ -8313,7 +9000,7 @@
 		logval("Process1:found", ((int)((P2 *)_this)->_6_14_24_21_5_found));
 #endif
 		;
-		/* merge: tmpId = 0(122, 107, 122) */
+		/* merge: tmpId = 0(210, 107, 210) */
 		reached[2][107] = 1;
 		(trpt+1)->bup.ovals[3] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
 		((P2 *)_this)->_6_14_24_21_5_tmpId = 0;
@@ -8321,7 +9008,7 @@
 		logval("Process1:tmpId", ((int)((P2 *)_this)->_6_14_24_21_5_tmpId));
 #endif
 		;
-		/* merge: tmpTime = 0(122, 108, 122) */
+		/* merge: tmpTime = 0(210, 108, 210) */
 		reached[2][108] = 1;
 		(trpt+1)->bup.ovals[4] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
 		((P2 *)_this)->_6_14_24_21_5_tmpTime = 0;
@@ -8329,290 +9016,246 @@
 		logval("Process1:tmpTime", ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime));
 #endif
 		;
-		/* merge: assert((g_taskSortLinkTail<(2+1)))(122, 109, 122) */
+		/* merge: willOverflow = 0(210, 109, 210) */
 		reached[2][109] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
-		/* merge: assert((g_taskSortLinkTail>=0))(122, 110, 122) */
+		(trpt+1)->bup.ovals[5] = ((int)((P2 *)_this)->_6_14_24_21_5_willOverflow);
+		((P2 *)_this)->_6_14_24_21_5_willOverflow = 0;
+#ifdef VAR_RANGES
+		logval("Process1:willOverflow", ((int)((P2 *)_this)->_6_14_24_21_5_willOverflow));
+#endif
+		;
+		/* merge: willOverflow = ((g_tickCount+5)<g_tickCount)(210, 110, 210) */
 		reached[2][110] = 1;
-		spin_assert((((int)now.g_taskSortLinkTail)>=0), "(g_taskSortLinkTail>=0)", II, tt, t);
-		/* merge: insertPos = 0(122, 111, 122) */
+		(trpt+1)->bup.ovals[6] = ((int)((P2 *)_this)->_6_14_24_21_5_willOverflow);
+		((P2 *)_this)->_6_14_24_21_5_willOverflow = ((((int)now.g_tickCount)+5)<((int)now.g_tickCount));
+#ifdef VAR_RANGES
+		logval("Process1:willOverflow", ((int)((P2 *)_this)->_6_14_24_21_5_willOverflow));
+#endif
+		;
+		_m = 3; goto P999; /* 6 */
+	case 426: // STATE 111 - data_structures.pml:237 - [(willOverflow)] (124:0:3 - 1)
+		IfNotBlocked
 		reached[2][111] = 1;
-		(trpt+1)->bup.ovals[5] = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
+		if (!(((int)((P2 *)_this)->_6_14_24_21_5_willOverflow)))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _6_14_24_21_5_willOverflow */  (trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((P2 *)_this)->_6_14_24_21_5_willOverflow;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P2 *)_this)->_6_14_24_21_5_willOverflow = 0;
+		/* merge: assert((overflowedSortLinkTail<(2+1)))(124, 112, 124) */
+		reached[2][112] = 1;
+		spin_assert((((int)now.overflowedSortLinkTail)<(2+1)), "(overflowedSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(124, 113, 124) */
+		reached[2][113] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
 		((P2 *)_this)->_6_14_24_21_5_insertPos = 0;
 #ifdef VAR_RANGES
 		logval("Process1:insertPos", ((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
 #endif
 		;
-		/* merge: found = 0(122, 112, 122) */
-		reached[2][112] = 1;
-		(trpt+1)->bup.ovals[6] = ((int)((P2 *)_this)->_6_14_24_21_5_found);
+		/* merge: found = 0(124, 114, 124) */
+		reached[2][114] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P2 *)_this)->_6_14_24_21_5_found);
 		((P2 *)_this)->_6_14_24_21_5_found = 0;
 #ifdef VAR_RANGES
 		logval("Process1:found", ((int)((P2 *)_this)->_6_14_24_21_5_found));
 #endif
 		;
-		/* merge: .(goto)(0, 123, 122) */
-		reached[2][123] = 1;
+		/* merge: .(goto)(0, 125, 124) */
+		reached[2][125] = 1;
 		;
-		_m = 3; goto P999; /* 9 */
-	case 392: // STATE 113 - data_structures.pml:229 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 4 */
+	case 427: // STATE 115 - data_structures.pml:245 - [(((insertPos<overflowedSortLinkTail)&&(found==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[2][113] = 1;
-		if (!(((((int)((P2 *)_this)->_6_14_24_21_5_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P2 *)_this)->_6_14_24_21_5_found)==0))))
+		reached[2][115] = 1;
+		if (!(((((int)((P2 *)_this)->_6_14_24_21_5_insertPos)<((int)now.overflowedSortLinkTail))&&(((int)((P2 *)_this)->_6_14_24_21_5_found)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 393: // STATE 114 - data_structures.pml:231 - [(((g_tickCount+5)<g_taskSortLink[insertPos].responseTime))] (122:0:1 - 1)
+	case 428: // STATE 116 - data_structures.pml:247 - [(((g_tickCount+5)<overflowedSortLink[insertPos].responseTime))] (124:0:1 - 1)
 		IfNotBlocked
-		reached[2][114] = 1;
-		if (!(((((int)now.g_tickCount)+5)<((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime))))
+		reached[2][116] = 1;
+		if (!(((((int)now.g_tickCount)+5)<((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime))))
 			continue;
-		/* merge: found = 1(0, 115, 122) */
-		reached[2][115] = 1;
+		/* merge: found = 1(0, 117, 124) */
+		reached[2][117] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_found);
 		((P2 *)_this)->_6_14_24_21_5_found = 1;
 #ifdef VAR_RANGES
 		logval("Process1:found", ((int)((P2 *)_this)->_6_14_24_21_5_found));
 #endif
 		;
-		/* merge: .(goto)(0, 119, 122) */
-		reached[2][119] = 1;
+		/* merge: .(goto)(0, 121, 124) */
+		reached[2][121] = 1;
 		;
-		/* merge: .(goto)(0, 123, 122) */
-		reached[2][123] = 1;
+		/* merge: .(goto)(0, 125, 124) */
+		reached[2][125] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 394: // STATE 116 - data_structures.pml:233 - [(((g_tickCount+5)>=g_taskSortLink[insertPos].responseTime))] (122:0:1 - 1)
+	case 429: // STATE 119 - data_structures.pml:250 - [insertPos = (insertPos+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[2][116] = 1;
-		if (!(((((int)now.g_tickCount)+5)>=((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime))))
-			continue;
-		/* merge: insertPos = (insertPos+1)(0, 117, 122) */
-		reached[2][117] = 1;
+		reached[2][119] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
 		((P2 *)_this)->_6_14_24_21_5_insertPos = (((int)((P2 *)_this)->_6_14_24_21_5_insertPos)+1);
 #ifdef VAR_RANGES
 		logval("Process1:insertPos", ((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
 #endif
 		;
-		/* merge: .(goto)(0, 119, 122) */
-		reached[2][119] = 1;
-		;
-		/* merge: .(goto)(0, 123, 122) */
-		reached[2][123] = 1;
-		;
-		_m = 3; goto P999; /* 3 */
-	case 395: // STATE 125 - data_structures.pml:240 - [idx = g_taskSortLinkTail] (0:140:1 - 3)
+		_m = 3; goto P999; /* 0 */
+	case 430: // STATE 127 - data_structures.pml:256 - [idx = overflowedSortLinkTail] (0:142:1 - 3)
 		IfNotBlocked
-		reached[2][125] = 1;
+		reached[2][127] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
-		((P2 *)_this)->_6_14_24_21_5_idx = ((int)now.g_taskSortLinkTail);
+		((P2 *)_this)->_6_14_24_21_5_idx = ((int)now.overflowedSortLinkTail);
 #ifdef VAR_RANGES
 		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 141, 140) */
-		reached[2][141] = 1;
+		/* merge: .(goto)(0, 143, 142) */
+		reached[2][143] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 396: // STATE 126 - data_structures.pml:242 - [((idx>insertPos))] (135:0:4 - 1)
+	case 431: // STATE 128 - data_structures.pml:258 - [((idx>insertPos))] (137:0:4 - 1)
 		IfNotBlocked
-		reached[2][126] = 1;
+		reached[2][128] = 1;
 		if (!((((int)((P2 *)_this)->_6_14_24_21_5_idx)>((int)((P2 *)_this)->_6_14_24_21_5_insertPos))))
 			continue;
-		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(135, 127, 135) */
-		reached[2][127] = 1;
+		/* merge: tmpId = overflowedSortLink[(idx-1)].taskId(137, 129, 137) */
+		reached[2][129] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
-		((P2 *)_this)->_6_14_24_21_5_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].taskId);
+		((P2 *)_this)->_6_14_24_21_5_tmpId = ((int)now.overflowedSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].taskId);
 #ifdef VAR_RANGES
 		logval("Process1:tmpId", ((int)((P2 *)_this)->_6_14_24_21_5_tmpId));
 #endif
 		;
-		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(135, 128, 135) */
-		reached[2][128] = 1;
+		/* merge: tmpTime = overflowedSortLink[(idx-1)].responseTime(137, 130, 137) */
+		reached[2][130] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
-		((P2 *)_this)->_6_14_24_21_5_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].responseTime);
+		((P2 *)_this)->_6_14_24_21_5_tmpTime = ((int)now.overflowedSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].responseTime);
 #ifdef VAR_RANGES
 		logval("Process1:tmpTime", ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].taskId = tmpId(135, 129, 135) */
-		reached[2][129] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
+		/* merge: overflowedSortLink[idx].taskId = tmpId(137, 131, 137) */
+		reached[2][131] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId));
+		logval("overflowedSortLink[Process1:idx].taskId", ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[idx].responseTime = tmpTime(135, 130, 135) */
-		reached[2][130] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].responseTime = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
+		/* merge: overflowedSortLink[idx].responseTime = tmpTime(137, 132, 137) */
+		reached[2][132] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].responseTime = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime));
+		logval("overflowedSortLink[Process1:idx].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime));
 #endif
 		;
 		_m = 3; goto P999; /* 4 */
-	case 397: // STATE 131 - data_structures.pml:250 - [((tmpId!=255))] (140:0:2 - 1)
+	case 432: // STATE 133 - data_structures.pml:264 - [((tmpId!=255))] (142:0:2 - 1)
 		IfNotBlocked
-		reached[2][131] = 1;
+		reached[2][133] = 1;
 		if (!((((int)((P2 *)_this)->_6_14_24_21_5_tmpId)!=255)))
 			continue;
-		/* merge: tcb[tmpId].pendList = idx(140, 132, 140) */
-		reached[2][132] = 1;
+		/* merge: tcb[tmpId].pendList = (128+idx)(142, 134, 142) */
+		reached[2][134] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_21_5_tmpId), 4) ].pendList);
-		now.tcb[ Index(((P2 *)_this)->_6_14_24_21_5_tmpId, 4) ].pendList = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+		now.tcb[ Index(((P2 *)_this)->_6_14_24_21_5_tmpId, 4) ].pendList = (128+((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #ifdef VAR_RANGES
 		logval("tcb[Process1:tmpId].pendList", ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_21_5_tmpId), 4) ].pendList));
 #endif
 		;
-		/* merge: .(goto)(140, 136, 140) */
-		reached[2][136] = 1;
+		/* merge: .(goto)(142, 138, 142) */
+		reached[2][138] = 1;
 		;
-		/* merge: idx = (idx-1)(140, 137, 140) */
-		reached[2][137] = 1;
+		/* merge: idx = (idx-1)(142, 139, 142) */
+		reached[2][139] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
 		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 141, 140) */
-		reached[2][141] = 1;
+		/* merge: .(goto)(0, 143, 142) */
+		reached[2][143] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 398: // STATE 133 - data_structures.pml:251 - [((tmpId==255))] (0:0:1 - 1)
+	case 433: // STATE 136 - data_structures.pml:266 - [(1)] (142:0:1 - 1)
 		IfNotBlocked
-		reached[2][133] = 1;
-		if (!((((int)((P2 *)_this)->_6_14_24_21_5_tmpId)==255)))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _6_14_24_21_5_tmpId */  (trpt+1)->bup.oval = ((P2 *)_this)->_6_14_24_21_5_tmpId;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P2 *)_this)->_6_14_24_21_5_tmpId = 0;
-		_m = 3; goto P999; /* 0 */
-	case 399: // STATE 134 - data_structures.pml:251 - [(1)] (140:0:1 - 1)
-		IfNotBlocked
-		reached[2][134] = 1;
+		reached[2][136] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(140, 136, 140) */
-		reached[2][136] = 1;
+		/* merge: .(goto)(142, 138, 142) */
+		reached[2][138] = 1;
 		;
-		/* merge: idx = (idx-1)(140, 137, 140) */
-		reached[2][137] = 1;
+		/* merge: idx = (idx-1)(142, 139, 142) */
+		reached[2][139] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
 		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 141, 140) */
-		reached[2][141] = 1;
+		/* merge: .(goto)(0, 143, 142) */
+		reached[2][143] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 400: // STATE 137 - data_structures.pml:253 - [idx = (idx-1)] (0:140:1 - 3)
+	case 434: // STATE 139 - data_structures.pml:268 - [idx = (idx-1)] (0:142:1 - 3)
 		IfNotBlocked
-		reached[2][137] = 1;
+		reached[2][139] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
 		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
 #ifdef VAR_RANGES
 		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
 #endif
 		;
-		/* merge: .(goto)(0, 141, 140) */
-		reached[2][141] = 1;
+		/* merge: .(goto)(0, 143, 142) */
+		reached[2][143] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 401: // STATE 138 - data_structures.pml:254 - [((idx<=insertPos))] (151:0:5 - 1)
+	case 435: // STATE 145 - data_structures.pml:273 - [overflowedSortLink[insertPos].taskId = currentTask] (0:153:4 - 3)
 		IfNotBlocked
-		reached[2][138] = 1;
-		if (!((((int)((P2 *)_this)->_6_14_24_21_5_idx)<=((int)((P2 *)_this)->_6_14_24_21_5_insertPos))))
-			continue;
-		if (TstOnly) return 1; /* TT */
-		/* dead 1: _6_14_24_21_5_idx */  (trpt+1)->bup.ovals = grab_ints(5);
-		(trpt+1)->bup.ovals[0] = ((P2 *)_this)->_6_14_24_21_5_idx;
-#ifdef HAS_CODE
-		if (!readtrail)
-#endif
-			((P2 *)_this)->_6_14_24_21_5_idx = 0;
-		/* merge: goto :b11(151, 139, 151) */
-		reached[2][139] = 1;
-		;
-		/* merge: g_taskSortLink[insertPos].taskId = currentTask(151, 143, 151) */
-		reached[2][143] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_currentTask);
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId));
-#endif
-		;
-		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+5)(151, 144, 151) */
-		reached[2][144] = 1;
-		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+5);
-#ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime));
-#endif
-		;
-		/* merge: tcb[currentTask].pendList = insertPos(151, 145, 151) */
 		reached[2][145] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList);
-		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].pendList = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
-#ifdef VAR_RANGES
-		logval("tcb[Process1:currentTask].pendList", ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList));
-#endif
-		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(151, 146, 151) */
-		reached[2][146] = 1;
-		(trpt+1)->bup.ovals[4] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
-#ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
-#endif
-		;
-		_m = 3; goto P999; /* 5 */
-	case 402: // STATE 143 - data_structures.pml:258 - [g_taskSortLink[insertPos].taskId = currentTask] (0:151:4 - 3)
-		IfNotBlocked
-		reached[2][143] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
-		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_currentTask);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_currentTask);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId));
+		logval("overflowedSortLink[Process1:insertPos].taskId", ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+5)(151, 144, 151) */
-		reached[2][144] = 1;
-		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime);
-		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+5);
+		/* merge: overflowedSortLink[insertPos].responseTime = (g_tickCount+5)(153, 146, 153) */
+		reached[2][146] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+5);
 #ifdef VAR_RANGES
-		logval("g_taskSortLink[Process1:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime));
+		logval("overflowedSortLink[Process1:insertPos].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime));
 #endif
 		;
-		/* merge: tcb[currentTask].pendList = insertPos(151, 145, 151) */
-		reached[2][145] = 1;
+		/* merge: tcb[currentTask].pendList = (128+insertPos)(153, 147, 153) */
+		reached[2][147] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList);
-		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].pendList = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
+		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].pendList = (128+((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
 #ifdef VAR_RANGES
 		logval("tcb[Process1:currentTask].pendList", ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(151, 146, 151) */
-		reached[2][146] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
-		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+		/* merge: overflowedSortLinkTail = (overflowedSortLinkTail+1)(153, 148, 153) */
+		reached[2][148] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = (((int)now.overflowedSortLinkTail)+1);
 #ifdef VAR_RANGES
-		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
 #endif
 		;
 		_m = 3; goto P999; /* 3 */
-	case 403: // STATE 147 - data_structures.pml:265 - [(((insertPos==0)&&((g_tickCount+5)<255)))] (163:0:2 - 1)
+	case 436: // STATE 149 - data_structures.pml:280 - [(((insertPos==0)&&((g_tickCount+5)<255)))] (223:0:2 - 1)
 		IfNotBlocked
-		reached[2][147] = 1;
+		reached[2][149] = 1;
 		if (!(((((int)((P2 *)_this)->_6_14_24_21_5_insertPos)==0)&&((((int)now.g_tickCount)+5)<255))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -8622,21 +9265,258 @@
 		if (!readtrail)
 #endif
 			((P2 *)_this)->_6_14_24_21_5_insertPos = 0;
-		/* merge: g_schedResponseTime = (g_tickCount+5)(0, 148, 163) */
-		reached[2][148] = 1;
+		/* merge: g_overflowedResponseTime = (g_tickCount+5)(0, 150, 223) */
+		reached[2][150] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = (((int)now.g_tickCount)+5);
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(0, 154, 223) */
+		reached[2][154] = 1;
+		;
+		/* merge: .(goto)(0, 211, 223) */
+		reached[2][211] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 437: // STATE 156 - data_structures.pml:287 - [assert((g_taskSortLinkTail<(2+1)))] (0:168:2 - 1)
+		IfNotBlocked
+		reached[2][156] = 1;
+		spin_assert((((int)now.g_taskSortLinkTail)<(2+1)), "(g_taskSortLinkTail<(2+1))", II, tt, t);
+		/* merge: insertPos = 0(168, 157, 168) */
+		reached[2][157] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
+		((P2 *)_this)->_6_14_24_21_5_insertPos = 0;
+#ifdef VAR_RANGES
+		logval("Process1:insertPos", ((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
+#endif
+		;
+		/* merge: found = 0(168, 158, 168) */
+		reached[2][158] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_found);
+		((P2 *)_this)->_6_14_24_21_5_found = 0;
+#ifdef VAR_RANGES
+		logval("Process1:found", ((int)((P2 *)_this)->_6_14_24_21_5_found));
+#endif
+		;
+		/* merge: .(goto)(0, 169, 168) */
+		reached[2][169] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 438: // STATE 159 - data_structures.pml:293 - [(((insertPos<g_taskSortLinkTail)&&(found==0)))] (0:0:0 - 1)
+		IfNotBlocked
+		reached[2][159] = 1;
+		if (!(((((int)((P2 *)_this)->_6_14_24_21_5_insertPos)<((int)now.g_taskSortLinkTail))&&(((int)((P2 *)_this)->_6_14_24_21_5_found)==0))))
+			continue;
+		_m = 3; goto P999; /* 0 */
+	case 439: // STATE 160 - data_structures.pml:295 - [(((g_tickCount+5)<g_taskSortLink[insertPos].responseTime))] (168:0:1 - 1)
+		IfNotBlocked
+		reached[2][160] = 1;
+		if (!(((((int)now.g_tickCount)+5)<((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime))))
+			continue;
+		/* merge: found = 1(0, 161, 168) */
+		reached[2][161] = 1;
+		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_found);
+		((P2 *)_this)->_6_14_24_21_5_found = 1;
+#ifdef VAR_RANGES
+		logval("Process1:found", ((int)((P2 *)_this)->_6_14_24_21_5_found));
+#endif
+		;
+		/* merge: .(goto)(0, 165, 168) */
+		reached[2][165] = 1;
+		;
+		/* merge: .(goto)(0, 169, 168) */
+		reached[2][169] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 440: // STATE 163 - data_structures.pml:298 - [insertPos = (insertPos+1)] (0:0:1 - 1)
+		IfNotBlocked
+		reached[2][163] = 1;
+		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
+		((P2 *)_this)->_6_14_24_21_5_insertPos = (((int)((P2 *)_this)->_6_14_24_21_5_insertPos)+1);
+#ifdef VAR_RANGES
+		logval("Process1:insertPos", ((int)((P2 *)_this)->_6_14_24_21_5_insertPos));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 441: // STATE 171 - data_structures.pml:304 - [idx = g_taskSortLinkTail] (0:186:1 - 3)
+		IfNotBlocked
+		reached[2][171] = 1;
+		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+		((P2 *)_this)->_6_14_24_21_5_idx = ((int)now.g_taskSortLinkTail);
+#ifdef VAR_RANGES
+		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 187, 186) */
+		reached[2][187] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 442: // STATE 172 - data_structures.pml:306 - [((idx>insertPos))] (181:0:4 - 1)
+		IfNotBlocked
+		reached[2][172] = 1;
+		if (!((((int)((P2 *)_this)->_6_14_24_21_5_idx)>((int)((P2 *)_this)->_6_14_24_21_5_insertPos))))
+			continue;
+		/* merge: tmpId = g_taskSortLink[(idx-1)].taskId(181, 173, 181) */
+		reached[2][173] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
+		((P2 *)_this)->_6_14_24_21_5_tmpId = ((int)now.g_taskSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].taskId);
+#ifdef VAR_RANGES
+		logval("Process1:tmpId", ((int)((P2 *)_this)->_6_14_24_21_5_tmpId));
+#endif
+		;
+		/* merge: tmpTime = g_taskSortLink[(idx-1)].responseTime(181, 174, 181) */
+		reached[2][174] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
+		((P2 *)_this)->_6_14_24_21_5_tmpTime = ((int)now.g_taskSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_idx)-1), 3) ].responseTime);
+#ifdef VAR_RANGES
+		logval("Process1:tmpTime", ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].taskId = tmpId(181, 175, 181) */
+		reached[2][175] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_21_5_tmpId);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process1:idx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[idx].responseTime = tmpTime(181, 176, 181) */
+		reached[2][176] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_idx, 3) ].responseTime = ((int)((P2 *)_this)->_6_14_24_21_5_tmpTime);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process1:idx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_idx), 3) ].responseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 4 */
+	case 443: // STATE 177 - data_structures.pml:312 - [((tmpId!=255))] (186:0:2 - 1)
+		IfNotBlocked
+		reached[2][177] = 1;
+		if (!((((int)((P2 *)_this)->_6_14_24_21_5_tmpId)!=255)))
+			continue;
+		/* merge: tcb[tmpId].pendList = idx(186, 178, 186) */
+		reached[2][178] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_21_5_tmpId), 4) ].pendList);
+		now.tcb[ Index(((P2 *)_this)->_6_14_24_21_5_tmpId, 4) ].pendList = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+#ifdef VAR_RANGES
+		logval("tcb[Process1:tmpId].pendList", ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_21_5_tmpId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(186, 182, 186) */
+		reached[2][182] = 1;
+		;
+		/* merge: idx = (idx-1)(186, 183, 186) */
+		reached[2][183] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 187, 186) */
+		reached[2][187] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 444: // STATE 180 - data_structures.pml:313 - [(1)] (186:0:1 - 1)
+		IfNotBlocked
+		reached[2][180] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(186, 182, 186) */
+		reached[2][182] = 1;
+		;
+		/* merge: idx = (idx-1)(186, 183, 186) */
+		reached[2][183] = 1;
+		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 187, 186) */
+		reached[2][187] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 445: // STATE 183 - data_structures.pml:315 - [idx = (idx-1)] (0:186:1 - 3)
+		IfNotBlocked
+		reached[2][183] = 1;
+		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_idx);
+		((P2 *)_this)->_6_14_24_21_5_idx = (((int)((P2 *)_this)->_6_14_24_21_5_idx)-1);
+#ifdef VAR_RANGES
+		logval("Process1:idx", ((int)((P2 *)_this)->_6_14_24_21_5_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 187, 186) */
+		reached[2][187] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 446: // STATE 189 - data_structures.pml:320 - [g_taskSortLink[insertPos].taskId = currentTask] (0:197:4 - 3)
+		IfNotBlocked
+		reached[2][189] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].taskId = ((int)((P2 *)_this)->_6_14_24_currentTask);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process1:insertPos].taskId", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[insertPos].responseTime = (g_tickCount+5)(197, 190, 197) */
+		reached[2][190] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P2 *)_this)->_6_14_24_21_5_insertPos, 3) ].responseTime = (((int)now.g_tickCount)+5);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[Process1:insertPos].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_insertPos), 3) ].responseTime));
+#endif
+		;
+		/* merge: tcb[currentTask].pendList = insertPos(197, 191, 197) */
+		reached[2][191] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList);
+		now.tcb[ Index(((P2 *)_this)->_6_14_24_currentTask, 4) ].pendList = ((int)((P2 *)_this)->_6_14_24_21_5_insertPos);
+#ifdef VAR_RANGES
+		logval("tcb[Process1:currentTask].pendList", ((int)now.tcb[ Index(((int)((P2 *)_this)->_6_14_24_currentTask), 4) ].pendList));
+#endif
+		;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail+1)(197, 192, 197) */
+		reached[2][192] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)now.g_taskSortLinkTail);
+		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+1);
+#ifdef VAR_RANGES
+		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+#endif
+		;
+		_m = 3; goto P999; /* 3 */
+	case 447: // STATE 193 - data_structures.pml:327 - [(((insertPos==0)&&((g_tickCount+5)<255)))] (209:0:2 - 1)
+		IfNotBlocked
+		reached[2][193] = 1;
+		if (!(((((int)((P2 *)_this)->_6_14_24_21_5_insertPos)==0)&&((((int)now.g_tickCount)+5)<255))))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _6_14_24_21_5_insertPos */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P2 *)_this)->_6_14_24_21_5_insertPos;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P2 *)_this)->_6_14_24_21_5_insertPos = 0;
+		/* merge: g_schedResponseTime = (g_tickCount+5)(0, 194, 209) */
+		reached[2][194] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = (((int)now.g_tickCount)+5);
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 152, 163) */
-		reached[2][152] = 1;
+		/* merge: .(goto)(0, 198, 209) */
+		reached[2][198] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 404: // STATE 153 - data_structures.pml:335 - [checkIdx = 0] (0:160:3 - 1)
+	case 448: // STATE 199 - data_structures.pml:440 - [checkIdx = 0] (0:206:3 - 1)
 		IfNotBlocked
-		reached[2][153] = 1;
+		reached[2][199] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx);
 		((P2 *)_this)->_6_14_24_21_5_2_checkIdx = 0;
@@ -8644,8 +9524,8 @@
 		logval("Process1:checkIdx", ((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx));
 #endif
 		;
-		/* merge: isValid = 1(160, 154, 160) */
-		reached[2][154] = 1;
+		/* merge: isValid = 1(206, 200, 206) */
+		reached[2][200] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P2 *)_this)->_6_14_24_21_5_2_isValid);
 		((P2 *)_this)->_6_14_24_21_5_2_isValid = 1;
 #ifdef VAR_RANGES
@@ -8658,33 +9538,33 @@
 		if (!readtrail)
 #endif
 			((P2 *)_this)->_6_14_24_21_5_2_isValid = 0;
-		/* merge: .(goto)(0, 161, 160) */
-		reached[2][161] = 1;
+		/* merge: .(goto)(0, 207, 206) */
+		reached[2][207] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 405: // STATE 155 - data_structures.pml:339 - [((checkIdx<(g_taskSortLinkTail-1)))] (160:0:1 - 1)
+	case 449: // STATE 201 - data_structures.pml:444 - [((checkIdx<(g_taskSortLinkTail-1)))] (206:0:1 - 1)
 		IfNotBlocked
-		reached[2][155] = 1;
+		reached[2][201] = 1;
 		if (!((((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(160, 156, 160) */
-		reached[2][156] = 1;
+		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(206, 202, 206) */
+		reached[2][202] = 1;
 		spin_assert((((int)now.g_taskSortLink[ Index(((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx), 3) ].responseTime)<=((int)now.g_taskSortLink[ Index((((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx)+1), 3) ].responseTime)), "(g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime)", II, tt, t);
-		/* merge: checkIdx = (checkIdx+1)(160, 157, 160) */
-		reached[2][157] = 1;
+		/* merge: checkIdx = (checkIdx+1)(206, 203, 206) */
+		reached[2][203] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx);
 		((P2 *)_this)->_6_14_24_21_5_2_checkIdx = (((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx)+1);
 #ifdef VAR_RANGES
 		logval("Process1:checkIdx", ((int)((P2 *)_this)->_6_14_24_21_5_2_checkIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 161, 160) */
-		reached[2][161] = 1;
+		/* merge: .(goto)(0, 207, 206) */
+		reached[2][207] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 406: // STATE 166 - scheduler.pml:113 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 450: // STATE 214 - scheduler.pml:113 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[2][166] = 1;
+		reached[2][214] = 1;
 		if (!((((int)((P2 *)_this)->_6_14_24_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -8694,9 +9574,9 @@
 #endif
 			((P2 *)_this)->_6_14_24_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 407: // STATE 167 - data_structures.pml:107 - [intSave = 0] (0:0:1 - 1)
+	case 451: // STATE 215 - data_structures.pml:112 - [intSave = 0] (0:0:1 - 1)
 		IfNotBlocked
-		reached[2][167] = 1;
+		reached[2][215] = 1;
 		(trpt+1)->bup.oval = ((int)((P2 *)_this)->_6_14_24_intSave);
 		((P2 *)_this)->_6_14_24_intSave = 0;
 #ifdef VAR_RANGES
@@ -8704,70 +9584,70 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 408: // STATE 169 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:187:1 - 1)
+	case 452: // STATE 217 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:235:1 - 1)
 		IfNotBlocked
-		reached[2][169] = 1;
+		reached[2][217] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(187, 170, 187) */
-		reached[2][170] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(235, 218, 235) */
+		reached[2][218] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 176, 187) */
-		reached[2][176] = 1;
+		/* merge: .(goto)(0, 224, 235) */
+		reached[2][224] = 1;
 		;
-		/* merge: .(goto)(0, 180, 187) */
-		reached[2][180] = 1;
+		/* merge: .(goto)(0, 228, 235) */
+		reached[2][228] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 409: // STATE 183 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:202:1 - 1)
+	case 453: // STATE 231 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:250:1 - 1)
 		IfNotBlocked
-		reached[2][183] = 1;
+		reached[2][231] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(202, 184, 202) */
-		reached[2][184] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(250, 232, 250) */
+		reached[2][232] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 188, 202) */
-		reached[2][188] = 1;
+		/* merge: .(goto)(0, 236, 250) */
+		reached[2][236] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 410: // STATE 189 - processes.pml:9 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
+	case 454: // STATE 237 - processes.pml:9 - [((((((pending_exp>>0)&1)&&((BASEPRI==0)||(15<BASEPRI)))||(((pending_exp>>1)&1)&&((BASEPRI==0)||(15<BASEPRI))))&&(EP>=2)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[2][189] = 1;
+		reached[2][237] = 1;
 		if (!((((((((int)now.pending_exp)>>0)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI))))||(((((int)now.pending_exp)>>1)&1)&&((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))))&&(((int)now.EP)>=2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 411: // STATE 190 - processes.pml:9 - [((EP>=2))] (198:0:1 - 1)
+	case 455: // STATE 238 - processes.pml:9 - [((EP>=2))] (246:0:1 - 1)
 		IfNotBlocked
-		reached[2][190] = 1;
+		reached[2][238] = 1;
 		if (!((((int)now.EP)>=2)))
 			continue;
-		/* merge: chain_tick_used = 0(0, 191, 198) */
-		reached[2][191] = 1;
+		/* merge: chain_tick_used = 0(0, 239, 246) */
+		reached[2][239] = 1;
 		(trpt+1)->bup.oval = ((int)now.chain_tick_used);
 		now.chain_tick_used = 0;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(0, 195, 198) */
-		reached[2][195] = 1;
+		/* merge: .(goto)(0, 243, 246) */
+		reached[2][243] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 412: // STATE 196 - data_structures.pml:57 - [assert((EP_Stack==255))] (0:205:2 - 1)
+	case 456: // STATE 244 - data_structures.pml:62 - [assert((EP_Stack==255))] (0:253:2 - 1)
 		IfNotBlocked
-		reached[2][196] = 1;
+		reached[2][244] = 1;
 		spin_assert((((int)now.EP_Stack)==255), "(EP_Stack==255)", II, tt, t);
-		/* merge: EP_Stack = EP(205, 197, 205) */
-		reached[2][197] = 1;
+		/* merge: EP_Stack = EP(253, 245, 253) */
+		reached[2][245] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP_Stack);
 		now.EP_Stack = ((int)now.EP);
@@ -8775,65 +9655,65 @@
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(205, 199, 205) */
-		reached[2][199] = 1;
+		/* merge: EP = ( (((pending_exp>>0)&1)) -> (0) : (1) )(253, 247, 253) */
+		reached[2][247] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: .(goto)(205, 203, 205) */
-		reached[2][203] = 1;
+		/* merge: .(goto)(253, 251, 253) */
+		reached[2][251] = 1;
 		;
-		/* merge: .(goto)(0, 206, 205) */
-		reached[2][206] = 1;
+		/* merge: .(goto)(0, 254, 253) */
+		reached[2][254] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 413: // STATE 203 - processes.pml:9 - [.(goto)] (0:205:0 - 2)
+	case 457: // STATE 251 - processes.pml:9 - [.(goto)] (0:253:0 - 2)
 		IfNotBlocked
-		reached[2][203] = 1;
+		reached[2][251] = 1;
 		;
-		/* merge: .(goto)(0, 206, 205) */
-		reached[2][206] = 1;
+		/* merge: .(goto)(0, 254, 253) */
+		reached[2][254] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 414: // STATE 201 - processes.pml:9 - [(1)] (205:0:0 - 1)
+	case 458: // STATE 249 - processes.pml:9 - [(1)] (253:0:0 - 1)
 		IfNotBlocked
-		reached[2][201] = 1;
+		reached[2][249] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(205, 203, 205) */
-		reached[2][203] = 1;
+		/* merge: .(goto)(253, 251, 253) */
+		reached[2][251] = 1;
 		;
-		/* merge: .(goto)(0, 206, 205) */
-		reached[2][206] = 1;
+		/* merge: .(goto)(0, 254, 253) */
+		reached[2][254] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 415: // STATE 208 - processes.pml:11 - [-end-] (0:0:0 - 1)
+	case 459: // STATE 256 - processes.pml:11 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
-		reached[2][208] = 1;
+		reached[2][256] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC SysTick_Handler */
-	case 416: // STATE 1 - scheduler.pml:303 - [((EP==1))] (0:0:0 - 1)
+	case 460: // STATE 1 - scheduler.pml:360 - [((EP==1))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][1] = 1;
 		if (!((((int)now.EP)==1)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 417: // STATE 2 - data_structures.pml:81 - [((EP==1))] (0:0:0 - 1)
+	case 461: // STATE 2 - data_structures.pml:86 - [((EP==1))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][2] = 1;
 		if (!((((int)now.EP)==1)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 418: // STATE 3 - data_structures.pml:51 - [assert(((1<2)&&(1<8)))] (0:110:1 - 1)
+	case 462: // STATE 3 - data_structures.pml:56 - [assert(((1<2)&&(1<8)))] (0:153:1 - 1)
 		IfNotBlocked
 		reached[1][3] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp&~((1<<1)))(110, 4, 110) */
+		/* merge: pending_exp = (pending_exp&~((1<<1)))(153, 4, 153) */
 		reached[1][4] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)& ~((1<<1)));
@@ -8842,23 +9722,23 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 419: // STATE 8 - scheduler.pml:307 - [((1==EP))] (0:0:0 - 1)
+	case 463: // STATE 8 - scheduler.pml:364 - [((1==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[1][8] = 1;
 		if (!((1==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 420: // STATE 9 - scheduler.pml:154 - [idx = 0] (0:90:4 - 1)
+	case 464: // STATE 9 - scheduler.pml:154 - [idx = 0] (0:53:5 - 1)
 		IfNotBlocked
 		reached[1][9] = 1;
-		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals = grab_ints(5);
 		(trpt+1)->bup.ovals[0] = ((int)((P1 *)_this)->_5_9_14_idx);
 		((P1 *)_this)->_5_9_14_idx = 0;
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
 #endif
 		;
-		/* merge: taskId = 0(90, 10, 90) */
+		/* merge: taskId = 0(53, 10, 53) */
 		reached[1][10] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_taskId);
 		((P1 *)_this)->_5_9_14_taskId = 0;
@@ -8866,7 +9746,7 @@
 		logval("SysTick_Handler:taskId", ((int)((P1 *)_this)->_5_9_14_taskId));
 #endif
 		;
-		/* merge: needSched = 0(90, 11, 90) */
+		/* merge: needSched = 0(53, 11, 53) */
 		reached[1][11] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P1 *)_this)->_5_9_14_needSched);
 		((P1 *)_this)->_5_9_14_needSched = 0;
@@ -8874,28 +9754,340 @@
 		logval("SysTick_Handler:needSched", ((int)((P1 *)_this)->_5_9_14_needSched));
 #endif
 		;
-		/* merge: g_tickCount = (g_tickCount+1)(90, 12, 90) */
+		/* merge: oldTickCount = g_tickCount(53, 12, 53) */
 		reached[1][12] = 1;
-		(trpt+1)->bup.ovals[3] = ((int)now.g_tickCount);
+		(trpt+1)->bup.ovals[3] = ((int)((P1 *)_this)->_5_9_14_oldTickCount);
+		((P1 *)_this)->_5_9_14_oldTickCount = ((int)now.g_tickCount);
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:oldTickCount", ((int)((P1 *)_this)->_5_9_14_oldTickCount));
+#endif
+		;
+		/* merge: g_tickCount = (g_tickCount+1)(53, 13, 53) */
+		reached[1][13] = 1;
+		(trpt+1)->bup.ovals[4] = ((int)now.g_tickCount);
 		now.g_tickCount = (((int)now.g_tickCount)+1);
 #ifdef VAR_RANGES
 		logval("g_tickCount", ((int)now.g_tickCount));
 #endif
 		;
-		_m = 3; goto P999; /* 3 */
-	case 421: // STATE 13 - scheduler.pml:166 - [((g_tickCount<g_schedResponseTime))] (0:0:0 - 1)
+		_m = 3; goto P999; /* 4 */
+	case 465: // STATE 14 - scheduler.pml:166 - [(((oldTickCount==255)&&(g_tickCount==0)))] (29:0:2 - 1)
 		IfNotBlocked
-		reached[1][13] = 1;
+		reached[1][14] = 1;
+		if (!(((((int)((P1 *)_this)->_5_9_14_oldTickCount)==255)&&(((int)now.g_tickCount)==0))))
+			continue;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _5_9_14_oldTickCount */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P1 *)_this)->_5_9_14_oldTickCount;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P1 *)_this)->_5_9_14_oldTickCount = 0;
+		/* merge: idx = 0(0, 15, 29) */
+		reached[1][15] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 30, 29) */
+		reached[1][30] = 1;
+		;
+		_m = 3; goto P999; /* 2 */
+	case 466: // STATE 16 - scheduler.pml:170 - [((idx<overflowedSortLinkTail))] (24:0:3 - 1)
+		IfNotBlocked
+		reached[1][16] = 1;
+		if (!((((int)((P1 *)_this)->_5_9_14_idx)<((int)now.overflowedSortLinkTail))))
+			continue;
+		/* merge: newIdx = (g_taskSortLinkTail+idx)(24, 17, 24) */
+		reached[1][17] = 1;
+		(trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((int)((P1 *)_this)->_5_9_14_newIdx);
+		((P1 *)_this)->_5_9_14_newIdx = (((int)now.g_taskSortLinkTail)+((int)((P1 *)_this)->_5_9_14_idx));
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:newIdx", ((int)((P1 *)_this)->_5_9_14_newIdx));
+#endif
+		;
+		/* merge: g_taskSortLink[newIdx].taskId = overflowedSortLink[idx].taskId(24, 18, 24) */
+		reached[1][18] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].taskId);
+		now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_newIdx, 3) ].taskId = ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].taskId);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[SysTick_Handler:newIdx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].taskId));
+#endif
+		;
+		/* merge: g_taskSortLink[newIdx].responseTime = overflowedSortLink[idx].responseTime(24, 19, 24) */
+		reached[1][19] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].responseTime);
+		now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_newIdx, 3) ].responseTime = ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].responseTime);
+#ifdef VAR_RANGES
+		logval("g_taskSortLink[SysTick_Handler:newIdx].responseTime", ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].responseTime));
+#endif
+		;
+		_m = 3; goto P999; /* 3 */
+	case 467: // STATE 20 - scheduler.pml:177 - [((g_taskSortLink[newIdx].taskId!=255))] (29:0:2 - 1)
+		IfNotBlocked
+		reached[1][20] = 1;
+		if (!((((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].taskId)!=255)))
+			continue;
+		/* merge: tcb[g_taskSortLink[newIdx].taskId].pendList = newIdx(29, 21, 29) */
+		reached[1][21] = 1;
+		(trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].taskId), 4) ].pendList);
+		now.tcb[ Index(now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_newIdx, 3) ].taskId, 4) ].pendList = ((int)((P1 *)_this)->_5_9_14_newIdx);
+#ifdef VAR_RANGES
+		logval("tcb[g_taskSortLink[SysTick_Handler:newIdx].taskId].pendList", ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_newIdx), 3) ].taskId), 4) ].pendList));
+#endif
+		;
+		/* merge: .(goto)(29, 25, 29) */
+		reached[1][25] = 1;
+		;
+		/* merge: idx = (idx+1)(29, 26, 29) */
+		reached[1][26] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = (((int)((P1 *)_this)->_5_9_14_idx)+1);
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 30, 29) */
+		reached[1][30] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 468: // STATE 23 - scheduler.pml:179 - [(1)] (29:0:1 - 1)
+		IfNotBlocked
+		reached[1][23] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(29, 25, 29) */
+		reached[1][25] = 1;
+		;
+		/* merge: idx = (idx+1)(29, 26, 29) */
+		reached[1][26] = 1;
+		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = (((int)((P1 *)_this)->_5_9_14_idx)+1);
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 30, 29) */
+		reached[1][30] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 469: // STATE 26 - scheduler.pml:182 - [idx = (idx+1)] (0:29:1 - 3)
+		IfNotBlocked
+		reached[1][26] = 1;
+		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = (((int)((P1 *)_this)->_5_9_14_idx)+1);
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 30, 29) */
+		reached[1][30] = 1;
+		;
+		_m = 3; goto P999; /* 1 */
+	case 470: // STATE 32 - scheduler.pml:187 - [g_taskSortLinkTail = (g_taskSortLinkTail+overflowedSortLinkTail)] (0:37:1 - 3)
+		IfNotBlocked
+		reached[1][32] = 1;
+		(trpt+1)->bup.oval = ((int)now.g_taskSortLinkTail);
+		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)+((int)now.overflowedSortLinkTail));
+#ifdef VAR_RANGES
+		logval("g_taskSortLinkTail", ((int)now.g_taskSortLinkTail));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 471: // STATE 33 - scheduler.pml:191 - [((g_taskSortLinkTail>0))] (48:0:4 - 1)
+		IfNotBlocked
+		reached[1][33] = 1;
+		if (!((((int)now.g_taskSortLinkTail)>0)))
+			continue;
+		/* merge: g_schedResponseTime = g_taskSortLink[0].responseTime(48, 34, 48) */
+		reached[1][34] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)now.g_schedResponseTime);
+		now.g_schedResponseTime = ((int)now.g_taskSortLink[0].responseTime);
+#ifdef VAR_RANGES
+		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(48, 38, 48) */
+		reached[1][38] = 1;
+		;
+		/* merge: overflowedSortLinkTail = 0(48, 39, 48) */
+		reached[1][39] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = 0;
+#ifdef VAR_RANGES
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
+#endif
+		;
+		/* merge: g_overflowedResponseTime = 255(48, 40, 48) */
+		reached[1][40] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: idx = 0(48, 41, 48) */
+		reached[1][41] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 49, 48) */
+		reached[1][49] = 1;
+		;
+		_m = 3; goto P999; /* 6 */
+	case 472: // STATE 36 - scheduler.pml:194 - [g_schedResponseTime = 255] (0:48:4 - 1)
+		IfNotBlocked
+		reached[1][36] = 1;
+		(trpt+1)->bup.ovals = grab_ints(4);
+		(trpt+1)->bup.ovals[0] = ((int)now.g_schedResponseTime);
+		now.g_schedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
+#endif
+		;
+		/* merge: .(goto)(48, 38, 48) */
+		reached[1][38] = 1;
+		;
+		/* merge: overflowedSortLinkTail = 0(48, 39, 48) */
+		reached[1][39] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = 0;
+#ifdef VAR_RANGES
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
+#endif
+		;
+		/* merge: g_overflowedResponseTime = 255(48, 40, 48) */
+		reached[1][40] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: idx = 0(48, 41, 48) */
+		reached[1][41] = 1;
+		(trpt+1)->bup.ovals[3] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 49, 48) */
+		reached[1][49] = 1;
+		;
+		_m = 3; goto P999; /* 5 */
+	case 473: // STATE 39 - scheduler.pml:198 - [overflowedSortLinkTail = 0] (0:48:3 - 3)
+		IfNotBlocked
+		reached[1][39] = 1;
+		(trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLinkTail);
+		now.overflowedSortLinkTail = 0;
+#ifdef VAR_RANGES
+		logval("overflowedSortLinkTail", ((int)now.overflowedSortLinkTail));
+#endif
+		;
+		/* merge: g_overflowedResponseTime = 255(48, 40, 48) */
+		reached[1][40] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)g_overflowedResponseTime);
+		g_overflowedResponseTime = 255;
+#ifdef VAR_RANGES
+		logval("g_overflowedResponseTime", ((int)g_overflowedResponseTime));
+#endif
+		;
+		/* merge: idx = 0(48, 41, 48) */
+		reached[1][41] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 49, 48) */
+		reached[1][49] = 1;
+		;
+		_m = 3; goto P999; /* 3 */
+	case 474: // STATE 42 - scheduler.pml:204 - [((idx<(2+1)))] (48:0:3 - 1)
+		IfNotBlocked
+		reached[1][42] = 1;
+		if (!((((int)((P1 *)_this)->_5_9_14_idx)<(2+1))))
+			continue;
+		/* merge: overflowedSortLink[idx].taskId = 255(48, 43, 48) */
+		reached[1][43] = 1;
+		(trpt+1)->bup.ovals = grab_ints(3);
+		(trpt+1)->bup.ovals[0] = ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].taskId);
+		now.overflowedSortLink[ Index(((P1 *)_this)->_5_9_14_idx, 3) ].taskId = 255;
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[SysTick_Handler:idx].taskId", ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].taskId));
+#endif
+		;
+		/* merge: overflowedSortLink[idx].responseTime = 255(48, 44, 48) */
+		reached[1][44] = 1;
+		(trpt+1)->bup.ovals[1] = ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].responseTime);
+		now.overflowedSortLink[ Index(((P1 *)_this)->_5_9_14_idx, 3) ].responseTime = 255;
+#ifdef VAR_RANGES
+		logval("overflowedSortLink[SysTick_Handler:idx].responseTime", ((int)now.overflowedSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].responseTime));
+#endif
+		;
+		/* merge: idx = (idx+1)(48, 45, 48) */
+		reached[1][45] = 1;
+		(trpt+1)->bup.ovals[2] = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = (((int)((P1 *)_this)->_5_9_14_idx)+1);
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		/* merge: .(goto)(0, 49, 48) */
+		reached[1][49] = 1;
+		;
+		_m = 3; goto P999; /* 4 */
+	case 475: // STATE 52 - scheduler.pml:211 - [(1)] (133:0:1 - 1)
+		IfNotBlocked
+		reached[1][52] = 1;
+		if (!(1))
+			continue;
+		/* merge: .(goto)(133, 54, 133) */
+		reached[1][54] = 1;
+		;
+		/* merge: idx = 0(133, 55, 133) */
+		reached[1][55] = 1;
+		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		_m = 3; goto P999; /* 2 */
+	case 476: // STATE 55 - scheduler.pml:215 - [idx = 0] (0:133:1 - 5)
+		IfNotBlocked
+		reached[1][55] = 1;
+		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_idx);
+		((P1 *)_this)->_5_9_14_idx = 0;
+#ifdef VAR_RANGES
+		logval("SysTick_Handler:idx", ((int)((P1 *)_this)->_5_9_14_idx));
+#endif
+		;
+		_m = 3; goto P999; /* 0 */
+	case 477: // STATE 56 - scheduler.pml:223 - [((g_tickCount<g_schedResponseTime))] (0:0:0 - 1)
+		IfNotBlocked
+		reached[1][56] = 1;
 		if (!((((int)now.g_tickCount)<((int)now.g_schedResponseTime))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 422: // STATE 16 - scheduler.pml:175 - [((idx<g_taskSortLinkTail))] (66:0:2 - 1)
+	case 478: // STATE 59 - scheduler.pml:232 - [((idx<g_taskSortLinkTail))] (109:0:2 - 1)
 		IfNotBlocked
-		reached[1][16] = 1;
+		reached[1][59] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_idx)<((int)now.g_taskSortLinkTail))))
 			continue;
-		/* merge: taskId = g_taskSortLink[idx].taskId(66, 17, 66) */
-		reached[1][17] = 1;
+		/* merge: taskId = g_taskSortLink[idx].taskId(109, 60, 109) */
+		reached[1][60] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)((P1 *)_this)->_5_9_14_taskId);
 		((P1 *)_this)->_5_9_14_taskId = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].taskId);
@@ -8903,8 +10095,8 @@
 		logval("SysTick_Handler:taskId", ((int)((P1 *)_this)->_5_9_14_taskId));
 #endif
 		;
-		/* merge: taskResponseTime = g_taskSortLink[idx].responseTime(66, 18, 66) */
-		reached[1][18] = 1;
+		/* merge: taskResponseTime = g_taskSortLink[idx].responseTime(109, 61, 109) */
+		reached[1][61] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_taskResponseTime);
 		((P1 *)_this)->_5_9_14_taskResponseTime = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_idx), 3) ].responseTime);
 #ifdef VAR_RANGES
@@ -8912,9 +10104,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 423: // STATE 19 - scheduler.pml:182 - [((taskResponseTime>=255))] (0:0:1 - 1)
+	case 479: // STATE 62 - scheduler.pml:239 - [((taskResponseTime>=255))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[1][19] = 1;
+		reached[1][62] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_taskResponseTime)>=255)))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -8924,9 +10116,9 @@
 #endif
 			((P1 *)_this)->_5_9_14_taskResponseTime = 0;
 		_m = 3; goto P999; /* 0 */
-	case 424: // STATE 21 - scheduler.pml:192 - [(((tcb[taskId].state==2)&&(g_tickCount>=taskResponseTime)))] (30:0:2 - 1)
+	case 480: // STATE 64 - scheduler.pml:249 - [(((tcb[taskId].state==2)&&(g_tickCount>=taskResponseTime)))] (73:0:2 - 1)
 		IfNotBlocked
-		reached[1][21] = 1;
+		reached[1][64] = 1;
 		if (!(((((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].state)==2)&&(((int)now.g_tickCount)>=((int)((P1 *)_this)->_5_9_14_taskResponseTime)))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -8936,8 +10128,8 @@
 		if (!readtrail)
 #endif
 			((P1 *)_this)->_5_9_14_taskResponseTime = 0;
-		/* merge: tcb[taskId].state = 1(0, 22, 30) */
-		reached[1][22] = 1;
+		/* merge: tcb[taskId].state = 1(0, 65, 73) */
+		reached[1][65] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].state);
 		now.tcb[ Index(((P1 *)_this)->_5_9_14_taskId, 4) ].state = 1;
 #ifdef VAR_RANGES
@@ -8945,13 +10137,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 425: // STATE 23 - data_structures.pml:136 - [((readyQueue[tcb[taskId].prio].tailIndex<5))] (44:0:3 - 1)
+	case 481: // STATE 66 - data_structures.pml:141 - [((readyQueue[tcb[taskId].prio].tailIndex<5))] (87:0:3 - 1)
 		IfNotBlocked
-		reached[1][23] = 1;
+		reached[1][66] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex)<5)))
 			continue;
-		/* merge: readyQueue[tcb[taskId].prio].tasks[readyQueue[tcb[taskId].prio].tailIndex] = taskId(44, 24, 44) */
-		reached[1][24] = 1;
+		/* merge: readyQueue[tcb[taskId].prio].tasks[readyQueue[tcb[taskId].prio].tailIndex] = taskId(87, 67, 87) */
+		reached[1][67] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex), 5) ]);
 		now.readyQueue[ Index(now.tcb[ Index(((P1 *)_this)->_5_9_14_taskId, 4) ].prio, 4) ].tasks[ Index(now.readyQueue[ Index(now.tcb[ Index(((P1 *)_this)->_5_9_14_taskId, 4) ].prio, 4) ].tailIndex, 5) ] = ((int)((P1 *)_this)->_5_9_14_taskId);
@@ -8959,68 +10151,68 @@
 		logval("readyQueue[tcb[SysTick_Handler:taskId].prio].tasks[readyQueue[tcb[SysTick_Handler:taskId].prio].tailIndex]", ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tasks[ Index(((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex), 5) ]));
 #endif
 		;
-		/* merge: readyQueue[tcb[taskId].prio].tailIndex = (readyQueue[tcb[taskId].prio].tailIndex+1)(44, 25, 44) */
-		reached[1][25] = 1;
+		/* merge: readyQueue[tcb[taskId].prio].tailIndex = (readyQueue[tcb[taskId].prio].tailIndex+1)(87, 68, 87) */
+		reached[1][68] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex);
 		now.readyQueue[ Index(now.tcb[ Index(((P1 *)_this)->_5_9_14_taskId, 4) ].prio, 4) ].tailIndex = (((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex)+1);
 #ifdef VAR_RANGES
 		logval("readyQueue[tcb[SysTick_Handler:taskId].prio].tailIndex", ((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].prio), 4) ].tailIndex));
 #endif
 		;
-		/* merge: .(goto)(44, 29, 44) */
-		reached[1][29] = 1;
+		/* merge: .(goto)(87, 72, 87) */
+		reached[1][72] = 1;
 		;
-		/* merge: shiftIdx = idx(44, 31, 44) */
-		reached[1][31] = 1;
+		/* merge: shiftIdx = idx(87, 74, 87) */
+		reached[1][74] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = ((int)((P1 *)_this)->_5_9_14_idx);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 5 */
-	case 426: // STATE 27 - data_structures.pml:139 - [assert(0)] (0:44:1 - 1)
+	case 482: // STATE 70 - data_structures.pml:144 - [assert(0)] (0:87:1 - 1)
 		IfNotBlocked
-		reached[1][27] = 1;
+		reached[1][70] = 1;
 		spin_assert(0, "0", II, tt, t);
-		/* merge: .(goto)(44, 29, 44) */
-		reached[1][29] = 1;
+		/* merge: .(goto)(87, 72, 87) */
+		reached[1][72] = 1;
 		;
-		/* merge: shiftIdx = idx(44, 31, 44) */
-		reached[1][31] = 1;
+		/* merge: shiftIdx = idx(87, 74, 87) */
+		reached[1][74] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = ((int)((P1 *)_this)->_5_9_14_idx);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 427: // STATE 31 - scheduler.pml:199 - [shiftIdx = idx] (0:44:1 - 3)
+	case 483: // STATE 74 - scheduler.pml:256 - [shiftIdx = idx] (0:87:1 - 3)
 		IfNotBlocked
-		reached[1][31] = 1;
+		reached[1][74] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = ((int)((P1 *)_this)->_5_9_14_idx);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 428: // STATE 32 - scheduler.pml:200 - [((shiftIdx<(g_taskSortLinkTail-1)))] (39:0:2 - 1)
+	case 484: // STATE 75 - scheduler.pml:257 - [((shiftIdx<(g_taskSortLinkTail-1)))] (82:0:2 - 1)
 		IfNotBlocked
-		reached[1][32] = 1;
+		reached[1][75] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_shiftIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: g_taskSortLink[shiftIdx].taskId = g_taskSortLink[(shiftIdx+1)].taskId(39, 33, 39) */
-		reached[1][33] = 1;
+		/* merge: g_taskSortLink[shiftIdx].taskId = g_taskSortLink[(shiftIdx+1)].taskId(82, 76, 82) */
+		reached[1][76] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].taskId);
 		now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_shiftIdx, 3) ].taskId = ((int)now.g_taskSortLink[ Index((((int)((P1 *)_this)->_5_9_14_shiftIdx)+1), 3) ].taskId);
@@ -9028,8 +10220,8 @@
 		logval("g_taskSortLink[SysTick_Handler:shiftIdx].taskId", ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[shiftIdx].responseTime = g_taskSortLink[(shiftIdx+1)].responseTime(39, 34, 39) */
-		reached[1][34] = 1;
+		/* merge: g_taskSortLink[shiftIdx].responseTime = g_taskSortLink[(shiftIdx+1)].responseTime(82, 77, 82) */
+		reached[1][77] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].responseTime);
 		now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_shiftIdx, 3) ].responseTime = ((int)now.g_taskSortLink[ Index((((int)((P1 *)_this)->_5_9_14_shiftIdx)+1), 3) ].responseTime);
 #ifdef VAR_RANGES
@@ -9037,13 +10229,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 429: // STATE 35 - scheduler.pml:205 - [((g_taskSortLink[shiftIdx].taskId!=255))] (44:0:2 - 1)
+	case 485: // STATE 78 - scheduler.pml:262 - [((g_taskSortLink[shiftIdx].taskId!=255))] (87:0:2 - 1)
 		IfNotBlocked
-		reached[1][35] = 1;
+		reached[1][78] = 1;
 		if (!((((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].taskId)!=255)))
 			continue;
-		/* merge: tcb[g_taskSortLink[shiftIdx].taskId].pendList = shiftIdx(44, 36, 44) */
-		reached[1][36] = 1;
+		/* merge: tcb[g_taskSortLink[shiftIdx].taskId].pendList = shiftIdx(87, 79, 87) */
+		reached[1][79] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].taskId), 4) ].pendList);
 		now.tcb[ Index(now.g_taskSortLink[ Index(((P1 *)_this)->_5_9_14_shiftIdx, 3) ].taskId, 4) ].pendList = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
@@ -9051,57 +10243,57 @@
 		logval("tcb[g_taskSortLink[SysTick_Handler:shiftIdx].taskId].pendList", ((int)now.tcb[ Index(((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_shiftIdx), 3) ].taskId), 4) ].pendList));
 #endif
 		;
-		/* merge: .(goto)(44, 40, 44) */
-		reached[1][40] = 1;
+		/* merge: .(goto)(87, 83, 87) */
+		reached[1][83] = 1;
 		;
-		/* merge: shiftIdx = (shiftIdx+1)(44, 41, 44) */
-		reached[1][41] = 1;
+		/* merge: shiftIdx = (shiftIdx+1)(87, 84, 87) */
+		reached[1][84] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = (((int)((P1 *)_this)->_5_9_14_shiftIdx)+1);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 430: // STATE 38 - scheduler.pml:207 - [(1)] (44:0:1 - 1)
+	case 486: // STATE 81 - scheduler.pml:264 - [(1)] (87:0:1 - 1)
 		IfNotBlocked
-		reached[1][38] = 1;
+		reached[1][81] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(44, 40, 44) */
-		reached[1][40] = 1;
+		/* merge: .(goto)(87, 83, 87) */
+		reached[1][83] = 1;
 		;
-		/* merge: shiftIdx = (shiftIdx+1)(44, 41, 44) */
-		reached[1][41] = 1;
+		/* merge: shiftIdx = (shiftIdx+1)(87, 84, 87) */
+		reached[1][84] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = (((int)((P1 *)_this)->_5_9_14_shiftIdx)+1);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 431: // STATE 41 - scheduler.pml:209 - [shiftIdx = (shiftIdx+1)] (0:44:1 - 3)
+	case 487: // STATE 84 - scheduler.pml:266 - [shiftIdx = (shiftIdx+1)] (0:87:1 - 3)
 		IfNotBlocked
-		reached[1][41] = 1;
+		reached[1][84] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_shiftIdx);
 		((P1 *)_this)->_5_9_14_shiftIdx = (((int)((P1 *)_this)->_5_9_14_shiftIdx)+1);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:shiftIdx", ((int)((P1 *)_this)->_5_9_14_shiftIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 45, 44) */
-		reached[1][45] = 1;
+		/* merge: .(goto)(0, 88, 87) */
+		reached[1][88] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 432: // STATE 47 - scheduler.pml:213 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:60:3 - 3)
+	case 488: // STATE 90 - scheduler.pml:270 - [g_taskSortLink[(g_taskSortLinkTail-1)].taskId = 255] (0:103:3 - 3)
 		IfNotBlocked
-		reached[1][47] = 1;
+		reached[1][90] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].taskId = 255;
@@ -9109,16 +10301,16 @@
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].taskId", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].taskId));
 #endif
 		;
-		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(60, 48, 60) */
-		reached[1][48] = 1;
+		/* merge: g_taskSortLink[(g_taskSortLinkTail-1)].responseTime = 255(103, 91, 103) */
+		reached[1][91] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime);
 		now.g_taskSortLink[ Index((now.g_taskSortLinkTail-1), 3) ].responseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_taskSortLink[(g_taskSortLinkTail-1)].responseTime", ((int)now.g_taskSortLink[ Index((((int)now.g_taskSortLinkTail)-1), 3) ].responseTime));
 #endif
 		;
-		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(60, 49, 60) */
-		reached[1][49] = 1;
+		/* merge: g_taskSortLinkTail = (g_taskSortLinkTail-1)(103, 92, 103) */
+		reached[1][92] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)now.g_taskSortLinkTail);
 		now.g_taskSortLinkTail = (((int)now.g_taskSortLinkTail)-1);
 #ifdef VAR_RANGES
@@ -9126,9 +10318,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 2 */
-	case 433: // STATE 50 - data_structures.pml:335 - [checkIdx = 0] (0:57:3 - 1)
+	case 489: // STATE 93 - data_structures.pml:440 - [checkIdx = 0] (0:100:3 - 1)
 		IfNotBlocked
-		reached[1][50] = 1;
+		reached[1][93] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
 		(trpt+1)->bup.ovals[0] = ((int)((P1 *)_this)->_5_9_14_12_checkIdx);
 		((P1 *)_this)->_5_9_14_12_checkIdx = 0;
@@ -9136,8 +10328,8 @@
 		logval("SysTick_Handler:checkIdx", ((int)((P1 *)_this)->_5_9_14_12_checkIdx));
 #endif
 		;
-		/* merge: isValid = 1(57, 51, 57) */
-		reached[1][51] = 1;
+		/* merge: isValid = 1(100, 94, 100) */
+		reached[1][94] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)((P1 *)_this)->_5_9_14_12_isValid);
 		((P1 *)_this)->_5_9_14_12_isValid = 1;
 #ifdef VAR_RANGES
@@ -9150,49 +10342,49 @@
 		if (!readtrail)
 #endif
 			((P1 *)_this)->_5_9_14_12_isValid = 0;
-		/* merge: .(goto)(0, 58, 57) */
-		reached[1][58] = 1;
+		/* merge: .(goto)(0, 101, 100) */
+		reached[1][101] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 434: // STATE 52 - data_structures.pml:339 - [((checkIdx<(g_taskSortLinkTail-1)))] (57:0:1 - 1)
+	case 490: // STATE 95 - data_structures.pml:444 - [((checkIdx<(g_taskSortLinkTail-1)))] (100:0:1 - 1)
 		IfNotBlocked
-		reached[1][52] = 1;
+		reached[1][95] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_12_checkIdx)<(((int)now.g_taskSortLinkTail)-1))))
 			continue;
-		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(57, 53, 57) */
-		reached[1][53] = 1;
+		/* merge: assert((g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime))(100, 96, 100) */
+		reached[1][96] = 1;
 		spin_assert((((int)now.g_taskSortLink[ Index(((int)((P1 *)_this)->_5_9_14_12_checkIdx), 3) ].responseTime)<=((int)now.g_taskSortLink[ Index((((int)((P1 *)_this)->_5_9_14_12_checkIdx)+1), 3) ].responseTime)), "(g_taskSortLink[checkIdx].responseTime<=g_taskSortLink[(checkIdx+1)].responseTime)", II, tt, t);
-		/* merge: checkIdx = (checkIdx+1)(57, 54, 57) */
-		reached[1][54] = 1;
+		/* merge: checkIdx = (checkIdx+1)(100, 97, 100) */
+		reached[1][97] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_12_checkIdx);
 		((P1 *)_this)->_5_9_14_12_checkIdx = (((int)((P1 *)_this)->_5_9_14_12_checkIdx)+1);
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:checkIdx", ((int)((P1 *)_this)->_5_9_14_12_checkIdx));
 #endif
 		;
-		/* merge: .(goto)(0, 58, 57) */
-		reached[1][58] = 1;
+		/* merge: .(goto)(0, 101, 100) */
+		reached[1][101] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 435: // STATE 61 - scheduler.pml:220 - [needSched = 1] (0:70:1 - 3)
+	case 491: // STATE 104 - scheduler.pml:277 - [needSched = 1] (0:113:1 - 3)
 		IfNotBlocked
-		reached[1][61] = 1;
+		reached[1][104] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_needSched);
 		((P1 *)_this)->_5_9_14_needSched = 1;
 #ifdef VAR_RANGES
 		logval("SysTick_Handler:needSched", ((int)((P1 *)_this)->_5_9_14_needSched));
 #endif
 		;
-		/* merge: .(goto)(0, 67, 70) */
-		reached[1][67] = 1;
+		/* merge: .(goto)(0, 110, 113) */
+		reached[1][110] = 1;
 		;
-		/* merge: .(goto)(0, 71, 70) */
-		reached[1][71] = 1;
+		/* merge: .(goto)(0, 114, 113) */
+		reached[1][114] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 436: // STATE 62 - scheduler.pml:223 - [(((tcb[taskId].state==2)&&(g_tickCount<taskResponseTime)))] (0:0:2 - 1)
+	case 492: // STATE 105 - scheduler.pml:280 - [(((tcb[taskId].state==2)&&(g_tickCount<taskResponseTime)))] (0:0:2 - 1)
 		IfNotBlocked
-		reached[1][62] = 1;
+		reached[1][105] = 1;
 		if (!(((((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].state)==2)&&(((int)now.g_tickCount)<((int)((P1 *)_this)->_5_9_14_taskResponseTime)))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -9209,9 +10401,9 @@
 #endif
 			((P1 *)_this)->_5_9_14_taskResponseTime = 0;
 		_m = 3; goto P999; /* 0 */
-	case 437: // STATE 65 - scheduler.pml:233 - [idx = (idx+1)] (0:0:1 - 1)
+	case 493: // STATE 108 - scheduler.pml:290 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked
-		reached[1][65] = 1;
+		reached[1][108] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_idx);
 		((P1 *)_this)->_5_9_14_idx = (((int)((P1 *)_this)->_5_9_14_idx)+1);
 #ifdef VAR_RANGES
@@ -9219,42 +10411,42 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 438: // STATE 73 - scheduler.pml:244 - [(needSched)] (0:0:0 - 1)
+	case 494: // STATE 116 - scheduler.pml:301 - [(needSched)] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][73] = 1;
+		reached[1][116] = 1;
 		if (!(((int)((P1 *)_this)->_5_9_14_needSched)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 439: // STATE 74 - scheduler.pml:247 - [((g_taskSortLinkTail==0))] (98:0:1 - 1)
+	case 495: // STATE 117 - scheduler.pml:304 - [((g_taskSortLinkTail==0))] (141:0:1 - 1)
 		IfNotBlocked
-		reached[1][74] = 1;
+		reached[1][117] = 1;
 		if (!((((int)now.g_taskSortLinkTail)==0)))
 			continue;
-		/* merge: g_schedResponseTime = 255(0, 75, 98) */
-		reached[1][75] = 1;
+		/* merge: g_schedResponseTime = 255(0, 118, 141) */
+		reached[1][118] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = 255;
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 85, 98) */
-		reached[1][85] = 1;
+		/* merge: .(goto)(0, 128, 141) */
+		reached[1][128] = 1;
 		;
-		/* merge: .(goto)(0, 89, 98) */
-		reached[1][89] = 1;
+		/* merge: .(goto)(0, 132, 141) */
+		reached[1][132] = 1;
 		;
-		/* merge: .(goto)(0, 91, 98) */
-		reached[1][91] = 1;
+		/* merge: .(goto)(0, 134, 141) */
+		reached[1][134] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 440: // STATE 76 - scheduler.pml:249 - [((g_taskSortLinkTail>0))] (82:0:1 - 1)
+	case 496: // STATE 119 - scheduler.pml:306 - [((g_taskSortLinkTail>0))] (125:0:1 - 1)
 		IfNotBlocked
-		reached[1][76] = 1;
+		reached[1][119] = 1;
 		if (!((((int)now.g_taskSortLinkTail)>0)))
 			continue;
-		/* merge: firstTime = g_taskSortLink[0].responseTime(0, 77, 82) */
-		reached[1][77] = 1;
+		/* merge: firstTime = g_taskSortLink[0].responseTime(0, 120, 125) */
+		reached[1][120] = 1;
 		(trpt+1)->bup.oval = ((int)((P1 *)_this)->_5_9_14_firstTime);
 		((P1 *)_this)->_5_9_14_firstTime = ((int)now.g_taskSortLink[0].responseTime);
 #ifdef VAR_RANGES
@@ -9262,35 +10454,35 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 441: // STATE 78 - scheduler.pml:252 - [((firstTime<255))] (98:0:1 - 1)
+	case 497: // STATE 121 - scheduler.pml:309 - [((firstTime<255))] (141:0:1 - 1)
 		IfNotBlocked
-		reached[1][78] = 1;
+		reached[1][121] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_firstTime)<255)))
 			continue;
-		/* merge: g_schedResponseTime = firstTime(0, 79, 98) */
-		reached[1][79] = 1;
+		/* merge: g_schedResponseTime = firstTime(0, 122, 141) */
+		reached[1][122] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = ((int)((P1 *)_this)->_5_9_14_firstTime);
 #ifdef VAR_RANGES
 		logval("g_schedResponseTime", ((int)now.g_schedResponseTime));
 #endif
 		;
-		/* merge: .(goto)(0, 83, 98) */
-		reached[1][83] = 1;
+		/* merge: .(goto)(0, 126, 141) */
+		reached[1][126] = 1;
 		;
-		/* merge: .(goto)(0, 85, 98) */
-		reached[1][85] = 1;
+		/* merge: .(goto)(0, 128, 141) */
+		reached[1][128] = 1;
 		;
-		/* merge: .(goto)(0, 89, 98) */
-		reached[1][89] = 1;
+		/* merge: .(goto)(0, 132, 141) */
+		reached[1][132] = 1;
 		;
-		/* merge: .(goto)(0, 91, 98) */
-		reached[1][91] = 1;
+		/* merge: .(goto)(0, 134, 141) */
+		reached[1][134] = 1;
 		;
 		_m = 3; goto P999; /* 5 */
-	case 442: // STATE 81 - scheduler.pml:257 - [g_schedResponseTime = 255] (0:0:1 - 1)
+	case 498: // STATE 124 - scheduler.pml:314 - [g_schedResponseTime = 255] (0:0:1 - 1)
 		IfNotBlocked
-		reached[1][81] = 1;
+		reached[1][124] = 1;
 		(trpt+1)->bup.oval = ((int)now.g_schedResponseTime);
 		now.g_schedResponseTime = 255;
 #ifdef VAR_RANGES
@@ -9298,9 +10490,9 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 443: // STATE 92 - scheduler.pml:266 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
+	case 499: // STATE 135 - scheduler.pml:323 - [((needSched&&g_taskScheduled))] (0:0:1 - 1)
 		IfNotBlocked
-		reached[1][92] = 1;
+		reached[1][135] = 1;
 		if (!((((int)((P1 *)_this)->_5_9_14_needSched)&&((int)now.g_taskScheduled))))
 			continue;
 		if (TstOnly) return 1; /* TT */
@@ -9310,34 +10502,34 @@
 #endif
 			((P1 *)_this)->_5_9_14_needSched = 0;
 		_m = 3; goto P999; /* 0 */
-	case 444: // STATE 93 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:109:1 - 1)
+	case 500: // STATE 136 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:152:1 - 1)
 		IfNotBlocked
-		reached[1][93] = 1;
+		reached[1][136] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(109, 94, 109) */
-		reached[1][94] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(152, 137, 152) */
+		reached[1][137] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: .(goto)(0, 99, 109) */
-		reached[1][99] = 1;
+		/* merge: .(goto)(0, 142, 152) */
+		reached[1][142] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 445: // STATE 101 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 501: // STATE 144 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][101] = 1;
+		reached[1][144] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 446: // STATE 102 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:124:2 - 1)
+	case 502: // STATE 145 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:167:2 - 1)
 		IfNotBlocked
-		reached[1][102] = 1;
+		reached[1][145] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(124, 103, 124) */
-		reached[1][103] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(167, 146, 167) */
+		reached[1][146] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -9345,44 +10537,44 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(124, 105, 124) */
-		reached[1][105] = 1;
+		/* merge: chain_tick_used = 1(167, 148, 167) */
+		reached[1][148] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(124, 108, 124) */
-		reached[1][108] = 1;
+		/* merge: .(goto)(167, 151, 167) */
+		reached[1][151] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 447: // STATE 108 - data_structures.pml:118 - [.(goto)] (0:124:0 - 2)
+	case 503: // STATE 151 - data_structures.pml:123 - [.(goto)] (0:167:0 - 2)
 		IfNotBlocked
-		reached[1][108] = 1;
+		reached[1][151] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 448: // STATE 106 - data_structures.pml:116 - [(1)] (124:0:0 - 1)
+	case 504: // STATE 149 - data_structures.pml:121 - [(1)] (167:0:0 - 1)
 		IfNotBlocked
-		reached[1][106] = 1;
+		reached[1][149] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(124, 108, 124) */
-		reached[1][108] = 1;
+		/* merge: .(goto)(167, 151, 167) */
+		reached[1][151] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 449: // STATE 111 - scheduler.pml:310 - [((1==EP))] (0:0:0 - 1)
+	case 505: // STATE 154 - scheduler.pml:367 - [((1==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][111] = 1;
+		reached[1][154] = 1;
 		if (!((1==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 450: // STATE 112 - data_structures.pml:45 - [assert(((0<2)&&(0<8)))] (0:123:1 - 1)
+	case 506: // STATE 155 - data_structures.pml:50 - [assert(((0<2)&&(0<8)))] (0:166:1 - 1)
 		IfNotBlocked
-		reached[1][112] = 1;
+		reached[1][155] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<0))(123, 113, 123) */
-		reached[1][113] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<0))(166, 156, 166) */
+		reached[1][156] = 1;
 		(trpt+1)->bup.oval = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<0));
 #ifdef VAR_RANGES
@@ -9390,18 +10582,18 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 451: // STATE 115 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 507: // STATE 158 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][115] = 1;
+		reached[1][158] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 452: // STATE 116 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:150:2 - 1)
+	case 508: // STATE 159 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:193:2 - 1)
 		IfNotBlocked
-		reached[1][116] = 1;
+		reached[1][159] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(150, 117, 150) */
-		reached[1][117] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(193, 160, 193) */
+		reached[1][160] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -9409,47 +10601,47 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(150, 119, 150) */
-		reached[1][119] = 1;
+		/* merge: chain_tick_used = 1(193, 162, 193) */
+		reached[1][162] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(150, 122, 150) */
-		reached[1][122] = 1;
+		/* merge: .(goto)(193, 165, 193) */
+		reached[1][165] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 453: // STATE 122 - data_structures.pml:118 - [.(goto)] (0:150:0 - 2)
+	case 509: // STATE 165 - data_structures.pml:123 - [.(goto)] (0:193:0 - 2)
 		IfNotBlocked
-		reached[1][122] = 1;
+		reached[1][165] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 454: // STATE 120 - data_structures.pml:116 - [(1)] (150:0:0 - 1)
+	case 510: // STATE 163 - data_structures.pml:121 - [(1)] (193:0:0 - 1)
 		IfNotBlocked
-		reached[1][120] = 1;
+		reached[1][163] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(150, 122, 150) */
-		reached[1][122] = 1;
+		/* merge: .(goto)(193, 165, 193) */
+		reached[1][165] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 455: // STATE 125 - scheduler.pml:313 - [((1==EP))] (0:0:0 - 1)
+	case 511: // STATE 168 - scheduler.pml:370 - [((1==EP))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][125] = 1;
+		reached[1][168] = 1;
 		if (!((1==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 456: // STATE 126 - data_structures.pml:95 - [((pending_exp>0))] (0:0:0 - 1)
+	case 512: // STATE 169 - data_structures.pml:100 - [((pending_exp>0))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][126] = 1;
+		reached[1][169] = 1;
 		if (!((((int)now.pending_exp)>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 457: // STATE 127 - data_structures.pml:76 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:149:4 - 1)
+	case 513: // STATE 170 - data_structures.pml:81 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:192:4 - 1)
 		IfNotBlocked
-		reached[1][127] = 1;
+		reached[1][170] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
 		(trpt+1)->bup.ovals[0] = ((int)((P1 *)_this)->tmp);
 		((P1 *)_this)->tmp = ( (((((int)now.pending_exp)>>0)&1)) ? (0) : (1) );
@@ -9457,19 +10649,19 @@
 		logval("SysTick_Handler:tmp", ((int)((P1 *)_this)->tmp));
 #endif
 		;
-		/* merge: assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))(149, 129, 149) */
-		reached[1][129] = 1;
+		/* merge: assert((((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2)))(192, 172, 192) */
+		reached[1][172] = 1;
 		spin_assert((((((int)now.BASEPRI)==0)||(15<((int)now.BASEPRI)))&&(((int)now.EP_Stack)>=2)), "(((BASEPRI==0)||(15<BASEPRI))&&(EP_Stack>=2))", II, tt, t);
-		/* merge: EP = tmp(149, 130, 149) */
-		reached[1][130] = 1;
+		/* merge: EP = tmp(192, 173, 192) */
+		reached[1][173] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP);
 		now.EP = ((int)((P1 *)_this)->tmp);
 #ifdef VAR_RANGES
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: tmp = 255(149, 131, 149) */
-		reached[1][131] = 1;
+		/* merge: tmp = 255(192, 174, 192) */
+		reached[1][174] = 1;
 		(trpt+1)->bup.ovals[2] = ((int)((P1 *)_this)->tmp);
 		((P1 *)_this)->tmp = 255;
 #ifdef VAR_RANGES
@@ -9482,16 +10674,16 @@
 		if (!readtrail)
 #endif
 			((P1 *)_this)->tmp = 0;
-		/* merge: .(goto)(0, 139, 149) */
-		reached[1][139] = 1;
+		/* merge: .(goto)(0, 182, 192) */
+		reached[1][182] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 458: // STATE 134 - data_structures.pml:63 - [assert((EP_Stack!=255))] (0:149:2 - 1)
+	case 514: // STATE 177 - data_structures.pml:68 - [assert((EP_Stack!=255))] (0:192:2 - 1)
 		IfNotBlocked
-		reached[1][134] = 1;
+		reached[1][177] = 1;
 		spin_assert((((int)now.EP_Stack)!=255), "(EP_Stack!=255)", II, tt, t);
-		/* merge: EP = EP_Stack(149, 135, 149) */
-		reached[1][135] = 1;
+		/* merge: EP = EP_Stack(192, 178, 192) */
+		reached[1][178] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.EP);
 		now.EP = ((int)now.EP_Stack);
@@ -9499,30 +10691,30 @@
 		logval("EP", ((int)now.EP));
 #endif
 		;
-		/* merge: EP_Stack = 255(149, 136, 149) */
-		reached[1][136] = 1;
+		/* merge: EP_Stack = 255(192, 179, 192) */
+		reached[1][179] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.EP_Stack);
 		now.EP_Stack = 255;
 #ifdef VAR_RANGES
 		logval("EP_Stack", ((int)now.EP_Stack));
 #endif
 		;
-		/* merge: .(goto)(0, 139, 149) */
-		reached[1][139] = 1;
+		/* merge: .(goto)(0, 182, 192) */
+		reached[1][182] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 459: // STATE 141 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 515: // STATE 184 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][141] = 1;
+		reached[1][184] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 460: // STATE 142 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:151:2 - 1)
+	case 516: // STATE 185 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:194:2 - 1)
 		IfNotBlocked
-		reached[1][142] = 1;
+		reached[1][185] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
-		/* merge: pending_exp = (pending_exp|(1<<1))(151, 143, 151) */
-		reached[1][143] = 1;
+		/* merge: pending_exp = (pending_exp|(1<<1))(194, 186, 194) */
+		reached[1][186] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
 		(trpt+1)->bup.ovals[0] = ((int)now.pending_exp);
 		now.pending_exp = (((int)now.pending_exp)|(1<<1));
@@ -9530,61 +10722,61 @@
 		logval("pending_exp", ((int)now.pending_exp));
 #endif
 		;
-		/* merge: chain_tick_used = 1(151, 145, 151) */
-		reached[1][145] = 1;
+		/* merge: chain_tick_used = 1(194, 188, 194) */
+		reached[1][188] = 1;
 		(trpt+1)->bup.ovals[1] = ((int)now.chain_tick_used);
 		now.chain_tick_used = 1;
 #ifdef VAR_RANGES
 		logval("chain_tick_used", ((int)now.chain_tick_used));
 #endif
 		;
-		/* merge: .(goto)(151, 148, 151) */
-		reached[1][148] = 1;
+		/* merge: .(goto)(194, 191, 194) */
+		reached[1][191] = 1;
 		;
-		/* merge: .(goto)(0, 152, 151) */
-		reached[1][152] = 1;
+		/* merge: .(goto)(0, 195, 194) */
+		reached[1][195] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 461: // STATE 148 - data_structures.pml:118 - [.(goto)] (0:151:0 - 2)
+	case 517: // STATE 191 - data_structures.pml:123 - [.(goto)] (0:194:0 - 2)
 		IfNotBlocked
-		reached[1][148] = 1;
+		reached[1][191] = 1;
 		;
-		/* merge: .(goto)(0, 152, 151) */
-		reached[1][152] = 1;
+		/* merge: .(goto)(0, 195, 194) */
+		reached[1][195] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 462: // STATE 146 - data_structures.pml:116 - [(1)] (151:0:0 - 1)
+	case 518: // STATE 189 - data_structures.pml:121 - [(1)] (194:0:0 - 1)
 		IfNotBlocked
-		reached[1][146] = 1;
+		reached[1][189] = 1;
 		if (!(1))
 			continue;
-		/* merge: .(goto)(151, 148, 151) */
-		reached[1][148] = 1;
+		/* merge: .(goto)(194, 191, 194) */
+		reached[1][191] = 1;
 		;
-		/* merge: .(goto)(0, 152, 151) */
-		reached[1][152] = 1;
+		/* merge: .(goto)(0, 195, 194) */
+		reached[1][195] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 463: // STATE 154 - scheduler.pml:315 - [-end-] (0:0:0 - 1)
+	case 519: // STATE 197 - scheduler.pml:372 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
-		reached[1][154] = 1;
+		reached[1][197] = 1;
 		if (!delproc(1, II)) continue;
 		_m = 3; goto P999; /* 0 */
 
 		 /* PROC PendSV_Handler */
-	case 464: // STATE 1 - scheduler.pml:277 - [((EP==0))] (0:0:0 - 1)
+	case 520: // STATE 1 - scheduler.pml:334 - [((EP==0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][1] = 1;
 		if (!((((int)now.EP)==0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 465: // STATE 2 - data_structures.pml:81 - [((EP==0))] (0:0:0 - 1)
+	case 521: // STATE 2 - data_structures.pml:86 - [((EP==0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][2] = 1;
 		if (!((((int)now.EP)==0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 466: // STATE 3 - data_structures.pml:51 - [assert(((0<2)&&(0<8)))] (0:32:1 - 1)
+	case 522: // STATE 3 - data_structures.pml:56 - [assert(((0<2)&&(0<8)))] (0:32:1 - 1)
 		IfNotBlocked
 		reached[0][3] = 1;
 		spin_assert(((0<2)&&(0<8)), "((0<2)&&(0<8))", II, tt, t);
@@ -9597,13 +10789,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 467: // STATE 8 - scheduler.pml:281 - [((0==EP))] (0:0:0 - 1)
+	case 523: // STATE 8 - scheduler.pml:338 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][8] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 468: // STATE 9 - scheduler.pml:281 - [((tcb[EP_Stack].state==4))] (18:0:1 - 1)
+	case 524: // STATE 9 - scheduler.pml:338 - [((tcb[EP_Stack].state==4))] (18:0:1 - 1)
 		IfNotBlocked
 		reached[0][9] = 1;
 		if (!((((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].state)==4)))
@@ -9617,7 +10809,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 469: // STATE 11 - data_structures.pml:136 - [((readyQueue[tcb[EP_Stack].prio].tailIndex<5))] (31:0:2 - 1)
+	case 525: // STATE 11 - data_structures.pml:141 - [((readyQueue[tcb[EP_Stack].prio].tailIndex<5))] (31:0:2 - 1)
 		IfNotBlocked
 		reached[0][11] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.tcb[ Index(((int)now.EP_Stack), 4) ].prio), 4) ].tailIndex)<5)))
@@ -9646,18 +10838,18 @@
 		reached[0][22] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 470: // STATE 15 - data_structures.pml:139 - [assert(0)] (0:0:0 - 1)
+	case 526: // STATE 15 - data_structures.pml:144 - [assert(0)] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][15] = 1;
 		spin_assert(0, "0", II, tt, t);
 		_m = 3; goto P999; /* 0 */
-	case 471: // STATE 23 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 527: // STATE 23 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][23] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 472: // STATE 24 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:62:2 - 1)
+	case 528: // STATE 24 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:62:2 - 1)
 		IfNotBlocked
 		reached[0][24] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -9682,12 +10874,12 @@
 		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 473: // STATE 30 - data_structures.pml:118 - [.(goto)] (0:62:0 - 2)
+	case 529: // STATE 30 - data_structures.pml:123 - [.(goto)] (0:62:0 - 2)
 		IfNotBlocked
 		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 474: // STATE 28 - data_structures.pml:116 - [(1)] (62:0:0 - 1)
+	case 530: // STATE 28 - data_structures.pml:121 - [(1)] (62:0:0 - 1)
 		IfNotBlocked
 		reached[0][28] = 1;
 		if (!(1))
@@ -9696,13 +10888,13 @@
 		reached[0][30] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 475: // STATE 33 - scheduler.pml:289 - [((0==EP))] (0:0:0 - 1)
+	case 531: // STATE 33 - scheduler.pml:346 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][33] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 476: // STATE 34 - data_structures.pml:193 - [prio = 0] (0:47:3 - 1)
+	case 532: // STATE 34 - data_structures.pml:198 - [prio = 0] (0:47:3 - 1)
 		IfNotBlocked
 		reached[0][34] = 1;
 		(trpt+1)->bup.ovals = grab_ints(3);
@@ -9732,13 +10924,13 @@
 		reached[0][48] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 477: // STATE 37 - data_structures.pml:196 - [(((prio<4)&&!(found)))] (0:0:0 - 1)
+	case 533: // STATE 37 - data_structures.pml:201 - [(((prio<4)&&!(found)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][37] = 1;
 		if (!(((((int)((P0 *)_this)->_4_3_4_prio)<4)&& !(((int)((P0 *)_this)->_4_3_4_found)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 478: // STATE 38 - data_structures.pml:198 - [((readyQueue[prio].tailIndex>0))] (47:0:2 - 1)
+	case 534: // STATE 38 - data_structures.pml:203 - [((readyQueue[prio].tailIndex>0))] (47:0:2 - 1)
 		IfNotBlocked
 		reached[0][38] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)((P0 *)_this)->_4_3_4_prio), 4) ].tailIndex)>0)))
@@ -9767,7 +10959,7 @@
 		reached[0][48] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 479: // STATE 42 - data_structures.pml:201 - [prio = (prio+1)] (0:0:1 - 1)
+	case 535: // STATE 42 - data_structures.pml:206 - [prio = (prio+1)] (0:0:1 - 1)
 		IfNotBlocked
 		reached[0][42] = 1;
 		(trpt+1)->bup.oval = ((int)((P0 *)_this)->_4_3_4_prio);
@@ -9777,7 +10969,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 480: // STATE 50 - data_structures.pml:205 - [tmp = top_task] (0:61:2 - 3)
+	case 536: // STATE 50 - data_structures.pml:210 - [tmp = top_task] (0:61:2 - 3)
 		IfNotBlocked
 		reached[0][50] = 1;
 		(trpt+1)->bup.ovals = grab_ints(2);
@@ -9796,13 +10988,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 481: // STATE 53 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 537: // STATE 53 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][53] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 482: // STATE 54 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:90:2 - 1)
+	case 538: // STATE 54 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:90:2 - 1)
 		IfNotBlocked
 		reached[0][54] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -9827,12 +11019,12 @@
 		reached[0][60] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 483: // STATE 60 - data_structures.pml:118 - [.(goto)] (0:90:0 - 2)
+	case 539: // STATE 60 - data_structures.pml:123 - [.(goto)] (0:90:0 - 2)
 		IfNotBlocked
 		reached[0][60] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 484: // STATE 58 - data_structures.pml:116 - [(1)] (90:0:0 - 1)
+	case 540: // STATE 58 - data_structures.pml:121 - [(1)] (90:0:0 - 1)
 		IfNotBlocked
 		reached[0][58] = 1;
 		if (!(1))
@@ -9841,13 +11033,13 @@
 		reached[0][60] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 485: // STATE 63 - scheduler.pml:290 - [((0==EP))] (0:0:0 - 1)
+	case 541: // STATE 63 - scheduler.pml:347 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][63] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 486: // STATE 64 - data_structures.pml:146 - [idx = 0] (0:0:1 - 1)
+	case 542: // STATE 64 - data_structures.pml:151 - [idx = 0] (0:0:1 - 1)
 		IfNotBlocked
 		reached[0][64] = 1;
 		(trpt+1)->bup.oval = ((int)((P0 *)_this)->_4_4_6_idx);
@@ -9857,7 +11049,7 @@
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
-	case 487: // STATE 65 - data_structures.pml:147 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (70:0:2 - 1)
+	case 543: // STATE 65 - data_structures.pml:152 - [((idx<(readyQueue[topPrio].tailIndex-1)))] (70:0:2 - 1)
 		IfNotBlocked
 		reached[0][65] = 1;
 		if (!((((int)((P0 *)_this)->_4_4_6_idx)<(((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)-1))))
@@ -9883,7 +11075,7 @@
 		reached[0][71] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 488: // STATE 73 - data_structures.pml:153 - [((readyQueue[topPrio].tailIndex>0))] (89:0:2 - 1)
+	case 544: // STATE 73 - data_structures.pml:158 - [((readyQueue[topPrio].tailIndex>0))] (89:0:2 - 1)
 		IfNotBlocked
 		reached[0][73] = 1;
 		if (!((((int)now.readyQueue[ Index(((int)now.topPrio), 4) ].tailIndex)>0)))
@@ -9909,13 +11101,13 @@
 		reached[0][79] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 489: // STATE 81 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 545: // STATE 81 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][81] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 490: // STATE 82 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:102:2 - 1)
+	case 546: // STATE 82 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:102:2 - 1)
 		IfNotBlocked
 		reached[0][82] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -9940,12 +11132,12 @@
 		reached[0][88] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 491: // STATE 88 - data_structures.pml:118 - [.(goto)] (0:102:0 - 2)
+	case 547: // STATE 88 - data_structures.pml:123 - [.(goto)] (0:102:0 - 2)
 		IfNotBlocked
 		reached[0][88] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 492: // STATE 86 - data_structures.pml:116 - [(1)] (102:0:0 - 1)
+	case 548: // STATE 86 - data_structures.pml:121 - [(1)] (102:0:0 - 1)
 		IfNotBlocked
 		reached[0][86] = 1;
 		if (!(1))
@@ -9954,7 +11146,7 @@
 		reached[0][88] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 493: // STATE 91 - scheduler.pml:291 - [((0==EP))] (101:0:1 - 1)
+	case 549: // STATE 91 - scheduler.pml:348 - [((0==EP))] (101:0:1 - 1)
 		IfNotBlocked
 		reached[0][91] = 1;
 		if (!((0==((int)now.EP))))
@@ -9968,13 +11160,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 494: // STATE 93 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 550: // STATE 93 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][93] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 495: // STATE 94 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:116:2 - 1)
+	case 551: // STATE 94 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:116:2 - 1)
 		IfNotBlocked
 		reached[0][94] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -9999,12 +11191,12 @@
 		reached[0][100] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 496: // STATE 100 - data_structures.pml:118 - [.(goto)] (0:116:0 - 2)
+	case 552: // STATE 100 - data_structures.pml:123 - [.(goto)] (0:116:0 - 2)
 		IfNotBlocked
 		reached[0][100] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 497: // STATE 98 - data_structures.pml:116 - [(1)] (116:0:0 - 1)
+	case 553: // STATE 98 - data_structures.pml:121 - [(1)] (116:0:0 - 1)
 		IfNotBlocked
 		reached[0][98] = 1;
 		if (!(1))
@@ -10013,13 +11205,13 @@
 		reached[0][100] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 498: // STATE 103 - scheduler.pml:292 - [((0==EP))] (0:0:0 - 1)
+	case 554: // STATE 103 - scheduler.pml:349 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][103] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 499: // STATE 104 - data_structures.pml:70 - [assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))] (0:115:1 - 1)
+	case 555: // STATE 104 - data_structures.pml:75 - [assert((((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2)))] (0:115:1 - 1)
 		IfNotBlocked
 		reached[0][104] = 1;
 		spin_assert((((((int)now.EP_Stack)!=255)&&(((int)now.EP_Stack)>=2))&&(((int)((P0 *)_this)->tmp)>=2)), "(((EP_Stack!=255)&&(EP_Stack>=2))&&(tmp>=2))", II, tt, t);
@@ -10032,13 +11224,13 @@
 #endif
 		;
 		_m = 3; goto P999; /* 1 */
-	case 500: // STATE 107 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 556: // STATE 107 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][107] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 501: // STATE 108 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:142:2 - 1)
+	case 557: // STATE 108 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:142:2 - 1)
 		IfNotBlocked
 		reached[0][108] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -10063,12 +11255,12 @@
 		reached[0][114] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 502: // STATE 114 - data_structures.pml:118 - [.(goto)] (0:142:0 - 2)
+	case 558: // STATE 114 - data_structures.pml:123 - [.(goto)] (0:142:0 - 2)
 		IfNotBlocked
 		reached[0][114] = 1;
 		;
 		_m = 3; goto P999; /* 0 */
-	case 503: // STATE 112 - data_structures.pml:116 - [(1)] (142:0:0 - 1)
+	case 559: // STATE 112 - data_structures.pml:121 - [(1)] (142:0:0 - 1)
 		IfNotBlocked
 		reached[0][112] = 1;
 		if (!(1))
@@ -10077,19 +11269,19 @@
 		reached[0][114] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 504: // STATE 117 - scheduler.pml:295 - [((0==EP))] (0:0:0 - 1)
+	case 560: // STATE 117 - scheduler.pml:352 - [((0==EP))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][117] = 1;
 		if (!((0==((int)now.EP))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 505: // STATE 118 - data_structures.pml:95 - [((pending_exp>0))] (0:0:0 - 1)
+	case 561: // STATE 118 - data_structures.pml:100 - [((pending_exp>0))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][118] = 1;
 		if (!((((int)now.pending_exp)>0)))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 506: // STATE 119 - data_structures.pml:76 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:141:4 - 1)
+	case 562: // STATE 119 - data_structures.pml:81 - [tmp = ( (((pending_exp>>0)&1)) -> (0) : (1) )] (0:141:4 - 1)
 		IfNotBlocked
 		reached[0][119] = 1;
 		(trpt+1)->bup.ovals = grab_ints(4);
@@ -10128,7 +11320,7 @@
 		reached[0][131] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 507: // STATE 126 - data_structures.pml:63 - [assert((EP_Stack!=255))] (0:141:2 - 1)
+	case 563: // STATE 126 - data_structures.pml:68 - [assert((EP_Stack!=255))] (0:141:2 - 1)
 		IfNotBlocked
 		reached[0][126] = 1;
 		spin_assert((((int)now.EP_Stack)!=255), "(EP_Stack!=255)", II, tt, t);
@@ -10153,13 +11345,13 @@
 		reached[0][131] = 1;
 		;
 		_m = 3; goto P999; /* 3 */
-	case 508: // STATE 133 - data_structures.pml:114 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
+	case 564: // STATE 133 - data_structures.pml:119 - [(((chain_tick_used==0)&&(((pending_exp>>1)&1)==0)))] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][133] = 1;
 		if (!(((((int)now.chain_tick_used)==0)&&(((((int)now.pending_exp)>>1)&1)==0))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 509: // STATE 134 - data_structures.pml:45 - [assert(((1<2)&&(1<8)))] (0:143:2 - 1)
+	case 565: // STATE 134 - data_structures.pml:50 - [assert(((1<2)&&(1<8)))] (0:143:2 - 1)
 		IfNotBlocked
 		reached[0][134] = 1;
 		spin_assert(((1<2)&&(1<8)), "((1<2)&&(1<8))", II, tt, t);
@@ -10187,7 +11379,7 @@
 		reached[0][144] = 1;
 		;
 		_m = 3; goto P999; /* 4 */
-	case 510: // STATE 140 - data_structures.pml:118 - [.(goto)] (0:143:0 - 2)
+	case 566: // STATE 140 - data_structures.pml:123 - [.(goto)] (0:143:0 - 2)
 		IfNotBlocked
 		reached[0][140] = 1;
 		;
@@ -10195,7 +11387,7 @@
 		reached[0][144] = 1;
 		;
 		_m = 3; goto P999; /* 1 */
-	case 511: // STATE 138 - data_structures.pml:116 - [(1)] (143:0:0 - 1)
+	case 567: // STATE 138 - data_structures.pml:121 - [(1)] (143:0:0 - 1)
 		IfNotBlocked
 		reached[0][138] = 1;
 		if (!(1))
@@ -10207,7 +11399,7 @@
 		reached[0][144] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 512: // STATE 146 - scheduler.pml:297 - [-end-] (0:0:0 - 1)
+	case 568: // STATE 146 - scheduler.pml:354 - [-end-] (0:0:0 - 1)
 		IfNotBlocked
 		reached[0][146] = 1;
 		if (!delproc(1, II)) continue;
