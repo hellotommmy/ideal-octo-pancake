@@ -9190,17 +9190,24 @@
 		reached[1][71] = 1;
 		;
 		_m = 3; goto P999; /* 2 */
-	case 436: // STATE 62 - scheduler.pml:223 - [((tcb[taskId].state==2))] (0:0:1 - 1)
+	case 436: // STATE 62 - scheduler.pml:223 - [(((tcb[taskId].state==2)&&(g_tickCount<taskResponseTime)))] (0:0:2 - 1)
 		IfNotBlocked
 		reached[1][62] = 1;
-		if (!((((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].state)==2)))
+		if (!(((((int)now.tcb[ Index(((int)((P1 *)_this)->_5_9_14_taskId), 4) ].state)==2)&&(((int)now.g_tickCount)<((int)((P1 *)_this)->_5_9_14_taskResponseTime)))))
 			continue;
 		if (TstOnly) return 1; /* TT */
-		/* dead 1: _5_9_14_taskId */  (trpt+1)->bup.oval = ((P1 *)_this)->_5_9_14_taskId;
+		/* dead 1: _5_9_14_taskId */  (trpt+1)->bup.ovals = grab_ints(2);
+		(trpt+1)->bup.ovals[0] = ((P1 *)_this)->_5_9_14_taskId;
 #ifdef HAS_CODE
 		if (!readtrail)
 #endif
 			((P1 *)_this)->_5_9_14_taskId = 0;
+		if (TstOnly) return 1; /* TT */
+		/* dead 1: _5_9_14_taskResponseTime */  (trpt+1)->bup.ovals[1] = ((P1 *)_this)->_5_9_14_taskResponseTime;
+#ifdef HAS_CODE
+		if (!readtrail)
+#endif
+			((P1 *)_this)->_5_9_14_taskResponseTime = 0;
 		_m = 3; goto P999; /* 0 */
 	case 437: // STATE 65 - scheduler.pml:233 - [idx = (idx+1)] (0:0:1 - 1)
 		IfNotBlocked

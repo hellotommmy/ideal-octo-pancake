@@ -2173,7 +2173,7 @@ settable(void)
 	reached1[61] = 1;
 	trans[1][59]	= settr(204,2,61,1,0,"break", 1, 2, 0);
 	trans[1][61]	= settr(206,2,70,435,435,"needSched = 1", 1, 2, 0);
-	trans[1][62]	= settr(207,2,88,436,436,"((tcb[taskId].state==2))", 1, 2, 0);
+	trans[1][62]	= settr(207,2,88,436,436,"(((tcb[taskId].state==2)&&(g_tickCount<taskResponseTime)))", 1, 2, 0);
 	trans[1][63]	= settr(208,2,88,1,0,"goto :b4", 1, 2, 0);
 	trans[1][64]	= settr(209,2,65,2,0,"else", 1, 2, 0);
 	trans[1][65]	= settr(210,2,70,437,437,"idx = (idx+1)", 1, 2, 0);

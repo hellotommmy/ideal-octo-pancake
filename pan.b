@@ -1940,9 +1940,11 @@
 
 	case 436: // STATE 62
 		;
-	/* 0 */	((P1 *)_this)->_5_9_14_taskId = trpt->bup.oval;
+	/* 1 */	((P1 *)_this)->_5_9_14_taskResponseTime = trpt->bup.ovals[1];
+	/* 0 */	((P1 *)_this)->_5_9_14_taskId = trpt->bup.ovals[0];
 		;
 		;
+		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
 	case 437: // STATE 65

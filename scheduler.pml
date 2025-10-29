@@ -220,9 +220,9 @@ inline OsTickProcess()
             needSched = 1;
             /* Don't increment idx, as we removed current element and need to check it again */
             
-        :: (tcb[taskId].state == DELAYED) ->
+        :: (tcb[taskId].state == DELAYED && g_tickCount < taskResponseTime) ->
             /* 
-             * Task is DELAYED but wakeup time not reached yet.
+             * Task is DELAYED but wakeup time not reached yet (g_tickCount < taskResponseTime).
              * Since sortLink is SORTED, all following tasks also haven't expired.
              * EARLY TERMINATION: Stop here to save unnecessary checks.
              */
