@@ -1,14 +1,12 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Ready-Queue Non-Empty Verification Script (dual-model comparison)
 # - Runs a CORRECT model and a BUG-REVEALING model
 # - For now both models must be clean (no assertions/errors)
 #   (use an explicit bug model later to trigger only this class of error)
 
 echo "=========================================="
-echo "Delay Overflow Bug Verification"
+echo "Ready Queue Non-Empty Verification"
 echo "=========================================="
 echo ""
 
@@ -19,8 +17,10 @@ if ! command -v spin &> /dev/null; then
     exit 1
 fi
 
+# Configuration
 BUG_MODEL="main_overflow_test.pml"
 CORRECT_MODEL="main_correct.pml"
+DEPTH=10000  # Maximum search depth (use -m flag for pan)
 
 compile_and_build() {
     local model="$1"
@@ -34,8 +34,8 @@ compile_and_build() {
 
 run_pan() {
     local label="$1"; shift
-    echo "Running verification ($label) ..."
-    ./pan 2>&1 | tee "pan_${label}.out"
+    echo "Running verification ($label) with depth=$DEPTH ..."
+    ./pan -m${DEPTH} 2>&1 | tee "pan_${label}.out"
     return ${PIPESTATUS[0]}
 }
 
