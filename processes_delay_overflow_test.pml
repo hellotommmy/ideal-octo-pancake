@@ -16,6 +16,9 @@
  * Assertion fails, demonstrating the bug!
  */
 
+/* Override NUM_OF_TASKS to include idle task */
+#define NUM_OF_TASKS_OVERFLOW 3
+
 /***** Task Processes *****/
 proctype Process1()
 {
@@ -34,6 +37,16 @@ proctype Process2()
            /* This should trigger or demonstrate the overflow scenario */
            /* When g_tickCount approaches 255, this will cause overflow */
            LOS_TaskDelay(10)
+       )
+    od
+}
+
+proctype IdleTask()
+{
+    do
+    :: EXEC_WHEN_CURRENT(FIRST_TASK + 2, 
+           /* Idle task: always ready to run, just delays briefly */
+           LOS_TaskDelay(1)
        )
     od
 }
@@ -68,10 +81,10 @@ init
      */
     g_tickCount = 245;
     
-    /* Initialize verification arrays */
+    /* Initialize verification arrays (including idle task) */
     i = 0;
     do
-    :: (i <= LAST_TASK) ->
+    :: (i <= FIRST_TASK + 2) ->
         ticksActuallyWaited[i] = 0;
         requestedDelay[i] = 0;
         i++
@@ -80,12 +93,20 @@ init
 
     /* init TCBs + ready lists */
     tcb[FIRST_TASK].prio = 2;      
-    tcb[FIRST_TASK].state = READY; 
+    tcb[FIRST_TASK].state = READY;
+    tcb[FIRST_TASK].pendList = UNUSED;
     OsEnqueueTail(FIRST_TASK, 2);
     
     tcb[FIRST_TASK+1].prio = 2;    
-    tcb[FIRST_TASK+1].state = READY; 
+    tcb[FIRST_TASK+1].state = READY;
+    tcb[FIRST_TASK+1].pendList = UNUSED;
     OsEnqueueTail(FIRST_TASK+1, 2);
+    
+    /* Idle task at lowest priority */
+    tcb[FIRST_TASK+2].prio = NUM_PRIORITIES - 1;
+    tcb[FIRST_TASK+2].state = READY;
+    tcb[FIRST_TASK+2].pendList = UNUSED;
+    OsEnqueueTail(FIRST_TASK+2, NUM_PRIORITIES - 1);
 
     /* pick first running task */
     EP = 2;
@@ -96,7 +117,8 @@ init
     /* start exception handlers and tasks */
     RUN_ALL_EXPS();
     run Process2();
-    run Process1()
+    run Process1();
+    run IdleTask()
 }
 
 

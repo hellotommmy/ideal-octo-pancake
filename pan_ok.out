@@ -1,0 +1,46 @@
+warning: never claim + accept labels requires -a flag to fully verify
+pan: ltl formula back_to_user
+error: max search depth too small
+Depth=    9999 States=    1e+06 Transitions= 1.79e+06 Memory=   350.312	t=     0.87 R=   1e+06
+Depth=    9999 States=    2e+06 Transitions= 3.58e+06 Memory=   571.796	t=     1.73 R=   1e+06
+Depth=    9999 States=    3e+06 Transitions= 5.37e+06 Memory=   793.280	t=     2.68 R=   1e+06
+Depth=    9999 States=    4e+06 Transitions= 7.17e+06 Memory=  1014.667	t=     3.65 R=   1e+06
+Depth=    9999 States=    5e+06 Transitions= 8.95e+06 Memory=  1236.151	t=     4.73 R=   1e+06
+Depth=    9999 States=    6e+06 Transitions= 1.07e+07 Memory=  1457.538	t=     5.73 R=   1e+06
+Depth=    9999 States=    7e+06 Transitions= 1.25e+07 Memory=  1679.022	t=     6.77 R=   1e+06
+Depth=    9999 States=    8e+06 Transitions= 1.43e+07 Memory=  1900.409	t=     7.73 R=   1e+06
+Depth=    9999 States=    9e+06 Transitions= 1.61e+07 Memory=  2121.894	t=     8.65 R=   1e+06
+Depth=    9999 States=    1e+07 Transitions= 1.79e+07 Memory=  2343.378	t=      9.6 R=   1e+06
+Depth=    9999 States=  1.1e+07 Transitions= 1.97e+07 Memory=  2564.765	t=     10.6 R=   1e+06
+Depth=    9999 States=  1.2e+07 Transitions= 2.15e+07 Memory=  2786.249	t=     11.6 R=   1e+06
+Depth=    9999 States=  1.3e+07 Transitions= 2.33e+07 Memory=  3007.636	t=     12.6 R=   1e+06
+Depth=    9999 States=  1.4e+07 Transitions=  2.5e+07 Memory=  3229.120	t=     13.7 R=   1e+06
+Depth=    9999 States=  1.5e+07 Transitions= 2.68e+07 Memory=  3450.507	t=     14.8 R=   1e+06
+Depth=    9999 States=  1.6e+07 Transitions= 2.86e+07 Memory=  3671.991	t=     15.8 R=   1e+06
+Depth=    9999 States=  1.7e+07 Transitions= 3.04e+07 Memory=  3893.476	t=     16.9 R=   1e+06
+Depth=    9999 States=  1.8e+07 Transitions= 3.22e+07 Memory=  4114.862	t=     17.9 R=   1e+06
+Depth=    9999 States=  1.9e+07 Transitions=  3.4e+07 Memory=  4336.347	t=       19 R=   1e+06
+Depth=    9999 States=    2e+07 Transitions= 3.58e+07 Memory=  4557.733	t=     20.1 R=   1e+06
+Depth=    9999 States=  2.1e+07 Transitions= 3.75e+07 Memory=  4779.218	t=     21.2 R=   1e+06
+Depth=    9999 States=  2.2e+07 Transitions= 3.93e+07 Memory=  5000.605	t=     22.3 R=   1e+06
+Depth=    9999 States=  2.3e+07 Transitions= 4.11e+07 Memory=  5222.089	t=     23.4 R=   1e+06
+Depth=    9999 States=  2.4e+07 Transitions= 4.29e+07 Memory=  5443.573	t=     24.6 R=   1e+06
+Depth=    9999 States=  2.5e+07 Transitions= 4.47e+07 Memory=  5664.960	t=     25.7 R=   1e+06
+Depth=    9999 States=  2.6e+07 Transitions= 4.65e+07 Memory=  5886.444	t=     26.9 R=   1e+06
+Depth=    9999 States=  2.7e+07 Transitions= 4.82e+07 Memory=  6107.831	t=     28.1 R=   1e+06
+Depth=    9999 States=  2.8e+07 Transitions=    5e+07 Memory=  6329.315	t=     29.4 R=   1e+06
+Depth=    9999 States=  2.9e+07 Transitions= 5.18e+07 Memory=  6550.702	t=     30.8 R=   9e+05
+Depth=    9999 States=    3e+07 Transitions= 5.36e+07 Memory=  6772.187	t=       32 R=   9e+05
+Depth=    9999 States=  3.1e+07 Transitions= 5.54e+07 Memory=  6993.671	t=     33.3 R=   9e+05
+Depth=    9999 States=  3.2e+07 Transitions= 5.72e+07 Memory=  7215.058	t=     34.6 R=   9e+05
+Depth=    9999 States=  3.3e+07 Transitions=  5.9e+07 Memory=  7436.542	t=     35.8 R=   9e+05
+Depth=    9999 States=  3.4e+07 Transitions= 6.07e+07 Memory=  7657.929	t=     37.1 R=   9e+05
+pan: resizing hashtable to -w26..  done
+Depth=    9999 States=  3.5e+07 Transitions= 6.25e+07 Memory=  8375.397	t=     40.5 R=   9e+05
+Depth=    9999 States=  3.6e+07 Transitions= 6.43e+07 Memory=  8596.882	t=     41.6 R=   9e+05
+Depth=    9999 States=  3.7e+07 Transitions= 6.61e+07 Memory=  8818.269	t=     42.7 R=   9e+05
+Depth=    9999 States=  3.8e+07 Transitions= 6.79e+07 Memory=  9039.753	t=     43.8 R=   9e+05
+Depth=    9999 States=  3.9e+07 Transitions= 6.97e+07 Memory=  9261.140	t=     44.9 R=   9e+05
+Depth=    9999 States=    4e+07 Transitions= 7.14e+07 Memory=  9482.624	t=       46 R=   9e+05
+Depth=    9999 States=  4.1e+07 Transitions= 7.32e+07 Memory=  9704.108	t=     46.9 R=   9e+05
+Depth=    9999 States=  4.2e+07 Transitions=  7.5e+07 Memory=  9925.495	t=       48 R=   9e+05

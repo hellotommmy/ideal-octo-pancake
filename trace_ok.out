@@ -1,0 +1,295 @@
+ltl back_to_user: [] (<> ((EP>=2)))
+ltl exc_leads_to_user: [] ((! ((EP<2))) || (<> ((EP>=2))))
+ltl starvation_free_task1: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2)))))
+ltl starvation_free_task2: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1))))))
+ltl all_starvation_free: (! ([] ((! ((pending_exp>0))) || (<> ((EP>=2)))))) || (([] ((! (((tcb[2].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==2))))) && ([] ((! (((tcb[(2+1)].state==1)) && ((((pending_exp>>1)&1)==1)))) || (<> ((EP==(2+1)))))))
+ltl P2_switching_not_P1_witness_unfolded: [] (! (<> ((((EP==1)) && ((EP_Stack==(2+1)))) && ((((EP==1)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==(2+1)))) && ((((EP==0)) && ((EP_Stack==(2+1)))) U ((EP==(2+1)))))))))))))))))
+ltl p2_double_context_switch: [] (! (<> ((((EP==3)) && ((((pending_exp>>1)&1)==1))) && ((((EP==3)) && ((((pending_exp>>1)&1)==1))) U ((((EP==1)) && ((EP_Stack==3))) && ((((EP==1)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==1)) && ((EP_Stack==2))) && ((((EP==1)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==2))) && ((((EP==0)) && ((EP_Stack==2))) U ((((EP==0)) && ((EP_Stack==3))) && ((((EP==0)) && ((EP_Stack==3))) U ((EP==3))))))))))))))))))
+ltl smoke_P2_user_no_pending: [] (! ((((EP==(2+1))) && ((pending_exp==0))) && ((chain_tick_used==1))))
+ltl smoke_P1_user_no_pending: [] (! ((((EP==2)) && ((pending_exp==0))) && ((chain_tick_used==1))))
+ltl delayed_become_ready: [] ((! ((tcb[2].state==2))) || (<> ((tcb[2].state==1))))
+ltl tick_monotonic: [] ((g_tickCount<255))
+ltl delayed_not_in_ready_queue: [] ((! ((tcb[2].state==2))) || ((readyQueue[tcb[2].prio].tasks[0]!=2)))
+ltl sortlink_is_sorted: [] ((! ((g_taskSortLinkTail>=2))) || ((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)))
+ltl sortlink_three_sorted: [] ((! ((g_taskSortLinkTail>=3))) || (((g_taskSortLink[0].responseTime<=g_taskSortLink[1].responseTime)) && ((g_taskSortLink[1].responseTime<=g_taskSortLink[2].responseTime))))
+starting claim 6
+  2:	proc  0 (:init::1) processes_correct.pml:49 (state 1)	[i = 0]
+		:init:(0):i = 0
+  4:	proc  0 (:init::1) processes_correct.pml:51 (state 2)	[((i<4))]
+  6:	proc  0 (:init::1) data_structures.pml:130 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+  8:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 10:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 12:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 14:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 16:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 18:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+ 20:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 22:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 24:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+ 26:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 28:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 30:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+ 32:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 34:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 36:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+ 38:	proc  0 (:init::1) data_structures.pml:134 (state 7)	[else]
+ 40:	proc  0 (:init::1) data_structures.pml:136 (state 12)	[readyQueue[i].tailIndex = 0]
+ 42:	proc  0 (:init::1) processes_correct.pml:53 (state 14)	[i = (i+1)]
+		:init:(0):i = 1
+ 44:	proc  0 (:init::1) processes_correct.pml:51 (state 2)	[((i<4))]
+ 46:	proc  0 (:init::1) data_structures.pml:130 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+ 48:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 50:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 52:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 54:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 56:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 58:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+ 60:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 62:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 64:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+ 66:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 68:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 70:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+ 72:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 74:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 76:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+ 78:	proc  0 (:init::1) data_structures.pml:134 (state 7)	[else]
+ 80:	proc  0 (:init::1) data_structures.pml:136 (state 12)	[readyQueue[i].tailIndex = 0]
+ 82:	proc  0 (:init::1) processes_correct.pml:53 (state 14)	[i = (i+1)]
+		:init:(0):i = 2
+ 84:	proc  0 (:init::1) processes_correct.pml:51 (state 2)	[((i<4))]
+ 86:	proc  0 (:init::1) data_structures.pml:130 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+ 88:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 90:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 92:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+ 94:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+ 96:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+ 98:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+100:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+102:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+104:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+106:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+108:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+110:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+112:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+114:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+116:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+118:	proc  0 (:init::1) data_structures.pml:134 (state 7)	[else]
+120:	proc  0 (:init::1) data_structures.pml:136 (state 12)	[readyQueue[i].tailIndex = 0]
+122:	proc  0 (:init::1) processes_correct.pml:53 (state 14)	[i = (i+1)]
+		:init:(0):i = 3
+124:	proc  0 (:init::1) processes_correct.pml:51 (state 2)	[((i<4))]
+126:	proc  0 (:init::1) data_structures.pml:130 (state 3)	[idx = 0]
+		:init:(0):idx = 0
+128:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+130:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+132:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 1
+134:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+136:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+138:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 2
+140:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+142:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+144:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 3
+146:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+148:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+150:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 4
+152:	proc  0 (:init::1) data_structures.pml:131 (state 4)	[((idx<5))]
+154:	proc  0 (:init::1) data_structures.pml:132 (state 5)	[readyQueue[i].tasks[idx] = 255]
+156:	proc  0 (:init::1) data_structures.pml:133 (state 6)	[idx = (idx+1)]
+		:init:(0):idx = 5
+158:	proc  0 (:init::1) data_structures.pml:134 (state 7)	[else]
+160:	proc  0 (:init::1) data_structures.pml:136 (state 12)	[readyQueue[i].tailIndex = 0]
+162:	proc  0 (:init::1) processes_correct.pml:53 (state 14)	[i = (i+1)]
+		:init:(0):i = 4
+164:	proc  0 (:init::1) processes_correct.pml:54 (state 15)	[else]
+166:	proc  0 (:init::1) processes_correct.pml:58 (state 20)	[tcb[2].prio = 2]
+168:	proc  0 (:init::1) processes_correct.pml:59 (state 21)	[tcb[2].state = 1]
+170:	proc  0 (:init::1) processes_correct.pml:60 (state 22)	[tcb[2].pendList = 255]
+172:	proc  0 (:init::1) data_structures.pml:142 (state 23)	[temp = 2]
+		:init:(0):temp = 2
+174:	proc  0 (:init::1) data_structures.pml:143 (state 24)	[temp1 = readyQueue[2].tailIndex]
+		:init:(0):temp1 = 0
+176:	proc  0 (:init::1) data_structures.pml:144 (state 25)	[((readyQueue[2].tailIndex<5))]
+178:	proc  0 (:init::1) data_structures.pml:145 (state 26)	[readyQueue[2].tasks[readyQueue[2].tailIndex] = 2]
+180:	proc  0 (:init::1) data_structures.pml:140 (state 32)	[sub-sequence]
+		:init:(0):temp = 2
+182:	proc  0 (:init::1) processes_correct.pml:63 (state 33)	[tcb[(2+1)].prio = 2]
+184:	proc  0 (:init::1) processes_correct.pml:64 (state 34)	[tcb[(2+1)].state = 1]
+186:	proc  0 (:init::1) processes_correct.pml:65 (state 35)	[tcb[(2+1)].pendList = 255]
+188:	proc  0 (:init::1) data_structures.pml:142 (state 36)	[temp = 2]
+		:init:(0):temp = 2
+190:	proc  0 (:init::1) data_structures.pml:143 (state 37)	[temp1 = readyQueue[2].tailIndex]
+		:init:(0):temp1 = 0
+192:	proc  0 (:init::1) data_structures.pml:144 (state 38)	[((readyQueue[2].tailIndex<5))]
+194:	proc  0 (:init::1) data_structures.pml:149 (state 44)	[.(goto)]
+196:	proc  0 (:init::1) data_structures.pml:140 (state 45)	[sub-sequence]
+		:init:(0):temp = 2
+198:	proc  0 (:init::1) processes_correct.pml:69 (state 46)	[tcb[(2+2)].prio = (4-1)]
+200:	proc  0 (:init::1) processes_correct.pml:70 (state 47)	[tcb[(2+2)].state = 1]
+202:	proc  0 (:init::1) processes_correct.pml:71 (state 48)	[tcb[(2+2)].pendList = 255]
+204:	proc  0 (:init::1) data_structures.pml:142 (state 49)	[temp = (4-1)]
+		:init:(0):temp = 3
+206:	proc  0 (:init::1) data_structures.pml:143 (state 50)	[temp1 = readyQueue[(4-1)].tailIndex]
+		:init:(0):temp1 = 0
+208:	proc  0 (:init::1) data_structures.pml:143 (state 56)	[IF]
+210:	proc  0 (:init::1) data_structures.pml:149 (state 57)	[.(goto)]
+212:	proc  0 (:init::1) data_structures.pml:140 (state 58)	[sub-sequence]
+		:init:(0):temp = 3
+214:	proc  0 (:init::1) processes_correct.pml:75 (state 59)	[EP = 2]
+		EP = 2
+216:	proc  0 (:init::1) processes_correct.pml:76 (state 60)	[topPrio = 2]
+		topPrio = 2
+218:	proc  0 (:init::1) data_structures.pml:154 (state 61)	[idx = 0]
+		:init:(0):idx = 0
+220:	proc  0 (:init::1) data_structures.pml:155 (state 62)	[((idx<(readyQueue[topPrio].tailIndex-1)))]
+	transition failed
+222:	proc  0 (:init::1) data_structures.pml:154 (state 67)	[DO]
+224:	proc  0 (:init::1) data_structures.pml:160 (state 68)	[.(goto)]
+226:	proc  0 (:init::1) data_structures.pml:154 (state 69)	[break]
+228:	proc  0 (:init::1) data_structures.pml:160 (state 75)	[IF]
+230:	proc  0 (:init::1) data_structures.pml:166 (state 76)	[.(goto)]
+231:	proc  0 (:init::1) data_structures.pml:152 (state 77)	[sub-sequence]
+		:init:(0):idx = 0
+Starting PendSV_Handler with pid 2
+233:	proc  0 (:init::1) processes_correct.pml:81 (state 79)	[(run PendSV_Handler())]
+Starting SysTick_Handler with pid 3
+235:	proc  0 (:init::1) processes_correct.pml:81 (state 80)	[(run SysTick_Handler())]
+Starting PendSV_Handler with pid 4
+237:	proc  0 (:init::1) processes_correct.pml:81 (state 81)	[ATOMIC]
+239:	proc  5 (?) #processes: 4
+		EP = 2
+		g_tickCount = 0
+		g_schedResponseTime = 255
+		g_overflowedResponseTime = 255
+		BASEPRI = 0
+		pending_exp = 0
+		EP_Stack = 255
+		chain_tick_used = 0
+		topPrio = 2
+		g_taskScheduled = 1
+		tcb[0].prio = 0
+		tcb[0].state = 0
+		tcb[0].pendList = 0
+		tcb[1].prio = 0
+		tcb[1].state = 0
+		tcb[1].pendList = 0
+		tcb[2].prio = 2
+		tcb[2].state = 1
+		tcb[2].pendList = 255
+		tcb[3].prio = 2
+		tcb[3].state = 1
+		tcb[3].pendList = 255
+		tcb[4].prio = 3
+		tcb[4].state = 1
+		tcb[4].pendList = 255
+		tcb[5].prio = 0
+		tcb[5].state = 0
+		tcb[5].pendList = 0
+		readyQueue[0].tasks[0] = 255
+		readyQueue[0].tasks[1] = 255
+		readyQueue[0].tasks[2] = 255
+		readyQueue[0].tasks[3] = 255
+		readyQueue[0].tasks[4] = 255
+		readyQueue[0].tailIndex = 0
+		readyQueue[1].tasks[0] = 255
+		readyQueue[1].tasks[1] = 255
+		readyQueue[1].tasks[2] = 255
+		readyQueue[1].tasks[3] = 255
+		readyQueue[1].tasks[4] = 255
+		readyQueue[1].tailIndex = 0
+		readyQueue[2].tasks[0] = 2
+		readyQueue[2].tasks[1] = 255
+		readyQueue[2].tasks[2] = 255
+		readyQueue[2].tasks[3] = 255
+		readyQueue[2].tasks[4] = 255
+		readyQueue[2].tailIndex = 0
+		readyQueue[3].tasks[0] = 255
+		readyQueue[3].tasks[1] = 255
+		readyQueue[3].tasks[2] = 255
+		readyQueue[3].tasks[3] = 255
+		readyQueue[3].tasks[4] = 255
+		readyQueue[3].tailIndex = 0
+		g_taskSortLink[0].taskId = 0
+		g_taskSortLink[0].responseTime = 0
+		g_taskSortLink[1].taskId = 0
+		g_taskSortLink[1].responseTime = 0
+		g_taskSortLink[2].taskId = 0
+		g_taskSortLink[2].responseTime = 0
+		g_taskSortLink[3].taskId = 0
+		g_taskSortLink[3].responseTime = 0
+		g_taskSortLinkTail = 0
+		overflowedSortLink[0].taskId = 0
+		overflowedSortLink[0].responseTime = 0
+		overflowedSortLink[1].taskId = 0
+		overflowedSortLink[1].responseTime = 0
+		overflowedSortLink[2].taskId = 0
+		overflowedSortLink[2].responseTime = 0
+		overflowedSortLink[3].taskId = 0
+		overflowedSortLink[3].responseTime = 0
+		overflowedSortLinkTail = 0
+239:	proc  3 (PendSV_Handler:1) scheduler.pml:336 (state 195)
+		PendSV_Handler(3):idx = 0
+		PendSV_Handler(3):idx = 0
+		PendSV_Handler(3):temp1 = 0
+		PendSV_Handler(3):temp = 0
+		PendSV_Handler(3):found = 0
+		PendSV_Handler(3):top_task = 0
+		PendSV_Handler(3):prio = 0
+		PendSV_Handler(3):tmp = 255
+239:	proc  2 (SysTick_Handler:1) scheduler.pml:382 (state 197)
+		SysTick_Handler(2):firstTime = 0
+		SysTick_Handler(2):isValid = 0
+		SysTick_Handler(2):checkIdx = 0
+		SysTick_Handler(2):shiftIdx = 0
+		SysTick_Handler(2):temp1 = 0
+		SysTick_Handler(2):temp = 0
+		SysTick_Handler(2):taskResponseTime = 0
+		SysTick_Handler(2):newIdx = 0
+		SysTick_Handler(2):oldTickCount = 0
+		SysTick_Handler(2):needSched = 0
+		SysTick_Handler(2):taskId = 0
+		SysTick_Handler(2):idx = 0
+		SysTick_Handler(2):tmp = 255
+239:	proc  1 (PendSV_Handler:1) scheduler.pml:336 (state 195)
+		PendSV_Handler(1):idx = 0
+		PendSV_Handler(1):idx = 0
+		PendSV_Handler(1):temp1 = 0
+		PendSV_Handler(1):temp = 0
+		PendSV_Handler(1):found = 0
+		PendSV_Handler(1):top_task = 0
+		PendSV_Handler(1):prio = 0
+		PendSV_Handler(1):tmp = 255
+239:	proc  0 (:init::1) processes_correct.pml:81 (state 80)
+		:init:(0):idx = 0
+		:init:(0):temp1 = 0
+		:init:(0):temp = 3
+		:init:(0):temp1 = 0
+		:init:(0):temp = 2
+		:init:(0):temp1 = 0
+		:init:(0):temp = 2
+		:init:(0):idx = 5
+		:init:(0):i = 4
+239:	proc  - (back_to_user:1) _spin_nvr.tmp:2 (state 5)
+4 processes created

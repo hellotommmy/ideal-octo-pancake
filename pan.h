@@ -2,7 +2,7 @@
 #define PAN_H
 
 #define SpinVersion	"Spin Version 6.5.2 -- 6 December 2019"
-#define PanSource	"main.pml"
+#define PanSource	"main_correct.pml"
 
 #define G_long	8
 #define G_int	4
@@ -121,7 +121,7 @@
 #endif
 #ifdef NP
 	#define HAS_NP	2
-	#define VERI	19	/* np_ */
+	#define VERI	20	/* np_ */
 #endif
 #if defined(NOCLAIM) && defined(NP)
 	#undef NOCLAIM
@@ -129,7 +129,7 @@
 #ifndef NOCLAIM
 	#define NCLAIMS	14
 	#ifndef NP
-		#define VERI	18
+		#define VERI	19
 	#endif
 #endif
 
@@ -139,101 +139,107 @@ typedef struct S_F_MAP {
 	int upto;
 } S_F_MAP;
 
-#define _nstates18	11	/* sortlink_three_sorted */
-#define minseq18	1873
-#define maxseq18	1882
+#define _nstates19	11	/* sortlink_three_sorted */
+#define minseq19	2152
+#define maxseq19	2161
+#define _endstate19	10
+
+#define _nstates18	11	/* sortlink_is_sorted */
+#define minseq18	2142
+#define maxseq18	2151
 #define _endstate18	10
 
-#define _nstates17	11	/* sortlink_is_sorted */
-#define minseq17	1863
-#define maxseq17	1872
+#define _nstates17	11	/* delayed_not_in_ready_queue */
+#define minseq17	2132
+#define maxseq17	2141
 #define _endstate17	10
 
-#define _nstates16	11	/* delayed_not_in_ready_queue */
-#define minseq16	1853
-#define maxseq16	1862
+#define _nstates16	11	/* tick_monotonic */
+#define minseq16	2122
+#define maxseq16	2131
 #define _endstate16	10
 
-#define _nstates15	11	/* tick_monotonic */
-#define minseq15	1843
-#define maxseq15	1852
-#define _endstate15	10
+#define _nstates15	14	/* delayed_become_ready */
+#define minseq15	2109
+#define maxseq15	2121
+#define _endstate15	13
 
-#define _nstates14	14	/* delayed_become_ready */
-#define minseq14	1830
-#define maxseq14	1842
-#define _endstate14	13
+#define _nstates14	11	/* smoke_P1_user_no_pending */
+#define minseq14	2099
+#define maxseq14	2108
+#define _endstate14	10
 
-#define _nstates13	11	/* smoke_P1_user_no_pending */
-#define minseq13	1820
-#define maxseq13	1829
+#define _nstates13	11	/* smoke_P2_user_no_pending */
+#define minseq13	2089
+#define maxseq13	2098
 #define _endstate13	10
 
-#define _nstates12	11	/* smoke_P2_user_no_pending */
-#define minseq12	1810
-#define maxseq12	1819
-#define _endstate12	10
+#define _nstates12	123	/* p2_double_context_switch */
+#define minseq12	1967
+#define maxseq12	2088
+#define _endstate12	122
 
-#define _nstates11	123	/* p2_double_context_switch */
-#define minseq11	1688
-#define maxseq11	1809
-#define _endstate11	122
+#define _nstates11	101	/* P2_switching_not_P1_witness_unfolded */
+#define minseq11	1867
+#define maxseq11	1966
+#define _endstate11	100
 
-#define _nstates10	101	/* P2_switching_not_P1_witness_unfolded */
-#define minseq10	1588
-#define maxseq10	1687
-#define _endstate10	100
+#define _nstates10	157	/* all_starvation_free */
+#define minseq10	1711
+#define maxseq10	1866
+#define _endstate10	156
 
-#define _nstates9	157	/* all_starvation_free */
-#define minseq9	1432
-#define maxseq9	1587
-#define _endstate9	156
+#define _nstates9	76	/* starvation_free_task2 */
+#define minseq9	1636
+#define maxseq9	1710
+#define _endstate9	75
 
-#define _nstates8	76	/* starvation_free_task2 */
-#define minseq8	1357
-#define maxseq8	1431
+#define _nstates8	76	/* starvation_free_task1 */
+#define minseq8	1561
+#define maxseq8	1635
 #define _endstate8	75
 
-#define _nstates7	76	/* starvation_free_task1 */
-#define minseq7	1282
-#define maxseq7	1356
-#define _endstate7	75
+#define _nstates7	14	/* exc_leads_to_user */
+#define minseq7	1548
+#define maxseq7	1560
+#define _endstate7	13
 
-#define _nstates6	14	/* exc_leads_to_user */
-#define minseq6	1269
-#define maxseq6	1281
+#define _nstates6	14	/* back_to_user */
+#define minseq6	1535
+#define maxseq6	1547
 #define _endstate6	13
 
-#define _nstates5	14	/* back_to_user */
-#define minseq5	1256
-#define maxseq5	1268
-#define _endstate5	13
+#define _nstates5	86	/* :init: */
+#define minseq5	1450
+#define maxseq5	1534
+#define _endstate5	85
 
-#define _nstates4	66	/* :init: */
-#define minseq4	1191
-#define maxseq4	1255
-#define _endstate4	65
+#define _nstates4	205	/* IdleTask */
+#define minseq4	1246
+#define maxseq4	1449
+#define _endstate4	204
 
-#define _nstates3	593	/* Process2 */
-#define minseq3	599
-#define maxseq3	1190
-#define _endstate3	592
+#define _nstates3	596	/* Process2 */
+#define minseq3	651
+#define maxseq3	1245
+#define _endstate3	595
 
-#define _nstates2	257	/* Process1 */
-#define minseq2	343
-#define maxseq2	598
-#define _endstate2	256
+#define _nstates2	254	/* Process1 */
+#define minseq2	398
+#define maxseq2	650
+#define _endstate2	253
 
-#define _nstates1	198	/* SysTick_Handler */
-#define minseq1	146
-#define maxseq1	342
-#define _endstate1	197
+#define _nstates1	201	/* SysTick_Handler */
+#define minseq1	198
+#define maxseq1	397
+#define _endstate1	200
 
-#define _nstates0	147	/* PendSV_Handler */
+#define _nstates0	199	/* PendSV_Handler */
 #define minseq0	0
-#define maxseq0	145
-#define _endstate0	146
+#define maxseq0	197
+#define _endstate0	198
 
+extern short src_ln19[];
 extern short src_ln18[];
 extern short src_ln17[];
 extern short src_ln16[];
@@ -253,6 +259,7 @@ extern short src_ln3[];
 extern short src_ln2[];
 extern short src_ln1[];
 extern short src_ln0[];
+extern S_F_MAP src_file19[];
 extern S_F_MAP src_file18[];
 extern S_F_MAP src_file17[];
 extern S_F_MAP src_file16[];
@@ -274,8 +281,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned short
-#define _T5	569
-#define _T2	570
+#define _T5	654
+#define _T2	655
 #define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
@@ -303,7 +310,17 @@ struct SortLinkNode { /* user defined type */
 	uchar taskId;
 	uchar responseTime;
 };
-typedef struct P18 { /* sortlink_three_sorted */
+typedef struct P19 { /* sortlink_three_sorted */
+	unsigned _pid : 8;  /* 0..255 */
+	unsigned _t   : 6; /* proctype */
+	unsigned _p   : 11; /* state    */
+#ifdef HAS_PRIORITY
+	unsigned _priority : 8; /* 0..255 */
+#endif
+} P19;
+#define Air19	(sizeof(P19) - 4)
+
+typedef struct P18 { /* sortlink_is_sorted */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -313,7 +330,7 @@ typedef struct P18 { /* sortlink_three_sorted */
 } P18;
 #define Air18	(sizeof(P18) - 4)
 
-typedef struct P17 { /* sortlink_is_sorted */
+typedef struct P17 { /* delayed_not_in_ready_queue */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -323,7 +340,7 @@ typedef struct P17 { /* sortlink_is_sorted */
 } P17;
 #define Air17	(sizeof(P17) - 4)
 
-typedef struct P16 { /* delayed_not_in_ready_queue */
+typedef struct P16 { /* tick_monotonic */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -333,7 +350,7 @@ typedef struct P16 { /* delayed_not_in_ready_queue */
 } P16;
 #define Air16	(sizeof(P16) - 4)
 
-typedef struct P15 { /* tick_monotonic */
+typedef struct P15 { /* delayed_become_ready */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -343,7 +360,7 @@ typedef struct P15 { /* tick_monotonic */
 } P15;
 #define Air15	(sizeof(P15) - 4)
 
-typedef struct P14 { /* delayed_become_ready */
+typedef struct P14 { /* smoke_P1_user_no_pending */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -353,7 +370,7 @@ typedef struct P14 { /* delayed_become_ready */
 } P14;
 #define Air14	(sizeof(P14) - 4)
 
-typedef struct P13 { /* smoke_P1_user_no_pending */
+typedef struct P13 { /* smoke_P2_user_no_pending */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -363,7 +380,7 @@ typedef struct P13 { /* smoke_P1_user_no_pending */
 } P13;
 #define Air13	(sizeof(P13) - 4)
 
-typedef struct P12 { /* smoke_P2_user_no_pending */
+typedef struct P12 { /* p2_double_context_switch */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -373,7 +390,7 @@ typedef struct P12 { /* smoke_P2_user_no_pending */
 } P12;
 #define Air12	(sizeof(P12) - 4)
 
-typedef struct P11 { /* p2_double_context_switch */
+typedef struct P11 { /* P2_switching_not_P1_witness_unfolded */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -383,7 +400,7 @@ typedef struct P11 { /* p2_double_context_switch */
 } P11;
 #define Air11	(sizeof(P11) - 4)
 
-typedef struct P10 { /* P2_switching_not_P1_witness_unfolded */
+typedef struct P10 { /* all_starvation_free */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -393,7 +410,7 @@ typedef struct P10 { /* P2_switching_not_P1_witness_unfolded */
 } P10;
 #define Air10	(sizeof(P10) - 4)
 
-typedef struct P9 { /* all_starvation_free */
+typedef struct P9 { /* starvation_free_task2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -403,7 +420,7 @@ typedef struct P9 { /* all_starvation_free */
 } P9;
 #define Air9	(sizeof(P9) - 4)
 
-typedef struct P8 { /* starvation_free_task2 */
+typedef struct P8 { /* starvation_free_task1 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -413,7 +430,7 @@ typedef struct P8 { /* starvation_free_task2 */
 } P8;
 #define Air8	(sizeof(P8) - 4)
 
-typedef struct P7 { /* starvation_free_task1 */
+typedef struct P7 { /* exc_leads_to_user */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -423,7 +440,7 @@ typedef struct P7 { /* starvation_free_task1 */
 } P7;
 #define Air7	(sizeof(P7) - 4)
 
-typedef struct P6 { /* exc_leads_to_user */
+typedef struct P6 { /* back_to_user */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -433,18 +450,8 @@ typedef struct P6 { /* exc_leads_to_user */
 } P6;
 #define Air6	(sizeof(P6) - 4)
 
-typedef struct P5 { /* back_to_user */
-	unsigned _pid : 8;  /* 0..255 */
-	unsigned _t   : 6; /* proctype */
-	unsigned _p   : 11; /* state    */
-#ifdef HAS_PRIORITY
-	unsigned _priority : 8; /* 0..255 */
-#endif
-} P5;
-#define Air5	(sizeof(P5) - 4)
-
-#define Pinit	((P4 *)_this)
-typedef struct P4 { /* :init: */
+#define Pinit	((P5 *)_this)
+typedef struct P5 { /* :init: */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
@@ -452,10 +459,41 @@ typedef struct P4 { /* :init: */
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar i;
-	uchar _8_20_idx;
-	uchar _8_23_idx;
+	uchar _9_22_idx;
+	uchar _9_23_temp;
+	uchar _9_23_temp1;
+	uchar _9_24_temp;
+	uchar _9_24_temp1;
+	uchar _9_25_temp;
+	uchar _9_25_temp1;
+	uchar _9_26_idx;
+} P5;
+#define Air5	(sizeof(P5) - Offsetof(P5, _9_26_idx) - 1*sizeof(uchar))
+
+#define PIdleTask	((P4 *)_this)
+typedef struct P4 { /* IdleTask */
+	unsigned _pid : 8;  /* 0..255 */
+	unsigned _t   : 6; /* proctype */
+	unsigned _p   : 11; /* state    */
+#ifdef HAS_PRIORITY
+	unsigned _priority : 8; /* 0..255 */
+#endif
+	uchar _8_21_42_intSave;
+	uchar _8_21_42_needSched;
+	uchar _8_21_42_currentTask;
+	uchar _8_21_42_40_18_idx;
+	uchar _8_21_42_40_18_found;
+	uchar _8_21_42_40_18_prioLevel;
+	uchar _8_21_42_40_19_insertPos;
+	uchar _8_21_42_40_19_idx;
+	uchar _8_21_42_40_19_found;
+	uchar _8_21_42_40_19_tmpId;
+	uchar _8_21_42_40_19_tmpTime;
+	uchar _8_21_42_40_19_willOverflow;
+	uchar _8_21_42_40_19_8_checkIdx;
+	uchar _8_21_42_40_19_8_isValid;
 } P4;
-#define Air4	(sizeof(P4) - Offsetof(P4, _8_23_idx) - 1*sizeof(uchar))
+#define Air4	(sizeof(P4) - Offsetof(P4, _8_21_42_40_19_8_isValid) - 1*sizeof(uchar))
 
 #define PProcess2	((P3 *)_this)
 typedef struct P3 { /* Process2 */
@@ -465,44 +503,46 @@ typedef struct P3 { /* Process2 */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _7_16_29_intSave;
-	uchar _7_16_29_needSched;
-	uchar _7_16_29_25_7_idx;
-	uchar _7_16_29_25_7_found;
-	uchar _7_16_29_25_7_prioLevel;
-	uchar _7_16_29_25_8_3_insertPos;
-	uchar _7_16_29_25_8_3_idx;
-	uchar _7_16_29_25_8_3_found;
-	uchar _7_16_29_25_8_3_tmpId;
-	uchar _7_16_29_25_8_3_tmpTime;
-	uchar _7_16_29_25_8_3_willOverflow;
-	uchar _7_16_29_25_8_3_1_checkIdx;
-	uchar _7_16_29_25_8_3_1_isValid;
-	uchar _7_17_32_intSave;
-	uchar _7_17_32_tempStatus;
-	uchar _7_17_32_needSched;
-	uchar _7_17_32_29_10_pendListValue;
-	uchar _7_17_32_29_10_idx;
-	uchar _7_17_32_29_10_removedIdx;
-	uchar _7_17_32_29_10_newFirstTime;
-	uchar _7_17_32_29_10_4_checkIdx;
-	uchar _7_17_32_29_10_4_isValid;
-	uchar _7_19_37_intSave;
-	uchar _7_19_37_needSched;
-	uchar _7_19_37_currentTask;
-	uchar _7_19_37_34_14_idx;
-	uchar _7_19_37_34_14_found;
-	uchar _7_19_37_34_14_prioLevel;
-	uchar _7_19_37_34_15_insertPos;
-	uchar _7_19_37_34_15_idx;
-	uchar _7_19_37_34_15_found;
-	uchar _7_19_37_34_15_tmpId;
-	uchar _7_19_37_34_15_tmpTime;
-	uchar _7_19_37_34_15_willOverflow;
-	uchar _7_19_37_34_15_6_checkIdx;
-	uchar _7_19_37_34_15_6_isValid;
+	uchar _7_17_31_intSave;
+	uchar _7_17_31_needSched;
+	uchar _7_17_31_26_7_idx;
+	uchar _7_17_31_26_7_found;
+	uchar _7_17_31_26_7_prioLevel;
+	uchar _7_17_31_26_8_3_insertPos;
+	uchar _7_17_31_26_8_3_idx;
+	uchar _7_17_31_26_8_3_found;
+	uchar _7_17_31_26_8_3_tmpId;
+	uchar _7_17_31_26_8_3_tmpTime;
+	uchar _7_17_31_26_8_3_willOverflow;
+	uchar _7_17_31_26_8_3_1_checkIdx;
+	uchar _7_17_31_26_8_3_1_isValid;
+	uchar _7_18_34_intSave;
+	uchar _7_18_34_tempStatus;
+	uchar _7_18_34_needSched;
+	uchar _7_18_34_30_10_pendListValue;
+	uchar _7_18_34_30_10_idx;
+	uchar _7_18_34_30_10_removedIdx;
+	uchar _7_18_34_30_10_newFirstTime;
+	uchar _7_18_34_30_10_4_checkIdx;
+	uchar _7_18_34_30_10_4_isValid;
+	uchar _7_18_34_30_11_temp;
+	uchar _7_18_34_30_11_temp1;
+	uchar _7_20_39_intSave;
+	uchar _7_20_39_needSched;
+	uchar _7_20_39_currentTask;
+	uchar _7_20_39_35_14_idx;
+	uchar _7_20_39_35_14_found;
+	uchar _7_20_39_35_14_prioLevel;
+	uchar _7_20_39_35_15_insertPos;
+	uchar _7_20_39_35_15_idx;
+	uchar _7_20_39_35_15_found;
+	uchar _7_20_39_35_15_tmpId;
+	uchar _7_20_39_35_15_tmpTime;
+	uchar _7_20_39_35_15_willOverflow;
+	uchar _7_20_39_35_15_6_checkIdx;
+	uchar _7_20_39_35_15_6_isValid;
 } P3;
-#define Air3	(sizeof(P3) - Offsetof(P3, _7_19_37_34_15_6_isValid) - 1*sizeof(uchar))
+#define Air3	(sizeof(P3) - Offsetof(P3, _7_20_39_35_15_6_isValid) - 1*sizeof(uchar))
 
 #define PProcess1	((P2 *)_this)
 typedef struct P2 { /* Process1 */
@@ -512,22 +552,22 @@ typedef struct P2 { /* Process1 */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-	uchar _6_14_24_intSave;
-	uchar _6_14_24_needSched;
-	uchar _6_14_24_currentTask;
-	uchar _6_14_24_21_4_idx;
-	uchar _6_14_24_21_4_found;
-	uchar _6_14_24_21_4_prioLevel;
-	uchar _6_14_24_21_5_insertPos;
-	uchar _6_14_24_21_5_idx;
-	uchar _6_14_24_21_5_found;
-	uchar _6_14_24_21_5_tmpId;
-	uchar _6_14_24_21_5_tmpTime;
-	uchar _6_14_24_21_5_willOverflow;
-	uchar _6_14_24_21_5_2_checkIdx;
-	uchar _6_14_24_21_5_2_isValid;
+	uchar _6_15_26_intSave;
+	uchar _6_15_26_needSched;
+	uchar _6_15_26_currentTask;
+	uchar _6_15_26_22_4_idx;
+	uchar _6_15_26_22_4_found;
+	uchar _6_15_26_22_4_prioLevel;
+	uchar _6_15_26_22_5_insertPos;
+	uchar _6_15_26_22_5_idx;
+	uchar _6_15_26_22_5_found;
+	uchar _6_15_26_22_5_tmpId;
+	uchar _6_15_26_22_5_tmpTime;
+	uchar _6_15_26_22_5_willOverflow;
+	uchar _6_15_26_22_5_2_checkIdx;
+	uchar _6_15_26_22_5_2_isValid;
 } P2;
-#define Air2	(sizeof(P2) - Offsetof(P2, _6_14_24_21_5_2_isValid) - 1*sizeof(uchar))
+#define Air2	(sizeof(P2) - Offsetof(P2, _6_15_26_22_5_2_isValid) - 1*sizeof(uchar))
 
 #define PSysTick_Handler	((P1 *)_this)
 typedef struct P1 { /* SysTick_Handler */
@@ -538,18 +578,20 @@ typedef struct P1 { /* SysTick_Handler */
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar tmp;
-	uchar _5_9_14_idx;
-	uchar _5_9_14_taskId;
-	uchar _5_9_14_needSched;
-	uchar _5_9_14_oldTickCount;
-	uchar _5_9_14_newIdx;
-	uchar _5_9_14_taskResponseTime;
-	uchar _5_9_14_shiftIdx;
-	uchar _5_9_14_12_checkIdx;
-	uchar _5_9_14_12_isValid;
-	uchar _5_9_14_firstTime;
+	uchar _5_10_16_idx;
+	uchar _5_10_16_taskId;
+	uchar _5_10_16_needSched;
+	uchar _5_10_16_oldTickCount;
+	uchar _5_10_16_newIdx;
+	uchar _5_10_16_taskResponseTime;
+	uchar _5_10_16_12_temp;
+	uchar _5_10_16_12_temp1;
+	uchar _5_10_16_shiftIdx;
+	uchar _5_10_16_13_checkIdx;
+	uchar _5_10_16_13_isValid;
+	uchar _5_10_16_firstTime;
 } P1;
-#define Air1	(sizeof(P1) - Offsetof(P1, _5_9_14_firstTime) - 1*sizeof(uchar))
+#define Air1	(sizeof(P1) - Offsetof(P1, _5_10_16_firstTime) - 1*sizeof(uchar))
 
 #define PPendSV_Handler	((P0 *)_this)
 typedef struct P0 { /* PendSV_Handler */
@@ -560,39 +602,42 @@ typedef struct P0 { /* PendSV_Handler */
 	unsigned _priority : 8; /* 0..255 */
 #endif
 	uchar tmp;
-	uchar _4_3_4_prio;
-	uchar _4_3_4_top_task;
-	uchar _4_3_4_found;
+	uchar _4_2_2_prio;
+	uchar _4_2_2_top_task;
+	uchar _4_2_2_found;
+	uchar _4_3_4_temp;
+	uchar _4_3_4_temp1;
 	uchar _4_4_6_idx;
+	uchar _4_7_11_idx;
 } P0;
-#define Air0	(sizeof(P0) - Offsetof(P0, _4_4_6_idx) - 1*sizeof(uchar))
+#define Air0	(sizeof(P0) - Offsetof(P0, _4_7_11_idx) - 1*sizeof(uchar))
 
-typedef struct P19 { /* np_ */
+typedef struct P20 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 6; /* proctype */
 	unsigned _p   : 11; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
-} P19;
-#define Air19	(sizeof(P19) - 4)
+} P20;
+#define Air20	(sizeof(P20) - 4)
 
 
 #ifndef NOCLAIM
  #ifndef NP
 	#undef VERI
-	#define VERI	20
+	#define VERI	21
  #endif
-	#define Pclaim	P20
+	#define Pclaim	P21
 
-typedef struct P20 {
+typedef struct P21 {
 	unsigned _pid : 8; /* always zero */
 	unsigned _t   : 6; /* active-claim type  */
 	unsigned _p   : 11; /* active-claim state */
 	unsigned _n   : 5; /* active-claim index */
 	uchar c_cur[NCLAIMS]; /* claim-states */
-} P20;
-	#define Air20	(0)
+} P21;
+	#define Air21	(0)
 
 #endif
 #if defined(BFS) && defined(REACH)
@@ -792,10 +837,10 @@ typedef struct State {
 	uchar g_taskScheduled;
 	uchar g_taskSortLinkTail;
 	uchar overflowedSortLinkTail;
-	struct TCB tcb[4];
+	struct TCB tcb[6];
 	struct ReadyList readyQueue[4];
-	struct SortLinkNode g_taskSortLink[3];
-	struct SortLinkNode overflowedSortLink[3];
+	struct SortLinkNode g_taskSortLink[4];
+	struct SortLinkNode overflowedSortLink[4];
 #ifdef TRIX
 	/* room for 512 proc+chan ptrs, + safety margin */
 	char *_ids_[MAXPROC+MAXQ+4];
@@ -821,30 +866,31 @@ typedef struct TRIX_v6 {
 #define FORWARD_MOVES	"pan.m"
 #define BACKWARD_MOVES	"pan.b"
 #define TRANSITIONS	"pan.t"
-#define _NP_	19
-#define _nstates19	3 /* np_ */
-#define _endstate19	2 /* np_ */
+#define _NP_	20
+#define _nstates20	3 /* np_ */
+#define _endstate20	2 /* np_ */
 
-#define _start19	0 /* np_ */
+#define _start20	0 /* np_ */
+#define _start19	6
 #define _start18	6
 #define _start17	6
 #define _start16	6
-#define _start15	6
-#define _start14	5
+#define _start15	5
+#define _start14	6
 #define _start13	6
-#define _start12	6
-#define _start11	20
-#define _start10	18
-#define _start9	19
+#define _start12	20
+#define _start11	18
+#define _start10	19
+#define _start9	11
 #define _start8	11
-#define _start7	11
+#define _start7	5
 #define _start6	5
-#define _start5	5
-#define _start4	1
-#define _start3	589
-#define _start2	253
-#define _start1	194
-#define _start0	143
+#define _start5	1
+#define _start4	201
+#define _start3	592
+#define _start2	250
+#define _start1	197
+#define _start0	195
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -1204,7 +1250,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	571
+#define NTRANS	656
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);

@@ -12,10 +12,11 @@
 
 /***** Verification Variables *****/
 /* Track actual wait time for each task */
-byte ticksActuallyWaited[LAST_TASK + 1];
+/* Size must accommodate extra tasks like IdleTask */
+byte ticksActuallyWaited[FIRST_TASK + 3];
 
 /* Record requested delay for each task */
-byte requestedDelay[LAST_TASK + 1];
+byte requestedDelay[FIRST_TASK + 3];
 
 /***** Task Operations *****/
 inline LOS_Schedule()
@@ -39,6 +40,10 @@ inline LOS_TaskResume(taskID)
     byte       needSched = 0;
 
     LOS_IntLock(intSave)
+    
+    /* 不允许resume处于DELAYED状态的任务 */
+    assert(tcb[taskID].state != DELAYED);
+    
     tempStatus = tcb[taskID].state;
 
     assert(tempStatus == SUSPENDED);
@@ -227,12 +232,25 @@ inline OsTickProcess()
      * This tracks how long each task has ACTUALLY been waiting.
      */
     byte verifyIdx = 0;
+    byte verifyTaskId = 0;
     do
     :: (verifyIdx < g_taskSortLinkTail) ->
-        byte verifyTaskId = g_taskSortLink[verifyIdx].taskId;
+        verifyTaskId = g_taskSortLink[verifyIdx].taskId;
         if
         :: (tcb[verifyTaskId].state == DELAYED) ->
-            /* Increment actual wait time for delayed tasks */
+            ticksActuallyWaited[verifyTaskId]++;
+        :: else -> skip
+        fi;
+        verifyIdx++
+    :: else -> break
+    od;
+    /* Also verify overflowed queue */
+    verifyIdx = 0;
+    do
+    :: (verifyIdx < overflowedSortLinkTail) ->
+        verifyTaskId = overflowedSortLink[verifyIdx].taskId;
+        if
+        :: (tcb[verifyTaskId].state == DELAYED) ->
             ticksActuallyWaited[verifyTaskId]++;
         :: else -> skip
         fi;
@@ -301,6 +319,9 @@ inline OsTickProcess()
             g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
             g_taskSortLinkTail--;
             
+            /* Clear pendList of woken task */
+            tcb[taskId].pendList = UNUSED;
+            
             /* Verify sortLink remains sorted after removal */
             /* DISABLED: Overflow bug will break sortLink ordering, but we want */
             /* to proceed to verify the ticksActuallyWaited property instead */
@@ -362,20 +383,40 @@ proctype PendSV_Handler()
     do
     :: (EP == PendSV_ID) ->
         exp_entry(PendSV_ID);
-        /* 把被打断的线程放回就绪队列（轮转），并选择下一个 */
-        /* 只有RUNNING状态的任务才能被放回就绪队列，避免覆盖SUSPENDED等状态 */
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
-            if
-            :: (tcb[LAST_EP_STACK].state == RUNNING) ->
-                tcb[LAST_EP_STACK].state = READY;
-                OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
-            :: else -> skip
-            fi
-        );
+        /* 获取下一个要运行的任务 */
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsGetTopTask(tmp, topPrio));
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsDequeueHead(topPrio));
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, tcb[tmp].state = RUNNING);
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, switch_context(tmp));
+        /* Only dequeue and switch if we found a different task */
+        if
+        :: (tmp != LAST_EP_STACK && tmp != NULL_byte) ->
+            /* 切换到不同任务：把被打断的任务放回就绪队列 */
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
+                if
+                :: (tcb[LAST_EP_STACK].state == RUNNING) ->
+                    tcb[LAST_EP_STACK].state = READY;
+                    OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
+                :: else -> skip
+                fi
+            );
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsDequeueHead(topPrio));
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, tcb[tmp].state = RUNNING);
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, switch_context(tmp))
+        :: else ->
+            /* Keep current task running, no need to enqueue */
+            /* Only set READY tasks to RUNNING, not DELAYED/SUSPENDED */
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
+                if
+                :: (tcb[LAST_EP_STACK].state == READY) ->
+                    /* Dequeue self from ready queue head if present */
+                    if
+                    :: (readyQueue[topPrio].tailIndex > 0) ->
+                        OsDequeueHead(topPrio)
+                    :: else -> skip
+                    fi;
+                    tcb[LAST_EP_STACK].state = RUNNING
+                :: else -> skip
+                fi
+            )
+        fi;
 
         /* 退出：若此时 SysTick 也 pending，则 tail‑chaining 立即转去 SysTick */
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID, exp_return(tmp))

@@ -2,10 +2,10 @@
 
 #!/bin/bash
 
-# Delay Overflow Bug Verification Script (dual-model comparison)
+# Ready-Queue Non-Empty Verification Script (dual-model comparison)
 # - Runs a CORRECT model and a BUG-REVEALING model
-# - Confirms the BUG model only shows the overflow assertion (no other errors)
-# - Confirms the CORRECT model has no errors
+# - For now both models must be clean (no assertions/errors)
+#   (use an explicit bug model later to trigger only this class of error)
 
 echo "=========================================="
 echo "Delay Overflow Bug Verification"
@@ -42,35 +42,28 @@ run_pan() {
 run_trace() {
     local model="$1"
     local label="$2"
-    # Generate a trace replay to classify the assertion
     spin -t -g -l -p "$model" 2>&1 | tee "trace_${label}.out" >/dev/null
 }
 
 echo ""
-echo "[1/2] BUG-REVEALING MODEL: $BUG_MODEL"
+echo "[1/2] BUG-REVEALING MODEL (placeholder): $BUG_MODEL"
 if ! compile_and_build "$BUG_MODEL"; then
     echo "Error: Failed to compile/build $BUG_MODEL"
     exit 1
 fi
 
 bug_ok=0
-if ! run_pan "bug"; then
-    # Expect an overflow assertion only
-    run_trace "$BUG_MODEL" "bug"
-    if grep -q "requestedDelay\[" trace_bug.out; then
-        if grep -qi "indexing error\|Error:" trace_bug.out; then
-            echo "Result (BUG model): ✗ Unexpected errors present (indexing/other)"
-            bug_ok=1
-        else
-            echo "Result (BUG model): ✓ Expected overflow assertion reproduced"
-            bug_ok=0
-        fi
-    else
-        echo "Result (BUG model): ✗ Assertion is not the expected overflow property"
+if run_pan "bug"; then
+    if grep -qi "assertion violated\|Error:" pan_bug.out; then
+        echo "Result (BUG model, placeholder): ✗ Unexpected errors present"
         bug_ok=1
+    else
+        echo "Result (BUG model, placeholder): ✓ Clean (no errors)"
+        bug_ok=0
     fi
 else
-    echo "Result (BUG model): ✗ No error detected (expected overflow assertion)"
+    echo "Result (BUG model, placeholder): ✗ Should be clean for now"
+    run_trace "$BUG_MODEL" "bug"
     bug_ok=1
 fi
 
@@ -85,7 +78,6 @@ run_pan "ok"
 rc=$?
 if [ $rc -ne 0 ]; then
     echo "Result (CORRECT model): ✗ Should be clean, but verification failed"
-    # Show the error classification
     run_trace "$CORRECT_MODEL" "ok"
     correct_ok=1
 else
@@ -103,6 +95,5 @@ echo "=========================================="
 echo "Verification complete (dual-model)"
 echo "=========================================="
 
-# Exit non-zero if any side failed expectation
 exit $(( bug_ok | correct_ok ))
 

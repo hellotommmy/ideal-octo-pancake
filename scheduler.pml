@@ -22,8 +22,12 @@ inline LOS_TaskResume(taskID)
     byte       needSched = 0;
 
     LOS_IntLock(intSave)
+    
+    /* 不允许resume处于DELAYED状态的任务 */
+    assert(tcb[taskID].state != DELAYED);
+    
     tempStatus = tcb[taskID].state;
-
+    
     assert(tempStatus == SUSPENDED);
 
     OsSchedResume(taskID, needSched);
@@ -99,7 +103,7 @@ inline LOS_TaskDelay(ticks)
     byte intSave;
     byte needSched = 0;
     byte currentTask = EP;
-    
+    assert(g_taskScheduled);
     LOS_IntLock(intSave);
     
     if
@@ -109,12 +113,8 @@ inline LOS_TaskDelay(ticks)
     :: (ticks > 0) ->
         /* Delay for specified ticks */
         OsSchedDelay(currentTask, ticks, needSched);
-        if
-        :: (needSched && g_taskScheduled) ->
-            LOS_IntRestore(intSave);
-            LOS_Schedule();
-        :: else -> skip
-        fi;
+        LOS_IntRestore(intSave);
+        LOS_Schedule();
     :: else -> skip
     fi;
 }
@@ -271,6 +271,9 @@ inline OsTickProcess()
             g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
             g_taskSortLinkTail--;
             
+            /* Clear pendList of woken task */
+            tcb[taskId].pendList = UNUSED;
+            
             /* Verify sortLink remains sorted after removal */
             AssertSortLinkIsSorted();
             
@@ -333,20 +336,40 @@ proctype PendSV_Handler()
     do
     :: (EP == PendSV_ID) ->
         exp_entry(PendSV_ID);
-        /* 把被打断的线程放回就绪队列（轮转），并选择下一个 */
-        /* 只有RUNNING状态的任务才能被放回就绪队列，避免覆盖SUSPENDED等状态 */
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
-            if
-            :: (tcb[LAST_EP_STACK].state == RUNNING) ->
-                tcb[LAST_EP_STACK].state = READY;
-                OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
-            :: else -> skip
-            fi
-        );
+        /* 获取下一个要运行的任务 */
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsGetTopTask(tmp, topPrio));
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsDequeueHead(topPrio));
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, tcb[tmp].state = RUNNING);
-        EXEC_WHEN_CURRENT_SAFE(PendSV_ID, switch_context(tmp));
+        /* Only dequeue and switch if we found a different task */
+        if
+        :: (tmp != LAST_EP_STACK && tmp != NULL_byte) ->
+            /* 切换到不同任务：把被打断的任务放回就绪队列 */
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
+                if
+                :: (tcb[LAST_EP_STACK].state == RUNNING) ->
+                    tcb[LAST_EP_STACK].state = READY;
+                    OsEnqueueTail(LAST_EP_STACK, tcb[LAST_EP_STACK].prio)
+                :: else -> skip
+                fi
+            );
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, OsDequeueHead(topPrio));
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, tcb[tmp].state = RUNNING);
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID, switch_context(tmp))
+        :: else ->
+            /* Keep current task running, no need to enqueue */
+            /* Only set READY tasks to RUNNING, not DELAYED/SUSPENDED */
+            EXEC_WHEN_CURRENT_SAFE(PendSV_ID,
+                if
+                :: (tcb[LAST_EP_STACK].state == READY) ->
+                    /* Dequeue self from ready queue head if present */
+                    if
+                    :: (readyQueue[topPrio].tailIndex > 0) ->
+                        OsDequeueHead(topPrio)
+                    :: else -> skip
+                    fi;
+                    tcb[LAST_EP_STACK].state = RUNNING
+                :: else -> skip
+                fi
+            )
+        fi;
 
         /* 退出：若此时 SysTick 也 pending，则 tail‑chaining 立即转去 SysTick */
         EXEC_WHEN_CURRENT_SAFE(PendSV_ID, exp_return(tmp))

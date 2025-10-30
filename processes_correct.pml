@@ -1,4 +1,9 @@
-/* ===== Processes and Initialization ===== */
+/* ===== Processes and Initialization (with Idle Task) ===== */
+
+/* Override NUM_OF_TASKS to include Idle task */
+#ifndef NUM_OF_TASKS_CORRECT
+#define NUM_OF_TASKS_CORRECT 3
+#endif
 
 /***** Task Processes *****/
 proctype Process1()
@@ -21,6 +26,17 @@ proctype Process2()
     od
 }
 
+/* Idle task: always ready, does trivial work in infinite loop */
+proctype IdleTask()
+{
+    do
+    :: EXEC_WHEN_CURRENT(FIRST_TASK + 2, 
+           /* Do something trivial - just increment a counter or wait */
+           skip;
+           LOS_TaskDelay(1))
+    od
+}
+
 /***** Helper Macros *****/
 #define RUN_ALL_EXPS() atomic { run PendSV_Handler(); run SysTick_Handler() }
 
@@ -39,15 +55,21 @@ init
     od;
 
     /* init TCBs + ready lists */
-    tcb[FIRST_TASK].prio = 2;
+    tcb[FIRST_TASK].prio = 2;      
     tcb[FIRST_TASK].state = READY;
     tcb[FIRST_TASK].pendList = UNUSED;
     OsEnqueueTail(FIRST_TASK, 2);
     
-    tcb[FIRST_TASK+1].prio = 2;
+    tcb[FIRST_TASK+1].prio = 2;    
     tcb[FIRST_TASK+1].state = READY;
     tcb[FIRST_TASK+1].pendList = UNUSED;
     OsEnqueueTail(FIRST_TASK+1, 2);
+    
+    /* Idle task at lowest priority (highest priority number) */
+    tcb[FIRST_TASK+2].prio = NUM_PRIORITIES - 1;
+    tcb[FIRST_TASK+2].state = READY;
+    tcb[FIRST_TASK+2].pendList = UNUSED;
+    OsEnqueueTail(FIRST_TASK+2, NUM_PRIORITIES - 1);
 
     /* pick first running task */
     EP = 2;
@@ -58,6 +80,7 @@ init
     /* start exception handlers and tasks */
     RUN_ALL_EXPS();
     run Process2();
-    run Process1()
+    run Process1();
+    run IdleTask()
 }
 

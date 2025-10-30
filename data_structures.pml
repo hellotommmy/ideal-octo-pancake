@@ -29,13 +29,14 @@ typedef SortLinkNode {
     byte responseTime;
 }
 
-TCB tcb[LAST_TASK + 1];
+/* TCB array must accommodate extra tasks (like IdleTask in overflow test) */
+TCB tcb[FIRST_TASK + 4];  /* Allow FIRST_TASK + 3 tasks */
 ReadyList readyQueue[NUM_PRIORITIES];
-SortLinkNode g_taskSortLink[NUM_OF_TASKS + 1];
+SortLinkNode g_taskSortLink[NUM_OF_TASKS + 2];  /* Allow extra task */
 byte g_taskSortLinkTail = 0;
 
 /* Overflow queue for tasks that would wrap around the 255 tick boundary */
-SortLinkNode overflowedSortLink[NUM_OF_TASKS + 1];
+SortLinkNode overflowedSortLink[NUM_OF_TASKS + 2];  /* Allow extra task */
 byte overflowedSortLinkTail = 0;
 
 /***** Basic Inline Functions *****/
@@ -137,6 +138,8 @@ inline initReadyQueue(prioLevel)
 
 inline OsEnqueueTail(taskId, prioLevel)
 {
+    byte temp = prioLevel;
+    byte temp1 = readyQueue[prioLevel].tailIndex;
     if
     :: (readyQueue[prioLevel].tailIndex < LIST_SIZE) ->
         readyQueue[prioLevel].tasks[readyQueue[prioLevel].tailIndex] = taskId;
@@ -207,6 +210,13 @@ inline OsGetTopTask(task_return_var, task_return_prio)
         fi
     :: else -> break
     od;
+    /* If no task found, keep current task */
+    if
+    :: (!found) ->
+        top_task = LAST_EP_STACK;
+        prio = (tcb[LAST_EP_STACK].prio)
+    :: else -> skip
+    fi;
     task_return_var = top_task;
     task_return_prio = prio
 }
@@ -229,6 +239,9 @@ inline OsAdd2SortLinkSorted(taskID, wakeupTime)
     byte tmpId;
     byte tmpTime;
     byte willOverflow;
+    
+    /* CRITICAL: Task must not already be in a sortLink */
+    assert(tcb[taskID].pendList == UNUSED);
     
     /* Detect overflow: if wakeupTime < g_tickCount, byte addition wrapped around */
     willOverflow = (wakeupTime < g_tickCount);
@@ -371,6 +384,9 @@ inline OsRemoveFromSortLink(taskID)
         g_taskSortLink[g_taskSortLinkTail - 1].responseTime = UNUSED;
         g_taskSortLinkTail--;
         
+        /* Clear pendList of removed task */
+        tcb[taskID].pendList = UNUSED;
+        
         /* Update earliest wakeup time after removal */
         if
         :: (g_taskSortLinkTail == 0) ->
@@ -409,6 +425,9 @@ inline OsRemoveFromSortLink(taskID)
         overflowedSortLink[overflowedSortLinkTail - 1].taskId = UNUSED;
         overflowedSortLink[overflowedSortLinkTail - 1].responseTime = UNUSED;
         overflowedSortLinkTail--;
+        
+        /* Clear pendList of removed task */
+        tcb[taskID].pendList = UNUSED;
         
         /* Update overflow queue earliest wakeup time */
         if
