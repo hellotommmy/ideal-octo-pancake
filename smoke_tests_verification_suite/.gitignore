@@ -1,0 +1,6 @@
+# Spin generated artifacts
+pan
+pan.*
+*.trail
+_spin_nvr.tmp
+*.out
