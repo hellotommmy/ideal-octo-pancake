@@ -1,7 +1,6 @@
 warning: never claim + accept labels requires -a flag to fully verify
 pan: ltl formula back_to_user
-error: max search depth too small
-pan:1: assertion violated ((tcb[currentTask].state==1)||(tcb[currentTask].state==4)) (at depth 9887)
+pan:1: assertion violated (requestedDelay[taskId]<=ticksActuallyWaited[taskId]) (at depth 589)
 pan: wrote main_overflow_test.pml.trail
 
 (Spin Version 6.5.2 -- 6 December 2019)
@@ -14,19 +13,19 @@ Full statespace search for:
 	acceptance   cycles 	- (not selected)
 	invalid end states	- (disabled by never claim)
 
-State-vector 228 byte, depth reached 9999, errors: 1
-     3526 states, stored
-     1685 states, matched
-     5211 transitions (= stored+matched)
-    20135 atomic steps
+State-vector 196 byte, depth reached 589, errors: 1
+      245 states, stored
+       44 states, matched
+      289 transitions (= stored+matched)
+      478 atomic steps
 hash conflicts:         0 (resolved)
 
 Stats on memory usage (in Megabytes):
-    0.861	equivalent memory usage for states (stored*(State-vector + overhead))
-    1.157	actual memory usage for states
+    0.052	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.315	actual memory usage for states
   128.000	memory used for hash table (-w24)
     0.534	memory used for DFS stack (-m10000)
-  129.608	total actual memory usage
+  128.827	total actual memory usage
 
 
 

@@ -1,22 +1,4 @@
-/* ===== Task Scheduler with Delay Verification ===== */
-/* 
- * This is a specialized version of scheduler.pml for verifying delay correctness.
- * 
- * BUG DETECTED: g_tickCount + ticks may overflow, causing tasks to wake up prematurely.
- * 
- * VERIFICATION APPROACH:
- * - Track actual wait time (ticksActuallyWaited) for each delayed task
- * - Formal property: requestedDelay <= ticksActuallyWaited
- * - When overflow occurs, this property will be violated
- */
-
-/***** Verification Variables *****/
-/* Track actual wait time for each task */
-/* Size must accommodate extra tasks like IdleTask */
-byte ticksActuallyWaited[FIRST_TASK + 3];
-
-/* Record requested delay for each task */
-byte requestedDelay[FIRST_TASK + 3];
+/* ===== Task Scheduler and Exception Handlers ===== */
 
 /***** Task Operations *****/
 inline LOS_Schedule()
@@ -45,7 +27,7 @@ inline LOS_TaskResume(taskID)
     assert(tcb[taskID].state != DELAYED);
     
     tempStatus = tcb[taskID].state;
-
+    
     assert(tempStatus == SUSPENDED);
 
     OsSchedResume(taskID, needSched);
@@ -102,7 +84,6 @@ inline LOS_TaskYield()
 }
 
 /* Task Delay - delay task for specified ticks */
-/* BUG VERSION: No overflow queue handling - wakeupTime wraps around */
 inline OsSchedDelay(taskID, ticks, needSched)
 {
     assert(tcb[taskID].state == READY || tcb[taskID].state == RUNNING);
@@ -113,55 +94,8 @@ inline OsSchedDelay(taskID, ticks, needSched)
     :: else -> skip  /* If RUNNING, will be handled by PendSV */
     fi;
     tcb[taskID].state = DELAYED;
-    
-    /* BUG: Simple addition causes overflow when g_tickCount + ticks >= 256 */
-    byte wakeupTime = g_tickCount + ticks;
-    
-    /* Insert into sortLink WITHOUT overflow queue logic */
-    assert(tcb[taskID].pendList == UNUSED);
-    
-    byte insertPos = 0;
-    byte found = 0;
-    
-    /* Find insertion position (sorted by wakeupTime) */
-    do
-    :: (insertPos < g_taskSortLinkTail && !found) ->
-        if
-        :: (wakeupTime < g_taskSortLink[insertPos].responseTime) ->
-            found = 1
-        :: else ->
-            insertPos++
-        fi
-    :: else -> break
-    od;
-    
-    /* Shift tasks to make room */
-    byte shiftIdx = g_taskSortLinkTail;
-    do
-    :: (shiftIdx > insertPos) ->
-        g_taskSortLink[shiftIdx].taskId = g_taskSortLink[shiftIdx - 1].taskId;
-        g_taskSortLink[shiftIdx].responseTime = g_taskSortLink[shiftIdx - 1].responseTime;
-        if
-        :: (g_taskSortLink[shiftIdx].taskId != UNUSED) ->
-            tcb[g_taskSortLink[shiftIdx].taskId].pendList = shiftIdx
-        :: else -> skip
-        fi;
-        shiftIdx--
-    :: else -> break
-    od;
-    
-    /* Insert new task */
-    g_taskSortLink[insertPos].taskId = taskID;
-    g_taskSortLink[insertPos].responseTime = wakeupTime;
-    tcb[taskID].pendList = insertPos;
-    g_taskSortLinkTail++;
-    
-    /* Update earliest wakeup time */
-    if
-    :: (insertPos == 0) ->
-        g_schedResponseTime = wakeupTime
-    :: else -> skip
-    fi
+    /* Add to sortLink with sorted insertion by absolute wakeup time */
+    OsAdd2SortLinkSorted(taskID, g_tickCount + ticks);
 }
 
 inline LOS_TaskDelay(ticks)
@@ -169,10 +103,7 @@ inline LOS_TaskDelay(ticks)
     byte intSave;
     byte needSched = 0;
     byte currentTask = EP;
-    
-    /* CONSTRAINT: ticks must be less than 255 to avoid overflow issues */
-    assert(ticks < 255);
-    
+    assert(g_taskScheduled);
     LOS_IntLock(intSave);
     
     if
@@ -180,59 +111,113 @@ inline LOS_TaskDelay(ticks)
         /* Delay 0 means yield CPU */
         LOS_TaskYield();
     :: (ticks > 0) ->
-        /* VERIFICATION: Clear wait counter and record requested delay */
-        ticksActuallyWaited[currentTask] = 0;
-        requestedDelay[currentTask] = ticks;
-        
         /* Delay for specified ticks */
         OsSchedDelay(currentTask, ticks, needSched);
-        if
-        :: (needSched && g_taskScheduled) ->
-            LOS_IntRestore(intSave);
-            LOS_Schedule();
-        :: else -> skip
-        fi;
+        LOS_IntRestore(intSave);
+        LOS_Schedule();
     :: else -> skip
     fi;
 }
 
 /* 
- * Process tick for delayed tasks - BUG VERSION (NO overflow queue handling)
- * 
- * This version does NOT handle overflow, which will trigger the bug!
+ * Process tick for delayed tasks - uses absolute time comparison with sorted list.
+ *
+ * OPTIMIZATION #1 - Absolute time vs relative countdown:
+ * - OLD: responseTime stores relative ticks, each tick must decrement ALL delayed tasks
+ * - NEW: responseTime stores absolute wakeup time (g_tickCount + delay)
+ *        Only increment g_tickCount, compare g_tickCount >= responseTime to wake up
+ *        Result: Reduces O(N) writes per tick to O(1) write (67%~99% reduction)
+ *
+ * OPTIMIZATION #2 - Sorted list with early termination:
+ * - sortLink is now sorted by responseTime in ascending order
+ * - SUSPENDED tasks (responseTime = MAX_RESPONSE_TIME) naturally sort to the end
+ * - When we see MAX_RESPONSE_TIME, we can STOP immediately - all following are SUSPENDED
+ * - When we see DELAYED but not expired, we can STOP - all following are later
+ * - Result: Average scan stops at first non-expired/SUSPENDED task
+ *
+ * OPTIMIZATION #3 - Early exit with g_schedResponseTime:
+ * - g_schedResponseTime caches the earliest wakeup time
+ * - If g_tickCount < g_schedResponseTime, skip entire scan (O(1) return)
+ * - Result: Most ticks don't scan sortLink at all (92~99% reduction)
+ *
+ * SAFETY - SUSPENDED tasks never wake spuriously:
+ * - SUSPENDED tasks have responseTime = MAX_RESPONSE_TIME (255)
+ * - Check (responseTime >= MAX) before checking expiry
+ * - Even if g_tickCount wraps to 0, SUSPENDED won't be awakened
+ * - Only LOS_TaskResume() can wake SUSPENDED tasks
+ *
+ * Combined effect: O(1) tick processing in typical case
  */
 inline OsTickProcess()
 {
     byte idx = 0;
     byte taskId;
     byte needSched = 0;
+    byte oldTickCount = g_tickCount;
     
     /* Increment global tick counter */
     g_tickCount++;
+    
+    /* 
+     * CRITICAL: Check if tick counter wrapped around (255 -> 0)
+     * When this happens, merge overflow queue into normal queue
+     */
+    if
+    :: (oldTickCount == 255 && g_tickCount == 0) ->
+        /* Tick wrapped! Move overflowed tasks to normal queue */
+        idx = 0;
+        do
+        :: (idx < overflowedSortLinkTail) ->
+            byte newIdx = g_taskSortLinkTail + idx;
+            g_taskSortLink[newIdx].taskId = overflowedSortLink[idx].taskId;
+            g_taskSortLink[newIdx].responseTime = overflowedSortLink[idx].responseTime;
+            
+            /* Update pendList: remove overflow marker (128+) */
+            if
+            :: (g_taskSortLink[newIdx].taskId != UNUSED) ->
+                tcb[g_taskSortLink[newIdx].taskId].pendList = newIdx
+            :: else -> skip
+            fi;
+            
+            idx++
+        :: else -> break
+        od;
+        
+        /* Update normal queue length */
+        g_taskSortLinkTail = g_taskSortLinkTail + overflowedSortLinkTail;
+        
+        /* Update earliest wakeup time */
+        if
+        :: (g_taskSortLinkTail > 0) ->
+            g_schedResponseTime = g_taskSortLink[0].responseTime
+        :: else ->
+            g_schedResponseTime = MAX_RESPONSE_TIME
+        fi;
+        
+        /* Clear overflow queue */
+        overflowedSortLinkTail = 0;
+        g_overflowedResponseTime = MAX_RESPONSE_TIME;
+        
+        /* Clear overflow queue contents */
+        idx = 0;
+        do
+        :: (idx < NUM_OF_TASKS + 1) ->
+            overflowedSortLink[idx].taskId = UNUSED;
+            overflowedSortLink[idx].responseTime = UNUSED;
+            idx++
+        :: else -> break
+        od
+        
+    :: else -> skip
+    fi;
     
     /* Reset idx for the main loop */
     idx = 0;
     
     /* 
-     * VERIFICATION: Increment wait time for ALL delayed tasks.
-     * This tracks how long each task has ACTUALLY been waiting.
-     */
-    byte verifyIdx = 0;
-    byte verifyTaskId = 0;
-    do
-    :: (verifyIdx < g_taskSortLinkTail) ->
-        verifyTaskId = g_taskSortLink[verifyIdx].taskId;
-        if
-        :: (tcb[verifyTaskId].state == DELAYED) ->
-            ticksActuallyWaited[verifyTaskId]++;
-        :: else -> skip
-        fi;
-        verifyIdx++
-    :: else -> break
-    od;
-    
-    /* 
      * OPTIMIZATION: Early exit if no tasks are ready to wake up yet.
+     * g_schedResponseTime tracks the earliest wakeup time in sortLink.
+     * If current tick hasn't reached it, no need to scan sortLink at all.
      */
     if
     :: (g_tickCount < g_schedResponseTime) ->
@@ -241,6 +226,7 @@ inline OsTickProcess()
     :: else ->
         /* 
          * Scan sortLink for delayed tasks whose wakeup time has arrived.
+         * Since sortLink is sorted by responseTime, we can stop at first non-expired task.
          */
         do
         :: (idx < g_taskSortLinkTail) ->
@@ -253,21 +239,14 @@ inline OsTickProcess()
         :: (taskResponseTime >= MAX_RESPONSE_TIME) ->
             /* 
              * Task has MAX_RESPONSE_TIME (SUSPENDED).
+             * OPTIMIZATION: Since sortLink is sorted, all following tasks 
+             * also have responseTime >= MAX_RESPONSE_TIME.
+             * SAFETY: Never wake up SUSPENDED tasks, even if g_tickCount wraps.
              * Stop scanning immediately!
              */
             break
             
         :: (tcb[taskId].state == DELAYED && g_tickCount >= taskResponseTime) ->
-            /* 
-             * VERIFICATION POINT: Task is waking up.
-             * Check formal property: requestedDelay <= ticksActuallyWaited
-             * 
-             * If this assertion fails, it means the task woke up BEFORE
-             * waiting the requested number of ticks (premature wakeup).
-             * This indicates the overflow bug!
-             */
-            assert(requestedDelay[taskId] <= ticksActuallyWaited[taskId]);
-            
             /* Time expired, wake up the task */
             tcb[taskId].state = READY;
             OsEnqueueTail(taskId, tcb[taskId].prio);
@@ -296,16 +275,15 @@ inline OsTickProcess()
             tcb[taskId].pendList = UNUSED;
             
             /* Verify sortLink remains sorted after removal */
-            /* DISABLED: Overflow bug will break sortLink ordering, but we want */
-            /* to proceed to verify the ticksActuallyWaited property instead */
-            /* AssertSortLinkIsSorted(); */
+            AssertSortLinkIsSorted();
             
             needSched = 1;
             /* Don't increment idx, as we removed current element and need to check it again */
             
         :: (tcb[taskId].state == DELAYED && g_tickCount < taskResponseTime) ->
             /* 
-             * Task is DELAYED but wakeup time not reached yet.
+             * Task is DELAYED but wakeup time not reached yet (g_tickCount < taskResponseTime).
+             * Since sortLink is SORTED, all following tasks also haven't expired.
              * EARLY TERMINATION: Stop here to save unnecessary checks.
              */
             break
@@ -319,6 +297,8 @@ inline OsTickProcess()
         
         /* 
          * Update earliest wakeup time after processing expired tasks.
+         * OPTIMIZATION: Just check first element's responseTime.
+         * If it's MAX_RESPONSE_TIME, all are SUSPENDED.
          */
         if
         :: (needSched) ->
@@ -413,6 +393,4 @@ proctype SysTick_Handler()
         EXEC_WHEN_CURRENT_SAFE(SysTick_ID, exp_return(tmp))
     od
 }
-
-
 

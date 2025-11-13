@@ -1,0 +1,199 @@
+======================================================================
+SCHEDULING LIVELOCK VERIFICATION SUITE - 验证套件总结
+======================================================================
+
+目录位置: /root/jk_done/ideal-octo-pancake/scheduling_livelock_verification_suite
+
+核心目标:
+---------
+验证 RTOS 任务调度中的活锁（Livelock）问题
+
+问题描述:
+---------
+**任务调度活锁问题**
+
+当三个并发执行的任务在特定时序下交互时：
+- prev: 前置任务，即将被切出
+- victask: 受害者任务，被 PendSV 选中为下一个运行任务
+- lucky: 幸运任务，在受害者之后的调度顺序
+
+触发场景:
+1. PendSV 中断选择 victask 作为下一个任务
+2. 在 victask 真正开始执行前，SysTick 中断通过 tail-chaining 触发
+3. SysTick 再次触发 PendSV，导致任务重新选择
+4. victask 失去本次执行机会
+5. 如果反复发生，victask 将遭受饥饿（starvation）
+
+严重后果:
+- 任务饥饿：victask 长时间无法执行
+- 系统死锁：如果 victask 持有关键资源
+- 系统活锁：如果 victask 是 producer/consumer 中的关键角色
+
+根本原因:
+---------
+ARM Cortex-M 的 tail-chaining 机制：
+- 中断返回时，如果有更高或同等优先级中断 pending
+- 硬件自动链接到下一个中断，无需重新压栈/出栈
+- 导致 SysTick 可以在 PendSV 结束时立即执行
+- 新的 PendSV 被触发，之前选择的任务失效
+
+文件清单:
+---------
+核心模型:
+  - scheduler.pml ................. 调度器实现
+  - data_structures.pml ............ 数据结构和队列操作
+  - macros.pml ..................... 基础宏定义
+  - ltl_properties.pml ............. LTL性质定义
+
+测试场景:
+  - processes_livelock_test.pml .... 完整的三任务场景
+  - processes_livelock_simple.pml .. 简化版本（减少非确定性）
+
+主模型:
+  - main_livelock_test.pml ......... 完整测试主文件
+  - main_livelock_simple.pml ....... 简化测试主文件（推荐）
+
+验证脚本:
+  - verify_livelock.sh ............. 自动化验证脚本
+
+文档:
+  - README.md ...................... 完整文档
+  - QUICKSTART.md .................. 快速入门
+  - SUMMARY.txt .................... 本文件
+
+运行验证:
+---------
+# 使用简化版本（推荐）
+spin -a main_livelock_simple.pml
+gcc -O2 -o pan pan.c
+./pan -m1000
+
+# 或使用自动化脚本（带超时保护）
+bash verify_livelock.sh
+
+超时配置:
+- DEPTH=2000   : 搜索深度
+- TIMEOUT=5    : 每步超时（秒）
+- 可在脚本顶部修改
+
+任务配置:
+---------
+四个任务，编号如下：
+  - Task 2 (FIRST_TASK)  : prev 任务
+  - Task 3 (FIRST_TASK+1): victask 任务（受害者）
+  - Task 4 (FIRST_TASK+2): lucky 任务
+  - Task 5 (FIRST_TASK+3): IdleTask（防止死锁）
+
+所有主任务使用相同优先级（优先级 2）以触发调度竞争。
+
+关键验证点:
+-----------
+1. 饥饿自由度（Starvation Freedom）:
+   ltl starvation_free_task2:
+     系统应保证 victask (Task 3) 最终能执行
+   
+   如果违反: 检测到活锁问题
+
+2. 进度性质（Progress）:
+   ltl back_to_user:
+     系统总是最终返回用户任务
+   
+3. 任务公平性（Fairness）:
+   ltl all_starvation_free:
+     所有任务都应获得执行机会
+
+预期结果:
+---------
+根据模型执行的随机交错，可能出现：
+
+情况 A：未触发活锁
+  ✓ Basic verification: PASSED
+  ✓ Starvation freedom: VERIFIED
+  ✓ Progress property: VERIFIED
+
+情况 B：检测到活锁
+  ✓ Basic verification: PASSED
+  ✗ Starvation freedom: VIOLATED (livelock detected!)
+  ✓ Progress property: VERIFIED
+
+注意：活锁问题需要特定的中断交错时序，不是每次都触发。
+
+分析方法:
+---------
+如果检测到活锁，生成反例轨迹：
+
+```bash
+spin -t -p main_livelock_simple.pml > trace.txt
+```
+
+在轨迹中查找：
+1. PendSV 选择 victask 的时刻
+2. SysTick 通过 tail-chaining 触发
+3. 新的 PendSV 重新选择任务
+4. victask 失去执行机会的模式
+
+关键观察变量：
+- EP: 当前执行任务 ID
+- pending_exp: 中断 pending 位（bit 0=PendSV, bit 1=SysTick）
+- tcb[3].state: victask 的状态
+- readyQueue: 就绪队列内容
+
+状态空间注意事项:
+-----------------
+- 三任务并发会产生大量状态
+- 完整版本状态空间非常大（>100M 状态）
+- 推荐使用简化版本（processes_livelock_simple.pml）
+- 或减小搜索深度（-m1000 到 -m2000）
+
+缓解方案（理论）:
+-----------------
+本套件不包含修复实现，但理论上的缓解方案：
+
+1. 任务选择确认机制
+   - PendSV 选择任务后设置标志
+   - 下次 PendSV 检查标志，确保不重复选择
+
+2. 禁用 tail-chaining
+   - 性能损失较大
+   - 不推荐
+
+3. 优先级调整
+   - 关键任务使用更高优先级
+   - 避免多个关键任务同优先级
+
+4. 公平调度策略
+   - 时间片轮转
+   - 追踪任务执行机会
+
+5. 优先级天花板协议
+   - 资源访问协议
+   - 防止优先级反转
+
+技术说明:
+---------
+- 这是已知的设计问题，无现成修复方案
+- 问题源于 ARM Cortex-M 硬件机制
+- 实际系统中发生概率较低但存在
+- 关键系统需要特别注意
+
+文件统计:
+---------
+PML 模型文件: 7 个
+验证脚本: 1 个
+文档文件: 3 个
+
+总计: 11 个文件
+
+与 overflow_bug_verification_suite 的区别:
+------------------------------------------
+- overflow 套件: 有 bug 和 correct 两个模型对比
+- livelock 套件: 只有一个模型（无修复方案）
+- overflow 套件: 验证特定断言违反
+- livelock 套件: 验证 LTL 性质（饥饿自由度）
+- overflow 套件: 确定性触发
+- livelock 套件: 需要特定交错（非确定性）
+
+======================================================================
+验证套件创建完成 - 可独立运行和分发
+======================================================================
+
