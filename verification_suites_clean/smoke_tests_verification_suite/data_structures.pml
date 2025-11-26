@@ -242,9 +242,9 @@ inline OsAdd2SortLinkSorted(taskID, wakeupTime)
     
     /* CRITICAL: Task must not already be in a sortLink */
     assert(tcb[taskID].pendList == UNUSED);
-    byte candidate = wakeupTime;
+    
     /* Detect overflow: if wakeupTime < g_tickCount, byte addition wrapped around */
-    willOverflow = (candidate < g_tickCount);
+    willOverflow = (wakeupTime < g_tickCount);
     
     if
     :: (willOverflow) ->

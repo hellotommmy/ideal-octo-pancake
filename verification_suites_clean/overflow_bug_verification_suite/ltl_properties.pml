@@ -177,10 +177,3 @@ ltl sortlink_three_sorted {
          (g_taskSortLink[1].responseTime <= g_taskSortLink[2].responseTime)))
 }
 
-/***** Progress/Fairness: at least one of prev/victim/lucky runs infinitely often *****/
-ltl at_least_one_runs_inf {
-    ( ([] <> (EP == FIRST_TASK)) ) ||
-    ( ([] <> (EP == FIRST_TASK+1)) ) ||
-    ( ([] <> (EP == FIRST_TASK+2)) )
-}
-

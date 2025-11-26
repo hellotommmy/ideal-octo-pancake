@@ -23,6 +23,8 @@ proctype Process2()
 
 /***** Helper Macros *****/
 #define RUN_ALL_EXPS() atomic { run PendSV_Handler(); run SysTick_Handler() }
+/* Start all task processes */
+#define RUN_ALL_PROCESSES() atomic { run Process2(); run Process1() }
 
 /***** Initialization *****/
 init
@@ -57,7 +59,6 @@ init
 
     /* start exception handlers and tasks */
     RUN_ALL_EXPS();
-    run Process2();
-    run Process1()
+    RUN_ALL_PROCESSES()
 }
 

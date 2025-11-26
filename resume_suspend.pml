@@ -602,8 +602,6 @@ init {
     OsDequeueHead(topPrio);          /* Remove it from queue */
     tcb[EP].state = RUNNING;         /* Mark as RUNNING */
     
-    run Process1();
-    run Process2();
-    run Process3();
-    run Process4()
+    #define RUN_ALL_PROCESSES() atomic { run Process1(); run Process2(); run Process3(); run Process4() }
+    RUN_ALL_PROCESSES()
 }

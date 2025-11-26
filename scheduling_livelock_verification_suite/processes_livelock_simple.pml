@@ -65,6 +65,8 @@ proctype IdleTask()
 
 /***** Helper Macros *****/
 #define RUN_ALL_EXPS() atomic { run PendSV_Handler(); run SysTick_Handler() }
+/* Start all task processes */
+#define RUN_ALL_PROCESSES() atomic { run PrevTask(); run VictimTask(); run LuckyTask(); run IdleTask() }
 
 /***** Initialization *****/
 init
@@ -107,9 +109,6 @@ init
     tcb[EP].state = RUNNING;
 
     RUN_ALL_EXPS();
-    run PrevTask();
-    run VictimTask();
-    run LuckyTask();
-    run IdleTask()
+    RUN_ALL_PROCESSES()
 }
 
